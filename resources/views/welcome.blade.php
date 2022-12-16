@@ -169,7 +169,7 @@
                             <li class="list-group-item"><a href="https://unifesp.br/prodmais">Prodmais Unifesp</a></li>
                             <li class="list-group-item"><a
                                     href="https://github.com/trmurakami/coletaprod">Coletaprod</a></li>
-                            <li class="list-group-item"><a href="https://online-marc-editor.herokuapp.com">Online MARC
+                            <li class="list-group-item"><a href="onlinemarceditor">Online MARC
                                     Editor</a></li>
                             <li class="list-group-item"><a href="https://usp-prod-editor.herokuapp.com/">Editor ALEPHSEQ
                                     para a Produção Científica USP</a></li>
