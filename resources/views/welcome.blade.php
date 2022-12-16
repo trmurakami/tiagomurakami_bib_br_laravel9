@@ -82,6 +82,9 @@
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     <span class="fs-4">Início</span>
                 </a>
+                <a href="/apps" class="d-flex align-items-center text-dark text-decoration-none">
+                    <span class="fs-4">Aplicativos online</span>
+                </a>
             </header>
 
             <div class="p-5 mb-4 bg-light rounded-3">
