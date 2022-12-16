@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/apps', function () {
+    return view('apps');
+});
+
+Route::get('/onlinemarceditor', function () {
+    return view('apps.onlinemarceditor');
+});

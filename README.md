@@ -69,3 +69,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Install 
 
     npm install laravel-mix --save-dev
+
+
+    sudo apt-get install php8.1-mbstring
