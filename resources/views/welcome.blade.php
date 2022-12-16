@@ -174,7 +174,7 @@
                                     href="https://github.com/trmurakami/coletaprod">Coletaprod</a></li>
                             <li class="list-group-item"><a href="onlinemarceditor">Online MARC
                                     Editor</a></li>
-                            <li class="list-group-item"><a href="https://usp-prod-editor.herokuapp.com/">Editor ALEPHSEQ
+                            <li class="list-group-item"><a href="editoralephseq">Editor ALEPHSEQ
                                     para a Produção Científica USP</a></li>
                             <li class="list-group-item"><a href="https://lattes-to-bibtex.herokuapp.com/">Conversor
                                     online de XML do Currículo Lattes em formato Bibtex para importação no ORCID</a>
