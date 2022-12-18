@@ -28,3 +28,7 @@ Route::get('/onlinemarceditor', function () {
 Route::get('/editoralephseq', function () {
     return view('apps.editoralephseq');
 });
+
+Route::get('/admin', function () {
+    return view('admin');
+});
