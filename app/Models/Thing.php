@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Thing extends Model
 {
     use HasFactory;
+    public $fillable = ['name'];
 }

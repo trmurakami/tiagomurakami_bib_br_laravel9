@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SoftwareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +33,5 @@ Route::get('/editoralephseq', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+
+Route::resource('softwares', SoftwareController::class);

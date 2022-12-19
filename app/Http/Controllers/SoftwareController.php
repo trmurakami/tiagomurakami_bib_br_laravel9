@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSoftwareRequest;
 use App\Http\Requests\UpdateSoftwareRequest;
 use App\Models\Software;
+use Illuminate\Support\Facades\DB;
 
 class SoftwareController extends Controller
 {
@@ -15,7 +16,8 @@ class SoftwareController extends Controller
      */
     public function index()
     {
-        //
+        $softwares = Software::orderBy('id','desc')->paginate(5);
+        return view('softwares.index', compact('softwares'));
     }
 
     /**
@@ -25,7 +27,7 @@ class SoftwareController extends Controller
      */
     public function create()
     {
-        //
+        return view('softwares.create');
     }
 
     /**
@@ -36,7 +38,11 @@ class SoftwareController extends Controller
      */
     public function store(StoreSoftwareRequest $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        Software::create($request->post());
+        return redirect()->route('softwares.index')->with('success','Software has been created successfully.');
     }
 
     /**
@@ -47,7 +53,7 @@ class SoftwareController extends Controller
      */
     public function show(Software $software)
     {
-        //
+        return view('softwares.show',compact('software'));
     }
 
     /**
@@ -58,7 +64,7 @@ class SoftwareController extends Controller
      */
     public function edit(Software $software)
     {
-        //
+        return view('softwares.edit',compact('software'));
     }
 
     /**
@@ -70,7 +76,13 @@ class SoftwareController extends Controller
      */
     public function update(UpdateSoftwareRequest $request, Software $software)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        
+        $software->fill($request->post())->save();
+
+        return redirect()->route('softwares.index')->with('success','Software Has Been updated successfully');
     }
 
     /**
@@ -81,6 +93,7 @@ class SoftwareController extends Controller
      */
     public function destroy(Software $software)
     {
-        //
+        $software->delete();
+        return redirect()->route('softwares.index')->with('success','Software has been deleted successfully');
     }
 }
