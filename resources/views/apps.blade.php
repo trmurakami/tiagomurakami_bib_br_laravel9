@@ -23,6 +23,16 @@
             </div>
         </div>
     </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Conversor online de XML do Currículo Lattes em formato Bibtex para importação no
+                    ORCID</h5>
+                <p class="card-text">Conversor.</p>
+                <a href="lattestobibtex" class="btn btn-primary">Acessar</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 @stop

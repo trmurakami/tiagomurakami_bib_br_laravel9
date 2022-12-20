@@ -160,7 +160,7 @@
                             Editor</a></li>
                     <li class="list-group-item"><a href="editoralephseq">Editor ALEPHSEQ
                             para a Produção Científica USP</a></li>
-                    <li class="list-group-item"><a href="https://lattes-to-bibtex.herokuapp.com/">Conversor
+                    <li class="list-group-item"><a href="lattestobibtex">Conversor
                             online de XML do Currículo Lattes em formato Bibtex para importação no ORCID</a>
                     </li>
                 </ul>
