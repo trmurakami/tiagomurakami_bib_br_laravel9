@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 mt-3">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Conversor online de XML do Currículo Lattes em formato Bibtex para importação no
