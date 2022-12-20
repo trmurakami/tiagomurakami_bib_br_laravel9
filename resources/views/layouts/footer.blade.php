@@ -2,6 +2,6 @@
     <p class="col-md-4 mb-0 text-muted">Tiago Rodrigo Marçal Murakami</p>
 
     <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="" class="nav-link px-2 text-muted">Início</a></li>
+        <li class="nav-item"><a href="{{url('/')}}" class="nav-link px-2 text-muted">Início</a></li>
     </ul>
 </footer>
