@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SoftwareController;
+use App\Http\Controllers\ThingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,5 @@ Route::get('/admin', function () {
 });
 
 Route::resource('softwares', SoftwareController::class);
+
+Route::resource('things', ThingController::class);

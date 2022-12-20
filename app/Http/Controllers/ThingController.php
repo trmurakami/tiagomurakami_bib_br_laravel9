@@ -15,7 +15,8 @@ class ThingController extends Controller
      */
     public function index()
     {
-        //
+        $things = Thing::orderBy('id','desc')->paginate(5);
+        return view('things.index', compact('things'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ThingController extends Controller
      */
     public function create()
     {
-        //
+        return view('things.create');
     }
 
     /**
@@ -36,7 +37,11 @@ class ThingController extends Controller
      */
     public function store(StoreThingRequest $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        Thing::create($request->post());
+        return redirect()->route('things.index')->with('success','Thing has been created successfully.');
     }
 
     /**
@@ -47,7 +52,7 @@ class ThingController extends Controller
      */
     public function show(Thing $thing)
     {
-        //
+        return view('things.show', compact('thing'));
     }
 
     /**
@@ -58,7 +63,7 @@ class ThingController extends Controller
      */
     public function edit(Thing $thing)
     {
-        //
+        return view('things.edit', compact('thing'));
     }
 
     /**
@@ -70,7 +75,13 @@ class ThingController extends Controller
      */
     public function update(UpdateThingRequest $request, Thing $thing)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+        
+        $thing->fill($request->post())->save();
+
+        return redirect()->route('things.index')->with('success','Thing Has Been updated successfully');
     }
 
     /**
@@ -81,6 +92,7 @@ class ThingController extends Controller
      */
     public function destroy(Thing $thing)
     {
-        //
+        $thing->delete();
+        return redirect()->route('things.index')->with('success','Thing has been deleted successfully');
     }
 }
