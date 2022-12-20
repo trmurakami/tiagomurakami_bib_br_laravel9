@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\LattestoBibtex;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\ThingController;
+use App\Http\Controllers\LattestoBibtexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,7 @@ Route::get('/editoralephseq', function () {
 Route::get('/lattestobibtex', function () {
     return view('apps.lattestobibtex');
 });
+Route::post('/lattestobibtex', LattestoBibtex::class);
 
 Route::get('/admin', function () {
     return view('admin');

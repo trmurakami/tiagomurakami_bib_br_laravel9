@@ -12,7 +12,9 @@
         <p class="lead mb-4">Funcionando inicialmente com os tipos: Trabalhos em eventos, Artigos, Livros e
             Capítulos de Livros.</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <form class="m-3" action="upload.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+            <form class="m-3" action="lattestobibtex" method="post" accept-charset="utf-8"
+                enctype="multipart/form-data">
+                @csrf
                 <legend>Inserir um XML do Lattes</legend>
                 <div class="input-group">
                     <input type="file" class="custom-file-input" id="fileXML" aria-describedby="fileXML" name="file">
