@@ -72,11 +72,12 @@
 
 <div class="container py-4">
 
-    <div class="p-5 mb-4 bg-light border rounded-3">
+    <div class="p-5 mb-4 bg-light border rounded-3 text-light"
+        style="background-image: url('includes/images/Future of Metadata - Blog.jpg'); height: 100%; background-repeat: no-repeat; background-size: cover;">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Tiago Rodrigo Marçal Murakami</h1>
-            <p class="col-md-8 fs-4">Bibliotecário especialista em tecnologia para bibliotecas e unidades de
-                informação</p>
+            <p class="col-md-8 fs-4">Bibliotecário especialista em tecnologia para bibliotecas e unidades de informação
+            </p>
         </div>
     </div>
 
