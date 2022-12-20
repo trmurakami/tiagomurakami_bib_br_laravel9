@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreThingRequest;
 use App\Http\Requests\UpdateThingRequest;
 use App\Models\Thing;
+use App\Models\Software;
 
 class ThingController extends Controller
 {
@@ -95,4 +97,28 @@ class ThingController extends Controller
         $thing->delete();
         return redirect()->route('things.index')->with('success','Thing has been deleted successfully');
     }
+
+    // public function addSoftwaretoThing(Request $request, $id)
+    // {
+    //     $thing = Thing::find($id);
+    //     $record->things()->detach();
+    //     if ($record->author) {
+    //         foreach ($record->author as $author) {
+    //             if ($author["id"] != "") {
+    //                 $thing = Thing::find($author["id"]);
+    //                 $record->things()->attach($thing, ['relation' => $author['function'], 'function' => $author['function']]);
+    //             }
+    //         }
+    //     }
+    // }
+
+    public function addSoftwareAPI(Request $request)
+    {
+        $software = new Software($request->all());
+        $thing = Thing::find($request->id);
+        $addSoftwaretoThing = $thing->softwares()->save($software);
+        return response()->json($addSoftwaretoThing, 201);
+    }
+
+
 }

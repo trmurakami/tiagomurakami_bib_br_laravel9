@@ -14,6 +14,8 @@
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
 
+    @yield('head')
+
 </head>
 
 <body>

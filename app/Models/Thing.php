@@ -9,4 +9,15 @@ class Thing extends Model
 {
     use HasFactory;
     public $fillable = ['name'];
+
+    /**
+    * The softwares that this thing uses.
+    */
+
+    public function softwares()
+    {
+        return $this->belongsToMany(Software::class, 'software_thing');
+    }
+
+    
 }

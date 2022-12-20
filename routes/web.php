@@ -35,6 +35,10 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
+Route::get('/guiadesoftwares', function () {
+    return view('guiadesoftwares');
+});
+
 Route::resource('softwares', SoftwareController::class);
 
 Route::resource('things', ThingController::class);
