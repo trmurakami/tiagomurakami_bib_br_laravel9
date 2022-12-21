@@ -42,9 +42,7 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/guiadesoftwares', function () {
-    return view('guiadesoftwares');
-});
+Route::get('/guiadesoftwares', [SoftwareController::class, 'guiadesoftwares']);
 
 Route::resource('softwares', SoftwareController::class);
 

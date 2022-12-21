@@ -96,4 +96,15 @@ class SoftwareController extends Controller
         $software->delete();
         return redirect()->route('softwares.index')->with('success','Software has been deleted successfully');
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function guiadesoftwares()
+    {
+        $softwares = Software::orderBy('id','desc')->paginate(5);
+        return view('guiadesoftwares', compact('softwares'));
+    }
 }
