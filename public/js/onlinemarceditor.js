@@ -18192,7 +18192,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     getZ3950: function getZ3950(isbn, host, hostname) {
       var _this4 = this;
-      axios.get("proxy.php?url=http://tecbib.com/api/z3950?isbn=" + isbn + '%26host=' + host).then(function (response) {
+      axios.get("api/z3950?isbn=" + isbn + '%26host=' + host).then(function (response) {
         if (_this4.Z3950Records !== null) {
           Object.values(response.data).forEach(function (val) {
             val["source"] = hostname;
