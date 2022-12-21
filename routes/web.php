@@ -45,5 +45,6 @@ Route::get('/admin', function () {
 Route::get('/guiadesoftwares', [SoftwareController::class, 'guiadesoftwares']);
 
 Route::resource('softwares', SoftwareController::class);
-
 Route::resource('things', ThingController::class);
+
+Route::post('/softwaretothing', [ThingController::class, 'addSoftwaretoThing']);

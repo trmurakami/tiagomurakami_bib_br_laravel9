@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('software', function (Blueprint $table) {
+        Schema::create('softwares', function (Blueprint $table) {
             $table->id();
             $table->string('applicationcategory');
             $table->longText('description')->nullable();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('software');
+        Schema::dropIfExists('softwares');
     }
 };

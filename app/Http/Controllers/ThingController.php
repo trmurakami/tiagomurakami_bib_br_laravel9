@@ -98,19 +98,12 @@ class ThingController extends Controller
         return redirect()->route('things.index')->with('success','Thing has been deleted successfully');
     }
 
-    // public function addSoftwaretoThing(Request $request, $id)
-    // {
-    //     $thing = Thing::find($id);
-    //     $record->things()->detach();
-    //     if ($record->author) {
-    //         foreach ($record->author as $author) {
-    //             if ($author["id"] != "") {
-    //                 $thing = Thing::find($author["id"]);
-    //                 $record->things()->attach($thing, ['relation' => $author['function'], 'function' => $author['function']]);
-    //             }
-    //         }
-    //     }
-    // }
+    public function addSoftwaretoThing(Request $request)
+    {
+        $thing = Thing::find($request->thing_id);
+        $software = Software::find($request->software_id);
+        $software->things()->attach($thing, ['function' => $request->function, 'version' => $request->version, 'number_of_records' => $request->number_of_records]);
+    }
 
     public function addSoftwareAPI(Request $request)
     {

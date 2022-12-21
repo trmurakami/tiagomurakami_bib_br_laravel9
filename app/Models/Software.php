@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Software extends Model
 {
+    protected $table = 'softwares';
     use HasFactory;
     public $fillable = ['applicationcategory', 'description', 'license', 'maintainer', 'name', 'url'];
 

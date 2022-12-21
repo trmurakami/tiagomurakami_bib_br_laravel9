@@ -4,6 +4,14 @@
 
 @section('content')
 
+@php
+use App\Models\Software;
+use App\Models\Thing;
+
+$softwares = Software::get();
+
+@endphp
+
 
 <div class="container mt-2">
     <div class="row">
@@ -36,8 +44,41 @@
                     @enderror
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
         </div>
+        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+    </form>
+
+    @if ($thing->softwares)
+    <h4 class="mt-3">Softwares utilizados</h4>
+    <ul class="list-group">
+        @foreach ($thing->softwares as $softwares_used)
+        <li class="list-group-item">{{ $softwares_used->name }}</li>
+        @endforeach
+    </ul>
+    @endif
+
+    <h4 class="mt-3">Adicionar um software usado por {{ $thing->name }}:</h4>
+    <form action="/softwaretothing" method="POST" enctype="multipart/form-data" class="mt-3">
+        @csrf
+        <input type="hidden" name="thing_id" value="{{ $thing->id }}">
+
+        <select class="form-select" aria-label="Select software" name="software_id">
+            <option selected>Escolha um software</option>
+            @foreach ($softwares as $software)
+            <option value="{{ $software->id }}">{{ $software->name }}</option>
+            @endforeach
+        </select>
+        <select class="form-select" aria-label="Função" name="function">
+            <option selected>Escolha a função</option>
+            <option value="SGB">Sistema de Gestão de Bibliotecas(SGB)</option>
+            <option value="REP">Repositórios institucionais(REP)</option>
+        </select>
+        <input class="form-control" type="text" placeholder="Versão" aria-label="Versão" name="version">
+        <input class="form-control" type="text" placeholder="Número de registros" aria-label="Número de registros"
+            name="number_of_records">
+
+        <button type="submit" class="mt-3 btn btn-primary">Enviar</button>
+
     </form>
 </div>
 
