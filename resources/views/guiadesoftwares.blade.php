@@ -14,8 +14,9 @@
         <h5 class="card-title">{{ $software->name }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ $software->applicationcategory }}</h6>
         <h6 class="card-subtitle mb-2 text-muted">{{ $software->maintainer }}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{ $software->license }}</h6>
         <p class="card-text">{{ $software->description }}</p>
-        <a href="software/{{ $software->id }}" class="btn btn-primary">Link</a>
+        <a href="software/{{ $software->id }}" class="btn btn-primary">Saiba mais</a>
     </div>
 </div>
 

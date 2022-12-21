@@ -49,6 +49,10 @@
                         <input type="text" name="maintainer" class="form-control" placeholder="Mantenedor">
                     </div>
                     <div class="form-group">
+                        <strong>Licença:</strong>
+                        <input type="text" name="license" class="form-control" placeholder="Licença">
+                    </div>
+                    <div class="form-group">
                         <strong>URL:</strong>
                         <input type="text" name="url" class="form-control" placeholder="URL">
                     </div>

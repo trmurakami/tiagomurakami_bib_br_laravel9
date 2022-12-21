@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('software', function (Blueprint $table) {
             $table->id();
             $table->string('applicationcategory');
-            $table->longText('description')->nullable();            
+            $table->longText('description')->nullable();
+            $table->string('license');
             $table->string('maintainer');
             $table->string('name');
             $table->string('url');

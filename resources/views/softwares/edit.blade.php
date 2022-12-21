@@ -54,6 +54,11 @@
                             value="{{ $software->maintainer }}">
                     </div>
                     <div class="form-group">
+                        <strong>Licença:</strong>
+                        <input type="text" name="license" class="form-control" placeholder="Licença"
+                            value="{{ $software->license }}">
+                    </div>
+                    <div class="form-group">
                         <strong>URL:</strong>
                         <input type="text" name="url" class="form-control" placeholder="URL"
                             value="{{ $software->url }}">
