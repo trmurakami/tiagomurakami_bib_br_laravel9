@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Software extends Model
 {
     use HasFactory;
-    public $fillable = ['name'];
+    public $fillable = ['applicationcategory', 'description', 'maintainer', 'name', 'url'];
 
     /**
     * The things that uses the software.

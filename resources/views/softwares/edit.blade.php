@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Edit software Form - Laravel 9 CRUD Tutorial</title>
+    <title>Editar software</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Edit software</h2>
+                    <h2>Editar software</h2>
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('softwares.index') }}" enctype="multipart/form-data">
@@ -31,15 +31,35 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>software Name:</strong>
+                        <strong>Nome do software:</strong>
                         <input type="text" name="name" value="{{ $software->name }}" class="form-control"
-                            placeholder="software name">
+                            placeholder="Nome do software">
                         @error('name')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <strong>Categoria:</strong>
+                        <input type="text" name="applicationcategory" value="{{ $software->applicationcategory }}"
+                            class="form-control" placeholder="Categoria">
+                    </div>
+                    <div class="form-group">
+                        <strong>Descrição:</strong>
+                        <textarea type="text" name="description" class="form-control"
+                            value="{{ $software->description }}" placeholder="Descrição"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <strong>Mantenedor:</strong>
+                        <input type="text" name="maintainer" class="form-control" placeholder="Mantenedor"
+                            value="{{ $software->maintainer }}">
+                    </div>
+                    <div class="form-group">
+                        <strong>URL:</strong>
+                        <input type="text" name="url" class="form-control" placeholder="URL"
+                            value="{{ $software->url }}">
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary ml-3">Submit</button>
+                <button type="submit" class="btn btn-primary ml-3">Enviar</button>
             </div>
         </form>
     </div>

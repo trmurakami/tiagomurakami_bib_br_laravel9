@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Laravel 9 CRUD Tutorial Example</title>
+    <title>Administração - Softwares</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -12,10 +12,10 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2>Laravel 9 CRUD Example Tutorial</h2>
+                    <h2>Administração - Softwares</h2>
                 </div>
                 <div class="pull-right mb-2">
-                    <a class="btn btn-success" href="{{ route('softwares.create') }}"> Create software</a>
+                    <a class="btn btn-success" href="{{ route('softwares.create') }}"> Criar software</a>
                 </div>
             </div>
         </div>
@@ -27,9 +27,10 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>S.No</th>
-                    <th>Software Name</th>
-                    <th width="280px">Action</th>
+                    <th>Número</th>
+                    <th>Nome do software</th>
+                    <th>Mantenedor</th>
+                    <th width="280px">Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,12 +38,13 @@
                 <tr>
                     <td>{{ $software->id }}</td>
                     <td>{{ $software->name }}</td>
+                    <td>{{ $software->maintainer }}</td>
                     <td>
                         <form action="{{ route('softwares.destroy',$software->id) }}" method="Post">
-                            <a class="btn btn-primary" href="{{ route('softwares.edit',$software->id) }}">Edit</a>
+                            <a class="btn btn-primary" href="{{ route('softwares.edit',$software->id) }}">Editar</a>
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger">Excluir</button>
                         </form>
                     </td>
                 </tr>
