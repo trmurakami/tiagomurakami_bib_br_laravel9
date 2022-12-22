@@ -38,15 +38,23 @@ export default {
             _300a: 'Extent',
             _300b: 'Other physical details',
             _300c: 'Dimensions',
+            add_eletronic_location_and_access: 'Add Electronic Location and Access',
+            add_general_note: 'Add General Note',
+            add_isbn: 'Add ISBN',
             add_personal_name: 'Add Personal Name',
             add_rda_fields: 'Add RDA fields (336, 337, 338)',
+            add_subject_added_entry_topical_term: 'Add Subject Added Entry-Topical Term',
             book: 'Book',
             cataloging_source: 'Cataloging Source',
             clear_all_record: 'Clear all record',
             clear_validation: 'Clear validation',
             control_number: 'Control Number',
             control_number_identifier: 'Control Number Identifier',
+            copy: 'Copy',
+            current_publication_frequency: 'Current Publication Frequency',
+            delete: 'Delete',
             edit_fields: 'Edit fields',
+            general_note: 'General Note',
             leader: 'Leader',
             marc_record: 'MARC Record',
             predefined_types: 'Predefined types',
@@ -78,15 +86,23 @@ export default {
             _300a: 'Extensão',
             _300b: 'Detalhes físicos adicionais',
             _300c: 'Dimensões',
+            add_eletronic_location_and_access: 'Adicionar Localização eletrônica e acesso',
+            add_general_note: 'Adicionar nota geral',
+            add_isbn: 'Adicionar ISBN',
             add_personal_name: 'Adicionar Nome pessoal',
             add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
+            add_subject_added_entry_topical_term: 'Adicionar Assunto Tópico',
             book: 'Livro',
             cataloging_source: 'Fonte da Catalogação',
             clear_all_record: 'Limpar registro',
             clear_validation: 'Limpar validação',
             control_number: 'Número de controle',
             control_number_identifier: 'Código MARC da Agência Catalogadora',
+            copy: 'Copiar',
+            current_publication_frequency: 'Frequência atual da publicação',
+            delete: 'Excluir',
             edit_fields: 'Editar campos',
+            general_note: 'Nota geral',
             leader: 'Líder',
             marc_record: 'Registro MARC',
             predefined_types: 'Tipos predefinidos',
@@ -2477,7 +2493,7 @@ export default {
                                 ...</div>
                             <div class="alert alert-warning" role="alert" v-show="loadingZ3950">Searching Z39.50 servers
                                 ...</div>
-                            <button @click="addField('isbn')" class="btn btn-info btn-sm mb-2">Add ISBN</button>
+                            <button @click="addField('isbn')" class="btn btn-info btn-sm mb-2">{{ translation.add_isbn }}</button>
 
                             <div class="input-group mb-2" v-for="(isbn, indexisbn) in record.isbn">
                                 <div class="input-group-prepend"><span class="input-group-text">ISBN&nbsp;&nbsp;
@@ -2795,7 +2811,7 @@ export default {
                                 </div>
                                 <div class="col-1">
                                     <button @click="deleteField('personal_name', indexAuthor)"
-                                        class="btn btn-danger btn-sm">Delete</button>
+                                        class="btn btn-danger btn-sm">{{ translation.delete }}</button>
                                 </div>
                             </div>
 
@@ -2836,7 +2852,7 @@ export default {
                                     aria-label="Corporate name or jurisdiction name as entry element"
                                     aria-describedby="_100a">
                                 <button @click="deleteField('corporate_name', indexCorporate)"
-                                    class="btn btn-danger btn-sm">Delete</button>
+                                    class="btn btn-danger btn-sm">{{ translation.delete }}</button>
                             </div>
 
                             <button @click="addField('corporate_name')" class="btn btn-info btn-sm mb-2">
@@ -2977,7 +2993,7 @@ export default {
 
                         <!-- 310 -->
                         <div class="input-group mb-3" v-if="recordType === 'Serial'">
-                            <span class="input-group-text" id="_310">Current Publication Frequency&nbsp;&nbsp;
+                            <span class="input-group-text" id="_310">{{ translation.current_publication_frequency }}&nbsp;&nbsp;
                                 <a href="https://www.loc.gov/marc/bibliographic/bd310.html" rel="external"
                                     target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -2990,7 +3006,7 @@ export default {
                                 </a>
                             </span>
                             <input type="text" id="_310a" v-model="record._310a" class="form-control"
-                                placeholder="Current publication frequency" aria-label="Current publication frequency"
+                                :placeholder="translation.current_publication_frequency" aria-label="Current publication frequency"
                                 aria-describedby="_310a">
                         </div>
                         <!-- \310 -->
@@ -3211,7 +3227,7 @@ export default {
                         <!-- 500 -->
 
                         <div class="input-group mb-2" v-for="(note, indexNote) in record.general_note">
-                            <span class="input-group-text" id="general_note">General Note&nbsp;&nbsp;
+                            <span class="input-group-text" id="general_note">{{ translation.general_note }}&nbsp;&nbsp;
                                 <a href="https://www.loc.gov/marc/bibliographic/bd500.html" rel="external"
                                     target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -3224,14 +3240,13 @@ export default {
                                 </a>
                             </span>
                             <input type="text" id="_500a" v-model="record.general_note[indexNote].a"
-                                class="form-control" placeholder="General Note" aria-label="General Note"
+                                class="form-control" :placeholder="translation.general_note" aria-label="General Note"
                                 aria-describedby="_500a">
                             <button @click="deleteField('general_note', indexNote)"
-                                class="btn btn-danger btn-sm">Delete</button>
+                                class="btn btn-danger btn-sm">{{ translation.delete }}</button>
                         </div>
 
-                        <button @click="addField('general_note')" class="btn btn-info btn-sm mb-2">Add General
-                            Note</button>
+                        <button @click="addField('general_note')" class="btn btn-info btn-sm mb-2">{{ translation.add_general_note }}</button>
 
                         <!-- \500 -->
 
@@ -3282,10 +3297,9 @@ export default {
                                 aria-label="Source of heading or term" aria-describedby="_6502"
                                 v-if="record._650[indexSubjectTT].ind2 == '7'">
                             <button @click="deleteField('_650', indexSubjectTT)"
-                                class="btn btn-danger btn-sm col-md-1">Delete</button>
+                                class="btn btn-danger btn-sm col-md-1">{{ translation.delete }}</button>
                         </div>
-                        <button @click="addField('_650')" class="btn btn-info btn-sm mb-2">Add Subject Added
-                            Entry-Topical Term</button>
+                        <button @click="addField('_650')" class="btn btn-info btn-sm mb-2">{{ translation.add_subject_added_entry_topical_term }}</button>
                         <!-- \650 -->
 
                         <!-- 856 -->
@@ -3330,10 +3344,9 @@ export default {
                                 placeholder="Uniform Resource Identifier" aria-label="Uniform Resource Identifier"
                                 aria-describedby="url">
                             <button @click="deleteField('_856', indexURL)"
-                                class="btn btn-danger btn-sm col-md-1">Delete</button>
+                                class="btn btn-danger btn-sm col-md-1">{{ translation.delete }}</button>
                         </div>
-                        <button @click="addField('_856')" class="btn btn-info btn-sm mb-2">Add Electronic Location and
-                            Access</button>
+                        <button @click="addField('_856')" class="btn btn-info btn-sm mb-2">{{ translation.add_eletronic_location_and_access }}</button>
                         <!-- \856 -->
 
 
@@ -3344,7 +3357,7 @@ export default {
                 {{ complete_record }}
             </pre>
                         <span class="btn btn-info text-white copy-btn ml-auto"
-                            @click.stop.prevent="copyTestingCode">Copy</span>
+                            @click.stop.prevent="copyTestingCode">{{ translation.copy }}</span>
                         <input type="hidden" id="complete_record" :value="complete_record">
 
                         <div class="alert alert-info" role="alert" v-if="copySuccessful">

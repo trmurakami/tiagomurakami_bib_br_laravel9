@@ -17621,15 +17621,23 @@ __webpack_require__.r(__webpack_exports__);
         _300a: 'Extent',
         _300b: 'Other physical details',
         _300c: 'Dimensions',
+        add_eletronic_location_and_access: 'Add Electronic Location and Access',
+        add_general_note: 'Add General Note',
+        add_isbn: 'Add ISBN',
         add_personal_name: 'Add Personal Name',
         add_rda_fields: 'Add RDA fields (336, 337, 338)',
+        add_subject_added_entry_topical_term: 'Add Subject Added Entry-Topical Term',
         book: 'Book',
         cataloging_source: 'Cataloging Source',
         clear_all_record: 'Clear all record',
         clear_validation: 'Clear validation',
         control_number: 'Control Number',
         control_number_identifier: 'Control Number Identifier',
+        copy: 'Copy',
+        current_publication_frequency: 'Current Publication Frequency',
+        "delete": 'Delete',
         edit_fields: 'Edit fields',
+        general_note: 'General Note',
         leader: 'Leader',
         marc_record: 'MARC Record',
         predefined_types: 'Predefined types',
@@ -17661,15 +17669,23 @@ __webpack_require__.r(__webpack_exports__);
         _300a: 'Extensão',
         _300b: 'Detalhes físicos adicionais',
         _300c: 'Dimensões',
+        add_eletronic_location_and_access: 'Adicionar Localização eletrônica e acesso',
+        add_general_note: 'Adicionar nota geral',
+        add_isbn: 'Adicionar ISBN',
         add_personal_name: 'Adicionar Nome pessoal',
         add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
+        add_subject_added_entry_topical_term: 'Adicionar Assunto Tópico',
         book: 'Livro',
         cataloging_source: 'Fonte da Catalogação',
         clear_all_record: 'Limpar registro',
         clear_validation: 'Limpar validação',
         control_number: 'Número de controle',
         control_number_identifier: 'Código MARC da Agência Catalogadora',
+        copy: 'Copiar',
+        current_publication_frequency: 'Frequência atual da publicação',
+        "delete": 'Excluir',
         edit_fields: 'Editar campos',
+        general_note: 'Nota geral',
         leader: 'Líder',
         marc_record: 'Registro MARC',
         predefined_types: 'Tipos predefinidos',
@@ -19012,310 +19028,349 @@ var _hoisted_1674 = {
   key: 0,
   "class": "input-group mb-3"
 };
-var _hoisted_1675 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_310\">Current Publication Frequency   <a href=\"https://www.loc.gov/marc/bibliographic/bd310.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1676 = {
+var _hoisted_1675 = {
+  "class": "input-group-text",
+  id: "_310"
+};
+var _hoisted_1676 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "https://www.loc.gov/marc/bibliographic/bd310.html",
+  rel: "external",
+  target: "_blank"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "16",
+  height: "16",
+  fill: "currentColor",
+  "class": "bi bi-info-circle",
+  viewBox: "0 0 16 16"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+})])], -1 /* HOISTED */);
+var _hoisted_1677 = ["placeholder"];
+var _hoisted_1678 = {
   key: 1
 };
-var _hoisted_1677 = {
+var _hoisted_1679 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1678 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_336\">336 - Content Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd336.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1679 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA content term</option><option value=\"cartographic dataset\">cartographic dataset</option><option value=\"cartographic image\">cartographic image</option><option value=\"cartographic moving image\">cartographic moving image</option><option value=\"cartographic tactile image\">cartographic tactile image</option><option value=\"cartographic tactile three-dimensional form\">cartographic tactile three-dimensional form</option><option value=\"cartographic three-dimensional form\">cartographic three-dimensional form</option><option value=\"computer dataset\">computer dataset</option><option value=\"computer program\">computer program</option><option value=\"notated movement\">notated movement</option><option value=\"notated music\">notated music</option><option value=\"performed music\">performed music</option><option value=\"sounds\">sounds</option><option value=\"spoken word\">spoken word</option><option value=\"still image\">still image</option><option value=\"tactile image\">tactile image</option><option value=\"tactile notated music\">tactile notated music</option><option value=\"tactile notated movement\">tactile notated movement</option><option value=\"tactile text\">tactile text</option><option value=\"tactile three-dimensional form\">tactile three-dimensional form </option><option value=\"text\">text</option><option value=\"three-dimensional form\">three-dimensional form</option><option value=\"three-dimensional moving image\">three-dimensional moving image </option><option value=\"two-dimensional moving image\">two-dimensional moving image</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 26);
-var _hoisted_1705 = [_hoisted_1679];
-var _hoisted_1706 = {
+var _hoisted_1680 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_336\">336 - Content Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd336.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1681 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA content term</option><option value=\"cartographic dataset\">cartographic dataset</option><option value=\"cartographic image\">cartographic image</option><option value=\"cartographic moving image\">cartographic moving image</option><option value=\"cartographic tactile image\">cartographic tactile image</option><option value=\"cartographic tactile three-dimensional form\">cartographic tactile three-dimensional form</option><option value=\"cartographic three-dimensional form\">cartographic three-dimensional form</option><option value=\"computer dataset\">computer dataset</option><option value=\"computer program\">computer program</option><option value=\"notated movement\">notated movement</option><option value=\"notated music\">notated music</option><option value=\"performed music\">performed music</option><option value=\"sounds\">sounds</option><option value=\"spoken word\">spoken word</option><option value=\"still image\">still image</option><option value=\"tactile image\">tactile image</option><option value=\"tactile notated music\">tactile notated music</option><option value=\"tactile notated movement\">tactile notated movement</option><option value=\"tactile text\">tactile text</option><option value=\"tactile three-dimensional form\">tactile three-dimensional form </option><option value=\"text\">text</option><option value=\"three-dimensional form\">three-dimensional form</option><option value=\"three-dimensional moving image\">three-dimensional moving image </option><option value=\"two-dimensional moving image\">two-dimensional moving image</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 26);
+var _hoisted_1707 = [_hoisted_1681];
+var _hoisted_1708 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1707 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_337\">337 - Media Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd337.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1708 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA media terms</option><option value=\"audio\">audio</option><option value=\"computer\">computer</option><option value=\"microform\">microform</option><option value=\"microscopic\">microscopic</option><option value=\"projected\">projected</option><option value=\"stereographic\">stereographic</option><option value=\"unmediated\">unmediated</option><option value=\"video\">video</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 11);
-var _hoisted_1719 = [_hoisted_1708];
-var _hoisted_1720 = {
+var _hoisted_1709 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_337\">337 - Media Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd337.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1710 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA media terms</option><option value=\"audio\">audio</option><option value=\"computer\">computer</option><option value=\"microform\">microform</option><option value=\"microscopic\">microscopic</option><option value=\"projected\">projected</option><option value=\"stereographic\">stereographic</option><option value=\"unmediated\">unmediated</option><option value=\"video\">video</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 11);
+var _hoisted_1721 = [_hoisted_1710];
+var _hoisted_1722 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1721 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_338\">338 - Carrier Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd338.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1722 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1723 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_338\">338 - Carrier Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd338.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1724 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   disabled: ""
 }, "RDA carrier terms", -1 /* HOISTED */);
-var _hoisted_1723 = {
+var _hoisted_1725 = {
   key: 0,
   value: "audio cartridge"
 };
-var _hoisted_1724 = {
+var _hoisted_1726 = {
   key: 1,
   value: "audio belt"
 };
-var _hoisted_1725 = {
+var _hoisted_1727 = {
   key: 2,
   value: "audio cylinder"
 };
-var _hoisted_1726 = {
+var _hoisted_1728 = {
   key: 3,
   value: "audio disc"
 };
-var _hoisted_1727 = {
+var _hoisted_1729 = {
   key: 4,
   value: "sound track reel"
 };
-var _hoisted_1728 = {
+var _hoisted_1730 = {
   key: 5,
   value: "audio roll"
 };
-var _hoisted_1729 = {
+var _hoisted_1731 = {
   key: 6,
   value: "audio wire reel"
 };
-var _hoisted_1730 = {
+var _hoisted_1732 = {
   key: 7,
   value: "audiocassette"
 };
-var _hoisted_1731 = {
+var _hoisted_1733 = {
   key: 8,
   value: "audiotape reel"
 };
-var _hoisted_1732 = {
+var _hoisted_1734 = {
   key: 9,
   value: "other"
 };
-var _hoisted_1733 = {
+var _hoisted_1735 = {
   key: 10,
   value: "computer card"
 };
-var _hoisted_1734 = {
+var _hoisted_1736 = {
   key: 11,
   value: "computer chip cartridge"
 };
-var _hoisted_1735 = {
+var _hoisted_1737 = {
   key: 12,
   value: "computer disc"
 };
-var _hoisted_1736 = {
+var _hoisted_1738 = {
   key: 13,
   value: "computer disc cartridge"
 };
-var _hoisted_1737 = {
+var _hoisted_1739 = {
   key: 14,
   value: "computer tape cartridge"
 };
-var _hoisted_1738 = {
+var _hoisted_1740 = {
   key: 15,
   value: "computer tape cassette"
 };
-var _hoisted_1739 = {
+var _hoisted_1741 = {
   key: 16,
   value: "computer tape reel"
 };
-var _hoisted_1740 = {
+var _hoisted_1742 = {
   key: 17,
   value: "online resource"
 };
-var _hoisted_1741 = {
+var _hoisted_1743 = {
   key: 18,
   value: "other"
 };
-var _hoisted_1742 = {
+var _hoisted_1744 = {
   key: 19,
   value: "aperture card"
 };
-var _hoisted_1743 = {
+var _hoisted_1745 = {
   key: 20,
   value: "microfiche"
 };
-var _hoisted_1744 = {
+var _hoisted_1746 = {
   key: 21,
   value: "microfiche cassette"
 };
-var _hoisted_1745 = {
+var _hoisted_1747 = {
   key: 22,
   value: "microfilm cartridge"
 };
-var _hoisted_1746 = {
+var _hoisted_1748 = {
   key: 23,
   value: "microfilm cassette"
 };
-var _hoisted_1747 = {
+var _hoisted_1749 = {
   key: 24,
   value: "microfilm reel"
 };
-var _hoisted_1748 = {
+var _hoisted_1750 = {
   key: 25,
   value: "microfilm roll"
 };
-var _hoisted_1749 = {
+var _hoisted_1751 = {
   key: 26,
   value: "microfilm slip"
 };
-var _hoisted_1750 = {
+var _hoisted_1752 = {
   key: 27,
   value: "microopaque"
 };
-var _hoisted_1751 = {
+var _hoisted_1753 = {
   key: 28,
   value: "other"
 };
-var _hoisted_1752 = {
+var _hoisted_1754 = {
   key: 29,
   value: "microscope slide"
 };
-var _hoisted_1753 = {
+var _hoisted_1755 = {
   key: 30,
   value: "other"
 };
-var _hoisted_1754 = {
+var _hoisted_1756 = {
   key: 31,
   value: "film cartridge"
 };
-var _hoisted_1755 = {
+var _hoisted_1757 = {
   key: 32,
   value: "film cassette"
 };
-var _hoisted_1756 = {
+var _hoisted_1758 = {
   key: 33,
   value: "film reel"
 };
-var _hoisted_1757 = {
+var _hoisted_1759 = {
   key: 34,
   value: "film roll"
 };
-var _hoisted_1758 = {
+var _hoisted_1760 = {
   key: 35,
   value: "filmslip"
 };
-var _hoisted_1759 = {
+var _hoisted_1761 = {
   key: 36,
   value: "filmstrip"
 };
-var _hoisted_1760 = {
+var _hoisted_1762 = {
   key: 37,
   value: "filmstrip cartridge"
 };
-var _hoisted_1761 = {
+var _hoisted_1763 = {
   key: 38,
   value: "overhead transparency"
 };
-var _hoisted_1762 = {
+var _hoisted_1764 = {
   key: 39,
   value: "slide"
 };
-var _hoisted_1763 = {
+var _hoisted_1765 = {
   key: 40,
   value: "other"
 };
-var _hoisted_1764 = {
+var _hoisted_1766 = {
   key: 41,
   value: "stereograph card"
 };
-var _hoisted_1765 = {
+var _hoisted_1767 = {
   key: 42,
   value: "stereograph disc"
 };
-var _hoisted_1766 = {
+var _hoisted_1768 = {
   key: 43,
   value: "other"
 };
-var _hoisted_1767 = {
+var _hoisted_1769 = {
   key: 44,
   value: "card"
 };
-var _hoisted_1768 = {
+var _hoisted_1770 = {
   key: 45,
   value: "flipchart"
 };
-var _hoisted_1769 = {
+var _hoisted_1771 = {
   key: 46,
   value: "roll"
 };
-var _hoisted_1770 = {
+var _hoisted_1772 = {
   key: 47,
   value: "sheet"
 };
-var _hoisted_1771 = {
+var _hoisted_1773 = {
   key: 48,
   value: "volume"
 };
-var _hoisted_1772 = {
+var _hoisted_1774 = {
   key: 49,
   value: "object"
 };
-var _hoisted_1773 = {
+var _hoisted_1775 = {
   key: 50,
   value: "other"
 };
-var _hoisted_1774 = {
+var _hoisted_1776 = {
   key: 51,
   value: "video cartridge"
 };
-var _hoisted_1775 = {
+var _hoisted_1777 = {
   key: 52,
   value: "videocassette"
 };
-var _hoisted_1776 = {
+var _hoisted_1778 = {
   key: 53,
   value: "videodisc"
 };
-var _hoisted_1777 = {
+var _hoisted_1779 = {
   key: 54,
   value: "videotape reel"
 };
-var _hoisted_1778 = {
+var _hoisted_1780 = {
   key: 55,
   value: "other"
 };
-var _hoisted_1779 = {
+var _hoisted_1781 = {
   key: 56,
   value: "unspecified"
 };
-var _hoisted_1780 = {
+var _hoisted_1782 = {
   "class": "input-group mb-2"
 };
-var _hoisted_1781 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"general_note\">General Note   <a href=\"https://www.loc.gov/marc/bibliographic/bd500.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1782 = ["onUpdate:modelValue"];
-var _hoisted_1783 = ["onClick"];
-var _hoisted_1784 = {
+var _hoisted_1783 = {
+  "class": "input-group-text",
+  id: "general_note"
+};
+var _hoisted_1784 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "https://www.loc.gov/marc/bibliographic/bd500.html",
+  rel: "external",
+  target: "_blank"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  width: "16",
+  height: "16",
+  fill: "currentColor",
+  "class": "bi bi-info-circle",
+  viewBox: "0 0 16 16"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
+  d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+})])], -1 /* HOISTED */);
+var _hoisted_1785 = ["onUpdate:modelValue", "placeholder"];
+var _hoisted_1786 = ["onClick"];
+var _hoisted_1787 = {
   "class": "input-group mb-3 col"
 };
-var _hoisted_1785 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"subject_tt\">Subject Added Entry-Topical Term   <a href=\"https://www.loc.gov/marc/bibliographic/bd650.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1786 = {
+var _hoisted_1788 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"subject_tt\">Subject Added Entry-Topical Term   <a href=\"https://www.loc.gov/marc/bibliographic/bd650.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1789 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1787 = ["onUpdate:modelValue"];
-var _hoisted_1788 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Level of subject</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - No level specified</option><option value=\"1\">1 - Primary</option><option value=\"2\">2 - Secondary</option>", 5);
-var _hoisted_1793 = [_hoisted_1788];
-var _hoisted_1794 = {
+var _hoisted_1790 = ["onUpdate:modelValue"];
+var _hoisted_1791 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Level of subject</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - No level specified</option><option value=\"1\">1 - Primary</option><option value=\"2\">2 - Secondary</option>", 5);
+var _hoisted_1796 = [_hoisted_1791];
+var _hoisted_1797 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1795 = ["onUpdate:modelValue"];
-var _hoisted_1796 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Thesaurus</option><option value=\"0\">0 - Library of Congress Subject Headings</option><option value=\"1\">1 - LC subject headings for children&#39;s literature</option><option value=\"2\">2 - Medical Subject Headings</option><option value=\"3\">3 - National Agricultural Library subject authority file</option><option value=\"4\">4 - Source not specified</option><option value=\"5\">5 - Canadian Subject Headings</option><option value=\"6\">6 - Répertoire de vedettes-matière</option><option value=\"7\">7 - Source specified in subfield $2</option>", 9);
-var _hoisted_1805 = [_hoisted_1796];
-var _hoisted_1806 = ["onUpdate:modelValue"];
-var _hoisted_1807 = ["onUpdate:modelValue"];
-var _hoisted_1808 = ["onClick"];
-var _hoisted_1809 = {
+var _hoisted_1798 = ["onUpdate:modelValue"];
+var _hoisted_1799 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Thesaurus</option><option value=\"0\">0 - Library of Congress Subject Headings</option><option value=\"1\">1 - LC subject headings for children&#39;s literature</option><option value=\"2\">2 - Medical Subject Headings</option><option value=\"3\">3 - National Agricultural Library subject authority file</option><option value=\"4\">4 - Source not specified</option><option value=\"5\">5 - Canadian Subject Headings</option><option value=\"6\">6 - Répertoire de vedettes-matière</option><option value=\"7\">7 - Source specified in subfield $2</option>", 9);
+var _hoisted_1808 = [_hoisted_1799];
+var _hoisted_1809 = ["onUpdate:modelValue"];
+var _hoisted_1810 = ["onUpdate:modelValue"];
+var _hoisted_1811 = ["onClick"];
+var _hoisted_1812 = {
   "class": "input-group mb-3 col"
 };
-var _hoisted_1810 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"title\">Electronic Location and Access   <a href=\"https://www.loc.gov/marc/bibliographic/bd856.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1811 = {
+var _hoisted_1813 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"title\">Electronic Location and Access   <a href=\"https://www.loc.gov/marc/bibliographic/bd856.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1814 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1812 = ["onUpdate:modelValue"];
-var _hoisted_1813 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Access method</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Email</option><option value=\"1\">1 - FTP</option><option value=\"2\">2 - Remote login (Telnet)</option><option value=\"3\">3 - Dial-up</option><option value=\"4\">4 - HTTP</option><option value=\"7\">7 - Method specified in subfield $2</option>", 8);
-var _hoisted_1821 = [_hoisted_1813];
-var _hoisted_1822 = {
+var _hoisted_1815 = ["onUpdate:modelValue"];
+var _hoisted_1816 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Access method</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Email</option><option value=\"1\">1 - FTP</option><option value=\"2\">2 - Remote login (Telnet)</option><option value=\"3\">3 - Dial-up</option><option value=\"4\">4 - HTTP</option><option value=\"7\">7 - Method specified in subfield $2</option>", 8);
+var _hoisted_1824 = [_hoisted_1816];
+var _hoisted_1825 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1823 = ["onUpdate:modelValue"];
-var _hoisted_1824 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Relationship</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Resource</option><option value=\"1\">1 - Version of resource</option><option value=\"2\">2 - Related resource</option><option value=\"8\">8 - No display constant generated</option>", 6);
-var _hoisted_1830 = [_hoisted_1824];
-var _hoisted_1831 = ["onUpdate:modelValue"];
-var _hoisted_1832 = ["onClick"];
-var _hoisted_1833 = {
+var _hoisted_1826 = ["onUpdate:modelValue"];
+var _hoisted_1827 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Relationship</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Resource</option><option value=\"1\">1 - Version of resource</option><option value=\"2\">2 - Related resource</option><option value=\"8\">8 - No display constant generated</option>", 6);
+var _hoisted_1833 = [_hoisted_1827];
+var _hoisted_1834 = ["onUpdate:modelValue"];
+var _hoisted_1835 = ["onClick"];
+var _hoisted_1836 = {
   "class": "col-md-5 col-lg-4"
 };
-var _hoisted_1834 = ["value"];
-var _hoisted_1835 = {
+var _hoisted_1837 = ["value"];
+var _hoisted_1838 = {
   key: 0,
   "class": "alert alert-info",
   role: "alert"
 };
-var _hoisted_1836 = {
+var _hoisted_1839 = {
   key: 1,
   "class": "alert alert-warning mt-5",
   role: "alert"
@@ -19677,7 +19732,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.addField('isbn');
     }),
     "class": "btn btn-info btn-sm mb-2"
-  }, "Add ISBN"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.isbn, function (isbn, indexisbn) {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_isbn), 1 /* TEXT */), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.isbn, function (isbn, indexisbn) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1501, [_hoisted_1502, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       "class": "form-control",
@@ -19900,7 +19955,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return $options.deleteField('personal_name', indexAuthor);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Delete", 8 /* PROPS */, _hoisted_1617)])]);
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation["delete"]), 9 /* TEXT, PROPS */, _hoisted_1617)])]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[65] || (_cache[65] = function ($event) {
       return $options.addField('personal_name');
@@ -19928,7 +19983,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return $options.deleteField('corporate_name', indexCorporate);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Delete", 8 /* PROPS */, _hoisted_1628)]);
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation["delete"]), 9 /* TEXT, PROPS */, _hoisted_1628)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[66] || (_cache[66] = function ($event) {
       return $options.addField('corporate_name');
@@ -20042,23 +20097,23 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._300c,
     "aria-label": $data.translation._300c,
     "aria-describedby": "_300c"
-  }, null, 8 /* PROPS */, _hoisted_1673), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\300 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 310 "), $data.recordType === 'Serial' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1674, [_hoisted_1675, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1673), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\300 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 310 "), $data.recordType === 'Serial' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1674, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1675, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.current_publication_frequency) + "   ", 1 /* TEXT */), _hoisted_1676]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_310a",
     "onUpdate:modelValue": _cache[79] || (_cache[79] = function ($event) {
       return $data.record._310a = $event;
     }),
     "class": "form-control",
-    placeholder: "Current publication frequency",
+    placeholder: $data.translation.current_publication_frequency,
     "aria-label": "Current publication frequency",
     "aria-describedby": "_310a"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._310a]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\310 "), $data.RDA === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1676, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1677, [_hoisted_1678, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 8 /* PROPS */, _hoisted_1677), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._310a]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\310 "), $data.RDA === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1678, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1679, [_hoisted_1680, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_336a",
     "onUpdate:modelValue": _cache[80] || (_cache[80] = function ($event) {
       return $data.record._336a = $event;
     })
-  }, _hoisted_1705, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._336a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _hoisted_1707, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._336a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_336b",
     "onUpdate:modelValue": _cache[81] || (_cache[81] = function ($event) {
@@ -20080,13 +20135,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-label": "Source",
     "aria-describedby": "_3362",
     disabled: ""
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3362]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1706, [_hoisted_1707, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3362]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1708, [_hoisted_1709, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_337a",
     "onUpdate:modelValue": _cache[83] || (_cache[83] = function ($event) {
       return $data.record._337a = $event;
     })
-  }, _hoisted_1719, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._337a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _hoisted_1721, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._337a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_337b",
     "onUpdate:modelValue": _cache[84] || (_cache[84] = function ($event) {
@@ -20108,13 +20163,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-label": "Source",
     "aria-describedby": "_3372",
     disabled: ""
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3372]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 338 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1720, [_hoisted_1721, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3372]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 338 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1722, [_hoisted_1723, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_338a",
     "onUpdate:modelValue": _cache[86] || (_cache[86] = function ($event) {
       return $data.record._338a = $event;
     })
-  }, [_hoisted_1722, $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1723, "audio cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1724, "audio belt")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1725, "audio cylinder ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1726, "audio disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1727, "sound track reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1728, "audio roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1729, "audio wire reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1730, "audiocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1731, "audiotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1732, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1733, "computer card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1734, "computer chip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1735, "computer disc ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1736, "computer disc cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1737, "computer tape cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1738, "computer tape cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1739, "computer tape reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1740, "online resource ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1741, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1742, "aperture card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1743, "microfiche")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1744, "microfiche cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1745, "microfilm cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1746, "microfilm cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1747, "microfilm reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1748, "microfilm roll ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1749, "microfilm slip ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1750, "microopaque")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1751, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1752, "microscope slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1753, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1754, "film cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1755, "film cassette ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1756, "film reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1757, "film roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1758, "filmslip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1759, "filmstrip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1760, "filmstrip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1761, "overhead transparency")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1762, "slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1763, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1764, "stereograph card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1765, "stereograph disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1766, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1767, "card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1768, "flipchart")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1769, "roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1770, "sheet")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1771, "volume")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1772, "object")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1773, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1774, "video cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1775, "videocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1776, "videodisc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1777, "videotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1778, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unspecified' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1779, "unspecified ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._338a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [_hoisted_1724, $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1725, "audio cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1726, "audio belt")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1727, "audio cylinder ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1728, "audio disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1729, "sound track reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1730, "audio roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1731, "audio wire reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1732, "audiocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1733, "audiotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1734, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1735, "computer card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1736, "computer chip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1737, "computer disc ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1738, "computer disc cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1739, "computer tape cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1740, "computer tape cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1741, "computer tape reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1742, "online resource ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1743, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1744, "aperture card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1745, "microfiche")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1746, "microfiche cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1747, "microfilm cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1748, "microfilm cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1749, "microfilm reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1750, "microfilm roll ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1751, "microfilm slip ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1752, "microopaque")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1753, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1754, "microscope slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1755, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1756, "film cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1757, "film cassette ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1758, "film reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1759, "film roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1760, "filmslip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1761, "filmstrip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1762, "filmstrip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1763, "overhead transparency")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1764, "slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1765, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1766, "stereograph card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1767, "stereograph disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1768, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1769, "card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1770, "flipchart")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1771, "roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1772, "sheet")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1773, "volume")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1774, "object")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1775, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1776, "video cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1777, "videocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1778, "videodisc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1779, "videotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1780, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unspecified' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1781, "unspecified ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._338a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_338b",
     "onUpdate:modelValue": _cache[87] || (_cache[87] = function ($event) {
@@ -20137,41 +20192,41 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-describedby": "_3382",
     disabled: ""
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3382]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\338 ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 500 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.general_note, function (note, indexNote) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1780, [_hoisted_1781, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1782, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1783, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.general_note) + "   ", 1 /* TEXT */), _hoisted_1784]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_500a",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record.general_note[indexNote].a = $event;
       },
       "class": "form-control",
-      placeholder: "General Note",
+      placeholder: $data.translation.general_note,
       "aria-label": "General Note",
       "aria-describedby": "_500a"
-    }, null, 8 /* PROPS */, _hoisted_1782), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.general_note[indexNote].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1785), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.general_note[indexNote].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('general_note', indexNote);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Delete", 8 /* PROPS */, _hoisted_1783)]);
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation["delete"]), 9 /* TEXT, PROPS */, _hoisted_1786)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[89] || (_cache[89] = function ($event) {
       return $options.addField('general_note');
     }),
     "class": "btn btn-info btn-sm mb-2"
-  }, "Add General Note"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\500 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 650 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record._650, function (subjectTT, indexSubjectTT) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1784, [_hoisted_1785, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1786, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_general_note), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\500 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 650 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record._650, function (subjectTT, indexSubjectTT) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1787, [_hoisted_1788, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1789, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_650_ind1",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._650[indexSubjectTT].ind1 = $event;
       }
-    }, _hoisted_1793, 8 /* PROPS */, _hoisted_1787), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1794, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    }, _hoisted_1796, 8 /* PROPS */, _hoisted_1790), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1797, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_650_ind2",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._650[indexSubjectTT].ind2 = $event;
       }
-    }, _hoisted_1805, 8 /* PROPS */, _hoisted_1795), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, _hoisted_1808, 8 /* PROPS */, _hoisted_1798), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "tt",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -20181,7 +20236,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Topical term or geographic name entry element",
       "aria-label": "Topical term or geographic name entry element",
       "aria-describedby": "_650a"
-    }, null, 8 /* PROPS */, _hoisted_1806), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT].a]]), $data.record._650[indexSubjectTT].ind2 == '7' ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
+    }, null, 8 /* PROPS */, _hoisted_1809), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT].a]]), $data.record._650[indexSubjectTT].ind2 == '7' ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
       key: 0,
       type: "text",
       id: "_6502",
@@ -20192,31 +20247,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Source of heading or term",
       "aria-label": "Source of heading or term",
       "aria-describedby": "_6502"
-    }, null, 8 /* PROPS */, _hoisted_1807)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT]._2]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1810)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT]._2]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('_650', indexSubjectTT);
       },
       "class": "btn btn-danger btn-sm col-md-1"
-    }, "Delete", 8 /* PROPS */, _hoisted_1808)]);
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation["delete"]), 9 /* TEXT, PROPS */, _hoisted_1811)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[90] || (_cache[90] = function ($event) {
       return $options.addField('_650');
     }),
     "class": "btn btn-info btn-sm mb-2"
-  }, "Add Subject Added Entry-Topical Term"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\650 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 856 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record._856, function (url, indexURL) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1809, [_hoisted_1810, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1811, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_subject_added_entry_topical_term), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\650 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 856 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record._856, function (url, indexURL) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1812, [_hoisted_1813, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1814, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_856_ind1",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._856[indexURL].ind1 = $event;
       }
-    }, _hoisted_1821, 8 /* PROPS */, _hoisted_1812), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1822, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    }, _hoisted_1824, 8 /* PROPS */, _hoisted_1815), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1825, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_856_ind2",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._856[indexURL].ind2 = $event;
       }
-    }, _hoisted_1830, 8 /* PROPS */, _hoisted_1823), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, _hoisted_1833, 8 /* PROPS */, _hoisted_1826), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "url",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -20226,27 +20281,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Uniform Resource Identifier",
       "aria-label": "Uniform Resource Identifier",
       "aria-describedby": "url"
-    }, null, 8 /* PROPS */, _hoisted_1831), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._856[indexURL].u]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1834), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._856[indexURL].u]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('_856', indexURL);
       },
       "class": "btn btn-danger btn-sm col-md-1"
-    }, "Delete", 8 /* PROPS */, _hoisted_1832)]);
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation["delete"]), 9 /* TEXT, PROPS */, _hoisted_1835)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[91] || (_cache[91] = function ($event) {
       return $options.addField('_856');
     }),
     "class": "btn btn-info btn-sm mb-2"
-  }, "Add Electronic Location and Access"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\856 ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1833, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.marc_record), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n            ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_eletronic_location_and_access), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\856 ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1836, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.marc_record), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n            ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "btn btn-info text-white copy-btn ml-auto",
     onClick: _cache[92] || (_cache[92] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.copyTestingCode && $options.copyTestingCode.apply($options, arguments);
     }, ["stop", "prevent"]))
-  }, "Copy"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.copy), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     id: "complete_record",
     value: $options.complete_record
-  }, null, 8 /* PROPS */, _hoisted_1834), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1835, " Copied successful! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1836, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.warning), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+  }, null, 8 /* PROPS */, _hoisted_1837), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1838, " Copied successful! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1839, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.warning), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error.message), 1 /* TEXT */);
   }), 256 /* UNKEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
 }
