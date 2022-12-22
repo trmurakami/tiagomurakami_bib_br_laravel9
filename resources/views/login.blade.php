@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="mt-5">
+<div class="container mt-5">
     <h2>Login</h2>
     <form>
         <div class="row mb-3">
