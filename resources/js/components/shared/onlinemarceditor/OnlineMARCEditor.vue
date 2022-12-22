@@ -42,12 +42,17 @@ export default {
             add_rda_fields: 'Add RDA fields (336, 337, 338)',
             book: 'Book',
             cataloging_source: 'Cataloging Source',
+            clear_all_record: 'Clear all record',
+            clear_validation: 'Clear validation',
             control_number: 'Control Number',
             control_number_identifier: 'Control Number Identifier',
             edit_fields: 'Edit fields',
             leader: 'Leader',
+            marc_record: 'MARC Record',
             predefined_types: 'Predefined types',
-            serial: 'Serial'
+            serial: 'Serial',
+            validate: 'Validate',
+            warning: 'Warning'
         },
         translation_pt_BR: {
             _008: '008 - Campo de tamanho fixo',
@@ -77,12 +82,17 @@ export default {
             add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
             book: 'Livro',
             cataloging_source: 'Fonte da Catalogação',
+            clear_all_record: 'Limpar registro',
+            clear_validation: 'Limpar validação',
             control_number: 'Número de controle',
             control_number_identifier: 'Código MARC da Agência Catalogadora',
             edit_fields: 'Editar campos',
             leader: 'Líder',
+            marc_record: 'Registro MARC',
             predefined_types: 'Tipos predefinidos',
-            serial: 'Periódico'
+            serial: 'Periódico',
+            validate: 'Validar',
+            warning: 'Atenção'
         },
         record: {
             ldr: {
@@ -789,21 +799,6 @@ export default {
 </script>
 
 <template>
-      <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="https://online-marc-editor.herokuapp.com"
-            aria-current="page">Online MARC Editor</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-  <div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">Sign out</a>
-    </div>
-  </div> -->
-    </header>
 
     <div class="container-fluid">
         <div class="row" id="editor">
@@ -873,7 +868,7 @@ export default {
             <main class="col-md-10 ms-sm-auto col-lg-11 px-md-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Editor</h1>
+                    <h1 class="h2">Online MARC Editor</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
                             <button type="button" class="btn btn-sm btn-outline-info"
@@ -881,11 +876,10 @@ export default {
                             <button type="button" class="btn btn-sm btn-outline-info"
                                 @click="translate('en_US')">English</button>
                             <button type="button" class="btn btn-sm btn-outline-warning"
-                                @click="validate()">Validate</button>
+                                @click="validate()">{{ translation.validate }}</button>
                             <button type="button" class="btn btn-sm btn-outline-secondary"
-                                @click="validation._245a='', errors = null">Clear validation</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary" @click="cleanAll()">Clear all
-                                record</button>
+                                @click="validation._245a='', errors = null">{{ translation.clear_validation }}</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" @click="cleanAll()">{{ translation.clear_all_record }}</button>
                             <!--
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
@@ -3345,7 +3339,7 @@ export default {
 
                     </div>
                     <div class="col-md-5 col-lg-4">
-                        <h2>MARC Record</h2>
+                        <h2>{{ translation.marc_record }}</h2>
                         <pre>
                 {{ complete_record }}
             </pre>
@@ -3357,7 +3351,7 @@ export default {
                             Copied successful!
                         </div>
                         <div class="alert alert-warning mt-5" role="alert" v-if="errors">
-                            <h5>Warning</h5>
+                            <h5>{{ translation.warning }}</h5>
                             <ul>
                                 <li v-for="(error) in errors">{{ error.message }}</li>
                             </ul>
@@ -3373,13 +3367,5 @@ export default {
 
         </div>
     </div>
-
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted"><a href="https://github.com/trmurakami/online-marc-editor" target="_blank">Online
-                    MARC Editor</a> is an Open Source Software created by <a href="https://github.com/trmurakami"
-                    target="_blank">Tiago Murakami</a> &middot; 2022</span>
-        </div>
-    </footer>
 
 </template>

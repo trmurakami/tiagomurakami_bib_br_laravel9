@@ -17625,12 +17625,17 @@ __webpack_require__.r(__webpack_exports__);
         add_rda_fields: 'Add RDA fields (336, 337, 338)',
         book: 'Book',
         cataloging_source: 'Cataloging Source',
+        clear_all_record: 'Clear all record',
+        clear_validation: 'Clear validation',
         control_number: 'Control Number',
         control_number_identifier: 'Control Number Identifier',
         edit_fields: 'Edit fields',
         leader: 'Leader',
+        marc_record: 'MARC Record',
         predefined_types: 'Predefined types',
-        serial: 'Serial'
+        serial: 'Serial',
+        validate: 'Validate',
+        warning: 'Warning'
       },
       translation_pt_BR: {
         _008: '008 - Campo de tamanho fixo',
@@ -17660,12 +17665,17 @@ __webpack_require__.r(__webpack_exports__);
         add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
         book: 'Livro',
         cataloging_source: 'Fonte da Catalogação',
+        clear_all_record: 'Limpar registro',
+        clear_validation: 'Limpar validação',
         control_number: 'Número de controle',
         control_number_identifier: 'Código MARC da Agência Catalogadora',
         edit_fields: 'Editar campos',
         leader: 'Líder',
+        marc_record: 'Registro MARC',
         predefined_types: 'Tipos predefinidos',
-        serial: 'Periódico'
+        serial: 'Periódico',
+        validate: 'Validar',
+        warning: 'Atenção'
       },
       record: {
         ldr: {
@@ -18284,339 +18294,326 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", {
-  "class": "navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "navbar-brand col-md-3 col-lg-2 me-0 px-3",
-  href: "https://online-marc-editor.herokuapp.com",
-  "aria-current": "page"
-}, "Online MARC Editor"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "navbar-toggler position-absolute d-md-none collapsed",
-  type: "button",
-  "data-bs-toggle": "collapse",
-  "data-bs-target": "#sidebarMenu",
-  "aria-controls": "sidebarMenu",
-  "aria-expanded": "false",
-  "aria-label": "Toggle navigation"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "navbar-toggler-icon"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <input class=\"form-control form-control-dark w-100\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\r\n  <div class=\"navbar-nav\">\r\n    <div class=\"nav-item text-nowrap\">\r\n      <a class=\"nav-link px-3\" href=\"#\">Sign out</a>\r\n    </div>\r\n  </div> ")], -1 /* HOISTED */);
-var _hoisted_2 = {
+var _hoisted_1 = {
   "class": "container-fluid"
 };
-var _hoisted_3 = {
+var _hoisted_2 = {
   "class": "row",
   id: "editor"
 };
-var _hoisted_4 = {
+var _hoisted_3 = {
   id: "sidebarMenu",
   "class": "col-md-2 col-lg-1 d-md-block bg-light sidebar collapse"
 };
-var _hoisted_5 = {
+var _hoisted_4 = {
   "class": "position-sticky pt-3"
 };
-var _hoisted_6 = {
+var _hoisted_5 = {
   "class": "sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
 };
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "nav flex-column"
 };
-var _hoisted_8 = {
+var _hoisted_7 = {
   "class": "nav-item"
 };
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "book"
 }, null, -1 /* HOISTED */);
-var _hoisted_10 = {
+var _hoisted_9 = {
   "class": "nav-item"
 };
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "layers"
 }, null, -1 /* HOISTED */);
-var _hoisted_12 = {
+var _hoisted_11 = {
   "class": "sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
 };
-var _hoisted_13 = {
+var _hoisted_12 = {
   "class": "nav flex-column mb-2"
 };
-var _hoisted_14 = {
+var _hoisted_13 = {
   "class": "nav-item"
 };
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "file-text"
 }, null, -1 /* HOISTED */);
-var _hoisted_16 = {
+var _hoisted_15 = {
   "class": "nav-item"
 };
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "file-text"
 }, null, -1 /* HOISTED */);
-var _hoisted_18 = {
+var _hoisted_17 = {
   "class": "nav-item"
 };
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "file-text"
 }, null, -1 /* HOISTED */);
-var _hoisted_20 = {
+var _hoisted_19 = {
   "class": "nav-item"
 };
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "file-text"
 }, null, -1 /* HOISTED */);
-var _hoisted_22 = {
+var _hoisted_21 = {
   "class": "nav-item"
 };
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "data-feather": "layers"
 }, null, -1 /* HOISTED */);
-var _hoisted_24 = {
+var _hoisted_23 = {
   "class": "col-md-10 ms-sm-auto col-lg-11 px-md-4"
 };
-var _hoisted_25 = {
+var _hoisted_24 = {
   "class": "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
 };
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
   "class": "h2"
-}, "Editor", -1 /* HOISTED */);
-var _hoisted_27 = {
+}, "Online MARC Editor", -1 /* HOISTED */);
+var _hoisted_26 = {
   "class": "btn-toolbar mb-2 mb-md-0"
 };
-var _hoisted_28 = {
+var _hoisted_27 = {
   "class": "btn-group me-2"
 };
-var _hoisted_29 = {
+var _hoisted_28 = {
   "class": "row"
 };
-var _hoisted_30 = {
+var _hoisted_29 = {
   "class": "col-md-7 ms-sm-auto col-lg-8 px-md-4"
 };
-var _hoisted_31 = {
+var _hoisted_30 = {
   "class": "alert alert-warning alert-dismissible fade show",
   role: "alert"
 };
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "record_status"
 }, "06 - Type of date/Publication status", -1 /* HOISTED */);
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"b\">b - No dates given; B.C. date involved</option><option value=\"c\">c - Continuing resource currently published</option><option value=\"d\">d - Continuing resource ceased publication</option><option value=\"e\">e - Detailed date</option><option value=\"i\">i - Inclusive dates of collection</option><option value=\"k\">k - Range of years of bulk of collection</option><option value=\"m\">m - Multiple dates</option><option value=\"n\">n - Dates unknown</option><option value=\"p\">p - Date of distribution/release/issue and production/recording session when different</option><option value=\"q\">q - Questionable date</option><option value=\"r\">r - Reprint/reissue date and original date</option><option value=\"s\">s - Single known date/probable date</option><option value=\"t\">t - Publication date and copyright date</option><option value=\"i\">i - Continuing resource status unknown</option><option value=\"|\">| - No attempt to code</option>", 15);
-var _hoisted_48 = [_hoisted_33];
-var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"b\">b - No dates given; B.C. date involved</option><option value=\"c\">c - Continuing resource currently published</option><option value=\"d\">d - Continuing resource ceased publication</option><option value=\"e\">e - Detailed date</option><option value=\"i\">i - Inclusive dates of collection</option><option value=\"k\">k - Range of years of bulk of collection</option><option value=\"m\">m - Multiple dates</option><option value=\"n\">n - Dates unknown</option><option value=\"p\">p - Date of distribution/release/issue and production/recording session when different</option><option value=\"q\">q - Questionable date</option><option value=\"r\">r - Reprint/reissue date and original date</option><option value=\"s\">s - Single known date/probable date</option><option value=\"t\">t - Publication date and copyright date</option><option value=\"i\">i - Continuing resource status unknown</option><option value=\"|\">| - No attempt to code</option>", 15);
+var _hoisted_47 = [_hoisted_32];
+var _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "008_07_10"
 }, "07-10 - Date 1", -1 /* HOISTED */);
-var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "008_11_14"
 }, "11-14 - Date 2", -1 /* HOISTED */);
-var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "008_15_17"
 }, "15-17 - Place of publication, production, or execution", -1 /* HOISTED */);
-var _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"xx#\">xx# - No place, unknown, or undetermined</option><option value=\"vp#\">vp# - Various places</option><option value=\"bl#\">bl# - Brazil</option><option value=\"aa#\">aa# - Albania</option><option value=\"abc\">abc - Alberta</option><option value=\"-ac\">-ac - Ashmore and Cartier Islands</option><option value=\"aca\">aca - Australian Capital Territory</option><option value=\"ae#\">ae# - Algeria</option><option value=\"af#\">af# - Afghanistan</option><option value=\"ag#\">ag# - Argentina</option><option value=\"-ai\">-ai - Anguilla</option><option value=\"ai#\">ai# - Armenia (Republic)</option><option value=\"air\">air - Armenian S.S.R.</option><option value=\"aj#\">aj# - Azerbaijan</option><option value=\"ajr\">ajr - Azerbaijan S.S.R.</option><option value=\"aku\">aku - Alaska</option><option value=\"alu\">alu - Alabama</option><option value=\"am#\">am# - Anguilla</option><option value=\"an#\">an# - Andorra</option><option value=\"ao#\">ao# - Angola</option><option value=\"aq#\">aq# - Antigua and Barbuda</option><option value=\"aru\">aru - Arkansas</option><option value=\"as#\">as# - American Samoa</option><option value=\"at#\">at# - Australia</option><option value=\"au#\">au# - Austria</option><option value=\"aw#\">aw# - Aruba</option><option value=\"ay#\">ay# - Antarctica</option><option value=\"azu\">azu - Arizona</option><option value=\"ba#\">ba# - Bahrain</option><option value=\"bb#\">bb# - Barbados</option><option value=\"bcc\">bcc - British Columbia</option><option value=\"bd#\">bd# - Burundi</option><option value=\"be#\">be# - Belgium</option><option value=\"bf#\">bf# - Bahamas</option><option value=\"bg#\">bg# - Bangladesh</option><option value=\"bh#\">bh# - Belize</option><option value=\"bi#\">bi# - British Indian Ocean Territory</option><option value=\"bl#\">bl# - Brazil</option><option value=\"bm#\">bm# - Bermuda Islands</option><option value=\"bn#\">bn# - Bosnia and Herzegovina</option><option value=\"bo#\">bo# - Bolivia</option><option value=\"bp#\">bp# - Solomon Islands</option><option value=\"br#\">br# - Burma</option><option value=\"bs#\">bs# - Botswana</option><option value=\"bt#\">bt# - Bhutan</option><option value=\"bu#\">bu# - Bulgaria</option><option value=\"bv#\">bv# - Bouvet Island</option><option value=\"bw#\">bw# - Belarus</option><option value=\"bwr\">bwr - Byelorussian S.S.R.</option><option value=\"bx#\">bx# - Brunei</option><option value=\"ca#\">ca# - Caribbean Netherlands</option><option value=\"cau\">cau - California</option><option value=\"cb#\">cb# - Cambodia</option><option value=\"cc#\">cc# - China</option><option value=\"cd#\">cd# - Chad</option><option value=\"ce#\">ce# - Sri Lanka</option><option value=\"cf#\">cf# - Congo (Brazzaville)</option><option value=\"cg#\">cg# - Congo (Democratic Republic)</option><option value=\"ch#\">ch# - China (Republic : 1949- )</option><option value=\"ci#\">ci# - Croatia</option><option value=\"cj#\">cj# - Cayman Islands</option><option value=\"ck#\">ck# - Colombia</option><option value=\"cl#\">cl# - Chile</option><option value=\"cm#\">cm# - Cameroon</option><option value=\"-cn\">-cn - Canada</option><option value=\"co#\">co# - Curaçao</option><option value=\"cou\">cou - Colorado</option><option value=\"-cp\">-cp - Canton and Enderbury Islands</option><option value=\"cq#\">cq# - Comoros</option><option value=\"cr#\">cr# - Costa Rica</option><option value=\"-cs\">-cs - Czechoslovakia</option><option value=\"ctu\">ctu - Connecticut</option><option value=\"cu#\">cu# - Cuba</option><option value=\"cv#\">cv# - Cabo Verde</option><option value=\"cw#\">cw# - Cook Islands</option><option value=\"cx#\">cx# - Central African Republic</option><option value=\"cy#\">cy# - Cyprus</option><option value=\"-cz\">-cz - Canal Zone</option><option value=\"dcu\">dcu - District of Columbia</option><option value=\"deu\">deu - Delaware</option><option value=\"dk#\">dk# - Denmark</option><option value=\"dm#\">dm# - Benin</option><option value=\"dq#\">dq# - Dominica</option><option value=\"dr#\">dr# - Dominican Republic</option><option value=\"ea#\">ea# - Eritrea</option><option value=\"ec#\">ec# - Ecuador</option><option value=\"eg#\">eg# - Equatorial Guinea</option><option value=\"em#\">em# - Timor-Leste</option><option value=\"enk\">enk - England</option><option value=\"er#\">er# - Estonia</option><option value=\"err\">err - Estonia</option><option value=\"es#\">es# - El Salvador</option><option value=\"et#\">et# - Ethiopia</option><option value=\"fa#\">fa# - Faroe Islands</option><option value=\"fg#\">fg# - French Guiana</option><option value=\"fi#\">fi# - Finland</option><option value=\"fj#\">fj# - Fiji</option><option value=\"fk#\">fk# - Falkland Islands</option><option value=\"flu\">flu - Florida</option><option value=\"fm#\">fm# - Micronesia (Federated States)</option><option value=\"fp#\">fp# - French Polynesia</option><option value=\"fr#\">fr# - France</option><option value=\"fs#\">fs# - Terres australes et antarctiques françaises</option><option value=\"ft#\">ft# - Djibouti</option><option value=\"gau\">gau - Georgia</option><option value=\"gb#\">gb# - Kiribati</option><option value=\"gd#\">gd# - Grenada</option><option value=\"-ge\">-ge - Germany (East)</option><option value=\"gg#\">gg# - Guernsey</option><option value=\"gh#\">gh# - Ghana</option><option value=\"gi#\">gi# - Gibraltar</option><option value=\"gl#\">gl# - Greenland</option><option value=\"gm#\">gm# - Gambia</option><option value=\"-gn\">-gn - Gilbert and Ellice Islands</option><option value=\"go#\">go# - Gabon</option><option value=\"gp#\">gp# - Guadeloupe</option><option value=\"gr#\">gr# - Greece</option><option value=\"gs#\">gs# - Georgia (Republic)</option><option value=\"gsr\">gsr - Georgian S.S.R.</option><option value=\"gt#\">gt# - Guatemala</option><option value=\"gu#\">gu# - Guam</option><option value=\"gv#\">gv# - Guinea</option><option value=\"gw#\">gw# - Germany</option><option value=\"gy#\">gy# - Guyana</option><option value=\"gz#\">gz# - Gaza Strip</option><option value=\"hiu\">hiu - Hawaii</option><option value=\"-hk\">-hk - Hong Kong</option><option value=\"hm#\">hm# - Heard and McDonald Islands</option><option value=\"ho#\">ho# - Honduras</option><option value=\"ht#\">ht# - Haiti</option><option value=\"hu#\">hu# - Hungary</option><option value=\"iau\">iau - Iowa</option><option value=\"ic#\">ic# - Iceland</option><option value=\"idu\">idu - Idaho</option><option value=\"ie#\">ie# - Ireland</option><option value=\"ii#\">ii# - India</option><option value=\"ilu\">ilu - Illinois</option><option value=\"im#\">im# - Isle of Man</option><option value=\"inu\">inu - Indiana</option><option value=\"io#\">io# - Indonesia</option><option value=\"iq#\">iq# - Iraq</option><option value=\"ir#\">ir# - Iran</option><option value=\"is#\">is# - Israel</option><option value=\"it#\">it# - Italy</option><option value=\"-iu\">-iu - Israel-Syria Demilitarized Zones</option><option value=\"iv#\">iv# - Côte d&#39;Ivoire</option><option value=\"-iw\">-iw - Israel-Jordan Demilitarized Zones</option><option value=\"iy#\">iy# - Iraq-Saudi Arabia Neutral Zone</option><option value=\"ja#\">ja# - Japan</option><option value=\"je#\">je# - Jersey</option><option value=\"ji#\">ji# - Johnston Atoll</option><option value=\"jm#\">jm# - Jamaica</option><option value=\"-jn\">-jn - Jan Mayen</option><option value=\"jo#\">jo# - Jordan</option><option value=\"ke#\">ke# - Kenya</option><option value=\"kg#\">kg# - Kyrgyzstan</option><option value=\"kgr\">kgr - Kirghiz S.S.R.</option><option value=\"kn#\">kn# - Korea (North)</option><option value=\"ko#\">ko# - Korea (South)</option><option value=\"ksu\">ksu - Kansas</option><option value=\"ku#\">ku# - Kuwait</option><option value=\"kv#\">kv# - Kosovo</option><option value=\"kyu\">kyu - Kentucky</option><option value=\"kz#\">kz# - Kazakhstan</option><option value=\"kzr\">kzr - Kazakh S.S.R.</option><option value=\"lau\">lau - Louisiana</option><option value=\"lb#\">lb# - Liberia</option><option value=\"le#\">le# - Lebanon</option><option value=\"lh#\">lh# - Liechtenstein</option><option value=\"li#\">li# - Lithuania</option><option value=\"lir\">lir - Lithuania</option><option value=\"-ln\">-ln - Central and Southern Line Islands</option><option value=\"lo#\">lo# - Lesotho</option><option value=\"ls#\">ls# - Laos</option><option value=\"lu#\">lu# - Luxembourg</option><option value=\"lv#\">lv# - Latvia</option><option value=\"lvr\">lvr - Latvia</option><option value=\"ly#\">ly# - Libya</option><option value=\"mau\">mau - Massachusetts</option><option value=\"mbc\">mbc - Manitoba</option><option value=\"mc#\">mc# - Monaco</option><option value=\"mdu\">mdu - Maryland</option><option value=\"meu\">meu - Maine</option><option value=\"mf#\">mf# - Mauritius</option><option value=\"mg#\">mg# - Madagascar</option><option value=\"-mh\">-mh - Macao</option><option value=\"miu\">miu - Michigan</option><option value=\"mj#\">mj# - Montserrat</option><option value=\"mk#\">mk# - Oman</option><option value=\"ml#\">ml# - Mali</option><option value=\"mm#\">mm# - Malta</option><option value=\"mnu\">mnu - Minnesota</option><option value=\"mo#\">mo# - Montenegro</option><option value=\"mou\">mou - Missouri</option><option value=\"mp#\">mp# - Mongolia</option><option value=\"mq#\">mq# - Martinique</option><option value=\"mr#\">mr# - Morocco</option><option value=\"msu\">msu - Mississippi</option><option value=\"mtu\">mtu - Montana</option><option value=\"mu#\">mu# - Mauritania</option><option value=\"mv#\">mv# - Moldova</option><option value=\"mvr\">mvr - Moldavian S.S.R.</option><option value=\"mw#\">mw# - Malawi</option><option value=\"mx#\">mx# - Mexico</option><option value=\"my#\">my# - Malaysia</option><option value=\"mz#\">mz# - Mozambique</option><option value=\"-na\">-na - Netherlands Antilles</option><option value=\"nbu\">nbu - Nebraska</option><option value=\"ncu\">ncu - North Carolina</option><option value=\"ndu\">ndu - North Dakota</option><option value=\"ne#\">ne# - Netherlands</option><option value=\"nfc\">nfc - Newfoundland and Labrador</option><option value=\"ng#\">ng# - Niger</option><option value=\"nhu\">nhu - New Hampshire</option><option value=\"nik\">nik - Northern Ireland</option><option value=\"nju\">nju - New Jersey</option><option value=\"nkc\">nkc - New Brunswick</option><option value=\"nl#\">nl# - New Caledonia</option><option value=\"-nm\">-nm - Northern Mariana Islands</option><option value=\"nmu\">nmu - New Mexico</option><option value=\"nn#\">nn# - Vanuatu</option><option value=\"no#\">no# - Norway</option><option value=\"np#\">np# - Nepal</option><option value=\"nq#\">nq# - Nicaragua</option><option value=\"nr#\">nr# - Nigeria</option><option value=\"nsc\">nsc - Nova Scotia</option><option value=\"ntc\">ntc - Northwest Territories</option><option value=\"nu#\">nu# - Nauru</option><option value=\"nuc\">nuc - Nunavut</option><option value=\"nvu\">nvu - Nevada</option><option value=\"nw#\">nw# - Northern Mariana Islands</option><option value=\"nx#\">nx# - Norfolk Island</option><option value=\"nyu\">nyu - New York (State)</option><option value=\"nz#\">nz# - New Zealand</option><option value=\"ohu\">ohu - Ohio</option><option value=\"oku\">oku - Oklahoma</option><option value=\"onc\">onc - Ontario</option><option value=\"oru\">oru - Oregon</option><option value=\"ot#\">ot# - Mayotte</option><option value=\"pau\">pau - Pennsylvania</option><option value=\"pc#\">pc# - Pitcairn Island</option><option value=\"pe#\">pe# - Peru</option><option value=\"pf#\">pf# - Paracel Islands</option><option value=\"pg#\">pg# - Guinea-Bissau</option><option value=\"ph#\">ph# - Philippines</option><option value=\"pic\">pic - Prince Edward Island</option><option value=\"pk#\">pk# - Pakistan</option><option value=\"pl#\">pl# - Poland</option><option value=\"pn#\">pn# - Panama</option><option value=\"po#\">po# - Portugal</option><option value=\"pp#\">pp# - Papua New Guinea</option><option value=\"pr#\">pr# - Puerto Rico</option><option value=\"-pt\">-pt - Portuguese Timor</option><option value=\"pw#\">pw# - Palau</option><option value=\"py#\">py# - Paraguay</option><option value=\"qa#\">qa# - Qatar</option><option value=\"qea\">qea - Queensland</option><option value=\"quc\">quc - Québec (Province)</option><option value=\"rb#\">rb# - Serbia</option><option value=\"re#\">re# - Réunion</option><option value=\"rh#\">rh# - Zimbabwe</option><option value=\"riu\">riu - Rhode Island</option><option value=\"rm#\">rm# - Romania</option><option value=\"ru#\">ru# - Russia (Federation)</option><option value=\"rur\">rur - Russian S.F.S.R.</option><option value=\"rw#\">rw# - Rwanda</option><option value=\"-ry\">-ry - Ryukyu Islands, Southern</option><option value=\"sa#\">sa# - South Africa</option><option value=\"-sb\">-sb - Svalbard</option><option value=\"sc#\">sc# - Saint-Barthélemy</option><option value=\"scu\">scu - South Carolina</option><option value=\"sd#\">sd# - South Sudan</option><option value=\"sdu\">sdu - South Dakota</option><option value=\"se#\">se# - Seychelles</option><option value=\"sf#\">sf# - Sao Tome and Principe</option><option value=\"sg#\">sg# - Senegal</option><option value=\"sh#\">sh# - Spanish North Africa</option><option value=\"si#\">si# - Singapore</option><option value=\"sj#\">sj# - Sudan</option><option value=\"-sk\">-sk - Sikkim</option><option value=\"sl#\">sl# - Sierra Leone</option><option value=\"sm#\">sm# - San Marino</option><option value=\"sn#\">sn# - Sint Maarten</option><option value=\"snc\">snc - Saskatchewan</option><option value=\"so#\">so# - Somalia</option><option value=\"sp#\">sp# - Spain</option><option value=\"sq#\">sq# - Eswatini</option><option value=\"sr#\">sr# - Surinam</option><option value=\"ss#\">ss# - Western Sahara</option><option value=\"st#\">st# - Saint-Martin</option><option value=\"stk\">stk - Scotland</option><option value=\"su#\">su# - Saudi Arabia</option><option value=\"-sv\">-sv - Swan Islands</option><option value=\"sw#\">sw# - Sweden</option><option value=\"sx#\">sx# - Namibia</option><option value=\"sy#\">sy# - Syria</option><option value=\"sz#\">sz# - Switzerland</option><option value=\"ta#\">ta# - Tajikistan</option><option value=\"tar\">tar - Tajik S.S.R.</option><option value=\"tc#\">tc# - Turks and Caicos Islands</option><option value=\"tg#\">tg# - Togo</option><option value=\"th#\">th# - Thailand</option><option value=\"ti#\">ti# - Tunisia</option><option value=\"tk#\">tk# - Turkmenistan</option><option value=\"tkr\">tkr - Turkmen S.S.R.</option><option value=\"tl#\">tl# - Tokelau</option><option value=\"tma\">tma - Tasmania</option><option value=\"tnu\">tnu - Tennessee</option><option value=\"to#\">to# - Tonga</option><option value=\"tr#\">tr# - Trinidad and Tobago</option><option value=\"ts#\">ts# - United Arab Emirates</option><option value=\"-tt\">-tt - Trust Territory of the Pacific Islands</option><option value=\"tu#\">tu# - Turkey</option><option value=\"tv#\">tv# - Tuvalu</option><option value=\"txu\">txu - Texas</option><option value=\"tz#\">tz# - Tanzania</option><option value=\"ua#\">ua# - Egypt</option><option value=\"uc#\">uc# - United States Misc. Caribbean Islands</option><option value=\"ug#\">ug# - Uganda</option><option value=\"-ui\">-ui - United Kingdom Misc. Islands</option><option value=\"uik\">uik - United Kingdom Misc. Islands</option><option value=\"-uk\">-uk - United Kingdom</option><option value=\"un#\">un# - Ukraine</option><option value=\"unr\">unr - Ukraine</option><option value=\"up#\">up# - United States Misc. Pacific Islands</option><option value=\"-ur\">-ur - Soviet Union</option><option value=\"-us\">-us - United States</option><option value=\"utu\">utu - Utah</option><option value=\"uv#\">uv# - Burkina Faso</option><option value=\"uy#\">uy# - Uruguay</option><option value=\"uz#\">uz# - Uzbekistan</option><option value=\"uzr\">uzr - Uzbek S.S.R.</option><option value=\"vau\">vau - Virginia</option><option value=\"vb#\">vb# - British Virgin Islands</option><option value=\"vc#\">vc# - Vatican City</option><option value=\"ve#\">ve# - Venezuela</option><option value=\"vi#\">vi# - Virgin Islands of the United States</option><option value=\"vm#\">vm# - Vietnam</option><option value=\"-vn\">-vn - Vietnam, North</option><option value=\"vp#\">vp# - Various places</option><option value=\"vra\">vra - Victoria</option><option value=\"-vs\">-vs - Vietnam, South</option><option value=\"vtu\">vtu - Vermont</option><option value=\"wau\">wau - Washington (State)</option><option value=\"-wb\">-wb - West Berlin</option><option value=\"wea\">wea - Western Australia</option><option value=\"wf#\">wf# - Wallis and Futuna</option><option value=\"wiu\">wiu - Wisconsin</option><option value=\"wj#\">wj# - West Bank of the Jordan River</option><option value=\"wk#\">wk# - Wake Island</option><option value=\"wlk\">wlk - Wales</option><option value=\"ws#\">ws# - Samoa</option><option value=\"wvu\">wvu - West Virginia</option><option value=\"wyu\">wyu - Wyoming</option><option value=\"xa#\">xa# - Christmas Island (Indian Ocean)</option><option value=\"xb#\">xb# - Cocos (Keeling) Islands</option><option value=\"xc#\">xc# - Maldives</option><option value=\"xd#\">xd# - Saint Kitts-Nevis</option><option value=\"xe#\">xe# - Marshall Islands</option><option value=\"xf#\">xf# - Midway Islands</option><option value=\"xga\">xga - Coral Sea Islands Territory</option><option value=\"xh#\">xh# - Niue</option><option value=\"-xi\">-xi - Saint Kitts-Nevis-Anguilla</option><option value=\"xj#\">xj# - Saint Helena</option><option value=\"xk#\">xk# - Saint Lucia</option><option value=\"xl#\">xl# - Saint Pierre and Miquelon</option><option value=\"xm#\">xm# - Saint Vincent and the Grenadines</option><option value=\"xn#\">xn# - North Macedonia</option><option value=\"xna\">xna - New South Wales</option><option value=\"xo#\">xo# - Slovakia</option><option value=\"xoa\">xoa - Northern Territory</option><option value=\"xp#\">xp# - Spratly Island</option><option value=\"xr#\">xr# - Czech Republic</option><option value=\"xra\">xra - South Australia</option><option value=\"xs#\">xs# - South Georgia and the South Sandwich Islands</option><option value=\"xv#\">xv# - Slovenia</option><option value=\"xx#\">xx# - No place, unknown, or undetermined</option><option value=\"xxc\">xxc - Canada</option><option value=\"xxk\">xxk - United Kingdom</option><option value=\"xxr\">xxr - Soviet Union</option><option value=\"xxu\">xxu - United States</option><option value=\"ye#\">ye# - Yemen</option><option value=\"ykc\">ykc - Yukon Territory</option><option value=\"-ys\">-ys - Yemen (People&#39;s Democratic Republic)</option><option value=\"-yu\">-yu - Serbia and Montenegro</option><option value=\"za#\">za# - Zambia</option>", 386);
-var _hoisted_438 = [_hoisted_52];
-var _hoisted_439 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_440 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"xx#\">xx# - No place, unknown, or undetermined</option><option value=\"vp#\">vp# - Various places</option><option value=\"bl#\">bl# - Brazil</option><option value=\"aa#\">aa# - Albania</option><option value=\"abc\">abc - Alberta</option><option value=\"-ac\">-ac - Ashmore and Cartier Islands</option><option value=\"aca\">aca - Australian Capital Territory</option><option value=\"ae#\">ae# - Algeria</option><option value=\"af#\">af# - Afghanistan</option><option value=\"ag#\">ag# - Argentina</option><option value=\"-ai\">-ai - Anguilla</option><option value=\"ai#\">ai# - Armenia (Republic)</option><option value=\"air\">air - Armenian S.S.R.</option><option value=\"aj#\">aj# - Azerbaijan</option><option value=\"ajr\">ajr - Azerbaijan S.S.R.</option><option value=\"aku\">aku - Alaska</option><option value=\"alu\">alu - Alabama</option><option value=\"am#\">am# - Anguilla</option><option value=\"an#\">an# - Andorra</option><option value=\"ao#\">ao# - Angola</option><option value=\"aq#\">aq# - Antigua and Barbuda</option><option value=\"aru\">aru - Arkansas</option><option value=\"as#\">as# - American Samoa</option><option value=\"at#\">at# - Australia</option><option value=\"au#\">au# - Austria</option><option value=\"aw#\">aw# - Aruba</option><option value=\"ay#\">ay# - Antarctica</option><option value=\"azu\">azu - Arizona</option><option value=\"ba#\">ba# - Bahrain</option><option value=\"bb#\">bb# - Barbados</option><option value=\"bcc\">bcc - British Columbia</option><option value=\"bd#\">bd# - Burundi</option><option value=\"be#\">be# - Belgium</option><option value=\"bf#\">bf# - Bahamas</option><option value=\"bg#\">bg# - Bangladesh</option><option value=\"bh#\">bh# - Belize</option><option value=\"bi#\">bi# - British Indian Ocean Territory</option><option value=\"bl#\">bl# - Brazil</option><option value=\"bm#\">bm# - Bermuda Islands</option><option value=\"bn#\">bn# - Bosnia and Herzegovina</option><option value=\"bo#\">bo# - Bolivia</option><option value=\"bp#\">bp# - Solomon Islands</option><option value=\"br#\">br# - Burma</option><option value=\"bs#\">bs# - Botswana</option><option value=\"bt#\">bt# - Bhutan</option><option value=\"bu#\">bu# - Bulgaria</option><option value=\"bv#\">bv# - Bouvet Island</option><option value=\"bw#\">bw# - Belarus</option><option value=\"bwr\">bwr - Byelorussian S.S.R.</option><option value=\"bx#\">bx# - Brunei</option><option value=\"ca#\">ca# - Caribbean Netherlands</option><option value=\"cau\">cau - California</option><option value=\"cb#\">cb# - Cambodia</option><option value=\"cc#\">cc# - China</option><option value=\"cd#\">cd# - Chad</option><option value=\"ce#\">ce# - Sri Lanka</option><option value=\"cf#\">cf# - Congo (Brazzaville)</option><option value=\"cg#\">cg# - Congo (Democratic Republic)</option><option value=\"ch#\">ch# - China (Republic : 1949- )</option><option value=\"ci#\">ci# - Croatia</option><option value=\"cj#\">cj# - Cayman Islands</option><option value=\"ck#\">ck# - Colombia</option><option value=\"cl#\">cl# - Chile</option><option value=\"cm#\">cm# - Cameroon</option><option value=\"-cn\">-cn - Canada</option><option value=\"co#\">co# - Curaçao</option><option value=\"cou\">cou - Colorado</option><option value=\"-cp\">-cp - Canton and Enderbury Islands</option><option value=\"cq#\">cq# - Comoros</option><option value=\"cr#\">cr# - Costa Rica</option><option value=\"-cs\">-cs - Czechoslovakia</option><option value=\"ctu\">ctu - Connecticut</option><option value=\"cu#\">cu# - Cuba</option><option value=\"cv#\">cv# - Cabo Verde</option><option value=\"cw#\">cw# - Cook Islands</option><option value=\"cx#\">cx# - Central African Republic</option><option value=\"cy#\">cy# - Cyprus</option><option value=\"-cz\">-cz - Canal Zone</option><option value=\"dcu\">dcu - District of Columbia</option><option value=\"deu\">deu - Delaware</option><option value=\"dk#\">dk# - Denmark</option><option value=\"dm#\">dm# - Benin</option><option value=\"dq#\">dq# - Dominica</option><option value=\"dr#\">dr# - Dominican Republic</option><option value=\"ea#\">ea# - Eritrea</option><option value=\"ec#\">ec# - Ecuador</option><option value=\"eg#\">eg# - Equatorial Guinea</option><option value=\"em#\">em# - Timor-Leste</option><option value=\"enk\">enk - England</option><option value=\"er#\">er# - Estonia</option><option value=\"err\">err - Estonia</option><option value=\"es#\">es# - El Salvador</option><option value=\"et#\">et# - Ethiopia</option><option value=\"fa#\">fa# - Faroe Islands</option><option value=\"fg#\">fg# - French Guiana</option><option value=\"fi#\">fi# - Finland</option><option value=\"fj#\">fj# - Fiji</option><option value=\"fk#\">fk# - Falkland Islands</option><option value=\"flu\">flu - Florida</option><option value=\"fm#\">fm# - Micronesia (Federated States)</option><option value=\"fp#\">fp# - French Polynesia</option><option value=\"fr#\">fr# - France</option><option value=\"fs#\">fs# - Terres australes et antarctiques françaises</option><option value=\"ft#\">ft# - Djibouti</option><option value=\"gau\">gau - Georgia</option><option value=\"gb#\">gb# - Kiribati</option><option value=\"gd#\">gd# - Grenada</option><option value=\"-ge\">-ge - Germany (East)</option><option value=\"gg#\">gg# - Guernsey</option><option value=\"gh#\">gh# - Ghana</option><option value=\"gi#\">gi# - Gibraltar</option><option value=\"gl#\">gl# - Greenland</option><option value=\"gm#\">gm# - Gambia</option><option value=\"-gn\">-gn - Gilbert and Ellice Islands</option><option value=\"go#\">go# - Gabon</option><option value=\"gp#\">gp# - Guadeloupe</option><option value=\"gr#\">gr# - Greece</option><option value=\"gs#\">gs# - Georgia (Republic)</option><option value=\"gsr\">gsr - Georgian S.S.R.</option><option value=\"gt#\">gt# - Guatemala</option><option value=\"gu#\">gu# - Guam</option><option value=\"gv#\">gv# - Guinea</option><option value=\"gw#\">gw# - Germany</option><option value=\"gy#\">gy# - Guyana</option><option value=\"gz#\">gz# - Gaza Strip</option><option value=\"hiu\">hiu - Hawaii</option><option value=\"-hk\">-hk - Hong Kong</option><option value=\"hm#\">hm# - Heard and McDonald Islands</option><option value=\"ho#\">ho# - Honduras</option><option value=\"ht#\">ht# - Haiti</option><option value=\"hu#\">hu# - Hungary</option><option value=\"iau\">iau - Iowa</option><option value=\"ic#\">ic# - Iceland</option><option value=\"idu\">idu - Idaho</option><option value=\"ie#\">ie# - Ireland</option><option value=\"ii#\">ii# - India</option><option value=\"ilu\">ilu - Illinois</option><option value=\"im#\">im# - Isle of Man</option><option value=\"inu\">inu - Indiana</option><option value=\"io#\">io# - Indonesia</option><option value=\"iq#\">iq# - Iraq</option><option value=\"ir#\">ir# - Iran</option><option value=\"is#\">is# - Israel</option><option value=\"it#\">it# - Italy</option><option value=\"-iu\">-iu - Israel-Syria Demilitarized Zones</option><option value=\"iv#\">iv# - Côte d&#39;Ivoire</option><option value=\"-iw\">-iw - Israel-Jordan Demilitarized Zones</option><option value=\"iy#\">iy# - Iraq-Saudi Arabia Neutral Zone</option><option value=\"ja#\">ja# - Japan</option><option value=\"je#\">je# - Jersey</option><option value=\"ji#\">ji# - Johnston Atoll</option><option value=\"jm#\">jm# - Jamaica</option><option value=\"-jn\">-jn - Jan Mayen</option><option value=\"jo#\">jo# - Jordan</option><option value=\"ke#\">ke# - Kenya</option><option value=\"kg#\">kg# - Kyrgyzstan</option><option value=\"kgr\">kgr - Kirghiz S.S.R.</option><option value=\"kn#\">kn# - Korea (North)</option><option value=\"ko#\">ko# - Korea (South)</option><option value=\"ksu\">ksu - Kansas</option><option value=\"ku#\">ku# - Kuwait</option><option value=\"kv#\">kv# - Kosovo</option><option value=\"kyu\">kyu - Kentucky</option><option value=\"kz#\">kz# - Kazakhstan</option><option value=\"kzr\">kzr - Kazakh S.S.R.</option><option value=\"lau\">lau - Louisiana</option><option value=\"lb#\">lb# - Liberia</option><option value=\"le#\">le# - Lebanon</option><option value=\"lh#\">lh# - Liechtenstein</option><option value=\"li#\">li# - Lithuania</option><option value=\"lir\">lir - Lithuania</option><option value=\"-ln\">-ln - Central and Southern Line Islands</option><option value=\"lo#\">lo# - Lesotho</option><option value=\"ls#\">ls# - Laos</option><option value=\"lu#\">lu# - Luxembourg</option><option value=\"lv#\">lv# - Latvia</option><option value=\"lvr\">lvr - Latvia</option><option value=\"ly#\">ly# - Libya</option><option value=\"mau\">mau - Massachusetts</option><option value=\"mbc\">mbc - Manitoba</option><option value=\"mc#\">mc# - Monaco</option><option value=\"mdu\">mdu - Maryland</option><option value=\"meu\">meu - Maine</option><option value=\"mf#\">mf# - Mauritius</option><option value=\"mg#\">mg# - Madagascar</option><option value=\"-mh\">-mh - Macao</option><option value=\"miu\">miu - Michigan</option><option value=\"mj#\">mj# - Montserrat</option><option value=\"mk#\">mk# - Oman</option><option value=\"ml#\">ml# - Mali</option><option value=\"mm#\">mm# - Malta</option><option value=\"mnu\">mnu - Minnesota</option><option value=\"mo#\">mo# - Montenegro</option><option value=\"mou\">mou - Missouri</option><option value=\"mp#\">mp# - Mongolia</option><option value=\"mq#\">mq# - Martinique</option><option value=\"mr#\">mr# - Morocco</option><option value=\"msu\">msu - Mississippi</option><option value=\"mtu\">mtu - Montana</option><option value=\"mu#\">mu# - Mauritania</option><option value=\"mv#\">mv# - Moldova</option><option value=\"mvr\">mvr - Moldavian S.S.R.</option><option value=\"mw#\">mw# - Malawi</option><option value=\"mx#\">mx# - Mexico</option><option value=\"my#\">my# - Malaysia</option><option value=\"mz#\">mz# - Mozambique</option><option value=\"-na\">-na - Netherlands Antilles</option><option value=\"nbu\">nbu - Nebraska</option><option value=\"ncu\">ncu - North Carolina</option><option value=\"ndu\">ndu - North Dakota</option><option value=\"ne#\">ne# - Netherlands</option><option value=\"nfc\">nfc - Newfoundland and Labrador</option><option value=\"ng#\">ng# - Niger</option><option value=\"nhu\">nhu - New Hampshire</option><option value=\"nik\">nik - Northern Ireland</option><option value=\"nju\">nju - New Jersey</option><option value=\"nkc\">nkc - New Brunswick</option><option value=\"nl#\">nl# - New Caledonia</option><option value=\"-nm\">-nm - Northern Mariana Islands</option><option value=\"nmu\">nmu - New Mexico</option><option value=\"nn#\">nn# - Vanuatu</option><option value=\"no#\">no# - Norway</option><option value=\"np#\">np# - Nepal</option><option value=\"nq#\">nq# - Nicaragua</option><option value=\"nr#\">nr# - Nigeria</option><option value=\"nsc\">nsc - Nova Scotia</option><option value=\"ntc\">ntc - Northwest Territories</option><option value=\"nu#\">nu# - Nauru</option><option value=\"nuc\">nuc - Nunavut</option><option value=\"nvu\">nvu - Nevada</option><option value=\"nw#\">nw# - Northern Mariana Islands</option><option value=\"nx#\">nx# - Norfolk Island</option><option value=\"nyu\">nyu - New York (State)</option><option value=\"nz#\">nz# - New Zealand</option><option value=\"ohu\">ohu - Ohio</option><option value=\"oku\">oku - Oklahoma</option><option value=\"onc\">onc - Ontario</option><option value=\"oru\">oru - Oregon</option><option value=\"ot#\">ot# - Mayotte</option><option value=\"pau\">pau - Pennsylvania</option><option value=\"pc#\">pc# - Pitcairn Island</option><option value=\"pe#\">pe# - Peru</option><option value=\"pf#\">pf# - Paracel Islands</option><option value=\"pg#\">pg# - Guinea-Bissau</option><option value=\"ph#\">ph# - Philippines</option><option value=\"pic\">pic - Prince Edward Island</option><option value=\"pk#\">pk# - Pakistan</option><option value=\"pl#\">pl# - Poland</option><option value=\"pn#\">pn# - Panama</option><option value=\"po#\">po# - Portugal</option><option value=\"pp#\">pp# - Papua New Guinea</option><option value=\"pr#\">pr# - Puerto Rico</option><option value=\"-pt\">-pt - Portuguese Timor</option><option value=\"pw#\">pw# - Palau</option><option value=\"py#\">py# - Paraguay</option><option value=\"qa#\">qa# - Qatar</option><option value=\"qea\">qea - Queensland</option><option value=\"quc\">quc - Québec (Province)</option><option value=\"rb#\">rb# - Serbia</option><option value=\"re#\">re# - Réunion</option><option value=\"rh#\">rh# - Zimbabwe</option><option value=\"riu\">riu - Rhode Island</option><option value=\"rm#\">rm# - Romania</option><option value=\"ru#\">ru# - Russia (Federation)</option><option value=\"rur\">rur - Russian S.F.S.R.</option><option value=\"rw#\">rw# - Rwanda</option><option value=\"-ry\">-ry - Ryukyu Islands, Southern</option><option value=\"sa#\">sa# - South Africa</option><option value=\"-sb\">-sb - Svalbard</option><option value=\"sc#\">sc# - Saint-Barthélemy</option><option value=\"scu\">scu - South Carolina</option><option value=\"sd#\">sd# - South Sudan</option><option value=\"sdu\">sdu - South Dakota</option><option value=\"se#\">se# - Seychelles</option><option value=\"sf#\">sf# - Sao Tome and Principe</option><option value=\"sg#\">sg# - Senegal</option><option value=\"sh#\">sh# - Spanish North Africa</option><option value=\"si#\">si# - Singapore</option><option value=\"sj#\">sj# - Sudan</option><option value=\"-sk\">-sk - Sikkim</option><option value=\"sl#\">sl# - Sierra Leone</option><option value=\"sm#\">sm# - San Marino</option><option value=\"sn#\">sn# - Sint Maarten</option><option value=\"snc\">snc - Saskatchewan</option><option value=\"so#\">so# - Somalia</option><option value=\"sp#\">sp# - Spain</option><option value=\"sq#\">sq# - Eswatini</option><option value=\"sr#\">sr# - Surinam</option><option value=\"ss#\">ss# - Western Sahara</option><option value=\"st#\">st# - Saint-Martin</option><option value=\"stk\">stk - Scotland</option><option value=\"su#\">su# - Saudi Arabia</option><option value=\"-sv\">-sv - Swan Islands</option><option value=\"sw#\">sw# - Sweden</option><option value=\"sx#\">sx# - Namibia</option><option value=\"sy#\">sy# - Syria</option><option value=\"sz#\">sz# - Switzerland</option><option value=\"ta#\">ta# - Tajikistan</option><option value=\"tar\">tar - Tajik S.S.R.</option><option value=\"tc#\">tc# - Turks and Caicos Islands</option><option value=\"tg#\">tg# - Togo</option><option value=\"th#\">th# - Thailand</option><option value=\"ti#\">ti# - Tunisia</option><option value=\"tk#\">tk# - Turkmenistan</option><option value=\"tkr\">tkr - Turkmen S.S.R.</option><option value=\"tl#\">tl# - Tokelau</option><option value=\"tma\">tma - Tasmania</option><option value=\"tnu\">tnu - Tennessee</option><option value=\"to#\">to# - Tonga</option><option value=\"tr#\">tr# - Trinidad and Tobago</option><option value=\"ts#\">ts# - United Arab Emirates</option><option value=\"-tt\">-tt - Trust Territory of the Pacific Islands</option><option value=\"tu#\">tu# - Turkey</option><option value=\"tv#\">tv# - Tuvalu</option><option value=\"txu\">txu - Texas</option><option value=\"tz#\">tz# - Tanzania</option><option value=\"ua#\">ua# - Egypt</option><option value=\"uc#\">uc# - United States Misc. Caribbean Islands</option><option value=\"ug#\">ug# - Uganda</option><option value=\"-ui\">-ui - United Kingdom Misc. Islands</option><option value=\"uik\">uik - United Kingdom Misc. Islands</option><option value=\"-uk\">-uk - United Kingdom</option><option value=\"un#\">un# - Ukraine</option><option value=\"unr\">unr - Ukraine</option><option value=\"up#\">up# - United States Misc. Pacific Islands</option><option value=\"-ur\">-ur - Soviet Union</option><option value=\"-us\">-us - United States</option><option value=\"utu\">utu - Utah</option><option value=\"uv#\">uv# - Burkina Faso</option><option value=\"uy#\">uy# - Uruguay</option><option value=\"uz#\">uz# - Uzbekistan</option><option value=\"uzr\">uzr - Uzbek S.S.R.</option><option value=\"vau\">vau - Virginia</option><option value=\"vb#\">vb# - British Virgin Islands</option><option value=\"vc#\">vc# - Vatican City</option><option value=\"ve#\">ve# - Venezuela</option><option value=\"vi#\">vi# - Virgin Islands of the United States</option><option value=\"vm#\">vm# - Vietnam</option><option value=\"-vn\">-vn - Vietnam, North</option><option value=\"vp#\">vp# - Various places</option><option value=\"vra\">vra - Victoria</option><option value=\"-vs\">-vs - Vietnam, South</option><option value=\"vtu\">vtu - Vermont</option><option value=\"wau\">wau - Washington (State)</option><option value=\"-wb\">-wb - West Berlin</option><option value=\"wea\">wea - Western Australia</option><option value=\"wf#\">wf# - Wallis and Futuna</option><option value=\"wiu\">wiu - Wisconsin</option><option value=\"wj#\">wj# - West Bank of the Jordan River</option><option value=\"wk#\">wk# - Wake Island</option><option value=\"wlk\">wlk - Wales</option><option value=\"ws#\">ws# - Samoa</option><option value=\"wvu\">wvu - West Virginia</option><option value=\"wyu\">wyu - Wyoming</option><option value=\"xa#\">xa# - Christmas Island (Indian Ocean)</option><option value=\"xb#\">xb# - Cocos (Keeling) Islands</option><option value=\"xc#\">xc# - Maldives</option><option value=\"xd#\">xd# - Saint Kitts-Nevis</option><option value=\"xe#\">xe# - Marshall Islands</option><option value=\"xf#\">xf# - Midway Islands</option><option value=\"xga\">xga - Coral Sea Islands Territory</option><option value=\"xh#\">xh# - Niue</option><option value=\"-xi\">-xi - Saint Kitts-Nevis-Anguilla</option><option value=\"xj#\">xj# - Saint Helena</option><option value=\"xk#\">xk# - Saint Lucia</option><option value=\"xl#\">xl# - Saint Pierre and Miquelon</option><option value=\"xm#\">xm# - Saint Vincent and the Grenadines</option><option value=\"xn#\">xn# - North Macedonia</option><option value=\"xna\">xna - New South Wales</option><option value=\"xo#\">xo# - Slovakia</option><option value=\"xoa\">xoa - Northern Territory</option><option value=\"xp#\">xp# - Spratly Island</option><option value=\"xr#\">xr# - Czech Republic</option><option value=\"xra\">xra - South Australia</option><option value=\"xs#\">xs# - South Georgia and the South Sandwich Islands</option><option value=\"xv#\">xv# - Slovenia</option><option value=\"xx#\">xx# - No place, unknown, or undetermined</option><option value=\"xxc\">xxc - Canada</option><option value=\"xxk\">xxk - United Kingdom</option><option value=\"xxr\">xxr - Soviet Union</option><option value=\"xxu\">xxu - United States</option><option value=\"ye#\">ye# - Yemen</option><option value=\"ykc\">ykc - Yukon Territory</option><option value=\"-ys\">-ys - Yemen (People&#39;s Democratic Republic)</option><option value=\"-yu\">-yu - Serbia and Montenegro</option><option value=\"za#\">za# - Zambia</option>", 386);
+var _hoisted_437 = [_hoisted_51];
+var _hoisted_438 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_439 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p18"
 }, "18 - Illustrations (006/01-04)", -1 /* HOISTED */);
-var _hoisted_441 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
-var _hoisted_458 = [_hoisted_441];
-var _hoisted_459 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_440 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
+var _hoisted_457 = [_hoisted_440];
+var _hoisted_458 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p19"
 }, "19 - Illustrations (006/01-04)", -1 /* HOISTED */);
-var _hoisted_460 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
-var _hoisted_477 = [_hoisted_460];
-var _hoisted_478 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_459 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
+var _hoisted_476 = [_hoisted_459];
+var _hoisted_477 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p20"
 }, "20 - Illustrations (006/01-04)", -1 /* HOISTED */);
-var _hoisted_479 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
-var _hoisted_496 = [_hoisted_479];
-var _hoisted_497 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_478 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
+var _hoisted_495 = [_hoisted_478];
+var _hoisted_496 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p21"
 }, "21 - Illustrations (006/01-04)", -1 /* HOISTED */);
-var _hoisted_498 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
-var _hoisted_515 = [_hoisted_498];
-var _hoisted_516 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_497 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No illustrations</option><option value=\"a\">a - Illustrations</option><option value=\"b\">b - Maps</option><option value=\"c\">c - Portraits</option><option value=\"d\">d - Charts</option><option value=\"e\">e - Plans</option><option value=\"f\">f - Plates</option><option value=\"g\">g - Music</option><option value=\"h\">h - Facsimiles</option><option value=\"i\">i - Coats of arms</option><option value=\"j\">j - Genealogical tables</option><option value=\"k\">k - Forms</option><option value=\"l\">l - Samples</option><option value=\"m\">m - Phonodisc, phonowire, etc.</option><option value=\"o\">o - Photographs</option><option value=\"p\">p - Illuminations</option><option value=\"|\">| - No attempt to code</option>", 17);
+var _hoisted_514 = [_hoisted_497];
+var _hoisted_515 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p22"
 }, "22 - Target audience (006/05)", -1 /* HOISTED */);
-var _hoisted_517 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Unknown or not specified</option><option value=\"a\">a - Preschool</option><option value=\"b\">b - Primary</option><option value=\"c\">c - Pre-adolescent</option><option value=\"d\">d - Adolescent</option><option value=\"e\">e - Adult</option><option value=\"f\">f - Specialized</option><option value=\"g\">g - General</option><option value=\"j\">j - Juvenile</option><option value=\"|\">| - No attempt to code</option>", 10);
-var _hoisted_527 = [_hoisted_517];
-var _hoisted_528 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_516 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Unknown or not specified</option><option value=\"a\">a - Preschool</option><option value=\"b\">b - Primary</option><option value=\"c\">c - Pre-adolescent</option><option value=\"d\">d - Adolescent</option><option value=\"e\">e - Adult</option><option value=\"f\">f - Specialized</option><option value=\"g\">g - General</option><option value=\"j\">j - Juvenile</option><option value=\"|\">| - No attempt to code</option>", 10);
+var _hoisted_526 = [_hoisted_516];
+var _hoisted_527 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p23"
 }, "23 - Form of item (006/06)", -1 /* HOISTED */);
-var _hoisted_529 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"a\">a - Microfilm</option><option value=\"b\">b - Microfiche</option><option value=\"c\">c - Microopaque</option><option value=\"d\">d - Large print</option><option value=\"f\">f - Braille</option><option value=\"o\">o - Online</option><option value=\"q\">q - Direct electronic</option><option value=\"r\">r - Regular print reproduction</option><option value=\"s\">s - Electronic</option><option value=\"|\">| - No attempt to code</option>", 11);
-var _hoisted_540 = [_hoisted_529];
-var _hoisted_541 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_528 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"a\">a - Microfilm</option><option value=\"b\">b - Microfiche</option><option value=\"c\">c - Microopaque</option><option value=\"d\">d - Large print</option><option value=\"f\">f - Braille</option><option value=\"o\">o - Online</option><option value=\"q\">q - Direct electronic</option><option value=\"r\">r - Regular print reproduction</option><option value=\"s\">s - Electronic</option><option value=\"|\">| - No attempt to code</option>", 11);
+var _hoisted_539 = [_hoisted_528];
+var _hoisted_540 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p24"
 }, "24 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_542 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
-var _hoisted_571 = [_hoisted_542];
-var _hoisted_572 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_541 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
+var _hoisted_570 = [_hoisted_541];
+var _hoisted_571 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p25"
 }, "25 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_573 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
-var _hoisted_602 = [_hoisted_573];
-var _hoisted_603 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_572 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
+var _hoisted_601 = [_hoisted_572];
+var _hoisted_602 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p26"
 }, "26 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_604 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
-var _hoisted_633 = [_hoisted_604];
-var _hoisted_634 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_603 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
+var _hoisted_632 = [_hoisted_603];
+var _hoisted_633 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p27"
 }, "27 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_635 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
-var _hoisted_664 = [_hoisted_635];
-var _hoisted_665 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_634 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"2\">2 - Offprints</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
+var _hoisted_663 = [_hoisted_634];
+var _hoisted_664 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p28"
 }, "28 - Government publication (006/11)", -1 /* HOISTED */);
-var _hoisted_666 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Not a government publication</option><option value=\"a\">a - Autonomous or semi-autonomous component</option><option value=\"c\">c - Multilocal</option><option value=\"f\">f - Federal/national</option><option value=\"i\">i - International intergovernmental</option><option value=\"l\">l - Local</option><option value=\"m\">m - Multistate</option><option value=\"o\">o - Government publication-level undetermined</option><option value=\"s\">s - State, provincial, territorial, dependent, etc.</option><option value=\"u\">u - Unknown if item is government publication</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code</option>", 12);
-var _hoisted_678 = [_hoisted_666];
-var _hoisted_679 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_665 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Not a government publication</option><option value=\"a\">a - Autonomous or semi-autonomous component</option><option value=\"c\">c - Multilocal</option><option value=\"f\">f - Federal/national</option><option value=\"i\">i - International intergovernmental</option><option value=\"l\">l - Local</option><option value=\"m\">m - Multistate</option><option value=\"o\">o - Government publication-level undetermined</option><option value=\"s\">s - State, provincial, territorial, dependent, etc.</option><option value=\"u\">u - Unknown if item is government publication</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code</option>", 12);
+var _hoisted_677 = [_hoisted_665];
+var _hoisted_678 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p29"
 }, "29 - Conference publication (006/12)", -1 /* HOISTED */);
-var _hoisted_680 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_679 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - Not a conference publication", -1 /* HOISTED */);
-var _hoisted_681 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_680 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Conference publication", -1 /* HOISTED */);
-var _hoisted_682 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_681 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "|"
 }, "| - No attempt to code", -1 /* HOISTED */);
-var _hoisted_683 = [_hoisted_680, _hoisted_681, _hoisted_682];
-var _hoisted_684 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_682 = [_hoisted_679, _hoisted_680, _hoisted_681];
+var _hoisted_683 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p30"
 }, "30 - Festschrift (006/13)", -1 /* HOISTED */);
-var _hoisted_685 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_684 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - Not a festschrift", -1 /* HOISTED */);
-var _hoisted_686 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_685 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Festschrift", -1 /* HOISTED */);
-var _hoisted_687 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_686 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "|"
 }, "| - No attempt to code", -1 /* HOISTED */);
-var _hoisted_688 = [_hoisted_685, _hoisted_686, _hoisted_687];
-var _hoisted_689 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_687 = [_hoisted_684, _hoisted_685, _hoisted_686];
+var _hoisted_688 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p31"
 }, "31 - Index (006/14)", -1 /* HOISTED */);
-var _hoisted_690 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_689 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - No index", -1 /* HOISTED */);
-var _hoisted_691 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_690 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Index present", -1 /* HOISTED */);
-var _hoisted_692 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_691 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "|"
 }, "| - No attempt to code", -1 /* HOISTED */);
-var _hoisted_693 = [_hoisted_690, _hoisted_691, _hoisted_692];
-var _hoisted_694 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_692 = [_hoisted_689, _hoisted_690, _hoisted_691];
+var _hoisted_693 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p33"
 }, "33 - Literary form (006/16)", -1 /* HOISTED */);
-var _hoisted_695 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"0\">0 - Not fiction (not further specified)</option><option value=\"1\">1 - Fiction (not further specified)</option><option value=\"d\">d - Dramas</option><option value=\"e\">e - Essays</option><option value=\"f\">f - Novels</option><option value=\"h\">h - Humor, satires, etc.</option><option value=\"i\">i - Letters</option><option value=\"j\">j - Short stories</option><option value=\"m\">m - Mixed forms</option><option value=\"p\">p - Poetry</option><option value=\"s\">s - Speeches</option><option value=\"u\">u - Unknown</option><option value=\"|\">| - No attempt to code</option>", 13);
-var _hoisted_708 = [_hoisted_695];
-var _hoisted_709 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_694 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"0\">0 - Not fiction (not further specified)</option><option value=\"1\">1 - Fiction (not further specified)</option><option value=\"d\">d - Dramas</option><option value=\"e\">e - Essays</option><option value=\"f\">f - Novels</option><option value=\"h\">h - Humor, satires, etc.</option><option value=\"i\">i - Letters</option><option value=\"j\">j - Short stories</option><option value=\"m\">m - Mixed forms</option><option value=\"p\">p - Poetry</option><option value=\"s\">s - Speeches</option><option value=\"u\">u - Unknown</option><option value=\"|\">| - No attempt to code</option>", 13);
+var _hoisted_707 = [_hoisted_694];
+var _hoisted_708 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p34"
 }, "34 - Biography (006/17)", -1 /* HOISTED */);
-var _hoisted_710 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No biographical material</option><option value=\"a\">a - Autobiography</option><option value=\"b\">b - Individual biography</option><option value=\"c\">c - Collective biography</option><option value=\"d\">d - Contains biographical information</option><option value=\"|\">| - No attempt to code</option>", 6);
-var _hoisted_716 = [_hoisted_710];
-var _hoisted_717 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_709 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No biographical material</option><option value=\"a\">a - Autobiography</option><option value=\"b\">b - Individual biography</option><option value=\"c\">c - Collective biography</option><option value=\"d\">d - Contains biographical information</option><option value=\"|\">| - No attempt to code</option>", 6);
+var _hoisted_715 = [_hoisted_709];
+var _hoisted_716 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p18"
 }, "18 - Frequency (006/01)", -1 /* HOISTED */);
-var _hoisted_718 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No determinable frequency</option><option value=\"a\">a - Annual</option><option value=\"b\">b - Bimonthly</option><option value=\"c\">c - Semiweekly</option><option value=\"d\">d - Daily</option><option value=\"e\">e - Biweekly</option><option value=\"f\">f - Semiannual</option><option value=\"g\">g - Biennial</option><option value=\"h\">h - Triennial</option><option value=\"i\">i - Three times a week</option><option value=\"j\">j - Three times a month</option><option value=\"k\">k - Continuously updated</option><option value=\"m\">m - Monthly</option><option value=\"q\">q - Quarterly</option><option value=\"s\">s - Semimonthly</option><option value=\"t\">t - Three times a year</option><option value=\"u\">u - Unknown</option><option value=\"w\">w - Weekly</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code</option>", 20);
-var _hoisted_738 = [_hoisted_718];
-var _hoisted_739 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_717 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No determinable frequency</option><option value=\"a\">a - Annual</option><option value=\"b\">b - Bimonthly</option><option value=\"c\">c - Semiweekly</option><option value=\"d\">d - Daily</option><option value=\"e\">e - Biweekly</option><option value=\"f\">f - Semiannual</option><option value=\"g\">g - Biennial</option><option value=\"h\">h - Triennial</option><option value=\"i\">i - Three times a week</option><option value=\"j\">j - Three times a month</option><option value=\"k\">k - Continuously updated</option><option value=\"m\">m - Monthly</option><option value=\"q\">q - Quarterly</option><option value=\"s\">s - Semimonthly</option><option value=\"t\">t - Three times a year</option><option value=\"u\">u - Unknown</option><option value=\"w\">w - Weekly</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code</option>", 20);
+var _hoisted_737 = [_hoisted_717];
+var _hoisted_738 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p19"
 }, "19 - Regularity (006/02)", -1 /* HOISTED */);
-var _hoisted_740 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"n\">n - Normalized irregular</option><option value=\"r\">r - Regular</option><option value=\"u\">u - Unknown</option><option value=\"x\">x - Completely irregular</option><option value=\"|\">| - No attempt to code </option>", 5);
-var _hoisted_745 = [_hoisted_740];
-var _hoisted_746 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_739 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"n\">n - Normalized irregular</option><option value=\"r\">r - Regular</option><option value=\"u\">u - Unknown</option><option value=\"x\">x - Completely irregular</option><option value=\"|\">| - No attempt to code </option>", 5);
+var _hoisted_744 = [_hoisted_739];
+var _hoisted_745 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p21"
 }, "21 - Type of continuing resource (006/04)", -1 /* HOISTED */);
-var _hoisted_747 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"d\">d - Updating database</option><option value=\"g\">g - Magazine</option><option value=\"h\">h - Blog</option><option value=\"j\">j - Journal</option><option value=\"l\">l - Updating loose-leaf</option><option value=\"m\">m - Monographic series</option><option value=\"n\">n - Newspaper</option><option value=\"p\">p - Periodical</option><option value=\"r\">r - Repository</option><option value=\"s\">s - Newsletter</option><option value=\"t\">t - Directory</option><option value=\"w\">w - Updating Web site</option><option value=\"|\">| - No attempt to code </option>", 14);
-var _hoisted_761 = [_hoisted_747];
-var _hoisted_762 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_746 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"d\">d - Updating database</option><option value=\"g\">g - Magazine</option><option value=\"h\">h - Blog</option><option value=\"j\">j - Journal</option><option value=\"l\">l - Updating loose-leaf</option><option value=\"m\">m - Monographic series</option><option value=\"n\">n - Newspaper</option><option value=\"p\">p - Periodical</option><option value=\"r\">r - Repository</option><option value=\"s\">s - Newsletter</option><option value=\"t\">t - Directory</option><option value=\"w\">w - Updating Web site</option><option value=\"|\">| - No attempt to code </option>", 14);
+var _hoisted_760 = [_hoisted_746];
+var _hoisted_761 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p22"
 }, "22 - Form of original item (006/05)", -1 /* HOISTED */);
-var _hoisted_763 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"a\">a - Microfilm</option><option value=\"b\">b - Microfiche</option><option value=\"c\">c - Microopaque</option><option value=\"d\">d - Large print</option><option value=\"e\">e - Newspaper format</option><option value=\"f\">f - Braille</option><option value=\"o\">o - Online</option><option value=\"q\">q - Direct electronic</option><option value=\"s\">s - Electronic</option><option value=\"|\">| - No attempt to code</option>", 11);
-var _hoisted_774 = [_hoisted_763];
-var _hoisted_775 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_762 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"a\">a - Microfilm</option><option value=\"b\">b - Microfiche</option><option value=\"c\">c - Microopaque</option><option value=\"d\">d - Large print</option><option value=\"e\">e - Newspaper format</option><option value=\"f\">f - Braille</option><option value=\"o\">o - Online</option><option value=\"q\">q - Direct electronic</option><option value=\"s\">s - Electronic</option><option value=\"|\">| - No attempt to code</option>", 11);
+var _hoisted_773 = [_hoisted_762];
+var _hoisted_774 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p23"
 }, "23 - Form of item (006/06)", -1 /* HOISTED */);
-var _hoisted_776 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"a\">a - Microfilm</option><option value=\"b\">b - Microfiche</option><option value=\"c\">c - Microopaque</option><option value=\"d\">d - Large print</option><option value=\"f\">f - Braille</option><option value=\"o\">o - Online</option><option value=\"q\">q - Direct electronic</option><option value=\"r\">r - Regular print reproduction</option><option value=\"s\">s - Electronic</option><option value=\"|\">| - No attempt to code</option>", 11);
-var _hoisted_787 = [_hoisted_776];
-var _hoisted_788 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_775 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - None of the following</option><option value=\"a\">a - Microfilm</option><option value=\"b\">b - Microfiche</option><option value=\"c\">c - Microopaque</option><option value=\"d\">d - Large print</option><option value=\"f\">f - Braille</option><option value=\"o\">o - Online</option><option value=\"q\">q - Direct electronic</option><option value=\"r\">r - Regular print reproduction</option><option value=\"s\">s - Electronic</option><option value=\"|\">| - No attempt to code</option>", 11);
+var _hoisted_786 = [_hoisted_775];
+var _hoisted_787 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p24"
 }, "24 - Nature of entire work (006/07)", -1 /* HOISTED */);
-var _hoisted_789 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
-var _hoisted_818 = [_hoisted_789];
-var _hoisted_819 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_788 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|\">| - No attempt to code</option>", 29);
+var _hoisted_817 = [_hoisted_788];
+var _hoisted_818 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p25"
 }, "25 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_820 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|||\">||| - No attempt to code</option>", 29);
-var _hoisted_849 = [_hoisted_820];
-var _hoisted_850 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_819 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|||\">||| - No attempt to code</option>", 29);
+var _hoisted_848 = [_hoisted_819];
+var _hoisted_849 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p26"
 }, "26 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_851 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|||\">||| - No attempt to code</option>", 29);
-var _hoisted_880 = [_hoisted_851];
-var _hoisted_881 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_850 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|||\">||| - No attempt to code</option>", 29);
+var _hoisted_879 = [_hoisted_850];
+var _hoisted_880 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p27"
 }, "27 - Nature of contents (006/07-10)", -1 /* HOISTED */);
-var _hoisted_882 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|||\">||| - No attempt to code</option>", 29);
-var _hoisted_911 = [_hoisted_882];
-var _hoisted_912 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_881 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No specified nature of contents</option><option value=\"a\">a - Abstracts/summaries</option><option value=\"b\">b - Bibliographies</option><option value=\"c\">c - Catalogs</option><option value=\"d\">d - Dictionaries</option><option value=\"e\">e - Encyclopedias</option><option value=\"f\">f - Handbooks</option><option value=\"g\">g - Legal articles</option><option value=\"h\">h - Biography</option><option value=\"i\">i - Indexes</option><option value=\"j\">j - Patent document</option><option value=\"k\">k - Discographies</option><option value=\"l\">l - Legislation</option><option value=\"m\">m - Theses</option><option value=\"n\">n - Surveys of literature in a subject area</option><option value=\"o\">o - Reviews</option><option value=\"p\">p - Programmed texts</option><option value=\"q\">q - Filmographies</option><option value=\"r\">r - Directories</option><option value=\"s\">s - Statistics</option><option value=\"t\">t - Technical reports</option><option value=\"u\">u - Standards/specifications</option><option value=\"v\">v - Legal cases and case notes</option><option value=\"w\">w - Law reports and digests</option><option value=\"y\">y - Yearbooks</option><option value=\"z\">z - Treaties</option><option value=\"5\">5 - Calendars</option><option value=\"6\">6 - Comics/graphic novels</option><option value=\"|||\">||| - No attempt to code</option>", 29);
+var _hoisted_910 = [_hoisted_881];
+var _hoisted_911 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p28"
 }, "28 - Government publication (006/11)", -1 /* HOISTED */);
-var _hoisted_913 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Not a government publication</option><option value=\"a\">a - Autonomous or semi-autonomous component</option><option value=\"c\">c - Multilocal</option><option value=\"f\">f - Federal/national</option><option value=\"i\">i - International intergovernmental</option><option value=\"l\">l - Local</option><option value=\"m\">m - Multistate</option><option value=\"o\">o - Government publication-level undetermined</option><option value=\"s\">s - State, provincial, territorial, dependent, etc.</option><option value=\"u\">u - Unknown if item is government publication</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code</option>", 12);
-var _hoisted_925 = [_hoisted_913];
-var _hoisted_926 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_912 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Not a government publication</option><option value=\"a\">a - Autonomous or semi-autonomous component</option><option value=\"c\">c - Multilocal</option><option value=\"f\">f - Federal/national</option><option value=\"i\">i - International intergovernmental</option><option value=\"l\">l - Local</option><option value=\"m\">m - Multistate</option><option value=\"o\">o - Government publication-level undetermined</option><option value=\"s\">s - State, provincial, territorial, dependent, etc.</option><option value=\"u\">u - Unknown if item is government publication</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code</option>", 12);
+var _hoisted_924 = [_hoisted_912];
+var _hoisted_925 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p29"
 }, "29 - Conference publication (006/12)", -1 /* HOISTED */);
-var _hoisted_927 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_926 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - Not a conference publication", -1 /* HOISTED */);
-var _hoisted_928 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_927 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Conference publication", -1 /* HOISTED */);
-var _hoisted_929 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_928 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "|"
 }, "| - No attempt to code", -1 /* HOISTED */);
-var _hoisted_930 = [_hoisted_927, _hoisted_928, _hoisted_929];
-var _hoisted_931 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_929 = [_hoisted_926, _hoisted_927, _hoisted_928];
+var _hoisted_930 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p33"
 }, "33 - Original alphabet or script of title (006/16)", -1 /* HOISTED */);
-var _hoisted_932 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No alphabet or script given/No key title</option><option value=\"a\">a - Basic Roman</option><option value=\"b\">b - Extended Roman</option><option value=\"c\">c - Cyrillic</option><option value=\"d\">d - Japanese</option><option value=\"e\">e - Chinese</option><option value=\"f\">f - Arabic</option><option value=\"g\">g - Greek</option><option value=\"h\">h - Hebrew</option><option value=\"i\">i - Thai</option><option value=\"j\">j - Devanagari</option><option value=\"k\">k - Korean</option><option value=\"l\">l - Tamil</option><option value=\"u\">u - Unknown</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code </option>", 16);
-var _hoisted_948 = [_hoisted_932];
-var _hoisted_949 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_931 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - No alphabet or script given/No key title</option><option value=\"a\">a - Basic Roman</option><option value=\"b\">b - Extended Roman</option><option value=\"c\">c - Cyrillic</option><option value=\"d\">d - Japanese</option><option value=\"e\">e - Chinese</option><option value=\"f\">f - Arabic</option><option value=\"g\">g - Greek</option><option value=\"h\">h - Hebrew</option><option value=\"i\">i - Thai</option><option value=\"j\">j - Devanagari</option><option value=\"k\">k - Korean</option><option value=\"l\">l - Tamil</option><option value=\"u\">u - Unknown</option><option value=\"z\">z - Other</option><option value=\"|\">| - No attempt to code </option>", 16);
+var _hoisted_947 = [_hoisted_931];
+var _hoisted_948 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p34"
 }, "34 - Entry convention (006/17)", -1 /* HOISTED */);
-var _hoisted_950 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_949 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - Successive entry", -1 /* HOISTED */);
-var _hoisted_951 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_950 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Latest entry", -1 /* HOISTED */);
-var _hoisted_952 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_951 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "2"
 }, "2 - Integrated entry", -1 /* HOISTED */);
-var _hoisted_953 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_952 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "|"
 }, "| - No attempt to code ", -1 /* HOISTED */);
-var _hoisted_954 = [_hoisted_950, _hoisted_951, _hoisted_952, _hoisted_953];
-var _hoisted_955 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_953 = [_hoisted_949, _hoisted_950, _hoisted_951, _hoisted_952];
+var _hoisted_954 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "008_35_37"
 }, "35-37 - Language", -1 /* HOISTED */);
-var _hoisted_956 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"por\">por - Portuguese</option><option value=\"eng\">eng - English</option><option value=\"###\">### - No information provided</option><option value=\"zxx\">zxx - No linguistic content</option><option value=\"mul\">mul - Multiple languages</option><option value=\"sgn\">sgn - Sign languages</option><option value=\"und\">und - Undetermined</option><option value=\"|||\">||| - No attempt to code</option><option value=\"por\">por - Portuguese</option><option value=\"aar\">aar - Afar</option><option value=\"abk\">abk - Abkhaz</option><option value=\"ace\">ace - Achinese</option><option value=\"ach\">ach - Acoli</option><option value=\"ada\">ada - Adangme</option><option value=\"ady\">ady - Adygei</option><option value=\"afa\">afa - Afroasiatic (Other)</option><option value=\"afh\">afh - Afrihili (Artificial language)</option><option value=\"afr\">afr - Afrikaans</option><option value=\"ain\">ain - Ainu</option><option value=\"ajm\">ajm - Aljamía</option><option value=\"aka\">aka - Akan</option><option value=\"akk\">akk - Akkadian</option><option value=\"alb\">alb - Albanian</option><option value=\"ale\">ale - Aleut</option><option value=\"alg\">alg - Algonquian (Other)</option><option value=\"alt\">alt - Altai</option><option value=\"amh\">amh - Amharic</option><option value=\"ang\">ang - English, Old (ca. 4501100)</option><option value=\"anp\">anp - Angika</option><option value=\"apa\">apa - Apache languages</option><option value=\"ara\">ara - Arabic</option><option value=\"arc\">arc - Aramaic</option><option value=\"arg\">arg - Aragonese</option><option value=\"arm\">arm - Armenian</option><option value=\"arn\">arn - Mapuche</option><option value=\"arp\">arp - Arapaho</option><option value=\"art\">art - Artificial (Other)</option><option value=\"arw\">arw - Arawak</option><option value=\"asm\">asm - Assamese</option><option value=\"ast\">ast - Bable</option><option value=\"ath\">ath - Athapascan (Other)</option><option value=\"aus\">aus - Australian languages</option><option value=\"ava\">ava - Avaric</option><option value=\"ave\">ave - Avestan</option><option value=\"awa\">awa - Awadhi</option><option value=\"aym\">aym - Aymara</option><option value=\"aze\">aze - Azerbaijani</option><option value=\"bad\">bad - Banda languages</option><option value=\"bai\">bai - Bamileke languages</option><option value=\"bak\">bak - Bashkir</option><option value=\"bal\">bal - Baluchi</option><option value=\"bam\">bam - Bambara</option><option value=\"ban\">ban - Balinese</option><option value=\"baq\">baq - Basque</option><option value=\"bas\">bas - Basa</option><option value=\"bat\">bat - Baltic (Other)</option><option value=\"bej\">bej - Beja</option><option value=\"bel\">bel - Belarusian</option><option value=\"bem\">bem - Bemba</option><option value=\"ben\">ben - Bengali</option><option value=\"ber\">ber - Berber (Other)</option><option value=\"bho\">bho - Bhojpuri</option><option value=\"bih\">bih - Bihari (Other)</option><option value=\"bik\">bik - Bikol</option><option value=\"bin\">bin - Edo</option><option value=\"bis\">bis - Bislama</option><option value=\"bla\">bla - Siksika</option><option value=\"bnt\">bnt - Bantu (Other)</option><option value=\"bos\">bos - Bosnian</option><option value=\"bra\">bra - Braj</option><option value=\"bre\">bre - Breton</option><option value=\"btk\">btk - Batak</option><option value=\"bua\">bua - Buriat</option><option value=\"bug\">bug - Bugis</option><option value=\"bul\">bul - Bulgarian</option><option value=\"bur\">bur - Burmese</option><option value=\"byn\">byn - Bilin</option><option value=\"cad\">cad - Caddo</option><option value=\"cai\">cai - Central American Indian (Other)</option><option value=\"cam\">cam - Khmer</option><option value=\"car\">car - Carib</option><option value=\"cat\">cat - Catalan</option><option value=\"cau\">cau - Caucasian (Other)</option><option value=\"ceb\">ceb - Cebuano</option><option value=\"cel\">cel - Celtic (Other)</option><option value=\"cha\">cha - Chamorro</option><option value=\"chb\">chb - Chibcha</option><option value=\"che\">che - Chechen</option><option value=\"chg\">chg - Chagatai</option><option value=\"chi\">chi - Chinese</option><option value=\"chk\">chk - Chuukese</option><option value=\"chm\">chm - Mari</option><option value=\"chn\">chn - Chinook jargon</option><option value=\"cho\">cho - Choctaw</option><option value=\"chp\">chp - Chipewyan</option><option value=\"chr\">chr - Cherokee</option><option value=\"chu\">chu - Church Slavic</option><option value=\"chv\">chv - Chuvash</option><option value=\"chy\">chy - Cheyenne</option><option value=\"cmc\">cmc - Chamic languages</option><option value=\"cnr\">cnr - Montenegrin</option><option value=\"cop\">cop - Coptic</option><option value=\"cor\">cor - Cornish</option><option value=\"cos\">cos - Corsican</option><option value=\"cpe\">cpe - Creoles and Pidgins, Englishbased (Other)</option><option value=\"cpf\">cpf - Creoles and Pidgins, Frenchbased (Other)</option><option value=\"cpp\">cpp - Creoles and Pidgins, Portuguesebased (Other)</option><option value=\"cre\">cre - Cree</option><option value=\"crh\">crh - Crimean Tatar</option><option value=\"crp\">crp - Creoles and Pidgins (Other)</option><option value=\"csb\">csb - Kashubian</option><option value=\"cus\">cus - Cushitic (Other)</option><option value=\"cze\">cze - Czech</option><option value=\"dak\">dak - Dakota</option><option value=\"dan\">dan - Danish</option><option value=\"dar\">dar - Dargwa</option><option value=\"day\">day - Dayak</option><option value=\"del\">del - Delaware</option><option value=\"den\">den - Slavey</option><option value=\"dgr\">dgr - Dogrib</option><option value=\"din\">din - Dinka</option><option value=\"div\">div - Divehi</option><option value=\"doi\">doi - Dogri</option><option value=\"dra\">dra - Dravidian (Other)</option><option value=\"dsb\">dsb - Lower Sorbian</option><option value=\"dua\">dua - Duala</option><option value=\"dum\">dum - Dutch, Middle (ca. 10501350)</option><option value=\"dut\">dut - Dutch</option><option value=\"dyu\">dyu - Dyula</option><option value=\"dzo\">dzo - Dzongkha</option><option value=\"efi\">efi - Efik</option><option value=\"egy\">egy - Egyptian</option><option value=\"eka\">eka - Ekajuk</option><option value=\"elx\">elx - Elamite</option><option value=\"eng\">eng - English</option><option value=\"enm\">enm - English, Middle (11001500)</option><option value=\"epo\">epo - Esperanto</option><option value=\"esk\">esk - Eskimo languages</option><option value=\"esp\">esp - Esperanto</option><option value=\"est\">est - Estonian</option><option value=\"eth\">eth - Ethiopic</option><option value=\"ewe\">ewe - Ewe</option><option value=\"ewo\">ewo - Ewondo</option><option value=\"fan\">fan - Fang</option><option value=\"fao\">fao - Faroese</option><option value=\"far\">far - Faroese</option><option value=\"fat\">fat - Fanti</option><option value=\"fij\">fij - Fijian</option><option value=\"fil\">fil - Filipino</option><option value=\"fin\">fin - Finnish</option><option value=\"fiu\">fiu - FinnoUgrian (Other)</option><option value=\"fon\">fon - Fon</option><option value=\"fre\">fre - French</option><option value=\"fri\">fri - Frisian</option><option value=\"frm\">frm - French, Middle (ca. 13001600)</option><option value=\"fro\">fro - French, Old (ca. 8421300)</option><option value=\"frr\">frr - North Frisian</option><option value=\"frs\">frs - East Frisian</option><option value=\"fry\">fry - Frisian</option><option value=\"ful\">ful - Fula</option><option value=\"fur\">fur - Friulian</option><option value=\"gaa\">gaa - Gã</option><option value=\"gae\">gae - Scottish Gaelix</option><option value=\"gag\">gag - Galician</option><option value=\"gal\">gal - Oromo</option><option value=\"gay\">gay - Gayo</option><option value=\"gba\">gba - Gbaya</option><option value=\"gem\">gem - Germanic (Other)</option><option value=\"geo\">geo - Georgian</option><option value=\"ger\">ger - German</option><option value=\"gez\">gez - Ethiopic</option><option value=\"gil\">gil - Gilbertese</option><option value=\"gla\">gla - Scottish Gaelic</option><option value=\"gle\">gle - Irish</option><option value=\"glg\">glg - Galician</option><option value=\"glv\">glv - Manx</option><option value=\"gmh\">gmh - German, Middle High (ca. 10501500)</option><option value=\"goh\">goh - German, Old High (ca. 7501050)</option><option value=\"gon\">gon - Gondi</option><option value=\"gor\">gor - Gorontalo</option><option value=\"got\">got - Gothic</option><option value=\"grb\">grb - Grebo</option><option value=\"grc\">grc - Greek, Ancient (to 1453)</option><option value=\"gre\">gre - Greek, Modern (1453)</option><option value=\"grn\">grn - Guarani</option><option value=\"gsw\">gsw - Swiss German</option><option value=\"gua\">gua - Guarani</option><option value=\"guj\">guj - Gujarati</option><option value=\"gwi\">gwi - Gwich&#39;in</option><option value=\"hai\">hai - Haida</option><option value=\"hat\">hat - Haitian French Creole</option><option value=\"hau\">hau - Hausa</option><option value=\"haw\">haw - Hawaiian</option><option value=\"heb\">heb - Hebrew</option><option value=\"her\">her - Herero</option><option value=\"hil\">hil - Hiligaynon</option><option value=\"him\">him - Western Pahari languages</option><option value=\"hin\">hin - Hindi</option><option value=\"hit\">hit - Hittite</option><option value=\"hmn\">hmn - Hmong</option><option value=\"hmo\">hmo - Hiri Motu</option><option value=\"hrv\">hrv - Croatian</option><option value=\"hsb\">hsb - Upper Sorbian</option><option value=\"hun\">hun - Hungarian</option><option value=\"hup\">hup - Hupa</option><option value=\"iba\">iba - Iban</option><option value=\"ibo\">ibo - Igbo</option><option value=\"ice\">ice - Icelandic</option><option value=\"ido\">ido - Ido</option><option value=\"iii\">iii - Sichuan Yi</option><option value=\"ijo\">ijo - Ijo</option><option value=\"iku\">iku - Inuktitut</option><option value=\"ile\">ile - Interlingue</option><option value=\"ilo\">ilo - Iloko</option><option value=\"ina\">ina - Interlingua (International Auxiliary Language Association) </option><option value=\"inc\">inc - Indic (Other)</option><option value=\"ind\">ind - Indonesian</option><option value=\"ine\">ine - IndoEuropean (Other)</option><option value=\"inh\">inh - Ingush</option><option value=\"int\">int - Interlingua (International Auxiliary Language Association) </option><option value=\"ipk\">ipk - Inupiaq</option><option value=\"ira\">ira - Iranian (Other)</option><option value=\"iri\">iri - Irish</option><option value=\"iro\">iro - Iroquoian (Other)</option><option value=\"ita\">ita - Italian</option><option value=\"jav\">jav - Javanese</option><option value=\"jbo\">jbo - Lojban (Artificial language)</option><option value=\"jpn\">jpn - Japanese</option><option value=\"jpr\">jpr - JudeoPersian</option><option value=\"jrb\">jrb - JudeoArabic</option><option value=\"kaa\">kaa - KaraKalpak</option><option value=\"kab\">kab - Kabyle</option><option value=\"kac\">kac - Kachin</option><option value=\"kal\">kal - Kalâtdlisut</option><option value=\"kam\">kam - Kamba</option><option value=\"kan\">kan - Kannada</option><option value=\"kar\">kar - Karen languages</option><option value=\"kas\">kas - Kashmiri</option><option value=\"kau\">kau - Kanuri</option><option value=\"kaw\">kaw - Kawi</option><option value=\"kaz\">kaz - Kazakh</option><option value=\"kbd\">kbd - Kabardian</option><option value=\"kha\">kha - Khasi</option><option value=\"khi\">khi - Khoisan (Other)</option><option value=\"khm\">khm - Khmer</option><option value=\"kho\">kho - Khotanese</option><option value=\"kik\">kik - Kikuyu</option><option value=\"kin\">kin - Kinyarwanda</option><option value=\"kir\">kir - Kyrgyz</option><option value=\"kmb\">kmb - Kimbundu</option><option value=\"kok\">kok - Konkani</option><option value=\"kom\">kom - Komi</option><option value=\"kon\">kon - Kongo</option><option value=\"kor\">kor - Korean</option><option value=\"kos\">kos - Kosraean</option><option value=\"kpe\">kpe - Kpelle</option><option value=\"krc\">krc - KarachayBalkar</option><option value=\"krl\">krl - Karelian</option><option value=\"kro\">kro - Kru (Other)</option><option value=\"kru\">kru - Kurukh</option><option value=\"kua\">kua - Kuanyama</option><option value=\"kum\">kum - Kumyk</option><option value=\"kur\">kur - Kurdish</option><option value=\"kus\">kus - Kusaie</option><option value=\"kut\">kut - Kootenai</option><option value=\"lad\">lad - Ladino</option><option value=\"lah\">lah - Lahndā</option><option value=\"lam\">lam - Lamba (Zambia and Congo)</option><option value=\"lan\">lan - Occitan (post 1500)</option><option value=\"lao\">lao - Lao</option><option value=\"lap\">lap - Sami</option><option value=\"lat\">lat - Latin</option><option value=\"lav\">lav - Latvian</option><option value=\"lez\">lez - Lezgian</option><option value=\"lim\">lim - Limburgish</option><option value=\"lin\">lin - Lingala</option><option value=\"lit\">lit - Lithuanian</option><option value=\"lol\">lol - MongoNkundu</option><option value=\"loz\">loz - Lozi</option><option value=\"ltz\">ltz - Luxembourgish</option><option value=\"lua\">lua - LubaLulua</option><option value=\"lub\">lub - LubaKatanga</option><option value=\"lug\">lug - Ganda</option><option value=\"lui\">lui - Luiseño</option><option value=\"lun\">lun - Lunda</option><option value=\"luo\">luo - Luo (Kenya and Tanzania)</option><option value=\"lus\">lus - Lushai</option><option value=\"mac\">mac - Macedonian</option><option value=\"mad\">mad - Madurese</option><option value=\"mag\">mag - Magahi</option><option value=\"mah\">mah - Marshallese</option><option value=\"mai\">mai - Maithili</option><option value=\"mak\">mak - Makasar</option><option value=\"mal\">mal - Malayalam</option><option value=\"man\">man - Mandingo</option><option value=\"mao\">mao - Maori</option><option value=\"map\">map - Austronesian (Other)</option><option value=\"mar\">mar - Marathi</option><option value=\"mas\">mas - Maasai</option><option value=\"max\">max - Manx</option><option value=\"may\">may - Malay</option><option value=\"mdf\">mdf - Moksha</option><option value=\"mdr\">mdr - Mandar</option><option value=\"men\">men - Mende</option><option value=\"mga\">mga - Irish, Middle (ca. 11001550)</option><option value=\"mic\">mic - Micmac</option><option value=\"min\">min - Minangkabau</option><option value=\"mis\">mis - Miscellaneous languages</option><option value=\"mkh\">mkh - MonKhmer (Other)</option><option value=\"mla\">mla - Malagasy</option><option value=\"mlg\">mlg - Malagasy</option><option value=\"mlt\">mlt - Maltese</option><option value=\"mnc\">mnc - Manchu</option><option value=\"mni\">mni - Manipuri</option><option value=\"mno\">mno - Manobo languages</option><option value=\"moh\">moh - Mohawk</option><option value=\"mol\">mol - Moldavian</option><option value=\"mon\">mon - Mongolian</option><option value=\"mos\">mos - Mooré</option><option value=\"mul\">mul - Multiple languages</option><option value=\"mun\">mun - Munda (Other)</option><option value=\"mus\">mus - Creek</option><option value=\"mwl\">mwl - Mirandese</option><option value=\"mwr\">mwr - Marwari</option><option value=\"myn\">myn - Mayan languages</option><option value=\"myv\">myv - Erzya</option><option value=\"nah\">nah - Nahuatl</option><option value=\"nai\">nai - North American Indian (Other)</option><option value=\"nap\">nap - Neapolitan Italian</option><option value=\"nau\">nau - Nauru</option><option value=\"nav\">nav - Navajo</option><option value=\"nbl\">nbl - Ndebele (South Africa)</option><option value=\"nde\">nde - Ndebele (Zimbabwe)</option><option value=\"ndo\">ndo - Ndonga</option><option value=\"nds\">nds - Low German</option><option value=\"nep\">nep - Nepali</option><option value=\"new\">new - Newari</option><option value=\"nia\">nia - Nias</option><option value=\"nic\">nic - NigerKordofanian (Other)</option><option value=\"niu\">niu - Niuean</option><option value=\"nno\">nno - Norwegian (Nynorsk)</option><option value=\"nob\">nob - Norwegian (Bokmål)</option><option value=\"nog\">nog - Nogai</option><option value=\"non\">non - Old Norse</option><option value=\"nor\">nor - Norwegian</option><option value=\"nqo\">nqo - N&#39;Ko</option><option value=\"nso\">nso - Northern Sotho</option><option value=\"nub\">nub - Nubian languages</option><option value=\"nwc\">nwc - Newari, Old</option><option value=\"nya\">nya - Nyanja</option><option value=\"nym\">nym - Nyamwezi</option><option value=\"nyn\">nyn - Nyankole</option><option value=\"nyo\">nyo - Nyoro</option><option value=\"nzi\">nzi - Nzima</option><option value=\"oci\">oci - Occitan (post1500)</option><option value=\"oji\">oji - Ojibwa</option><option value=\"ori\">ori - Oriya</option><option value=\"orm\">orm - Oromo</option><option value=\"osa\">osa - Osage</option><option value=\"oss\">oss - Ossetic</option><option value=\"ota\">ota - Turkish, Ottoman</option><option value=\"oto\">oto - Otomian languages</option><option value=\"paa\">paa - Papuan (Other)</option><option value=\"pag\">pag - Pangasinan</option><option value=\"pal\">pal - Pahlavi</option><option value=\"pam\">pam - Pampanga</option><option value=\"pan\">pan - Panjabi</option><option value=\"pap\">pap - Papiamento</option><option value=\"pau\">pau - Palauan</option><option value=\"peo\">peo - Old Persian (ca. 600400 B.C.)</option><option value=\"per\">per - Persian</option><option value=\"phi\">phi - Philippine (Other)</option><option value=\"phn\">phn - Phoenician</option><option value=\"pli\">pli - Pali</option><option value=\"pol\">pol - Polish</option><option value=\"pon\">pon - Pohnpeian</option><option value=\"por\">por - Portuguese</option><option value=\"pra\">pra - Prakrit languages</option><option value=\"pro\">pro - Provençal (to 1500)</option><option value=\"pus\">pus - Pushto</option><option value=\"que\">que - Quechua</option><option value=\"raj\">raj - Rajasthani</option><option value=\"rap\">rap - Rapanui</option><option value=\"rar\">rar - Rarotongan</option><option value=\"roa\">roa - Romance (Other)</option><option value=\"roh\">roh - RaetoRomance</option><option value=\"rom\">rom - Romani</option><option value=\"rum\">rum - Romanian</option><option value=\"run\">run - Rundi</option><option value=\"rup\">rup - Aromanian</option><option value=\"rus\">rus - Russian</option><option value=\"sad\">sad - Sandawe</option><option value=\"sag\">sag - Sango (Ubangi Creole)</option><option value=\"sah\">sah - Yakut</option><option value=\"sai\">sai - South American Indian (Other)</option><option value=\"sal\">sal - Salishan languages</option><option value=\"sam\">sam - Samaritan Aramaic</option><option value=\"san\">san - Sanskrit</option><option value=\"sao\">sao - Samoan</option><option value=\"sas\">sas - Sasak</option><option value=\"sat\">sat - Santali</option><option value=\"scc\">scc - Serbian</option><option value=\"scn\">scn - Sicilian Italian</option><option value=\"sco\">sco - Scots</option><option value=\"scr\">scr - Croatian</option><option value=\"sel\">sel - Selkup</option><option value=\"sem\">sem - Semitic (Other)</option><option value=\"sga\">sga - Irish, Old (to 1100)</option><option value=\"sgn\">sgn - Sign languages</option><option value=\"shn\">shn - Shan</option><option value=\"sho\">sho - Shona</option><option value=\"sid\">sid - Sidamo</option><option value=\"sin\">sin - Sinhalese</option><option value=\"sio\">sio - Siouan (Other)</option><option value=\"sit\">sit - SinoTibetan (Other)</option><option value=\"sla\">sla - Slavic (Other)</option><option value=\"slo\">slo - Slovak</option><option value=\"slv\">slv - Slovenian</option><option value=\"sma\">sma - Southern Sami</option><option value=\"sme\">sme - Northern Sami</option><option value=\"smi\">smi - Sami</option><option value=\"smj\">smj - Lule Sami</option><option value=\"smn\">smn - Inari Sami</option><option value=\"smo\">smo - Samoan</option><option value=\"sms\">sms - Skolt Sami</option><option value=\"sna\">sna - Shona</option><option value=\"snd\">snd - Sindhi</option><option value=\"snh\">snh - Sinhalese</option><option value=\"snk\">snk - Soninke</option><option value=\"sog\">sog - Sogdian</option><option value=\"som\">som - Somali</option><option value=\"son\">son - Songhai</option><option value=\"sot\">sot - Sotho</option><option value=\"spa\">spa - Spanish</option><option value=\"srd\">srd - Sardinian</option><option value=\"srn\">srn - Sranan</option><option value=\"srp\">srp - Serbian</option><option value=\"srr\">srr - Serer</option><option value=\"ssa\">ssa - NiloSaharan (Other)</option><option value=\"sso\">sso - Sotho</option><option value=\"ssw\">ssw - Swazi</option><option value=\"suk\">suk - Sukuma</option><option value=\"sun\">sun - Sundanese</option><option value=\"sus\">sus - Susu</option><option value=\"sux\">sux - Sumerian</option><option value=\"swa\">swa - Swahili</option><option value=\"swe\">swe - Swedish</option><option value=\"swz\">swz - Swazi</option><option value=\"syc\">syc - Syriac</option><option value=\"syr\">syr - Syriac, Modern</option><option value=\"tag\">tag - Tagalog</option><option value=\"tah\">tah - Tahitian</option><option value=\"tai\">tai - Tai (Other)</option><option value=\"taj\">taj - Tajik</option><option value=\"tam\">tam - Tamil</option><option value=\"tar\">tar - Tatar</option><option value=\"tat\">tat - Tatar</option><option value=\"tel\">tel - Telugu</option><option value=\"tem\">tem - Temne</option><option value=\"ter\">ter - Terena</option><option value=\"tet\">tet - Tetum</option><option value=\"tgk\">tgk - Tajik</option><option value=\"tgl\">tgl - Tagalog</option><option value=\"tha\">tha - Thai</option><option value=\"tib\">tib - Tibetan</option><option value=\"tig\">tig - Tigré</option><option value=\"tir\">tir - Tigrinya</option><option value=\"tiv\">tiv - Tiv</option><option value=\"tkl\">tkl - Tokelauan</option><option value=\"tlh\">tlh - Klingon (Artificial language)</option><option value=\"tli\">tli - Tlingit</option><option value=\"tmh\">tmh - Tamashek</option><option value=\"tog\">tog - Tonga (Nyasa)</option><option value=\"ton\">ton - Tongan</option><option value=\"tpi\">tpi - Tok Pisin</option><option value=\"tru\">tru - Truk</option><option value=\"tsi\">tsi - Tsimshian</option><option value=\"tsn\">tsn - Tswana</option><option value=\"tso\">tso - Tsonga</option><option value=\"tsw\">tsw - Tswana</option><option value=\"tuk\">tuk - Turkmen</option><option value=\"tum\">tum - Tumbuka</option><option value=\"tup\">tup - Tupi languages</option><option value=\"tur\">tur - Turkish</option><option value=\"tut\">tut - Altaic (Other)</option><option value=\"tvl\">tvl - Tuvaluan</option><option value=\"twi\">twi - Twi</option><option value=\"tyv\">tyv - Tuvinian</option><option value=\"udm\">udm - Udmurt</option><option value=\"uga\">uga - Ugaritic</option><option value=\"uig\">uig - Uighur</option><option value=\"ukr\">ukr - Ukrainian</option><option value=\"umb\">umb - Umbundu</option><option value=\"und\">und - Undetermined</option><option value=\"urd\">urd - Urdu</option><option value=\"uzb\">uzb - Uzbek</option><option value=\"vai\">vai - Vai</option><option value=\"ven\">ven - Venda</option><option value=\"vie\">vie - Vietnamese</option><option value=\"vol\">vol - Volapük</option><option value=\"vot\">vot - Votic</option><option value=\"wak\">wak - Wakashan languages</option><option value=\"wal\">wal - Wolayta</option><option value=\"war\">war - Waray</option><option value=\"was\">was - Washoe</option><option value=\"wel\">wel - Welsh</option><option value=\"wen\">wen - Sorbian (Other)</option><option value=\"wln\">wln - Walloon</option><option value=\"wol\">wol - Wolof</option><option value=\"xal\">xal - Oirat</option><option value=\"xho\">xho - Xhosa</option><option value=\"yao\">yao - Yao (Africa)</option><option value=\"yap\">yap - Yapese</option><option value=\"yid\">yid - Yiddish</option><option value=\"yor\">yor - Yoruba</option><option value=\"ypk\">ypk - Yupik languages</option><option value=\"zap\">zap - Zapotec</option><option value=\"zbl\">zbl - Blissymbolics</option><option value=\"zen\">zen - Zenaga</option><option value=\"zha\">zha - Zhuang</option><option value=\"znd\">znd - Zande languages</option><option value=\"zul\">zul - Zulu</option><option value=\"zun\">zun - Zuni</option><option value=\"zxx\">zxx - No linguistic content</option><option value=\"zza\">zza - Zaza</option>", 525);
-var _hoisted_1481 = [_hoisted_956];
-var _hoisted_1482 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
-var _hoisted_1483 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_955 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"por\">por - Portuguese</option><option value=\"eng\">eng - English</option><option value=\"###\">### - No information provided</option><option value=\"zxx\">zxx - No linguistic content</option><option value=\"mul\">mul - Multiple languages</option><option value=\"sgn\">sgn - Sign languages</option><option value=\"und\">und - Undetermined</option><option value=\"|||\">||| - No attempt to code</option><option value=\"por\">por - Portuguese</option><option value=\"aar\">aar - Afar</option><option value=\"abk\">abk - Abkhaz</option><option value=\"ace\">ace - Achinese</option><option value=\"ach\">ach - Acoli</option><option value=\"ada\">ada - Adangme</option><option value=\"ady\">ady - Adygei</option><option value=\"afa\">afa - Afroasiatic (Other)</option><option value=\"afh\">afh - Afrihili (Artificial language)</option><option value=\"afr\">afr - Afrikaans</option><option value=\"ain\">ain - Ainu</option><option value=\"ajm\">ajm - Aljamía</option><option value=\"aka\">aka - Akan</option><option value=\"akk\">akk - Akkadian</option><option value=\"alb\">alb - Albanian</option><option value=\"ale\">ale - Aleut</option><option value=\"alg\">alg - Algonquian (Other)</option><option value=\"alt\">alt - Altai</option><option value=\"amh\">amh - Amharic</option><option value=\"ang\">ang - English, Old (ca. 4501100)</option><option value=\"anp\">anp - Angika</option><option value=\"apa\">apa - Apache languages</option><option value=\"ara\">ara - Arabic</option><option value=\"arc\">arc - Aramaic</option><option value=\"arg\">arg - Aragonese</option><option value=\"arm\">arm - Armenian</option><option value=\"arn\">arn - Mapuche</option><option value=\"arp\">arp - Arapaho</option><option value=\"art\">art - Artificial (Other)</option><option value=\"arw\">arw - Arawak</option><option value=\"asm\">asm - Assamese</option><option value=\"ast\">ast - Bable</option><option value=\"ath\">ath - Athapascan (Other)</option><option value=\"aus\">aus - Australian languages</option><option value=\"ava\">ava - Avaric</option><option value=\"ave\">ave - Avestan</option><option value=\"awa\">awa - Awadhi</option><option value=\"aym\">aym - Aymara</option><option value=\"aze\">aze - Azerbaijani</option><option value=\"bad\">bad - Banda languages</option><option value=\"bai\">bai - Bamileke languages</option><option value=\"bak\">bak - Bashkir</option><option value=\"bal\">bal - Baluchi</option><option value=\"bam\">bam - Bambara</option><option value=\"ban\">ban - Balinese</option><option value=\"baq\">baq - Basque</option><option value=\"bas\">bas - Basa</option><option value=\"bat\">bat - Baltic (Other)</option><option value=\"bej\">bej - Beja</option><option value=\"bel\">bel - Belarusian</option><option value=\"bem\">bem - Bemba</option><option value=\"ben\">ben - Bengali</option><option value=\"ber\">ber - Berber (Other)</option><option value=\"bho\">bho - Bhojpuri</option><option value=\"bih\">bih - Bihari (Other)</option><option value=\"bik\">bik - Bikol</option><option value=\"bin\">bin - Edo</option><option value=\"bis\">bis - Bislama</option><option value=\"bla\">bla - Siksika</option><option value=\"bnt\">bnt - Bantu (Other)</option><option value=\"bos\">bos - Bosnian</option><option value=\"bra\">bra - Braj</option><option value=\"bre\">bre - Breton</option><option value=\"btk\">btk - Batak</option><option value=\"bua\">bua - Buriat</option><option value=\"bug\">bug - Bugis</option><option value=\"bul\">bul - Bulgarian</option><option value=\"bur\">bur - Burmese</option><option value=\"byn\">byn - Bilin</option><option value=\"cad\">cad - Caddo</option><option value=\"cai\">cai - Central American Indian (Other)</option><option value=\"cam\">cam - Khmer</option><option value=\"car\">car - Carib</option><option value=\"cat\">cat - Catalan</option><option value=\"cau\">cau - Caucasian (Other)</option><option value=\"ceb\">ceb - Cebuano</option><option value=\"cel\">cel - Celtic (Other)</option><option value=\"cha\">cha - Chamorro</option><option value=\"chb\">chb - Chibcha</option><option value=\"che\">che - Chechen</option><option value=\"chg\">chg - Chagatai</option><option value=\"chi\">chi - Chinese</option><option value=\"chk\">chk - Chuukese</option><option value=\"chm\">chm - Mari</option><option value=\"chn\">chn - Chinook jargon</option><option value=\"cho\">cho - Choctaw</option><option value=\"chp\">chp - Chipewyan</option><option value=\"chr\">chr - Cherokee</option><option value=\"chu\">chu - Church Slavic</option><option value=\"chv\">chv - Chuvash</option><option value=\"chy\">chy - Cheyenne</option><option value=\"cmc\">cmc - Chamic languages</option><option value=\"cnr\">cnr - Montenegrin</option><option value=\"cop\">cop - Coptic</option><option value=\"cor\">cor - Cornish</option><option value=\"cos\">cos - Corsican</option><option value=\"cpe\">cpe - Creoles and Pidgins, Englishbased (Other)</option><option value=\"cpf\">cpf - Creoles and Pidgins, Frenchbased (Other)</option><option value=\"cpp\">cpp - Creoles and Pidgins, Portuguesebased (Other)</option><option value=\"cre\">cre - Cree</option><option value=\"crh\">crh - Crimean Tatar</option><option value=\"crp\">crp - Creoles and Pidgins (Other)</option><option value=\"csb\">csb - Kashubian</option><option value=\"cus\">cus - Cushitic (Other)</option><option value=\"cze\">cze - Czech</option><option value=\"dak\">dak - Dakota</option><option value=\"dan\">dan - Danish</option><option value=\"dar\">dar - Dargwa</option><option value=\"day\">day - Dayak</option><option value=\"del\">del - Delaware</option><option value=\"den\">den - Slavey</option><option value=\"dgr\">dgr - Dogrib</option><option value=\"din\">din - Dinka</option><option value=\"div\">div - Divehi</option><option value=\"doi\">doi - Dogri</option><option value=\"dra\">dra - Dravidian (Other)</option><option value=\"dsb\">dsb - Lower Sorbian</option><option value=\"dua\">dua - Duala</option><option value=\"dum\">dum - Dutch, Middle (ca. 10501350)</option><option value=\"dut\">dut - Dutch</option><option value=\"dyu\">dyu - Dyula</option><option value=\"dzo\">dzo - Dzongkha</option><option value=\"efi\">efi - Efik</option><option value=\"egy\">egy - Egyptian</option><option value=\"eka\">eka - Ekajuk</option><option value=\"elx\">elx - Elamite</option><option value=\"eng\">eng - English</option><option value=\"enm\">enm - English, Middle (11001500)</option><option value=\"epo\">epo - Esperanto</option><option value=\"esk\">esk - Eskimo languages</option><option value=\"esp\">esp - Esperanto</option><option value=\"est\">est - Estonian</option><option value=\"eth\">eth - Ethiopic</option><option value=\"ewe\">ewe - Ewe</option><option value=\"ewo\">ewo - Ewondo</option><option value=\"fan\">fan - Fang</option><option value=\"fao\">fao - Faroese</option><option value=\"far\">far - Faroese</option><option value=\"fat\">fat - Fanti</option><option value=\"fij\">fij - Fijian</option><option value=\"fil\">fil - Filipino</option><option value=\"fin\">fin - Finnish</option><option value=\"fiu\">fiu - FinnoUgrian (Other)</option><option value=\"fon\">fon - Fon</option><option value=\"fre\">fre - French</option><option value=\"fri\">fri - Frisian</option><option value=\"frm\">frm - French, Middle (ca. 13001600)</option><option value=\"fro\">fro - French, Old (ca. 8421300)</option><option value=\"frr\">frr - North Frisian</option><option value=\"frs\">frs - East Frisian</option><option value=\"fry\">fry - Frisian</option><option value=\"ful\">ful - Fula</option><option value=\"fur\">fur - Friulian</option><option value=\"gaa\">gaa - Gã</option><option value=\"gae\">gae - Scottish Gaelix</option><option value=\"gag\">gag - Galician</option><option value=\"gal\">gal - Oromo</option><option value=\"gay\">gay - Gayo</option><option value=\"gba\">gba - Gbaya</option><option value=\"gem\">gem - Germanic (Other)</option><option value=\"geo\">geo - Georgian</option><option value=\"ger\">ger - German</option><option value=\"gez\">gez - Ethiopic</option><option value=\"gil\">gil - Gilbertese</option><option value=\"gla\">gla - Scottish Gaelic</option><option value=\"gle\">gle - Irish</option><option value=\"glg\">glg - Galician</option><option value=\"glv\">glv - Manx</option><option value=\"gmh\">gmh - German, Middle High (ca. 10501500)</option><option value=\"goh\">goh - German, Old High (ca. 7501050)</option><option value=\"gon\">gon - Gondi</option><option value=\"gor\">gor - Gorontalo</option><option value=\"got\">got - Gothic</option><option value=\"grb\">grb - Grebo</option><option value=\"grc\">grc - Greek, Ancient (to 1453)</option><option value=\"gre\">gre - Greek, Modern (1453)</option><option value=\"grn\">grn - Guarani</option><option value=\"gsw\">gsw - Swiss German</option><option value=\"gua\">gua - Guarani</option><option value=\"guj\">guj - Gujarati</option><option value=\"gwi\">gwi - Gwich&#39;in</option><option value=\"hai\">hai - Haida</option><option value=\"hat\">hat - Haitian French Creole</option><option value=\"hau\">hau - Hausa</option><option value=\"haw\">haw - Hawaiian</option><option value=\"heb\">heb - Hebrew</option><option value=\"her\">her - Herero</option><option value=\"hil\">hil - Hiligaynon</option><option value=\"him\">him - Western Pahari languages</option><option value=\"hin\">hin - Hindi</option><option value=\"hit\">hit - Hittite</option><option value=\"hmn\">hmn - Hmong</option><option value=\"hmo\">hmo - Hiri Motu</option><option value=\"hrv\">hrv - Croatian</option><option value=\"hsb\">hsb - Upper Sorbian</option><option value=\"hun\">hun - Hungarian</option><option value=\"hup\">hup - Hupa</option><option value=\"iba\">iba - Iban</option><option value=\"ibo\">ibo - Igbo</option><option value=\"ice\">ice - Icelandic</option><option value=\"ido\">ido - Ido</option><option value=\"iii\">iii - Sichuan Yi</option><option value=\"ijo\">ijo - Ijo</option><option value=\"iku\">iku - Inuktitut</option><option value=\"ile\">ile - Interlingue</option><option value=\"ilo\">ilo - Iloko</option><option value=\"ina\">ina - Interlingua (International Auxiliary Language Association) </option><option value=\"inc\">inc - Indic (Other)</option><option value=\"ind\">ind - Indonesian</option><option value=\"ine\">ine - IndoEuropean (Other)</option><option value=\"inh\">inh - Ingush</option><option value=\"int\">int - Interlingua (International Auxiliary Language Association) </option><option value=\"ipk\">ipk - Inupiaq</option><option value=\"ira\">ira - Iranian (Other)</option><option value=\"iri\">iri - Irish</option><option value=\"iro\">iro - Iroquoian (Other)</option><option value=\"ita\">ita - Italian</option><option value=\"jav\">jav - Javanese</option><option value=\"jbo\">jbo - Lojban (Artificial language)</option><option value=\"jpn\">jpn - Japanese</option><option value=\"jpr\">jpr - JudeoPersian</option><option value=\"jrb\">jrb - JudeoArabic</option><option value=\"kaa\">kaa - KaraKalpak</option><option value=\"kab\">kab - Kabyle</option><option value=\"kac\">kac - Kachin</option><option value=\"kal\">kal - Kalâtdlisut</option><option value=\"kam\">kam - Kamba</option><option value=\"kan\">kan - Kannada</option><option value=\"kar\">kar - Karen languages</option><option value=\"kas\">kas - Kashmiri</option><option value=\"kau\">kau - Kanuri</option><option value=\"kaw\">kaw - Kawi</option><option value=\"kaz\">kaz - Kazakh</option><option value=\"kbd\">kbd - Kabardian</option><option value=\"kha\">kha - Khasi</option><option value=\"khi\">khi - Khoisan (Other)</option><option value=\"khm\">khm - Khmer</option><option value=\"kho\">kho - Khotanese</option><option value=\"kik\">kik - Kikuyu</option><option value=\"kin\">kin - Kinyarwanda</option><option value=\"kir\">kir - Kyrgyz</option><option value=\"kmb\">kmb - Kimbundu</option><option value=\"kok\">kok - Konkani</option><option value=\"kom\">kom - Komi</option><option value=\"kon\">kon - Kongo</option><option value=\"kor\">kor - Korean</option><option value=\"kos\">kos - Kosraean</option><option value=\"kpe\">kpe - Kpelle</option><option value=\"krc\">krc - KarachayBalkar</option><option value=\"krl\">krl - Karelian</option><option value=\"kro\">kro - Kru (Other)</option><option value=\"kru\">kru - Kurukh</option><option value=\"kua\">kua - Kuanyama</option><option value=\"kum\">kum - Kumyk</option><option value=\"kur\">kur - Kurdish</option><option value=\"kus\">kus - Kusaie</option><option value=\"kut\">kut - Kootenai</option><option value=\"lad\">lad - Ladino</option><option value=\"lah\">lah - Lahndā</option><option value=\"lam\">lam - Lamba (Zambia and Congo)</option><option value=\"lan\">lan - Occitan (post 1500)</option><option value=\"lao\">lao - Lao</option><option value=\"lap\">lap - Sami</option><option value=\"lat\">lat - Latin</option><option value=\"lav\">lav - Latvian</option><option value=\"lez\">lez - Lezgian</option><option value=\"lim\">lim - Limburgish</option><option value=\"lin\">lin - Lingala</option><option value=\"lit\">lit - Lithuanian</option><option value=\"lol\">lol - MongoNkundu</option><option value=\"loz\">loz - Lozi</option><option value=\"ltz\">ltz - Luxembourgish</option><option value=\"lua\">lua - LubaLulua</option><option value=\"lub\">lub - LubaKatanga</option><option value=\"lug\">lug - Ganda</option><option value=\"lui\">lui - Luiseño</option><option value=\"lun\">lun - Lunda</option><option value=\"luo\">luo - Luo (Kenya and Tanzania)</option><option value=\"lus\">lus - Lushai</option><option value=\"mac\">mac - Macedonian</option><option value=\"mad\">mad - Madurese</option><option value=\"mag\">mag - Magahi</option><option value=\"mah\">mah - Marshallese</option><option value=\"mai\">mai - Maithili</option><option value=\"mak\">mak - Makasar</option><option value=\"mal\">mal - Malayalam</option><option value=\"man\">man - Mandingo</option><option value=\"mao\">mao - Maori</option><option value=\"map\">map - Austronesian (Other)</option><option value=\"mar\">mar - Marathi</option><option value=\"mas\">mas - Maasai</option><option value=\"max\">max - Manx</option><option value=\"may\">may - Malay</option><option value=\"mdf\">mdf - Moksha</option><option value=\"mdr\">mdr - Mandar</option><option value=\"men\">men - Mende</option><option value=\"mga\">mga - Irish, Middle (ca. 11001550)</option><option value=\"mic\">mic - Micmac</option><option value=\"min\">min - Minangkabau</option><option value=\"mis\">mis - Miscellaneous languages</option><option value=\"mkh\">mkh - MonKhmer (Other)</option><option value=\"mla\">mla - Malagasy</option><option value=\"mlg\">mlg - Malagasy</option><option value=\"mlt\">mlt - Maltese</option><option value=\"mnc\">mnc - Manchu</option><option value=\"mni\">mni - Manipuri</option><option value=\"mno\">mno - Manobo languages</option><option value=\"moh\">moh - Mohawk</option><option value=\"mol\">mol - Moldavian</option><option value=\"mon\">mon - Mongolian</option><option value=\"mos\">mos - Mooré</option><option value=\"mul\">mul - Multiple languages</option><option value=\"mun\">mun - Munda (Other)</option><option value=\"mus\">mus - Creek</option><option value=\"mwl\">mwl - Mirandese</option><option value=\"mwr\">mwr - Marwari</option><option value=\"myn\">myn - Mayan languages</option><option value=\"myv\">myv - Erzya</option><option value=\"nah\">nah - Nahuatl</option><option value=\"nai\">nai - North American Indian (Other)</option><option value=\"nap\">nap - Neapolitan Italian</option><option value=\"nau\">nau - Nauru</option><option value=\"nav\">nav - Navajo</option><option value=\"nbl\">nbl - Ndebele (South Africa)</option><option value=\"nde\">nde - Ndebele (Zimbabwe)</option><option value=\"ndo\">ndo - Ndonga</option><option value=\"nds\">nds - Low German</option><option value=\"nep\">nep - Nepali</option><option value=\"new\">new - Newari</option><option value=\"nia\">nia - Nias</option><option value=\"nic\">nic - NigerKordofanian (Other)</option><option value=\"niu\">niu - Niuean</option><option value=\"nno\">nno - Norwegian (Nynorsk)</option><option value=\"nob\">nob - Norwegian (Bokmål)</option><option value=\"nog\">nog - Nogai</option><option value=\"non\">non - Old Norse</option><option value=\"nor\">nor - Norwegian</option><option value=\"nqo\">nqo - N&#39;Ko</option><option value=\"nso\">nso - Northern Sotho</option><option value=\"nub\">nub - Nubian languages</option><option value=\"nwc\">nwc - Newari, Old</option><option value=\"nya\">nya - Nyanja</option><option value=\"nym\">nym - Nyamwezi</option><option value=\"nyn\">nyn - Nyankole</option><option value=\"nyo\">nyo - Nyoro</option><option value=\"nzi\">nzi - Nzima</option><option value=\"oci\">oci - Occitan (post1500)</option><option value=\"oji\">oji - Ojibwa</option><option value=\"ori\">ori - Oriya</option><option value=\"orm\">orm - Oromo</option><option value=\"osa\">osa - Osage</option><option value=\"oss\">oss - Ossetic</option><option value=\"ota\">ota - Turkish, Ottoman</option><option value=\"oto\">oto - Otomian languages</option><option value=\"paa\">paa - Papuan (Other)</option><option value=\"pag\">pag - Pangasinan</option><option value=\"pal\">pal - Pahlavi</option><option value=\"pam\">pam - Pampanga</option><option value=\"pan\">pan - Panjabi</option><option value=\"pap\">pap - Papiamento</option><option value=\"pau\">pau - Palauan</option><option value=\"peo\">peo - Old Persian (ca. 600400 B.C.)</option><option value=\"per\">per - Persian</option><option value=\"phi\">phi - Philippine (Other)</option><option value=\"phn\">phn - Phoenician</option><option value=\"pli\">pli - Pali</option><option value=\"pol\">pol - Polish</option><option value=\"pon\">pon - Pohnpeian</option><option value=\"por\">por - Portuguese</option><option value=\"pra\">pra - Prakrit languages</option><option value=\"pro\">pro - Provençal (to 1500)</option><option value=\"pus\">pus - Pushto</option><option value=\"que\">que - Quechua</option><option value=\"raj\">raj - Rajasthani</option><option value=\"rap\">rap - Rapanui</option><option value=\"rar\">rar - Rarotongan</option><option value=\"roa\">roa - Romance (Other)</option><option value=\"roh\">roh - RaetoRomance</option><option value=\"rom\">rom - Romani</option><option value=\"rum\">rum - Romanian</option><option value=\"run\">run - Rundi</option><option value=\"rup\">rup - Aromanian</option><option value=\"rus\">rus - Russian</option><option value=\"sad\">sad - Sandawe</option><option value=\"sag\">sag - Sango (Ubangi Creole)</option><option value=\"sah\">sah - Yakut</option><option value=\"sai\">sai - South American Indian (Other)</option><option value=\"sal\">sal - Salishan languages</option><option value=\"sam\">sam - Samaritan Aramaic</option><option value=\"san\">san - Sanskrit</option><option value=\"sao\">sao - Samoan</option><option value=\"sas\">sas - Sasak</option><option value=\"sat\">sat - Santali</option><option value=\"scc\">scc - Serbian</option><option value=\"scn\">scn - Sicilian Italian</option><option value=\"sco\">sco - Scots</option><option value=\"scr\">scr - Croatian</option><option value=\"sel\">sel - Selkup</option><option value=\"sem\">sem - Semitic (Other)</option><option value=\"sga\">sga - Irish, Old (to 1100)</option><option value=\"sgn\">sgn - Sign languages</option><option value=\"shn\">shn - Shan</option><option value=\"sho\">sho - Shona</option><option value=\"sid\">sid - Sidamo</option><option value=\"sin\">sin - Sinhalese</option><option value=\"sio\">sio - Siouan (Other)</option><option value=\"sit\">sit - SinoTibetan (Other)</option><option value=\"sla\">sla - Slavic (Other)</option><option value=\"slo\">slo - Slovak</option><option value=\"slv\">slv - Slovenian</option><option value=\"sma\">sma - Southern Sami</option><option value=\"sme\">sme - Northern Sami</option><option value=\"smi\">smi - Sami</option><option value=\"smj\">smj - Lule Sami</option><option value=\"smn\">smn - Inari Sami</option><option value=\"smo\">smo - Samoan</option><option value=\"sms\">sms - Skolt Sami</option><option value=\"sna\">sna - Shona</option><option value=\"snd\">snd - Sindhi</option><option value=\"snh\">snh - Sinhalese</option><option value=\"snk\">snk - Soninke</option><option value=\"sog\">sog - Sogdian</option><option value=\"som\">som - Somali</option><option value=\"son\">son - Songhai</option><option value=\"sot\">sot - Sotho</option><option value=\"spa\">spa - Spanish</option><option value=\"srd\">srd - Sardinian</option><option value=\"srn\">srn - Sranan</option><option value=\"srp\">srp - Serbian</option><option value=\"srr\">srr - Serer</option><option value=\"ssa\">ssa - NiloSaharan (Other)</option><option value=\"sso\">sso - Sotho</option><option value=\"ssw\">ssw - Swazi</option><option value=\"suk\">suk - Sukuma</option><option value=\"sun\">sun - Sundanese</option><option value=\"sus\">sus - Susu</option><option value=\"sux\">sux - Sumerian</option><option value=\"swa\">swa - Swahili</option><option value=\"swe\">swe - Swedish</option><option value=\"swz\">swz - Swazi</option><option value=\"syc\">syc - Syriac</option><option value=\"syr\">syr - Syriac, Modern</option><option value=\"tag\">tag - Tagalog</option><option value=\"tah\">tah - Tahitian</option><option value=\"tai\">tai - Tai (Other)</option><option value=\"taj\">taj - Tajik</option><option value=\"tam\">tam - Tamil</option><option value=\"tar\">tar - Tatar</option><option value=\"tat\">tat - Tatar</option><option value=\"tel\">tel - Telugu</option><option value=\"tem\">tem - Temne</option><option value=\"ter\">ter - Terena</option><option value=\"tet\">tet - Tetum</option><option value=\"tgk\">tgk - Tajik</option><option value=\"tgl\">tgl - Tagalog</option><option value=\"tha\">tha - Thai</option><option value=\"tib\">tib - Tibetan</option><option value=\"tig\">tig - Tigré</option><option value=\"tir\">tir - Tigrinya</option><option value=\"tiv\">tiv - Tiv</option><option value=\"tkl\">tkl - Tokelauan</option><option value=\"tlh\">tlh - Klingon (Artificial language)</option><option value=\"tli\">tli - Tlingit</option><option value=\"tmh\">tmh - Tamashek</option><option value=\"tog\">tog - Tonga (Nyasa)</option><option value=\"ton\">ton - Tongan</option><option value=\"tpi\">tpi - Tok Pisin</option><option value=\"tru\">tru - Truk</option><option value=\"tsi\">tsi - Tsimshian</option><option value=\"tsn\">tsn - Tswana</option><option value=\"tso\">tso - Tsonga</option><option value=\"tsw\">tsw - Tswana</option><option value=\"tuk\">tuk - Turkmen</option><option value=\"tum\">tum - Tumbuka</option><option value=\"tup\">tup - Tupi languages</option><option value=\"tur\">tur - Turkish</option><option value=\"tut\">tut - Altaic (Other)</option><option value=\"tvl\">tvl - Tuvaluan</option><option value=\"twi\">twi - Twi</option><option value=\"tyv\">tyv - Tuvinian</option><option value=\"udm\">udm - Udmurt</option><option value=\"uga\">uga - Ugaritic</option><option value=\"uig\">uig - Uighur</option><option value=\"ukr\">ukr - Ukrainian</option><option value=\"umb\">umb - Umbundu</option><option value=\"und\">und - Undetermined</option><option value=\"urd\">urd - Urdu</option><option value=\"uzb\">uzb - Uzbek</option><option value=\"vai\">vai - Vai</option><option value=\"ven\">ven - Venda</option><option value=\"vie\">vie - Vietnamese</option><option value=\"vol\">vol - Volapük</option><option value=\"vot\">vot - Votic</option><option value=\"wak\">wak - Wakashan languages</option><option value=\"wal\">wal - Wolayta</option><option value=\"war\">war - Waray</option><option value=\"was\">was - Washoe</option><option value=\"wel\">wel - Welsh</option><option value=\"wen\">wen - Sorbian (Other)</option><option value=\"wln\">wln - Walloon</option><option value=\"wol\">wol - Wolof</option><option value=\"xal\">xal - Oirat</option><option value=\"xho\">xho - Xhosa</option><option value=\"yao\">yao - Yao (Africa)</option><option value=\"yap\">yap - Yapese</option><option value=\"yid\">yid - Yiddish</option><option value=\"yor\">yor - Yoruba</option><option value=\"ypk\">ypk - Yupik languages</option><option value=\"zap\">zap - Zapotec</option><option value=\"zbl\">zbl - Blissymbolics</option><option value=\"zen\">zen - Zenaga</option><option value=\"zha\">zha - Zhuang</option><option value=\"znd\">znd - Zande languages</option><option value=\"zul\">zul - Zulu</option><option value=\"zun\">zun - Zuni</option><option value=\"zxx\">zxx - No linguistic content</option><option value=\"zza\">zza - Zaza</option>", 525);
+var _hoisted_1480 = [_hoisted_955];
+var _hoisted_1481 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1 /* HOISTED */);
+var _hoisted_1482 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p38"
 }, "38 - Modified record", -1 /* HOISTED */);
-var _hoisted_1484 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Not modified</option><option value=\"d\">d - Dashed-on information omitted</option><option value=\"o\">o - Completely romanized/printed cards romanized</option><option value=\"r\">r - Completely romanized/printed cards in script</option><option value=\"s\">s - Shortened</option><option value=\"x\">x - Missing characters</option><option value=\"|\">| - No attempt to code</option>", 7);
-var _hoisted_1491 = [_hoisted_1484];
-var _hoisted_1492 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1483 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Not modified</option><option value=\"d\">d - Dashed-on information omitted</option><option value=\"o\">o - Completely romanized/printed cards romanized</option><option value=\"r\">r - Completely romanized/printed cards in script</option><option value=\"s\">s - Shortened</option><option value=\"x\">x - Missing characters</option><option value=\"|\">| - No attempt to code</option>", 7);
+var _hoisted_1490 = [_hoisted_1483];
+var _hoisted_1491 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "p39"
 }, "39 - Cataloging source", -1 /* HOISTED */);
-var _hoisted_1493 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - National bibliographic agency</option><option value=\"c\">c - Cooperative cataloging program</option><option value=\"d\">d - Other</option><option value=\"u\">u - Unknown</option><option value=\"|\">| - No attempt to code</option>", 5);
-var _hoisted_1498 = [_hoisted_1493];
-var _hoisted_1499 = {
+var _hoisted_1492 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - National bibliographic agency</option><option value=\"c\">c - Cooperative cataloging program</option><option value=\"d\">d - Other</option><option value=\"u\">u - Unknown</option><option value=\"|\">| - No attempt to code</option>", 5);
+var _hoisted_1497 = [_hoisted_1492];
+var _hoisted_1498 = {
   "class": "alert alert-warning alert-dismissible fade show",
+  role: "alert"
+};
+var _hoisted_1499 = {
+  "class": "alert alert-warning",
   role: "alert"
 };
 var _hoisted_1500 = {
@@ -18624,25 +18621,21 @@ var _hoisted_1500 = {
   role: "alert"
 };
 var _hoisted_1501 = {
-  "class": "alert alert-warning",
-  role: "alert"
-};
-var _hoisted_1502 = {
   "class": "input-group mb-2"
 };
-var _hoisted_1503 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"input-group-prepend\"><span class=\"input-group-text\">ISBN   <a href=\"https://www.loc.gov/marc/bibliographic/bd020.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span></div>", 1);
-var _hoisted_1504 = ["onUpdate:modelValue"];
+var _hoisted_1502 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"input-group-prepend\"><span class=\"input-group-text\">ISBN   <a href=\"https://www.loc.gov/marc/bibliographic/bd020.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span></div>", 1);
+var _hoisted_1503 = ["onUpdate:modelValue"];
+var _hoisted_1504 = ["onClick"];
 var _hoisted_1505 = ["onClick"];
 var _hoisted_1506 = ["onClick"];
-var _hoisted_1507 = ["onClick"];
-var _hoisted_1508 = {
+var _hoisted_1507 = {
   "class": "alert alert-info alert-dismissible fade show bg-opacity-10",
   role: "alert"
 };
-var _hoisted_1509 = {
+var _hoisted_1508 = {
   "class": "table p-2 text-dark"
 };
-var _hoisted_1510 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+var _hoisted_1509 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
 }, "Source"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
@@ -18665,96 +18658,96 @@ var _hoisted_1510 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }, "Edition"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   scope: "col"
 }, "Use")])], -1 /* HOISTED */);
-var _hoisted_1511 = {
+var _hoisted_1510 = {
   scope: "row"
 };
-var _hoisted_1512 = ["onClick"];
-var _hoisted_1513 = {
+var _hoisted_1511 = ["onClick"];
+var _hoisted_1512 = {
   "class": "alert alert-warning alert-dismissible fade show",
   role: "alert"
 };
-var _hoisted_1514 = {
+var _hoisted_1513 = {
   key: 0,
   "class": "alert alert-warning",
   role: "alert"
 };
-var _hoisted_1515 = {
+var _hoisted_1514 = {
   "class": "input-group mb-2"
 };
-var _hoisted_1516 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"input-group-prepend\"><span class=\"input-group-text\">DOI   <a href=\"https://www.loc.gov/marc/bibliographic/bd024.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span></div>", 1);
-var _hoisted_1517 = {
+var _hoisted_1515 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"input-group-prepend\"><span class=\"input-group-text\">DOI   <a href=\"https://www.loc.gov/marc/bibliographic/bd024.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span></div>", 1);
+var _hoisted_1516 = {
   "class": "alert alert-warning alert-dismissible fade show",
   role: "alert"
 };
-var _hoisted_1518 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1517 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "record_status"
 }, "05 - Record status", -1 /* HOISTED */);
-var _hoisted_1519 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"a\">a - Increase in encoding level</option><option value=\"c\">c - Corrected or revised</option><option value=\"d\">d - Deleted</option><option value=\"n\">n - New</option><option value=\"p\">p - Increase in encoding level from prepublication</option>", 5);
-var _hoisted_1524 = [_hoisted_1519];
-var _hoisted_1525 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1518 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"a\">a - Increase in encoding level</option><option value=\"c\">c - Corrected or revised</option><option value=\"d\">d - Deleted</option><option value=\"n\">n - New</option><option value=\"p\">p - Increase in encoding level from prepublication</option>", 5);
+var _hoisted_1523 = [_hoisted_1518];
+var _hoisted_1524 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "type_of_record"
 }, "06 - Type of record", -1 /* HOISTED */);
-var _hoisted_1526 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"a\">a - Language material</option><option value=\"c\">c - Notated music</option><option value=\"d\">d - Manuscript notated music</option><option value=\"e\">e - Cartographic material</option><option value=\"f\">f - Manuscript cartographic material</option><option value=\"g\">g - Projected medium</option><option value=\"i\">i - Nonmusical sound recording</option><option value=\"j\">j - Musical sound recording</option><option value=\"k\">k - Two-dimensional nonprojectable graphic</option><option value=\"m\">m - Computer file</option><option value=\"o\">o - Kit</option><option value=\"p\">p - Mixed materials</option><option value=\"r\">r - Three-dimensional artifact or naturally occurring object</option><option value=\"t\">t - Manuscript language material</option>", 14);
-var _hoisted_1540 = [_hoisted_1526];
-var _hoisted_1541 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1525 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"a\">a - Language material</option><option value=\"c\">c - Notated music</option><option value=\"d\">d - Manuscript notated music</option><option value=\"e\">e - Cartographic material</option><option value=\"f\">f - Manuscript cartographic material</option><option value=\"g\">g - Projected medium</option><option value=\"i\">i - Nonmusical sound recording</option><option value=\"j\">j - Musical sound recording</option><option value=\"k\">k - Two-dimensional nonprojectable graphic</option><option value=\"m\">m - Computer file</option><option value=\"o\">o - Kit</option><option value=\"p\">p - Mixed materials</option><option value=\"r\">r - Three-dimensional artifact or naturally occurring object</option><option value=\"t\">t - Manuscript language material</option>", 14);
+var _hoisted_1539 = [_hoisted_1525];
+var _hoisted_1540 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "bibliographic_level"
 }, "07 - Bibliographic level", -1 /* HOISTED */);
-var _hoisted_1542 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"a\">a - Monographic component part</option><option value=\"b\">b - Serial component part</option><option value=\"c\">c - Collection</option><option value=\"d\">d - Subunit</option><option value=\"i\">i - Integrating resource</option><option value=\"m\">m - Monograph/Item</option><option value=\"s\">s - Serial</option>", 7);
-var _hoisted_1549 = [_hoisted_1542];
-var _hoisted_1550 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1541 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"a\">a - Monographic component part</option><option value=\"b\">b - Serial component part</option><option value=\"c\">c - Collection</option><option value=\"d\">d - Subunit</option><option value=\"i\">i - Integrating resource</option><option value=\"m\">m - Monograph/Item</option><option value=\"s\">s - Serial</option>", 7);
+var _hoisted_1548 = [_hoisted_1541];
+var _hoisted_1549 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "type_of_control"
 }, "08 - Type of control", -1 /* HOISTED */);
-var _hoisted_1551 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1550 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "#"
 }, "# - No specified type", -1 /* HOISTED */);
-var _hoisted_1552 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1551 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "a"
 }, "a - Archival", -1 /* HOISTED */);
-var _hoisted_1553 = [_hoisted_1551, _hoisted_1552];
-var _hoisted_1554 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1552 = [_hoisted_1550, _hoisted_1551];
+var _hoisted_1553 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "character_coding_scheme"
 }, "09 - Character coding scheme", -1 /* HOISTED */);
-var _hoisted_1555 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1554 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "#"
 }, "# - MARC-8", -1 /* HOISTED */);
-var _hoisted_1556 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1555 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "a"
 }, "a - UCS/Unicode", -1 /* HOISTED */);
-var _hoisted_1557 = [_hoisted_1555, _hoisted_1556];
-var _hoisted_1558 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1556 = [_hoisted_1554, _hoisted_1555];
+var _hoisted_1557 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "encoding_level"
 }, "17 - Encoding level", -1 /* HOISTED */);
-var _hoisted_1559 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Full level</option><option value=\"1\">1 - Full level, material not examined</option><option value=\"2\">2 - Less-than-full level, material not examined</option><option value=\"3\">3 - Abbreviated level</option><option value=\"4\">4 - Core level</option><option value=\"5\">5 - Partial (preliminary) level</option><option value=\"7\">7 - Minimal level</option><option value=\"8\">8 - Prepublication level</option><option value=\"u\">u - Unknown</option><option value=\"u\">u - Unknown</option><option value=\"z\">z - Not applicable</option><option value=\"I\">I - Full level cataloging input by OCLC participating library</option><option value=\"K\">K - Less-than-full cataloging input by OCLC participating library </option><option value=\"L\">L - Non-LC and non-NLM cataloging added from tape</option><option value=\"M\">M - Less-than-full cataloging added from tapeloading</option>", 15);
-var _hoisted_1574 = [_hoisted_1559];
-var _hoisted_1575 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1558 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Full level</option><option value=\"1\">1 - Full level, material not examined</option><option value=\"2\">2 - Less-than-full level, material not examined</option><option value=\"3\">3 - Abbreviated level</option><option value=\"4\">4 - Core level</option><option value=\"5\">5 - Partial (preliminary) level</option><option value=\"7\">7 - Minimal level</option><option value=\"8\">8 - Prepublication level</option><option value=\"u\">u - Unknown</option><option value=\"u\">u - Unknown</option><option value=\"z\">z - Not applicable</option><option value=\"I\">I - Full level cataloging input by OCLC participating library</option><option value=\"K\">K - Less-than-full cataloging input by OCLC participating library </option><option value=\"L\">L - Non-LC and non-NLM cataloging added from tape</option><option value=\"M\">M - Less-than-full cataloging added from tapeloading</option>", 15);
+var _hoisted_1573 = [_hoisted_1558];
+var _hoisted_1574 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "descriptive_cataloging_form"
 }, "18 - Descriptive cataloging form", -1 /* HOISTED */);
-var _hoisted_1576 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Non-ISBD</option><option value=\"a\">a - AACR 2</option><option value=\"c\">c - ISBD punctuation omitted</option><option value=\"i\">i - ISBD punctuation included</option><option value=\"n\">n - Non-ISBD punctuation omitted</option><option value=\"u\">u - Unknown</option>", 6);
-var _hoisted_1582 = [_hoisted_1576];
-var _hoisted_1583 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_1575 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"#\"># - Non-ISBD</option><option value=\"a\">a - AACR 2</option><option value=\"c\">c - ISBD punctuation omitted</option><option value=\"i\">i - ISBD punctuation included</option><option value=\"n\">n - Non-ISBD punctuation omitted</option><option value=\"u\">u - Unknown</option>", 6);
+var _hoisted_1581 = [_hoisted_1575];
+var _hoisted_1582 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "for": "multipart_resource_record_level"
 }, "19 - Multipart resource record level", -1 /* HOISTED */);
-var _hoisted_1584 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1583 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "#"
 }, "# - Not specified or not applicable", -1 /* HOISTED */);
-var _hoisted_1585 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1584 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "a"
 }, "a - Set", -1 /* HOISTED */);
-var _hoisted_1586 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1585 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "b"
 }, "b - Part with independent title", -1 /* HOISTED */);
-var _hoisted_1587 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1586 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "c"
 }, "c - Part with dependent title", -1 /* HOISTED */);
-var _hoisted_1588 = [_hoisted_1584, _hoisted_1585, _hoisted_1586, _hoisted_1587];
-var _hoisted_1589 = {
+var _hoisted_1587 = [_hoisted_1583, _hoisted_1584, _hoisted_1585, _hoisted_1586];
+var _hoisted_1588 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1590 = {
+var _hoisted_1589 = {
   "class": "input-group-text",
   id: "_001"
 };
-var _hoisted_1591 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_1590 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "https://www.loc.gov/marc/bibliographic/bd001.html",
   rel: "external",
   target: "_blank"
@@ -18770,15 +18763,15 @@ var _hoisted_1591 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
 })])], -1 /* HOISTED */);
-var _hoisted_1592 = ["placeholder", "aria-label"];
-var _hoisted_1593 = {
+var _hoisted_1591 = ["placeholder", "aria-label"];
+var _hoisted_1592 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1594 = {
+var _hoisted_1593 = {
   "class": "input-group-text",
   id: "_003"
 };
-var _hoisted_1595 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_1594 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "https://www.loc.gov/marc/bibliographic/bd003.html",
   rel: "external",
   target: "_blank"
@@ -18794,15 +18787,15 @@ var _hoisted_1595 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
 })])], -1 /* HOISTED */);
-var _hoisted_1596 = ["placeholder", "aria-label"];
-var _hoisted_1597 = {
+var _hoisted_1595 = ["placeholder", "aria-label"];
+var _hoisted_1596 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1598 = {
+var _hoisted_1597 = {
   "class": "input-group-text",
   id: "_040"
 };
-var _hoisted_1599 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_1598 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "https://www.loc.gov/marc/bibliographic/bd040.html",
   rel: "external",
   target: "_blank"
@@ -18818,75 +18811,75 @@ var _hoisted_1599 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
 })])], -1 /* HOISTED */);
+var _hoisted_1599 = ["placeholder", "aria-label"];
 var _hoisted_1600 = ["placeholder", "aria-label"];
-var _hoisted_1601 = ["placeholder", "aria-label"];
-var _hoisted_1602 = {
+var _hoisted_1601 = {
   "class": "row mb-2"
 };
-var _hoisted_1603 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-2\"><span class=\"input-group-text\" id=\"personal_name\">Personal Name   <a href=\"https://www.loc.gov/marc/bibliographic/bd100.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span></div>", 1);
-var _hoisted_1604 = {
+var _hoisted_1602 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-2\"><span class=\"input-group-text\" id=\"personal_name\">Personal Name   <a href=\"https://www.loc.gov/marc/bibliographic/bd100.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span></div>", 1);
+var _hoisted_1603 = {
   "class": "col-9"
 };
-var _hoisted_1605 = {
+var _hoisted_1604 = {
   "class": "input-group-prepend"
 };
-var _hoisted_1606 = ["onUpdate:modelValue"];
-var _hoisted_1607 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1605 = ["onUpdate:modelValue"];
+var _hoisted_1606 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   disabled: ""
 }, "Type of personal name entry element", -1 /* HOISTED */);
-var _hoisted_1608 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1607 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - Forename", -1 /* HOISTED */);
-var _hoisted_1609 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1608 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Surname", -1 /* HOISTED */);
-var _hoisted_1610 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1609 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "3"
 }, "3 - Family name", -1 /* HOISTED */);
-var _hoisted_1611 = [_hoisted_1607, _hoisted_1608, _hoisted_1609, _hoisted_1610];
+var _hoisted_1610 = [_hoisted_1606, _hoisted_1607, _hoisted_1608, _hoisted_1609];
+var _hoisted_1611 = ["onUpdate:modelValue"];
 var _hoisted_1612 = ["onUpdate:modelValue"];
 var _hoisted_1613 = ["onUpdate:modelValue"];
 var _hoisted_1614 = ["onUpdate:modelValue"];
 var _hoisted_1615 = ["onUpdate:modelValue"];
-var _hoisted_1616 = ["onUpdate:modelValue"];
-var _hoisted_1617 = {
+var _hoisted_1616 = {
   "class": "col-1"
 };
-var _hoisted_1618 = ["onClick"];
-var _hoisted_1619 = {
+var _hoisted_1617 = ["onClick"];
+var _hoisted_1618 = {
   "class": "input-group mb-2"
 };
-var _hoisted_1620 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"corporate_name\">Corporate Name   <a href=\"https://www.loc.gov/marc/bibliographic/bd110.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1621 = {
+var _hoisted_1619 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"corporate_name\">Corporate Name   <a href=\"https://www.loc.gov/marc/bibliographic/bd110.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1620 = {
   "class": "input-group-prepend"
 };
-var _hoisted_1622 = ["onUpdate:modelValue"];
-var _hoisted_1623 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1621 = ["onUpdate:modelValue"];
+var _hoisted_1622 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   disabled: ""
 }, "Type of corporate name entry element", -1 /* HOISTED */);
-var _hoisted_1624 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1623 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "0"
 }, "0 - Inverted name", -1 /* HOISTED */);
-var _hoisted_1625 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1624 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "1"
 }, "1 - Jurisdiction name", -1 /* HOISTED */);
-var _hoisted_1626 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1625 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   value: "2"
 }, "2 - Name in direct order", -1 /* HOISTED */);
-var _hoisted_1627 = [_hoisted_1623, _hoisted_1624, _hoisted_1625, _hoisted_1626];
-var _hoisted_1628 = ["onUpdate:modelValue"];
-var _hoisted_1629 = ["onClick"];
-var _hoisted_1630 = {
+var _hoisted_1626 = [_hoisted_1622, _hoisted_1623, _hoisted_1624, _hoisted_1625];
+var _hoisted_1627 = ["onUpdate:modelValue"];
+var _hoisted_1628 = ["onClick"];
+var _hoisted_1629 = {
   "class": "row mb-3"
 };
-var _hoisted_1631 = {
+var _hoisted_1630 = {
   "class": "col-2"
 };
-var _hoisted_1632 = {
+var _hoisted_1631 = {
   "class": "input-group-text",
   id: "title"
 };
-var _hoisted_1633 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_1632 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "https://www.loc.gov/marc/bibliographic/bd245.html",
   rel: "external",
   target: "_blank"
@@ -18902,60 +18895,60 @@ var _hoisted_1633 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
 })])], -1 /* HOISTED */);
-var _hoisted_1634 = {
+var _hoisted_1633 = {
   "class": "col-10"
 };
-var _hoisted_1635 = {
+var _hoisted_1634 = {
   "class": "input-group-prepend"
+};
+var _hoisted_1635 = {
+  disabled: ""
 };
 var _hoisted_1636 = {
-  disabled: ""
-};
-var _hoisted_1637 = {
   value: "0"
 };
-var _hoisted_1638 = {
+var _hoisted_1637 = {
   value: "1"
 };
-var _hoisted_1639 = {
+var _hoisted_1638 = {
   "class": "input-group-prepend"
 };
-var _hoisted_1640 = {
+var _hoisted_1639 = {
   disabled: ""
 };
-var _hoisted_1641 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"0\">0</option><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option>", 8);
-var _hoisted_1649 = {
+var _hoisted_1640 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"0\">0</option><option value=\"1\">1</option><option value=\"2\">2</option><option value=\"3\">3</option><option value=\"4\">4</option><option value=\"5\">5</option><option value=\"6\">6</option><option value=\"7\">7</option>", 8);
+var _hoisted_1648 = {
   "class": "input-group"
 };
-var _hoisted_1650 = {
+var _hoisted_1649 = {
   "class": "input-group-text",
   id: "title"
 };
-var _hoisted_1651 = ["placeholder", "aria-label"];
-var _hoisted_1652 = {
+var _hoisted_1650 = ["placeholder", "aria-label"];
+var _hoisted_1651 = {
   "class": "input-group"
 };
-var _hoisted_1653 = {
+var _hoisted_1652 = {
   "class": "input-group-text",
   id: "subtitle"
 };
-var _hoisted_1654 = ["placeholder", "aria-label"];
-var _hoisted_1655 = {
+var _hoisted_1653 = ["placeholder", "aria-label"];
+var _hoisted_1654 = {
   "class": "input-group"
 };
-var _hoisted_1656 = {
+var _hoisted_1655 = {
   "class": "input-group-text",
   id: "245c"
 };
-var _hoisted_1657 = ["placeholder", "aria-label"];
-var _hoisted_1658 = {
+var _hoisted_1656 = ["placeholder", "aria-label"];
+var _hoisted_1657 = {
   "class": "input-group mb-3 col"
 };
-var _hoisted_1659 = {
+var _hoisted_1658 = {
   "class": "input-group-text col-md-1",
   id: "Imprint"
 };
-var _hoisted_1660 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_1659 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "https://www.loc.gov/marc/bibliographic/bd260.html",
   rel: "external",
   target: "_blank"
@@ -18971,32 +18964,32 @@ var _hoisted_1660 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
 })])], -1 /* HOISTED */);
-var _hoisted_1661 = {
+var _hoisted_1660 = {
   "class": "input-group-prepend col-md-2"
 };
-var _hoisted_1662 = {
+var _hoisted_1661 = {
   disabled: ""
 };
-var _hoisted_1663 = {
+var _hoisted_1662 = {
   value: "#"
 };
-var _hoisted_1664 = {
+var _hoisted_1663 = {
   value: "2"
 };
-var _hoisted_1665 = {
+var _hoisted_1664 = {
   value: "3"
 };
+var _hoisted_1665 = ["placeholder", "aria-label"];
 var _hoisted_1666 = ["placeholder", "aria-label"];
 var _hoisted_1667 = ["placeholder", "aria-label"];
-var _hoisted_1668 = ["placeholder", "aria-label"];
-var _hoisted_1669 = {
+var _hoisted_1668 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1670 = {
+var _hoisted_1669 = {
   "class": "input-group-text",
   id: "_300"
 };
-var _hoisted_1671 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_1670 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "https://www.loc.gov/marc/bibliographic/bd300.html",
   rel: "external",
   target: "_blank"
@@ -19012,326 +19005,323 @@ var _hoisted_1671 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createEleme
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("path", {
   d: "m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
 })])], -1 /* HOISTED */);
+var _hoisted_1671 = ["placeholder", "aria-label"];
 var _hoisted_1672 = ["placeholder", "aria-label"];
 var _hoisted_1673 = ["placeholder", "aria-label"];
-var _hoisted_1674 = ["placeholder", "aria-label"];
-var _hoisted_1675 = {
+var _hoisted_1674 = {
   key: 0,
   "class": "input-group mb-3"
 };
-var _hoisted_1676 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_310\">Current Publication Frequency   <a href=\"https://www.loc.gov/marc/bibliographic/bd310.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1677 = {
+var _hoisted_1675 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_310\">Current Publication Frequency   <a href=\"https://www.loc.gov/marc/bibliographic/bd310.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1676 = {
   key: 1
 };
-var _hoisted_1678 = {
+var _hoisted_1677 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1679 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_336\">336 - Content Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd336.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1680 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA content term</option><option value=\"cartographic dataset\">cartographic dataset</option><option value=\"cartographic image\">cartographic image</option><option value=\"cartographic moving image\">cartographic moving image</option><option value=\"cartographic tactile image\">cartographic tactile image</option><option value=\"cartographic tactile three-dimensional form\">cartographic tactile three-dimensional form</option><option value=\"cartographic three-dimensional form\">cartographic three-dimensional form</option><option value=\"computer dataset\">computer dataset</option><option value=\"computer program\">computer program</option><option value=\"notated movement\">notated movement</option><option value=\"notated music\">notated music</option><option value=\"performed music\">performed music</option><option value=\"sounds\">sounds</option><option value=\"spoken word\">spoken word</option><option value=\"still image\">still image</option><option value=\"tactile image\">tactile image</option><option value=\"tactile notated music\">tactile notated music</option><option value=\"tactile notated movement\">tactile notated movement</option><option value=\"tactile text\">tactile text</option><option value=\"tactile three-dimensional form\">tactile three-dimensional form </option><option value=\"text\">text</option><option value=\"three-dimensional form\">three-dimensional form</option><option value=\"three-dimensional moving image\">three-dimensional moving image </option><option value=\"two-dimensional moving image\">two-dimensional moving image</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 26);
-var _hoisted_1706 = [_hoisted_1680];
-var _hoisted_1707 = {
+var _hoisted_1678 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_336\">336 - Content Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd336.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1679 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA content term</option><option value=\"cartographic dataset\">cartographic dataset</option><option value=\"cartographic image\">cartographic image</option><option value=\"cartographic moving image\">cartographic moving image</option><option value=\"cartographic tactile image\">cartographic tactile image</option><option value=\"cartographic tactile three-dimensional form\">cartographic tactile three-dimensional form</option><option value=\"cartographic three-dimensional form\">cartographic three-dimensional form</option><option value=\"computer dataset\">computer dataset</option><option value=\"computer program\">computer program</option><option value=\"notated movement\">notated movement</option><option value=\"notated music\">notated music</option><option value=\"performed music\">performed music</option><option value=\"sounds\">sounds</option><option value=\"spoken word\">spoken word</option><option value=\"still image\">still image</option><option value=\"tactile image\">tactile image</option><option value=\"tactile notated music\">tactile notated music</option><option value=\"tactile notated movement\">tactile notated movement</option><option value=\"tactile text\">tactile text</option><option value=\"tactile three-dimensional form\">tactile three-dimensional form </option><option value=\"text\">text</option><option value=\"three-dimensional form\">three-dimensional form</option><option value=\"three-dimensional moving image\">three-dimensional moving image </option><option value=\"two-dimensional moving image\">two-dimensional moving image</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 26);
+var _hoisted_1705 = [_hoisted_1679];
+var _hoisted_1706 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1708 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_337\">337 - Media Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd337.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1709 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA media terms</option><option value=\"audio\">audio</option><option value=\"computer\">computer</option><option value=\"microform\">microform</option><option value=\"microscopic\">microscopic</option><option value=\"projected\">projected</option><option value=\"stereographic\">stereographic</option><option value=\"unmediated\">unmediated</option><option value=\"video\">video</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 11);
-var _hoisted_1720 = [_hoisted_1709];
-var _hoisted_1721 = {
+var _hoisted_1707 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_337\">337 - Media Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd337.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1708 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>RDA media terms</option><option value=\"audio\">audio</option><option value=\"computer\">computer</option><option value=\"microform\">microform</option><option value=\"microscopic\">microscopic</option><option value=\"projected\">projected</option><option value=\"stereographic\">stereographic</option><option value=\"unmediated\">unmediated</option><option value=\"video\">video</option><option value=\"other\">other</option><option value=\"unspecified\">unspecified</option>", 11);
+var _hoisted_1719 = [_hoisted_1708];
+var _hoisted_1720 = {
   "class": "input-group mb-3"
 };
-var _hoisted_1722 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_338\">338 - Carrier Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd338.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1723 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_1721 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"_338\">338 - Carrier Type   <a href=\"https://www.loc.gov/marc/bibliographic/bd338.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1722 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   disabled: ""
 }, "RDA carrier terms", -1 /* HOISTED */);
-var _hoisted_1724 = {
+var _hoisted_1723 = {
   key: 0,
   value: "audio cartridge"
 };
-var _hoisted_1725 = {
+var _hoisted_1724 = {
   key: 1,
   value: "audio belt"
 };
-var _hoisted_1726 = {
+var _hoisted_1725 = {
   key: 2,
   value: "audio cylinder"
 };
-var _hoisted_1727 = {
+var _hoisted_1726 = {
   key: 3,
   value: "audio disc"
 };
-var _hoisted_1728 = {
+var _hoisted_1727 = {
   key: 4,
   value: "sound track reel"
 };
-var _hoisted_1729 = {
+var _hoisted_1728 = {
   key: 5,
   value: "audio roll"
 };
-var _hoisted_1730 = {
+var _hoisted_1729 = {
   key: 6,
   value: "audio wire reel"
 };
-var _hoisted_1731 = {
+var _hoisted_1730 = {
   key: 7,
   value: "audiocassette"
 };
-var _hoisted_1732 = {
+var _hoisted_1731 = {
   key: 8,
   value: "audiotape reel"
 };
-var _hoisted_1733 = {
+var _hoisted_1732 = {
   key: 9,
   value: "other"
 };
-var _hoisted_1734 = {
+var _hoisted_1733 = {
   key: 10,
   value: "computer card"
 };
-var _hoisted_1735 = {
+var _hoisted_1734 = {
   key: 11,
   value: "computer chip cartridge"
 };
-var _hoisted_1736 = {
+var _hoisted_1735 = {
   key: 12,
   value: "computer disc"
 };
-var _hoisted_1737 = {
+var _hoisted_1736 = {
   key: 13,
   value: "computer disc cartridge"
 };
-var _hoisted_1738 = {
+var _hoisted_1737 = {
   key: 14,
   value: "computer tape cartridge"
 };
-var _hoisted_1739 = {
+var _hoisted_1738 = {
   key: 15,
   value: "computer tape cassette"
 };
-var _hoisted_1740 = {
+var _hoisted_1739 = {
   key: 16,
   value: "computer tape reel"
 };
-var _hoisted_1741 = {
+var _hoisted_1740 = {
   key: 17,
   value: "online resource"
 };
-var _hoisted_1742 = {
+var _hoisted_1741 = {
   key: 18,
   value: "other"
 };
-var _hoisted_1743 = {
+var _hoisted_1742 = {
   key: 19,
   value: "aperture card"
 };
-var _hoisted_1744 = {
+var _hoisted_1743 = {
   key: 20,
   value: "microfiche"
 };
-var _hoisted_1745 = {
+var _hoisted_1744 = {
   key: 21,
   value: "microfiche cassette"
 };
-var _hoisted_1746 = {
+var _hoisted_1745 = {
   key: 22,
   value: "microfilm cartridge"
 };
-var _hoisted_1747 = {
+var _hoisted_1746 = {
   key: 23,
   value: "microfilm cassette"
 };
-var _hoisted_1748 = {
+var _hoisted_1747 = {
   key: 24,
   value: "microfilm reel"
 };
-var _hoisted_1749 = {
+var _hoisted_1748 = {
   key: 25,
   value: "microfilm roll"
 };
-var _hoisted_1750 = {
+var _hoisted_1749 = {
   key: 26,
   value: "microfilm slip"
 };
-var _hoisted_1751 = {
+var _hoisted_1750 = {
   key: 27,
   value: "microopaque"
 };
-var _hoisted_1752 = {
+var _hoisted_1751 = {
   key: 28,
   value: "other"
 };
-var _hoisted_1753 = {
+var _hoisted_1752 = {
   key: 29,
   value: "microscope slide"
 };
-var _hoisted_1754 = {
+var _hoisted_1753 = {
   key: 30,
   value: "other"
 };
-var _hoisted_1755 = {
+var _hoisted_1754 = {
   key: 31,
   value: "film cartridge"
 };
-var _hoisted_1756 = {
+var _hoisted_1755 = {
   key: 32,
   value: "film cassette"
 };
-var _hoisted_1757 = {
+var _hoisted_1756 = {
   key: 33,
   value: "film reel"
 };
-var _hoisted_1758 = {
+var _hoisted_1757 = {
   key: 34,
   value: "film roll"
 };
-var _hoisted_1759 = {
+var _hoisted_1758 = {
   key: 35,
   value: "filmslip"
 };
-var _hoisted_1760 = {
+var _hoisted_1759 = {
   key: 36,
   value: "filmstrip"
 };
-var _hoisted_1761 = {
+var _hoisted_1760 = {
   key: 37,
   value: "filmstrip cartridge"
 };
-var _hoisted_1762 = {
+var _hoisted_1761 = {
   key: 38,
   value: "overhead transparency"
 };
-var _hoisted_1763 = {
+var _hoisted_1762 = {
   key: 39,
   value: "slide"
 };
-var _hoisted_1764 = {
+var _hoisted_1763 = {
   key: 40,
   value: "other"
 };
-var _hoisted_1765 = {
+var _hoisted_1764 = {
   key: 41,
   value: "stereograph card"
 };
-var _hoisted_1766 = {
+var _hoisted_1765 = {
   key: 42,
   value: "stereograph disc"
 };
-var _hoisted_1767 = {
+var _hoisted_1766 = {
   key: 43,
   value: "other"
 };
-var _hoisted_1768 = {
+var _hoisted_1767 = {
   key: 44,
   value: "card"
 };
-var _hoisted_1769 = {
+var _hoisted_1768 = {
   key: 45,
   value: "flipchart"
 };
-var _hoisted_1770 = {
+var _hoisted_1769 = {
   key: 46,
   value: "roll"
 };
-var _hoisted_1771 = {
+var _hoisted_1770 = {
   key: 47,
   value: "sheet"
 };
-var _hoisted_1772 = {
+var _hoisted_1771 = {
   key: 48,
   value: "volume"
 };
-var _hoisted_1773 = {
+var _hoisted_1772 = {
   key: 49,
   value: "object"
 };
-var _hoisted_1774 = {
+var _hoisted_1773 = {
   key: 50,
   value: "other"
 };
-var _hoisted_1775 = {
+var _hoisted_1774 = {
   key: 51,
   value: "video cartridge"
 };
-var _hoisted_1776 = {
+var _hoisted_1775 = {
   key: 52,
   value: "videocassette"
 };
-var _hoisted_1777 = {
+var _hoisted_1776 = {
   key: 53,
   value: "videodisc"
 };
-var _hoisted_1778 = {
+var _hoisted_1777 = {
   key: 54,
   value: "videotape reel"
 };
-var _hoisted_1779 = {
+var _hoisted_1778 = {
   key: 55,
   value: "other"
 };
-var _hoisted_1780 = {
+var _hoisted_1779 = {
   key: 56,
   value: "unspecified"
 };
-var _hoisted_1781 = {
+var _hoisted_1780 = {
   "class": "input-group mb-2"
 };
-var _hoisted_1782 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"general_note\">General Note   <a href=\"https://www.loc.gov/marc/bibliographic/bd500.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1783 = ["onUpdate:modelValue"];
-var _hoisted_1784 = ["onClick"];
-var _hoisted_1785 = {
+var _hoisted_1781 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"general_note\">General Note   <a href=\"https://www.loc.gov/marc/bibliographic/bd500.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1782 = ["onUpdate:modelValue"];
+var _hoisted_1783 = ["onClick"];
+var _hoisted_1784 = {
   "class": "input-group mb-3 col"
 };
-var _hoisted_1786 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"subject_tt\">Subject Added Entry-Topical Term   <a href=\"https://www.loc.gov/marc/bibliographic/bd650.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1787 = {
+var _hoisted_1785 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"subject_tt\">Subject Added Entry-Topical Term   <a href=\"https://www.loc.gov/marc/bibliographic/bd650.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1786 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1788 = ["onUpdate:modelValue"];
-var _hoisted_1789 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Level of subject</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - No level specified</option><option value=\"1\">1 - Primary</option><option value=\"2\">2 - Secondary</option>", 5);
-var _hoisted_1794 = [_hoisted_1789];
-var _hoisted_1795 = {
+var _hoisted_1787 = ["onUpdate:modelValue"];
+var _hoisted_1788 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Level of subject</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - No level specified</option><option value=\"1\">1 - Primary</option><option value=\"2\">2 - Secondary</option>", 5);
+var _hoisted_1793 = [_hoisted_1788];
+var _hoisted_1794 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1796 = ["onUpdate:modelValue"];
-var _hoisted_1797 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Thesaurus</option><option value=\"0\">0 - Library of Congress Subject Headings</option><option value=\"1\">1 - LC subject headings for children&#39;s literature</option><option value=\"2\">2 - Medical Subject Headings</option><option value=\"3\">3 - National Agricultural Library subject authority file</option><option value=\"4\">4 - Source not specified</option><option value=\"5\">5 - Canadian Subject Headings</option><option value=\"6\">6 - Répertoire de vedettes-matière</option><option value=\"7\">7 - Source specified in subfield $2</option>", 9);
-var _hoisted_1806 = [_hoisted_1797];
+var _hoisted_1795 = ["onUpdate:modelValue"];
+var _hoisted_1796 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Thesaurus</option><option value=\"0\">0 - Library of Congress Subject Headings</option><option value=\"1\">1 - LC subject headings for children&#39;s literature</option><option value=\"2\">2 - Medical Subject Headings</option><option value=\"3\">3 - National Agricultural Library subject authority file</option><option value=\"4\">4 - Source not specified</option><option value=\"5\">5 - Canadian Subject Headings</option><option value=\"6\">6 - Répertoire de vedettes-matière</option><option value=\"7\">7 - Source specified in subfield $2</option>", 9);
+var _hoisted_1805 = [_hoisted_1796];
+var _hoisted_1806 = ["onUpdate:modelValue"];
 var _hoisted_1807 = ["onUpdate:modelValue"];
-var _hoisted_1808 = ["onUpdate:modelValue"];
-var _hoisted_1809 = ["onClick"];
-var _hoisted_1810 = {
+var _hoisted_1808 = ["onClick"];
+var _hoisted_1809 = {
   "class": "input-group mb-3 col"
 };
-var _hoisted_1811 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"title\">Electronic Location and Access   <a href=\"https://www.loc.gov/marc/bibliographic/bd856.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
-var _hoisted_1812 = {
+var _hoisted_1810 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<span class=\"input-group-text\" id=\"title\">Electronic Location and Access   <a href=\"https://www.loc.gov/marc/bibliographic/bd856.html\" rel=\"external\" target=\"_blank\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-info-circle\" viewBox=\"0 0 16 16\"><path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\"></path><path d=\"m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z\"></path></svg></a></span>", 1);
+var _hoisted_1811 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1813 = ["onUpdate:modelValue"];
-var _hoisted_1814 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Access method</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Email</option><option value=\"1\">1 - FTP</option><option value=\"2\">2 - Remote login (Telnet)</option><option value=\"3\">3 - Dial-up</option><option value=\"4\">4 - HTTP</option><option value=\"7\">7 - Method specified in subfield $2</option>", 8);
-var _hoisted_1822 = [_hoisted_1814];
-var _hoisted_1823 = {
+var _hoisted_1812 = ["onUpdate:modelValue"];
+var _hoisted_1813 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Access method</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Email</option><option value=\"1\">1 - FTP</option><option value=\"2\">2 - Remote login (Telnet)</option><option value=\"3\">3 - Dial-up</option><option value=\"4\">4 - HTTP</option><option value=\"7\">7 - Method specified in subfield $2</option>", 8);
+var _hoisted_1821 = [_hoisted_1813];
+var _hoisted_1822 = {
   "class": "input-group-prepend col-md-1"
 };
-var _hoisted_1824 = ["onUpdate:modelValue"];
-var _hoisted_1825 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Relationship</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Resource</option><option value=\"1\">1 - Version of resource</option><option value=\"2\">2 - Related resource</option><option value=\"8\">8 - No display constant generated</option>", 6);
-var _hoisted_1831 = [_hoisted_1825];
-var _hoisted_1832 = ["onUpdate:modelValue"];
-var _hoisted_1833 = ["onClick"];
-var _hoisted_1834 = {
+var _hoisted_1823 = ["onUpdate:modelValue"];
+var _hoisted_1824 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option disabled>Relationship</option><option value=\"#\"># - No information provided</option><option value=\"0\">0 - Resource</option><option value=\"1\">1 - Version of resource</option><option value=\"2\">2 - Related resource</option><option value=\"8\">8 - No display constant generated</option>", 6);
+var _hoisted_1830 = [_hoisted_1824];
+var _hoisted_1831 = ["onUpdate:modelValue"];
+var _hoisted_1832 = ["onClick"];
+var _hoisted_1833 = {
   "class": "col-md-5 col-lg-4"
 };
-var _hoisted_1835 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "MARC Record", -1 /* HOISTED */);
-var _hoisted_1836 = ["value"];
-var _hoisted_1837 = {
+var _hoisted_1834 = ["value"];
+var _hoisted_1835 = {
   key: 0,
   "class": "alert alert-info",
   role: "alert"
 };
-var _hoisted_1838 = {
+var _hoisted_1836 = {
   key: 1,
   "class": "alert alert-warning mt-5",
   role: "alert"
 };
-var _hoisted_1839 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Warning", -1 /* HOISTED */);
-var _hoisted_1840 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<footer class=\"footer mt-auto py-3 bg-light\"><div class=\"container\"><span class=\"text-muted\"><a href=\"https://github.com/trmurakami/online-marc-editor\" target=\"_blank\">Online MARC Editor</a> is an Open Source Software created by <a href=\"https://github.com/trmurakami\" target=\"_blank\">Tiago Murakami</a> · 2022</span></div></footer>", 1);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.predefined_types), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.predefined_types), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     type: "button",
     onClick: _cache[0] || (_cache[0] = function ($event) {
@@ -19343,7 +19333,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       $data.record.f008.p33 = '0';
       $data.record.f008.p34 = '#';
     })
-  }, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.book), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.book), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     type: "button",
     onClick: _cache[1] || (_cache[1] = function ($event) {
@@ -19355,31 +19345,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       $data.record.f008.p33 = '#';
       $data.record.f008.p34 = '0';
     })
-  }, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.serial), 1 /* TEXT */)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.edit_fields), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.serial), 1 /* TEXT */)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.edit_fields), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $data.ldrShow = !$data.ldrShow;
     }),
     type: "button"
-  }, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.leader), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.leader), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $data.f008Show = !$data.f008Show;
     }),
     type: "button"
-  }, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._008), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._008), 1 /* TEXT */)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $data.doiShow = !$data.doiShow;
     }),
     type: "button"
-  }, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" DOI ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" DOI ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     onClick: _cache[5] || (_cache[5] = function ($event) {
       return $data.isbnShow = !$data.isbnShow;
     }),
     type: "button"
-  }, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ISBN ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" ISBN ")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "nav-link",
     type: "button",
     onClick: _cache[6] || (_cache[6] = function ($event) {
@@ -19388,7 +19378,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       $data.record._337a = 'unmediated';
       $data.record._338a = 'object';
     })
-  }, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_rda_fields), 1 /* TEXT */)])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_24, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [_hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_rda_fields), 1 /* TEXT */)])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-sm btn-outline-info",
     onClick: _cache[7] || (_cache[7] = function ($event) {
@@ -19406,26 +19396,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[9] || (_cache[9] = function ($event) {
       return $options.validate();
     })
-  }, "Validate"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.validate), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-sm btn-outline-secondary",
     onClick: _cache[10] || (_cache[10] = function ($event) {
       return $data.validation._245a = '', $data.errors = null;
     })
-  }, "Clear validation"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.clear_validation), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-sm btn-outline-secondary",
     onClick: _cache[11] || (_cache[11] = function ($event) {
       return $options.cleanAll();
     })
-  }, "Clear all record"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Share</button>\r\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Export</button>\r\n            ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 008 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.clear_all_record), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Share</button>\r\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Export</button>\r\n            ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 008 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Record status",
     id: "record_status",
     "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
       return $data.record.f008.p06 = $event;
     })
-  }, _hoisted_48, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p06]]), _hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _hoisted_47, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p06]]), _hoisted_48, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "008_07_10",
     "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
@@ -19435,7 +19425,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-label": "008_07_10",
     "aria-describedby": "008_07_10",
     maxlength: "4"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.f008.p07_10]]), _hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.f008.p07_10]]), _hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "008_11_14",
     "onUpdate:modelValue": _cache[14] || (_cache[14] = function ($event) {
@@ -19445,7 +19435,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-label": "008_11_14",
     "aria-describedby": "008_11_14",
     maxlength: "4"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.f008.p11_14]]), _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.f008.p11_14]]), _hoisted_50, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select selectpicker",
     "aria-label": "Place of publication",
     id: "008_15_17",
@@ -19453,214 +19443,214 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.record.f008.p15_17 = $event;
     }),
     "data-live-search": "true"
-  }, _hoisted_438, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p15_17]]), _hoisted_439, $data.recordType === 'Book' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  }, _hoisted_437, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p15_17]]), _hoisted_438, $data.recordType === 'Book' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 0
-  }, [_hoisted_440, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, [_hoisted_439, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Illustrations",
     id: "p18",
     "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
       return $data.record.f008.p18 = $event;
     })
-  }, _hoisted_458, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p18]]), _hoisted_459, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_457, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p18]]), _hoisted_458, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Illustrations",
     id: "p19",
     "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
       return $data.record.f008.p19 = $event;
     })
-  }, _hoisted_477, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p19]]), _hoisted_478, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_476, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p19]]), _hoisted_477, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Illustrations",
     id: "p20",
     "onUpdate:modelValue": _cache[18] || (_cache[18] = function ($event) {
       return $data.record.f008.p20 = $event;
     })
-  }, _hoisted_496, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p20]]), _hoisted_497, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_495, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p20]]), _hoisted_496, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Illustrations",
     id: "p21",
     "onUpdate:modelValue": _cache[19] || (_cache[19] = function ($event) {
       return $data.record.f008.p21 = $event;
     })
-  }, _hoisted_515, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p21]]), _hoisted_516, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_514, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p21]]), _hoisted_515, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Target audience",
     id: "p22",
     "onUpdate:modelValue": _cache[20] || (_cache[20] = function ($event) {
       return $data.record.f008.p22 = $event;
     })
-  }, _hoisted_527, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p22]]), _hoisted_528, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_526, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p22]]), _hoisted_527, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Form of item",
     id: "p23",
     "onUpdate:modelValue": _cache[21] || (_cache[21] = function ($event) {
       return $data.record.f008.p23 = $event;
     })
-  }, _hoisted_540, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p23]]), _hoisted_541, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_539, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p23]]), _hoisted_540, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p24",
     "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
       return $data.record.f008.p24 = $event;
     })
-  }, _hoisted_571, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p24]]), _hoisted_572, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_570, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p24]]), _hoisted_571, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p25",
     "onUpdate:modelValue": _cache[23] || (_cache[23] = function ($event) {
       return $data.record.f008.p25 = $event;
     })
-  }, _hoisted_602, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p25]]), _hoisted_603, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_601, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p25]]), _hoisted_602, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p26",
     "onUpdate:modelValue": _cache[24] || (_cache[24] = function ($event) {
       return $data.record.f008.p26 = $event;
     })
-  }, _hoisted_633, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p26]]), _hoisted_634, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_632, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p26]]), _hoisted_633, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p27",
     "onUpdate:modelValue": _cache[25] || (_cache[25] = function ($event) {
       return $data.record.f008.p27 = $event;
     })
-  }, _hoisted_664, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p27]]), _hoisted_665, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_663, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p27]]), _hoisted_664, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Government publication",
     id: "p28",
     "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
       return $data.record.f008.p28 = $event;
     })
-  }, _hoisted_678, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p28]]), _hoisted_679, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_677, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p28]]), _hoisted_678, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Conference publication",
     id: "p29",
     "onUpdate:modelValue": _cache[27] || (_cache[27] = function ($event) {
       return $data.record.f008.p29 = $event;
     })
-  }, _hoisted_683, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p29]]), _hoisted_684, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_682, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p29]]), _hoisted_683, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Festschrift",
     id: "p30",
     "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
       return $data.record.f008.p30 = $event;
     })
-  }, _hoisted_688, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p30]]), _hoisted_689, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_687, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p30]]), _hoisted_688, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Index",
     id: "p31",
     "onUpdate:modelValue": _cache[29] || (_cache[29] = function ($event) {
       return $data.record.f008.p31 = $event;
     })
-  }, _hoisted_693, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p31]]), _hoisted_694, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_692, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p31]]), _hoisted_693, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Literary form",
     id: "p33",
     "onUpdate:modelValue": _cache[30] || (_cache[30] = function ($event) {
       return $data.record.f008.p33 = $event;
     })
-  }, _hoisted_708, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p33]]), _hoisted_709, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_707, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p33]]), _hoisted_708, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Biography",
     id: "p34",
     "onUpdate:modelValue": _cache[31] || (_cache[31] = function ($event) {
       return $data.record.f008.p34 = $event;
     })
-  }, _hoisted_716, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p34]])], 64 /* STABLE_FRAGMENT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.recordType === 'Serial' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+  }, _hoisted_715, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p34]])], 64 /* STABLE_FRAGMENT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.recordType === 'Serial' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [_hoisted_717, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, [_hoisted_716, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Frequency",
     id: "p18",
     "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
       return $data.record.f008.p18 = $event;
     })
-  }, _hoisted_738, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p18]]), _hoisted_739, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_737, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p18]]), _hoisted_738, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Regularity",
     id: "p19",
     "onUpdate:modelValue": _cache[33] || (_cache[33] = function ($event) {
       return $data.record.f008.p19 = $event;
     })
-  }, _hoisted_745, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p19]]), _hoisted_746, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_744, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p19]]), _hoisted_745, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Type of continuing resource",
     id: "p21",
     "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
       return $data.record.f008.p21 = $event;
     })
-  }, _hoisted_761, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p21]]), _hoisted_762, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_760, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p21]]), _hoisted_761, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Form of original item",
     id: "p22",
     "onUpdate:modelValue": _cache[35] || (_cache[35] = function ($event) {
       return $data.record.f008.p22 = $event;
     })
-  }, _hoisted_774, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p22]]), _hoisted_775, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_773, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p22]]), _hoisted_774, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Form of item",
     id: "p23",
     "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
       return $data.record.f008.p23 = $event;
     })
-  }, _hoisted_787, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p23]]), _hoisted_788, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_786, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p23]]), _hoisted_787, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of entire work",
     id: "p24",
     "onUpdate:modelValue": _cache[37] || (_cache[37] = function ($event) {
       return $data.record.f008.p24 = $event;
     })
-  }, _hoisted_818, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p24]]), _hoisted_819, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_817, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p24]]), _hoisted_818, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p25",
     "onUpdate:modelValue": _cache[38] || (_cache[38] = function ($event) {
       return $data.record.f008.p25 = $event;
     })
-  }, _hoisted_849, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p25]]), _hoisted_850, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_848, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p25]]), _hoisted_849, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p26",
     "onUpdate:modelValue": _cache[39] || (_cache[39] = function ($event) {
       return $data.record.f008.p26 = $event;
     })
-  }, _hoisted_880, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p26]]), _hoisted_881, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_879, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p26]]), _hoisted_880, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Nature of contents",
     id: "p27",
     "onUpdate:modelValue": _cache[40] || (_cache[40] = function ($event) {
       return $data.record.f008.p27 = $event;
     })
-  }, _hoisted_911, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p27]]), _hoisted_912, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_910, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p27]]), _hoisted_911, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Government publication",
     id: "p28",
     "onUpdate:modelValue": _cache[41] || (_cache[41] = function ($event) {
       return $data.record.f008.p28 = $event;
     })
-  }, _hoisted_925, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p28]]), _hoisted_926, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_924, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p28]]), _hoisted_925, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Conference publication",
     id: "p29",
     "onUpdate:modelValue": _cache[42] || (_cache[42] = function ($event) {
       return $data.record.f008.p29 = $event;
     })
-  }, _hoisted_930, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p29]]), _hoisted_931, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_929, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p29]]), _hoisted_930, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Original alphabet or script of title",
     id: "p33",
     "onUpdate:modelValue": _cache[43] || (_cache[43] = function ($event) {
       return $data.record.f008.p33 = $event;
     })
-  }, _hoisted_948, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p33]]), _hoisted_949, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_947, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p33]]), _hoisted_948, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Entry convention",
     id: "p34",
     "onUpdate:modelValue": _cache[44] || (_cache[44] = function ($event) {
       return $data.record.f008.p34 = $event;
     })
-  }, _hoisted_954, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p34]])], 64 /* STABLE_FRAGMENT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_955, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_953, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p34]])], 64 /* STABLE_FRAGMENT */)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_954, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select selectpicker",
     "aria-label": "Place of publication",
     id: "008_35_37",
@@ -19668,27 +19658,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $data.record.f008.p35_37 = $event;
     }),
     "data-live-search": "true"
-  }, _hoisted_1481, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p35_37]]), _hoisted_1482, _hoisted_1483, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1480, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p35_37]]), _hoisted_1481, _hoisted_1482, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Modified record",
     id: "p38",
     "onUpdate:modelValue": _cache[46] || (_cache[46] = function ($event) {
       return $data.record.f008.p38 = $event;
     })
-  }, _hoisted_1491, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p38]]), _hoisted_1492, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1490, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p38]]), _hoisted_1491, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Cataloging source",
     id: "p39",
     "onUpdate:modelValue": _cache[47] || (_cache[47] = function ($event) {
       return $data.record.f008.p39 = $event;
     })
-  }, _hoisted_1498, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p39]])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.f008Show]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /008 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ISBN "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1499, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1500, "Searching in Google Books ...", 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.loadingISBN]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1501, "Searching Z39.50 servers ...", 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.loadingZ3950]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, _hoisted_1497, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.f008.p39]])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.f008Show]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /008 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" ISBN "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1498, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1499, "Searching in Google Books ...", 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.loadingISBN]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1500, "Searching Z39.50 servers ...", 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.loadingZ3950]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[48] || (_cache[48] = function ($event) {
       return $options.addField('isbn');
     }),
     "class": "btn btn-info btn-sm mb-2"
   }, "Add ISBN"), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.isbn, function (isbn, indexisbn) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1502, [_hoisted_1503, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1501, [_hoisted_1502, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       "class": "form-control",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19697,33 +19687,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: "isbn",
       name: "isbn",
       placeholder: "Enter ISBN"
-    }, null, 8 /* PROPS */, _hoisted_1504), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, isbn.id, void 0, {
+    }, null, 8 /* PROPS */, _hoisted_1503), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, isbn.id, void 0, {
       trim: true
     }]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       "class": "btn btn-info",
       onClick: function onClick($event) {
         return $options.getISBNGoogleBooks($data.record.isbn[indexisbn].id), $data.loadingISBN = true;
       }
-    }, "Google Books", 8 /* PROPS */, _hoisted_1505), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, "Google Books", 8 /* PROPS */, _hoisted_1504), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       "class": "btn btn-info",
       onClick: function onClick($event) {
         return $options.getZ3950($data.record.isbn[indexisbn].id, 'dedalus.usp.br:9991/usp01', 'USP/DEDALUS'), $options.getZ3950($data.record.isbn[indexisbn].id, 'unesp.alma.exlibrisgroup.com:1921/55UNESP_INST', 'UNESP'), $options.getZ3950($data.record.isbn[indexisbn].id, '162.214.168.248:9998/bib', 'BN'), $options.getZ3950($data.record.isbn[indexisbn].id, 'z3950.loc.gov:7090/Voyager', 'Library of Congress'), $data.loadingZ3950 = true;
       }
-    }, "Z39.50", 8 /* PROPS */, _hoisted_1506), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, "Z39.50", 8 /* PROPS */, _hoisted_1505), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('isbn', indexisbn);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Apagar", 8 /* PROPS */, _hoisted_1507)]);
-  }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1508, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_1509, [_hoisted_1510, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Z3950Records, function (Z3950Record, indexZ3950Record) {
+    }, "Apagar", 8 /* PROPS */, _hoisted_1506)]);
+  }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1507, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_1508, [_hoisted_1509, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.Z3950Records, function (Z3950Record, indexZ3950Record) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: indexZ3950Record
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_1511, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.source), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.author), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.editor), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.publisher), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.pub_place), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.pub_date), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.extent), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.language), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.edition), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", _hoisted_1510, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.source), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.title), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.author), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.editor), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.publisher), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.pub_place), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.pub_date), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.extent), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.language), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(Z3950Record.edition), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       "class": "btn btn-info btn-sm m-2",
       onClick: function onClick($event) {
         return $data.record.title = Z3950Record.title, $data.record.subtitle = Z3950Record.subtitle, $data.record._260c = Z3950Record.pub_date, $data.record._260b = Z3950Record.publisher, $data.record._300a = Z3950Record.extent, $data.record.f008.p35_37 = Z3950Record.language;
       }
-    }, "Use", 8 /* PROPS */, _hoisted_1512)])]);
+    }, "Use", 8 /* PROPS */, _hoisted_1511)])]);
   }), 128 /* KEYED_FRAGMENT */))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn-close",
@@ -19731,7 +19721,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[49] || (_cache[49] = function ($event) {
       return $data.Z3950Records = null;
     })
-  })], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.Z3950Records]])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.isbnShow]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /ISBN "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" DOI "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1513, [$data.loadingDOI ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1514, " Getting DOI data from CrossRef ... ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1515, [_hoisted_1516, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  })], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.Z3950Records]])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.isbnShow]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /ISBN "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" DOI "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1512, [$data.loadingDOI ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1513, " Getting DOI data from CrossRef ... ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1514, [_hoisted_1515, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     "onUpdate:modelValue": _cache[50] || (_cache[50] = function ($event) {
@@ -19745,70 +19735,70 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[51] || (_cache[51] = function ($event) {
       return $options.getDOI($data.record.doi), $data.loadingDOI = true;
     })
-  }, "Retrieve DOI metadata from CrossRef")])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.doiShow]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /DOI "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LDR "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1517, [_hoisted_1518, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, "Retrieve DOI metadata from CrossRef")])], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.doiShow]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /DOI "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" LDR "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1516, [_hoisted_1517, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Record status",
     id: "record_status",
     "onUpdate:modelValue": _cache[52] || (_cache[52] = function ($event) {
       return $data.record.ldr.record_status = $event;
     })
-  }, _hoisted_1524, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.record_status]]), _hoisted_1525, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1523, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.record_status]]), _hoisted_1524, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Type of record",
     id: "type_of_record",
     "onUpdate:modelValue": _cache[53] || (_cache[53] = function ($event) {
       return $data.record.ldr.type_of_record = $event;
     })
-  }, _hoisted_1540, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.type_of_record]]), _hoisted_1541, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1539, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.type_of_record]]), _hoisted_1540, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Bibliographic level",
     id: "bibliographic_level",
     "onUpdate:modelValue": _cache[54] || (_cache[54] = function ($event) {
       return $data.record.ldr.bibliographic_level = $event;
     })
-  }, _hoisted_1549, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.bibliographic_level]]), _hoisted_1550, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1548, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.bibliographic_level]]), _hoisted_1549, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Type of control",
     id: "type_of_control",
     "onUpdate:modelValue": _cache[55] || (_cache[55] = function ($event) {
       return $data.record.ldr.type_of_control = $event;
     })
-  }, _hoisted_1553, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.type_of_control]]), _hoisted_1554, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1552, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.type_of_control]]), _hoisted_1553, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Character coding scheme",
     id: "character_coding_scheme",
     "onUpdate:modelValue": _cache[56] || (_cache[56] = function ($event) {
       return $data.record.ldr.character_coding_scheme = $event;
     })
-  }, _hoisted_1557, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.character_coding_scheme]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-3\">\r\n                                <label for=\"base_address_of_data\" class=\"form-label\">Base address of data (Length of Leader and Directory)</label>\r\n                                <input v-model=\"base_address_of_data\" type=\"text\" class=\"form-control\" id=\"base_address_of_data\">\r\n                            </div> "), _hoisted_1558, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1556, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.character_coding_scheme]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-3\">\r\n                                <label for=\"base_address_of_data\" class=\"form-label\">Base address of data (Length of Leader and Directory)</label>\r\n                                <input v-model=\"base_address_of_data\" type=\"text\" class=\"form-control\" id=\"base_address_of_data\">\r\n                            </div> "), _hoisted_1557, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Encoding level",
     id: "encoding_level",
     "onUpdate:modelValue": _cache[57] || (_cache[57] = function ($event) {
       return $data.record.ldr.encoding_level = $event;
     })
-  }, _hoisted_1574, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.encoding_level]]), _hoisted_1575, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1573, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.encoding_level]]), _hoisted_1574, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Descriptive cataloging form",
     id: "descriptive_cataloging_form",
     "onUpdate:modelValue": _cache[58] || (_cache[58] = function ($event) {
       return $data.record.ldr.descriptive_cataloging_form = $event;
     })
-  }, _hoisted_1582, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.descriptive_cataloging_form]]), _hoisted_1583, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1581, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.descriptive_cataloging_form]]), _hoisted_1582, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Multipart resource record level",
     id: "multipart_resource_record_level",
     "onUpdate:modelValue": _cache[59] || (_cache[59] = function ($event) {
       return $data.record.ldr.multipart_resource_record_level = $event;
     })
-  }, _hoisted_1588, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.multipart_resource_record_level]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, _hoisted_1587, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.multipart_resource_record_level]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn-close",
     onClick: _cache[60] || (_cache[60] = function ($event) {
       return $data.ldrShow = !$data.ldrShow;
     }),
     "aria-label": "Close"
-  })], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.ldrShow]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /LDR "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 001 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1589, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1590, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.control_number) + "   ", 1 /* TEXT */), _hoisted_1591]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  })], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.ldrShow]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /LDR "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 001 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1588, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1589, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.control_number) + "   ", 1 /* TEXT */), _hoisted_1590]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_001",
     "onUpdate:modelValue": _cache[61] || (_cache[61] = function ($event) {
@@ -19818,7 +19808,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation.control_number,
     "aria-label": $data.translation.control_number,
     "aria-describedby": "_001"
-  }, null, 8 /* PROPS */, _hoisted_1592), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._001]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\001 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 003 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1593, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1594, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.control_number_identifier) + "   ", 1 /* TEXT */), _hoisted_1595]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1591), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._001]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\001 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 003 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1592, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1593, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.control_number_identifier) + "   ", 1 /* TEXT */), _hoisted_1594]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_003",
     "onUpdate:modelValue": _cache[62] || (_cache[62] = function ($event) {
@@ -19828,7 +19818,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation.control_number_identifier,
     "aria-label": $data.translation.control_number_identifier,
     "aria-describedby": "_003"
-  }, null, 8 /* PROPS */, _hoisted_1596), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._003]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\003 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 040 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1597, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1598, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.cataloging_source) + "   ", 1 /* TEXT */), _hoisted_1599]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1595), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._003]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\003 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 040 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1596, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1597, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.cataloging_source) + "   ", 1 /* TEXT */), _hoisted_1598]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_040a",
     "onUpdate:modelValue": _cache[63] || (_cache[63] = function ($event) {
@@ -19838,7 +19828,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._040a,
     "aria-label": $data.translation._040a,
     "aria-describedby": "_040a"
-  }, null, 8 /* PROPS */, _hoisted_1600), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._040a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1599), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._040a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_040c",
     "onUpdate:modelValue": _cache[64] || (_cache[64] = function ($event) {
@@ -19848,14 +19838,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._040c,
     "aria-label": $data.translation._040c,
     "aria-describedby": "_040c"
-  }, null, 8 /* PROPS */, _hoisted_1601), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._040c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\040 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 100 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("template", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.personal_name, function (author, indexAuthor) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1602, [_hoisted_1603, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1604, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1605, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 8 /* PROPS */, _hoisted_1600), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._040c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\040 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 100 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("template", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.personal_name, function (author, indexAuthor) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1601, [_hoisted_1602, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1603, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1604, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_100_ind1",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record.personal_name[indexAuthor].ind1 = $event;
       }
-    }, _hoisted_1611, 8 /* PROPS */, _hoisted_1606), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.personal_name[indexAuthor].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, _hoisted_1610, 8 /* PROPS */, _hoisted_1605), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.personal_name[indexAuthor].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_100a",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19865,7 +19855,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Personal name",
       "aria-label": "Personal name",
       "aria-describedby": "_100a"
-    }, null, 8 /* PROPS */, _hoisted_1612), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, null, 8 /* PROPS */, _hoisted_1611), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_100d",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19875,7 +19865,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Dates associated with a name",
       "aria-label": "Dates associated with a name",
       "aria-describedby": "_100d"
-    }, null, 8 /* PROPS */, _hoisted_1613), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].d]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, null, 8 /* PROPS */, _hoisted_1612), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].d]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_100e",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19885,7 +19875,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Relator term",
       "aria-label": "Relator term",
       "aria-describedby": "_100e"
-    }, null, 8 /* PROPS */, _hoisted_1614), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].e]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, null, 8 /* PROPS */, _hoisted_1613), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].e]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_100q",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19895,7 +19885,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Fuller form of name",
       "aria-label": "Fuller form of name",
       "aria-describedby": "_100q"
-    }, null, 8 /* PROPS */, _hoisted_1615), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].q]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, null, 8 /* PROPS */, _hoisted_1614), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].q]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_100u",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19905,25 +19895,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Affiliation",
       "aria-label": "Affiliation",
       "aria-describedby": "_100u"
-    }, null, 8 /* PROPS */, _hoisted_1616), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].u]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1617, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1615), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.personal_name[indexAuthor].u]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1616, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('personal_name', indexAuthor);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Delete", 8 /* PROPS */, _hoisted_1618)])]);
+    }, "Delete", 8 /* PROPS */, _hoisted_1617)])]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[65] || (_cache[65] = function ($event) {
       return $options.addField('personal_name');
     }),
     "class": "btn btn-info btn-sm mb-2"
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.add_personal_name), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\100 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 110 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("template", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.corporate_name, function (corporate, indexCorporate) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1619, [_hoisted_1620, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1621, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1618, [_hoisted_1619, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1620, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_110_ind1",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record.corporate_name[indexCorporate].ind1 = $event;
       }
-    }, _hoisted_1627, 8 /* PROPS */, _hoisted_1622), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.corporate_name[indexCorporate].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, _hoisted_1626, 8 /* PROPS */, _hoisted_1621), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.corporate_name[indexCorporate].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_100a",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -19933,30 +19923,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Corporate name or jurisdiction name as entry element",
       "aria-label": "Corporate name or jurisdiction name as entry element",
       "aria-describedby": "_100a"
-    }, null, 8 /* PROPS */, _hoisted_1628), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.corporate_name[indexCorporate].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1627), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.corporate_name[indexCorporate].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('corporate_name', indexCorporate);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Delete", 8 /* PROPS */, _hoisted_1629)]);
+    }, "Delete", 8 /* PROPS */, _hoisted_1628)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[66] || (_cache[66] = function ($event) {
       return $options.addField('corporate_name');
     }),
     "class": "btn btn-info btn-sm mb-2"
-  }, " Add Corporate Name ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\110 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1630, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1631, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1632, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245) + "   ", 1 /* TEXT */), _hoisted_1633])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1634, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1635, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, " Add Corporate Name ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\110 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1629, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1630, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1631, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245) + "   ", 1 /* TEXT */), _hoisted_1632])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1633, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1634, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_245_ind1",
     "onUpdate:modelValue": _cache[67] || (_cache[67] = function ($event) {
       return $data.record._245_ind1 = $event;
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1636, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2451), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1637, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._24510), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1638, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._24511), 1 /* TEXT */)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._245_ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1639, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1635, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2451), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1636, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._24510), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1637, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._24511), 1 /* TEXT */)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._245_ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1638, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_245_ind2",
     "onUpdate:modelValue": _cache[68] || (_cache[68] = function ($event) {
       return $data.record._245_ind2 = $event;
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1640, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2452), 1 /* TEXT */), _hoisted_1641], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._245_ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1649, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1650, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245a), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1639, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2452), 1 /* TEXT */), _hoisted_1640], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._245_ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1648, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1649, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245a), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "title",
     "onUpdate:modelValue": _cache[69] || (_cache[69] = function ($event) {
@@ -19966,7 +19956,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._245a,
     "aria-label": $data.translation._245a,
     "aria-describedby": "title"
-  }, null, 10 /* CLASS, PROPS */, _hoisted_1651), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.title]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1652, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1653, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245b), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 10 /* CLASS, PROPS */, _hoisted_1650), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.title]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1651, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1652, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245b), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "subtitle",
     "onUpdate:modelValue": _cache[70] || (_cache[70] = function ($event) {
@@ -19976,7 +19966,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._245b,
     "aria-label": $data.translation._245b,
     "aria-describedby": "subtitle"
-  }, null, 8 /* PROPS */, _hoisted_1654), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.subtitle]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1655, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1656, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245c), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1653), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.subtitle]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1654, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1655, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._245c), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "245c",
     "onUpdate:modelValue": _cache[71] || (_cache[71] = function ($event) {
@@ -19986,13 +19976,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._245c,
     "aria-label": $data.translation._245c,
     "aria-describedby": "245c"
-  }, null, 8 /* PROPS */, _hoisted_1657), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._245c]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\TITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SUBTITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\SUBTITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 245c "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\245c "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 260 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1658, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1659, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._260) + "   ", 1 /* TEXT */), _hoisted_1660]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1661, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 8 /* PROPS */, _hoisted_1656), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._245c]])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\TITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SUBTITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\SUBTITLE "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 245c "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\245c "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 260 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1657, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1658, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._260) + "   ", 1 /* TEXT */), _hoisted_1659]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1660, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_260_ind1",
     "onUpdate:modelValue": _cache[72] || (_cache[72] = function ($event) {
       return $data.record._260_ind1 = $event;
     })
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1662, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2601), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1663, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2601_), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1664, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._26012), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1665, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._26013), 1 /* TEXT */)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._260_ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1661, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2601), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1662, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._2601_), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1663, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._26012), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", _hoisted_1664, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._26013), 1 /* TEXT */)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._260_ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_260a",
     "onUpdate:modelValue": _cache[73] || (_cache[73] = function ($event) {
@@ -20002,7 +19992,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._260a,
     "aria-label": $data.translation._260a,
     "aria-describedby": "_260a"
-  }, null, 8 /* PROPS */, _hoisted_1666), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._260a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1665), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._260a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_260b",
     "onUpdate:modelValue": _cache[74] || (_cache[74] = function ($event) {
@@ -20012,7 +20002,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._260b,
     "aria-label": $data.translation._260b,
     "aria-describedby": "_260b"
-  }, null, 8 /* PROPS */, _hoisted_1667), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._260b]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1666), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._260b]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_260c",
     "onUpdate:modelValue": _cache[75] || (_cache[75] = function ($event) {
@@ -20022,7 +20012,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._260c,
     "aria-label": $data.translation._260c,
     "aria-describedby": "_260c"
-  }, null, 8 /* PROPS */, _hoisted_1668), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._260c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\260 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 300 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1669, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1670, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._300) + "   ", 1 /* TEXT */), _hoisted_1671]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1667), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._260c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\260 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 300 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1668, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_1669, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation._300) + "   ", 1 /* TEXT */), _hoisted_1670]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_300a",
     "onUpdate:modelValue": _cache[76] || (_cache[76] = function ($event) {
@@ -20032,7 +20022,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._300a,
     "aria-label": $data.translation._300a,
     "aria-describedby": "_300a"
-  }, null, 8 /* PROPS */, _hoisted_1672), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1671), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_300b",
     "onUpdate:modelValue": _cache[77] || (_cache[77] = function ($event) {
@@ -20042,7 +20032,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._300b,
     "aria-label": $data.translation._300b,
     "aria-describedby": "_300b"
-  }, null, 8 /* PROPS */, _hoisted_1673), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300b]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1672), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300b]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_300c",
     "onUpdate:modelValue": _cache[78] || (_cache[78] = function ($event) {
@@ -20052,7 +20042,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: $data.translation._300c,
     "aria-label": $data.translation._300c,
     "aria-describedby": "_300c"
-  }, null, 8 /* PROPS */, _hoisted_1674), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\300 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 310 "), $data.recordType === 'Serial' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1675, [_hoisted_1676, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, null, 8 /* PROPS */, _hoisted_1673), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._300c]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\300 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 310 "), $data.recordType === 'Serial' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1674, [_hoisted_1675, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_310a",
     "onUpdate:modelValue": _cache[79] || (_cache[79] = function ($event) {
@@ -20062,13 +20052,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Current publication frequency",
     "aria-label": "Current publication frequency",
     "aria-describedby": "_310a"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._310a]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\310 "), $data.RDA === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1677, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1678, [_hoisted_1679, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._310a]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\310 "), $data.RDA === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1676, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1677, [_hoisted_1678, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_336a",
     "onUpdate:modelValue": _cache[80] || (_cache[80] = function ($event) {
       return $data.record._336a = $event;
     })
-  }, _hoisted_1706, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._336a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _hoisted_1705, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._336a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_336b",
     "onUpdate:modelValue": _cache[81] || (_cache[81] = function ($event) {
@@ -20090,13 +20080,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-label": "Source",
     "aria-describedby": "_3362",
     disabled: ""
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3362]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1707, [_hoisted_1708, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3362]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\336 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1706, [_hoisted_1707, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_337a",
     "onUpdate:modelValue": _cache[83] || (_cache[83] = function ($event) {
       return $data.record._337a = $event;
     })
-  }, _hoisted_1720, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._337a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _hoisted_1719, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._337a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_337b",
     "onUpdate:modelValue": _cache[84] || (_cache[84] = function ($event) {
@@ -20118,13 +20108,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-label": "Source",
     "aria-describedby": "_3372",
     disabled: ""
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3372]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 338 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1721, [_hoisted_1722, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3372]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\337 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 338 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1720, [_hoisted_1721, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "input-group-text form-select",
     id: "_338a",
     "onUpdate:modelValue": _cache[86] || (_cache[86] = function ($event) {
       return $data.record._338a = $event;
     })
-  }, [_hoisted_1723, $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1724, "audio cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1725, "audio belt")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1726, "audio cylinder ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1727, "audio disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1728, "sound track reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1729, "audio roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1730, "audio wire reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1731, "audiocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1732, "audiotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1733, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1734, "computer card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1735, "computer chip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1736, "computer disc ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1737, "computer disc cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1738, "computer tape cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1739, "computer tape cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1740, "computer tape reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1741, "online resource ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1742, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1743, "aperture card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1744, "microfiche")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1745, "microfiche cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1746, "microfilm cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1747, "microfilm cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1748, "microfilm reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1749, "microfilm roll ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1750, "microfilm slip ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1751, "microopaque")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1752, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1753, "microscope slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1754, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1755, "film cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1756, "film cassette ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1757, "film reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1758, "film roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1759, "filmslip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1760, "filmstrip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1761, "filmstrip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1762, "overhead transparency")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1763, "slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1764, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1765, "stereograph card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1766, "stereograph disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1767, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1768, "card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1769, "flipchart")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1770, "roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1771, "sheet")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1772, "volume")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1773, "object")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1774, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1775, "video cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1776, "videocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1777, "videodisc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1778, "videotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1779, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unspecified' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1780, "unspecified ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._338a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, [_hoisted_1722, $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1723, "audio cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1724, "audio belt")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1725, "audio cylinder ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1726, "audio disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1727, "sound track reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1728, "audio roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1729, "audio wire reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1730, "audiocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1731, "audiotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'audio' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1732, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1733, "computer card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1734, "computer chip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1735, "computer disc ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1736, "computer disc cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1737, "computer tape cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1738, "computer tape cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1739, "computer tape reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1740, "online resource ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'computer' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1741, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1742, "aperture card ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1743, "microfiche")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1744, "microfiche cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1745, "microfilm cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1746, "microfilm cassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1747, "microfilm reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1748, "microfilm roll ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1749, "microfilm slip ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1750, "microopaque")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microform' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1751, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1752, "microscope slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'microscopic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1753, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1754, "film cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1755, "film cassette ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1756, "film reel")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1757, "film roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1758, "filmslip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1759, "filmstrip")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1760, "filmstrip cartridge")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1761, "overhead transparency")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1762, "slide")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'projected' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1763, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1764, "stereograph card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1765, "stereograph disc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'stereographic' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1766, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1767, "card")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1768, "flipchart")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1769, "roll")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1770, "sheet")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1771, "volume")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1772, "object")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unmediated' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1773, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1774, "video cartridge ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1775, "videocassette")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1776, "videodisc")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1777, "videotape reel ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'video' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1778, "other")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.record._337a == 'unspecified' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("option", _hoisted_1779, "unspecified ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._338a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "_338b",
     "onUpdate:modelValue": _cache[87] || (_cache[87] = function ($event) {
@@ -20147,7 +20137,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-describedby": "_3382",
     disabled: ""
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._3382]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\338 ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 500 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record.general_note, function (note, indexNote) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1781, [_hoisted_1782, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1780, [_hoisted_1781, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "_500a",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -20157,31 +20147,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "General Note",
       "aria-label": "General Note",
       "aria-describedby": "_500a"
-    }, null, 8 /* PROPS */, _hoisted_1783), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.general_note[indexNote].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1782), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.general_note[indexNote].a]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('general_note', indexNote);
       },
       "class": "btn btn-danger btn-sm"
-    }, "Delete", 8 /* PROPS */, _hoisted_1784)]);
+    }, "Delete", 8 /* PROPS */, _hoisted_1783)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[89] || (_cache[89] = function ($event) {
       return $options.addField('general_note');
     }),
     "class": "btn btn-info btn-sm mb-2"
   }, "Add General Note"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\500 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 650 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record._650, function (subjectTT, indexSubjectTT) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1785, [_hoisted_1786, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1787, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1784, [_hoisted_1785, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1786, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_650_ind1",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._650[indexSubjectTT].ind1 = $event;
       }
-    }, _hoisted_1794, 8 /* PROPS */, _hoisted_1788), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1795, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    }, _hoisted_1793, 8 /* PROPS */, _hoisted_1787), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1794, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_650_ind2",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._650[indexSubjectTT].ind2 = $event;
       }
-    }, _hoisted_1806, 8 /* PROPS */, _hoisted_1796), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, _hoisted_1805, 8 /* PROPS */, _hoisted_1795), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._650[indexSubjectTT].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "tt",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -20191,7 +20181,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Topical term or geographic name entry element",
       "aria-label": "Topical term or geographic name entry element",
       "aria-describedby": "_650a"
-    }, null, 8 /* PROPS */, _hoisted_1807), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT].a]]), $data.record._650[indexSubjectTT].ind2 == '7' ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
+    }, null, 8 /* PROPS */, _hoisted_1806), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT].a]]), $data.record._650[indexSubjectTT].ind2 == '7' ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
       key: 0,
       type: "text",
       id: "_6502",
@@ -20202,31 +20192,31 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Source of heading or term",
       "aria-label": "Source of heading or term",
       "aria-describedby": "_6502"
-    }, null, 8 /* PROPS */, _hoisted_1808)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT]._2]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1807)), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._650[indexSubjectTT]._2]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('_650', indexSubjectTT);
       },
       "class": "btn btn-danger btn-sm col-md-1"
-    }, "Delete", 8 /* PROPS */, _hoisted_1809)]);
+    }, "Delete", 8 /* PROPS */, _hoisted_1808)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[90] || (_cache[90] = function ($event) {
       return $options.addField('_650');
     }),
     "class": "btn btn-info btn-sm mb-2"
   }, "Add Subject Added Entry-Topical Term"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\650 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 856 "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.record._856, function (url, indexURL) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1810, [_hoisted_1811, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1812, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1809, [_hoisted_1810, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1811, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_856_ind1",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._856[indexURL].ind1 = $event;
       }
-    }, _hoisted_1822, 8 /* PROPS */, _hoisted_1813), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1823, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+    }, _hoisted_1821, 8 /* PROPS */, _hoisted_1812), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind1]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1822, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
       "class": "input-group-text form-select",
       id: "_856_ind2",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return $data.record._856[indexURL].ind2 = $event;
       }
-    }, _hoisted_1831, 8 /* PROPS */, _hoisted_1824), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    }, _hoisted_1830, 8 /* PROPS */, _hoisted_1823), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record._856[indexURL].ind2]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "text",
       id: "url",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
@@ -20236,18 +20226,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       placeholder: "Uniform Resource Identifier",
       "aria-label": "Uniform Resource Identifier",
       "aria-describedby": "url"
-    }, null, 8 /* PROPS */, _hoisted_1832), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._856[indexURL].u]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    }, null, 8 /* PROPS */, _hoisted_1831), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record._856[indexURL].u]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: function onClick($event) {
         return $options.deleteField('_856', indexURL);
       },
       "class": "btn btn-danger btn-sm col-md-1"
-    }, "Delete", 8 /* PROPS */, _hoisted_1833)]);
+    }, "Delete", 8 /* PROPS */, _hoisted_1832)]);
   }), 256 /* UNKEYED_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[91] || (_cache[91] = function ($event) {
       return $options.addField('_856');
     }),
     "class": "btn btn-info btn-sm mb-2"
-  }, "Add Electronic Location and Access"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\856 ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1834, [_hoisted_1835, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n            ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, "Add Electronic Location and Access"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\856 ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1833, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.marc_record), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n            ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "btn btn-info text-white copy-btn ml-auto",
     onClick: _cache[92] || (_cache[92] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.copyTestingCode && $options.copyTestingCode.apply($options, arguments);
@@ -20256,9 +20246,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "hidden",
     id: "complete_record",
     value: $options.complete_record
-  }, null, 8 /* PROPS */, _hoisted_1836), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1837, " Copied successful! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1838, [_hoisted_1839, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+  }, null, 8 /* PROPS */, _hoisted_1834), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1835, " Copied successful! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1836, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.warning), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error.message), 1 /* TEXT */);
-  }), 256 /* UNKEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]), _hoisted_1840], 64 /* STABLE_FRAGMENT */);
+  }), 256 /* UNKEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
 }
 
 /***/ }),
