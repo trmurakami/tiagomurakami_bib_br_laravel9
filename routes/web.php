@@ -4,7 +4,7 @@ use App\Http\Controllers\LattestoBibtex;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\ThingController;
-use App\Http\Controllers\LattestoBibtexController;
+use App\Models\Software;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +49,12 @@ Route::get('/login', function () {
 Route::get('/guiadesoftwares', [SoftwareController::class, 'guiadesoftwares']);
 
 Route::resource('softwares', SoftwareController::class);
+
+Route::get('/software/{id}', function (Software $id) {
+    return view('softwares.software', compact('id'));
+});
+
+
 Route::resource('things', ThingController::class);
 
 Route::post('/softwaretothing', [ThingController::class, 'addSoftwaretoThing']);
