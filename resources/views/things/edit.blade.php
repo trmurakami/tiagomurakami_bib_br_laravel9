@@ -36,7 +36,12 @@ $softwares = Software::get();
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Instituição:</strong>
+                    <strong>Tipo Schema.org:</strong>
+                    <input type="text" name="schema_org_type" class="form-control" value="Organization" disabled
+                        readonly>
+                </div>
+                <div class="form-group">
+                    <strong>Nome da instituição:</strong>
                     <input type="text" name="name" value="{{ $thing->name }}" class="form-control"
                         placeholder="Instituição">
                     @error('name')

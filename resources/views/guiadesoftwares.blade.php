@@ -8,6 +8,8 @@
 
     <h1>Guia de softwares</h1>
 
+    Quantidade de softwares cadastrados: {{ count($softwares) }}
+
     @foreach ($softwares as $software)
 
     <div class="card" style="width: 18rem;">

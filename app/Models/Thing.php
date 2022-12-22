@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Thing extends Model
 {
     use HasFactory;
-    public $fillable = ['name'];
+    public $fillable = ['schema_org_type', 'name'];
 
     /**
     * The softwares that this thing uses.
