@@ -8,6 +8,10 @@
                 <li><a href="{{url('/')}}/guiadesoftwares" class="nav-link px-2 text-white">Guia de softwares</a></li>
             </ul>
 
+            <ul class="nav mb-2 mb-md-0">
+                <li><a href="{{url('/')}}/login" class="nav-link px-2 text-secondary">Login</a></li>
+            </ul>
+
         </div>
     </div>
 </header>
