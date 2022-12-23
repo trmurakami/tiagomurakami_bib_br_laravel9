@@ -14,6 +14,29 @@ class SoftwareSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Software::factory()->create([
+            'name' => 'Aleph',
+            'applicationcategory' => 'ILS',
+            'description' => '',
+            'maintainer' => 'ExLibris',
+            'license' => 'Software proprietário',
+            'url' => 'https://www.exlibrisgroup.com/products/aleph-integrated-library-system'
+        ]);
+        \App\Models\Software::factory()->create([
+            'name' => 'Folio',
+            'applicationcategory' => 'LSP',
+            'description' => '',
+            'maintainer' => 'EBSCO',
+            'license' => 'Software livre (Apache 2 open source license)',
+            'url' => 'https://www.folio.org'
+        ]);
+        \App\Models\Software::factory()->create([
+            'name' => 'DSpace',
+            'applicationcategory' => 'Repositório Institucional',
+            'description' => '',
+            'maintainer' => 'LYRASIS',
+            'license' => 'Software livre (DSpace Source Code BSD License)',
+            'url' => 'https://dspace.lyrasis.org'
+        ]);
     }
 }
