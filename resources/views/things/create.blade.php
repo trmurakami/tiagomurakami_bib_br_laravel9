@@ -27,10 +27,9 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Tipo Schema.org:</strong>
-                    <input type="text" name="schema_org_type" class="form-control" value="Organization" disabled
-                        readonly>
-                </div>
-                <div class="form-group">
+                    <select class="form-select" aria-label="Schema Org Type" name="schema_org_type">
+                        <option value="Organization" selected>Organização</option>
+                    </select>
                     <strong>Nome da instituição:</strong>
                     <input type="text" name="name" class="form-control" placeholder="Instituição">
                     @error('name')

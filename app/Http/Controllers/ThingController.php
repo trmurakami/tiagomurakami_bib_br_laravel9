@@ -102,7 +102,16 @@ class ThingController extends Controller
     {
         $thing = Thing::find($request->thing_id);
         $software = Software::find($request->software_id);
-        $software->things()->attach($thing, ['function' => $request->function, 'version' => $request->version, 'number_of_records' => $request->number_of_records]);
+        $software->things()->attach($thing, 
+            [
+                'function' => $request->function, 
+                'software_version' => $request->software_version, 
+                'number_of_branchs' => $request->number_of_branchs, 
+                'number_of_records' => $request->number_of_records,
+                'url' => $request->url
+            ]
+        );
+        return redirect()->route('things.index')->with('success','Thing has been edited successfully');
     }
 
     public function addSoftwareAPI(Request $request)

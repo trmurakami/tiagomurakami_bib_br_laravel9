@@ -18,8 +18,10 @@ return new class extends Migration
             $table->foreignId('software_id')->constrained('softwares');
             $table->foreignId('thing_id')->constrained('things');
             $table->string('function');
-            $table->string('version');
+            $table->string('number_of_branchs');
             $table->string('number_of_records');
+            $table->string('software_version');
+            $table->string('url');            
             $table->timestamps();
 
 

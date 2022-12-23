@@ -75,12 +75,15 @@ $softwares = Software::get();
         </select>
         <select class="form-select" aria-label="Função" name="function">
             <option selected>Escolha a função</option>
-            <option value="SGB">Sistema de Gestão de Bibliotecas(SGB)</option>
-            <option value="REP">Repositórios institucionais(REP)</option>
+            <option value="SGB">Sistema Integrado de Gestão de Bibliotecas (SIGB)</option>
+            <option value="REP">Repositórios institucionais (RI)</option>
         </select>
-        <input class="form-control" type="text" placeholder="Versão" aria-label="Versão" name="version">
-        <input class="form-control" type="text" placeholder="Número de registros" aria-label="Número de registros"
+        <input class="form-control" type="text" placeholder="Versão" aria-label="Versão" name="software_version">
+        <input class="form-control" type="number" placeholder="Número de bibliotecas" aria-label="Número de bibliotecas"
+            name="number_of_branchs">
+        <input class="form-control" type="number" placeholder="Número de registros" aria-label="Número de registros"
             name="number_of_records">
+        <input class="form-control" type="url" placeholder="URL" aria-label="URL" name="url">
 
         <button type="submit" class="mt-3 btn btn-primary">Enviar</button>
 
