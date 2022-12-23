@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('schema_org_type');
             $table->string('name');
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }

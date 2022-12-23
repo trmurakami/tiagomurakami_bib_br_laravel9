@@ -16,12 +16,12 @@ $softwares = Software::get();
 <div class="container mt-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Editar instituição</h2>
-            </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('things.index') }}" enctype="multipart/form-data">
                     Voltar</a>
+            </div>
+            <div class="pull-left">
+                <h2>Editar instituição</h2>
             </div>
         </div>
     </div>
@@ -44,6 +44,9 @@ $softwares = Software::get();
                     <strong>Nome da instituição:</strong>
                     <input type="text" name="name" value="{{ $thing->name }}" class="form-control"
                         placeholder="Instituição">
+                    <strong>Site da instituição:</strong>
+                    <input type="url" name="url" value="{{ $thing->url }}" class="form-control"
+                        placeholder="Site da instituição">
                     @error('name')
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
