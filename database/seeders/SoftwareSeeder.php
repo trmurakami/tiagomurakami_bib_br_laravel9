@@ -38,5 +38,13 @@ class SoftwareSeeder extends Seeder
             'license' => 'Software livre (DSpace Source Code BSD License)',
             'url' => 'https://dspace.lyrasis.org'
         ]);
+        \App\Models\Software::factory()->create([
+            'name' => 'Tematres',
+            'applicationcategory' => 'Vocabulário controlado',
+            'description' => '',
+            'maintainer' => 'Diego Ferreyra',
+            'license' => 'Software livre (GPLv2)',
+            'url' => 'https://github.com/tematres/TemaTres-Vocabulary-Server'
+        ]);
     }
 }
