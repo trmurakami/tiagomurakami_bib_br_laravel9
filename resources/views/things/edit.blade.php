@@ -58,11 +58,28 @@ $softwares = Software::get();
 
     @if ($thing->softwares)
     <h4 class="mt-3">Softwares utilizados</h4>
-    <ul class="list-group">
-        @foreach ($thing->softwares as $softwares_used)
-        <li class="list-group-item">{{ $softwares_used->name }}</li>
-        @endforeach
-    </ul>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome da instituição</th>
+                <th scope="col">Número de Bibliotecas</th>
+                <th scope="col">Número de registros</th>
+                <th scope="col">URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($thing->softwares as $softwares_used)
+            @php
+            dd($softwares_used);
+            @endphp
+            <th scope="row"><a href="thing/{{ $softwares_used->id }}">{{ $softwares_used->name }}</a></th>
+            @endforeach
+
+
+        </tbody>
+    </table>
+
     @endif
 
     <h4 class="mt-3">Adicionar um software usado por {{ $thing->name }}:</h4>
@@ -78,8 +95,10 @@ $softwares = Software::get();
         </select>
         <select class="form-select" aria-label="Função" name="function">
             <option selected>Escolha a função</option>
-            <option value="SGB">Sistema Integrado de Gestão de Bibliotecas (SIGB)</option>
-            <option value="REP">Repositórios institucionais (RI)</option>
+            <option value="Sistema Integrado de Gestão de Bibliotecas (SIGB)">Sistema Integrado de Gestão de Bibliotecas
+                (SIGB)</option>
+            <option value="Repositório institucional (RI)">Repositório institucional (RI)</option>
+            <option value="Vocabulário controlado (VC)">Vocabulário controlado (VC)</option>
         </select>
         <input class="form-control" type="text" placeholder="Versão" aria-label="Versão" name="software_version">
         <input class="form-control" type="number" placeholder="Número de bibliotecas" aria-label="Número de bibliotecas"
