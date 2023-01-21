@@ -62,18 +62,24 @@ $softwares = Software::get();
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Nome da instituição</th>
-                <th scope="col">Número de Bibliotecas</th>
+                <th scope="col">Nome do software</th>
+                <th scope="col">Função</th>
+                <th scope="col">Versão</th>
+                <th scope="col">Número de bibliotecas</th>
                 <th scope="col">Número de registros</th>
                 <th scope="col">URL</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($thing->softwares as $softwares_used)
-            @php
-            dd($softwares_used);
-            @endphp
             <th scope="row"><a href="thing/{{ $softwares_used->id }}">{{ $softwares_used->name }}</a></th>
+            <th scope="row">{{ $softwares_used->getOriginal('pivot_function') }}</th>
+            <th scope="row">{{ $softwares_used->getOriginal('pivot_software_version') }}</th>
+            <th scope="row">{{ $softwares_used->getOriginal('pivot_number_of_branchs') }}</th>
+            <th scope="row">{{ $softwares_used->getOriginal('pivot_number_of_records') }}</th>
+            <th scope="row"><a href="{{ $softwares_used->getOriginal('pivot_url') }}"
+                    target="_blank">{{ $softwares_used->getOriginal('pivot_url') }}</a>
+            </th>
             @endforeach
 
 
