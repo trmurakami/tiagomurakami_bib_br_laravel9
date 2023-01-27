@@ -25,6 +25,10 @@ Route::get('/apps', function () {
     return view('apps');
 });
 
+Route::get('/slides', function () {
+    return view('slides');
+});
+
 Route::get('/onlinemarceditor', function () {
     return view('apps.onlinemarceditor');
 });
