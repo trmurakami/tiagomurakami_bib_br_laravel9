@@ -16,7 +16,7 @@ class Thing extends Model
 
     public function softwares()
     {
-        return $this->belongsToMany(Software::class, 'software_thing')->withPivot(['function', 'software_version', 'number_of_branchs', 'number_of_records', 'url']);
+        return $this->belongsToMany(Software::class, 'software_thing')->withPivot(['function', 'software_version', 'number_of_branchs', 'url']);
     }
 
     

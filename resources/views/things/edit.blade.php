@@ -66,7 +66,6 @@ $softwares = Software::get();
                 <th scope="col">Função</th>
                 <th scope="col">Versão</th>
                 <th scope="col">Número de bibliotecas</th>
-                <th scope="col">Número de registros</th>
                 <th scope="col">URL</th>
             </tr>
         </thead>
@@ -76,7 +75,6 @@ $softwares = Software::get();
             <th scope="row">{{ $softwares_used->getOriginal('pivot_function') }}</th>
             <th scope="row">{{ $softwares_used->getOriginal('pivot_software_version') }}</th>
             <th scope="row">{{ $softwares_used->getOriginal('pivot_number_of_branchs') }}</th>
-            <th scope="row">{{ $softwares_used->getOriginal('pivot_number_of_records') }}</th>
             <th scope="row"><a href="{{ $softwares_used->getOriginal('pivot_url') }}"
                     target="_blank">{{ $softwares_used->getOriginal('pivot_url') }}</a>
             </th>
@@ -109,8 +107,6 @@ $softwares = Software::get();
         <input class="form-control" type="text" placeholder="Versão" aria-label="Versão" name="software_version">
         <input class="form-control" type="number" placeholder="Número de bibliotecas" aria-label="Número de bibliotecas"
             name="number_of_branchs">
-        <input class="form-control" type="number" placeholder="Número de registros" aria-label="Número de registros"
-            name="number_of_records">
         <input class="form-control" type="url" placeholder="URL" aria-label="URL" name="url">
 
         <button type="submit" class="mt-3 btn btn-primary">Enviar</button>

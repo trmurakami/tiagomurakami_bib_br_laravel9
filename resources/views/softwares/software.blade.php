@@ -15,7 +15,6 @@
             <tr>
                 <th scope="col">Nome da instituição</th>
                 <th scope="col">Número de Bibliotecas</th>
-                <th scope="col">Número de registros</th>
                 <th scope="col">Versão do software</th>
                 <th scope="col">URL</th>
             </tr>
@@ -25,7 +24,6 @@
             <tr>
                 <th scope="row"><a href="thing/{{ $thing->id }}">{{ $thing->name }}</a></th>
                 <td>{{ $thing->getOriginal()['pivot_number_of_branchs'] }}</td>
-                <td>{{ $thing->getOriginal()['pivot_number_of_records'] }}</td>
                 <td>{{ $thing->getOriginal()['pivot_software_version'] }}</td>
                 <td><a href="{{ $thing->getOriginal()['pivot_url'] }}" target="_blank"
                         rel="noopener noreferrer">{{ $thing->getOriginal()['pivot_url'] }}</a></td>

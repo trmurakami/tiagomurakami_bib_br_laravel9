@@ -107,7 +107,6 @@ class ThingController extends Controller
                 'function' => $request->function, 
                 'software_version' => $request->software_version, 
                 'number_of_branchs' => $request->number_of_branchs, 
-                'number_of_records' => $request->number_of_records,
                 'url' => $request->url
             ]
         );
