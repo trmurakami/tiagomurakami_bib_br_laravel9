@@ -38,12 +38,14 @@ export default {
             _300a: 'Extent',
             _300b: 'Other physical details',
             _300c: 'Dimensions',
+            add_corporate_name:'Add Corporate Name',
             add_eletronic_location_and_access: 'Add Electronic Location and Access',
             add_general_note: 'Add General Note',
             add_isbn: 'Add ISBN',
             add_personal_name: 'Add Personal Name',
             add_rda_fields: 'Add RDA fields (336, 337, 338)',
             add_subject_added_entry_topical_term: 'Add Subject Added Entry-Topical Term',
+            affiliation: 'Affiliation',
             book: 'Book',
             cataloging_source: 'Cataloging Source',
             clear_all_record: 'Clear all record',
@@ -51,14 +53,28 @@ export default {
             control_number: 'Control Number',
             control_number_identifier: 'Control Number Identifier',
             copy: 'Copy',
+            corporate_name: 'Corporate Name',
+            corporate_name_or_jurisdiction_name: 'Corporate name or jurisdiction name as entry element',
             current_publication_frequency: 'Current Publication Frequency',
+            dates_associated_with_a_name: 'Dates associated with a name',
             delete: 'Delete',
             edit_fields: 'Edit fields',
+            family_name: 'Family name',
+            forename: 'Forename',
+            fuller_form_of_name: 'Fuller form of name',
             general_note: 'General Note',
+            inverted_name: 'Inverted name',
+            jurisdiction_name: 'Jurisdiction name',
             leader: 'Leader',
             marc_record: 'MARC Record',
+            name_in_direct_order: 'Name in direct order',
+            personal_name: 'Personal Name',
             predefined_types: 'Predefined types',
+            relator_term: 'Relator term',
             serial: 'Serial',
+            surname: 'Surname',
+            type_of_corporate_name: 'Type of corporate name entry element',
+            type_of_personal_name: 'Type of personal name entry element',
             validate: 'Validate',
             warning: 'Warning'
         },
@@ -86,12 +102,14 @@ export default {
             _300a: 'Extensão',
             _300b: 'Detalhes físicos adicionais',
             _300c: 'Dimensões',
+            add_corporate_name:'Adicionar Entidade',
             add_eletronic_location_and_access: 'Adicionar Localização eletrônica e acesso',
             add_general_note: 'Adicionar nota geral',
             add_isbn: 'Adicionar ISBN',
             add_personal_name: 'Adicionar Nome pessoal',
             add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
             add_subject_added_entry_topical_term: 'Adicionar Assunto Tópico',
+            affiliation: 'Afiliação',
             book: 'Livro',
             cataloging_source: 'Fonte da Catalogação',
             clear_all_record: 'Limpar registro',
@@ -99,14 +117,28 @@ export default {
             control_number: 'Número de controle',
             control_number_identifier: 'Código MARC da Agência Catalogadora',
             copy: 'Copiar',
+            corporate_name: 'Entidade',
+            corporate_name_or_jurisdiction_name: 'Nome da entidade ou lugar',
             current_publication_frequency: 'Frequência atual da publicação',
+            dates_associated_with_a_name: 'Datas associadas ao nome',
             delete: 'Excluir',
             edit_fields: 'Editar campos',
+            family_name: 'Nome de família',
+            forename: 'Prenome',
+            fuller_form_of_name: 'Forma completa do nome',
             general_note: 'Nota geral',
+            inverted_name: 'Nome invertido',
+            jurisdiction_name: 'Nome da jurisdição',
             leader: 'Líder',
             marc_record: 'Registro MARC',
+            name_in_direct_order: 'Nome na ordem direta',        
+            personal_name: 'Nome pessoal',
             predefined_types: 'Tipos predefinidos',
+            relator_term: 'Termo de relação',
             serial: 'Periódico',
+            surname: 'Sobrenome',
+            type_of_corporate_name: 'Tipo do nome da entidade',
+            type_of_personal_name: 'Tipo de entrada do nome pessoal',
             validate: 'Validar',
             warning: 'Atenção'
         },
@@ -2769,66 +2801,10 @@ export default {
                         <!-- \040 -->
 
                         <!-- 100 -->
-                        <template>
-                            <div class="row mb-2" v-for="(author, indexAuthor) in record.personal_name">
-                                <div class='col-2'>
-                                    <span class="input-group-text" id="personal_name">Personal Name&nbsp;&nbsp;
-                                        <a href="https://www.loc.gov/marc/bibliographic/bd100.html" rel="external"
-                                            target="_blank">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path
-                                                    d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                            </svg>
-                                        </a>
-                                    </span>
-                                </div>
-                                <div class="col-9">
-                                    <div class="input-group-prepend">
-                                        <select class="input-group-text form-select" id="_100_ind1"
-                                            v-model="record.personal_name[indexAuthor].ind1">
-                                            <option disabled>Type of personal name entry element</option>
-                                            <option value="0">0 - Forename</option>
-                                            <option value="1">1 - Surname</option>
-                                            <option value="3">3 - Family name</option>
-                                        </select>
-                                    </div>
-                                    <input type="text" id="_100a" v-model="record.personal_name[indexAuthor].a"
-                                        class="form-control" placeholder="Personal name" aria-label="Personal name"
-                                        aria-describedby="_100a">
-                                    <input type="text" id="_100d" v-model="record.personal_name[indexAuthor].d"
-                                        class="form-control" placeholder="Dates associated with a name"
-                                        aria-label="Dates associated with a name" aria-describedby="_100d">
-                                    <input type="text" id="_100e" v-model="record.personal_name[indexAuthor].e"
-                                        class="form-control" placeholder="Relator term" aria-label="Relator term"
-                                        aria-describedby="_100e">
-                                    <input type="text" id="_100q" v-model="record.personal_name[indexAuthor].q"
-                                        class="form-control" placeholder="Fuller form of name"
-                                        aria-label="Fuller form of name" aria-describedby="_100q">
-                                    <input type="text" id="_100u" v-model="record.personal_name[indexAuthor].u"
-                                        class="form-control" placeholder="Affiliation" aria-label="Affiliation"
-                                        aria-describedby="_100u">
-                                </div>
-                                <div class="col-1">
-                                    <button @click="deleteField('personal_name', indexAuthor)"
-                                        class="btn btn-danger btn-sm">{{ translation.delete }}</button>
-                                </div>
-                            </div>
-
-                            <button @click="addField('personal_name')" class="btn btn-info btn-sm mb-2">
-                                {{ translation.add_personal_name }}
-                            </button>
-                        </template>
-                        <!-- \100 -->
-
-                        <!-- 110 -->
-                        <template>
-                            <div class="input-group mb-2" v-for="(corporate, indexCorporate) in record.corporate_name">
-
-                                <span class="input-group-text" id="corporate_name">Corporate Name&nbsp;&nbsp;
-                                    <a href="https://www.loc.gov/marc/bibliographic/bd110.html" rel="external"
+                        <div class="row mb-2" v-for="(author, indexAuthor) in record.personal_name">
+                            <div class='col-2'>
+                                <span class="input-group-text" id="personal_name">{{ translation.personal_name }}&nbsp;&nbsp;
+                                    <a href="https://www.loc.gov/marc/bibliographic/bd100.html" rel="external"
                                         target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
@@ -2839,30 +2815,81 @@ export default {
                                         </svg>
                                     </a>
                                 </span>
+                            </div>
+                            <div class="col-9">
                                 <div class="input-group-prepend">
-                                    <select class="input-group-text form-select" id="_110_ind1"
-                                        v-model="record.corporate_name[indexCorporate].ind1">
-                                        <option disabled>Type of corporate name entry element</option>
-                                        <option value="0">0 - Inverted name</option>
-                                        <option value="1">1 - Jurisdiction name</option>
-                                        <option value="2">2 - Name in direct order</option>
+                                    <select class="input-group-text form-select" id="_100_ind1"
+                                        v-model="record.personal_name[indexAuthor].ind1">
+                                        <option disabled>{{ translation.type_of_personal_name }}</option>
+                                        <option value="0">0 - {{ translation.forename }}</option>
+                                        <option value="1">1 - {{ translation.surname }}</option>
+                                        <option value="3">3 - {{ translation.family_name }}</option>
                                     </select>
                                 </div>
-                                <input type="text" id="_100a" v-model="record.corporate_name[indexCorporate].a"
-                                    class="form-control"
-                                    placeholder="Corporate name or jurisdiction name as entry element"
-                                    aria-label="Corporate name or jurisdiction name as entry element"
+                                <input type="text" id="_100a" v-model="record.personal_name[indexAuthor].a"
+                                    class="form-control" :placeholder="translation.personal_name" :aria-label="translation.personal_name"
                                     aria-describedby="_100a">
-                                <button @click="deleteField('corporate_name', indexCorporate)"
+                                <input type="text" id="_100d" v-model="record.personal_name[indexAuthor].d"
+                                    class="form-control" :placeholder="translation.dates_associated_with_a_name"
+                                    :aria-label="translation.dates_associated_with_a_name" aria-describedby="_100d">
+                                <input type="text" id="_100e" v-model="record.personal_name[indexAuthor].e"
+                                    class="form-control" :placeholder="translation.relator_term" :aria-label="translation.relator_term"
+                                    aria-describedby="_100e">
+                                <input type="text" id="_100q" v-model="record.personal_name[indexAuthor].q"
+                                    class="form-control" :placeholder="translation.fuller_form_of_name"
+                                    :aria-label="translation.fuller_form_of_name" aria-describedby="_100q">
+                                <input type="text" id="_100u" v-model="record.personal_name[indexAuthor].u"
+                                    class="form-control" :placeholder="translation.affiliation" :aria-label="translation.affiliation"
+                                    aria-describedby="_100u">
+                            </div>
+                            <div class="col-1">
+                                <button @click="deleteField('personal_name', indexAuthor)"
                                     class="btn btn-danger btn-sm">{{ translation.delete }}</button>
                             </div>
+                        </div>
 
-                            <button @click="addField('corporate_name')" class="btn btn-info btn-sm mb-2">
-                                Add Corporate Name
-                            </button>
-                        </template>
+                        <button @click="addField('personal_name')" class="btn btn-info btn-sm mb-2">
+                            {{ translation.add_personal_name }}
+                        </button>
+                        <!-- \100 -->
+
+                        <!-- 110 -->
+                        <div class="input-group mb-2" v-for="(corporate, indexCorporate) in record.corporate_name">
+
+                            <span class="input-group-text" id="corporate_name">{{ translation.corporate_name }}&nbsp;&nbsp;
+                                <a href="https://www.loc.gov/marc/bibliographic/bd110.html" rel="external"
+                                    target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg>
+                                </a>
+                            </span>
+                            <div class="input-group-prepend">
+                                <select class="input-group-text form-select" id="_110_ind1"
+                                    v-model="record.corporate_name[indexCorporate].ind1">
+                                    <option disabled>{{ translation.type_of_corporate_name }}</option>
+                                    <option value="0">0 - {{ translation.inverted_name }}</option>
+                                    <option value="1">1 - {{ translation.jurisdiction_name }}</option>
+                                    <option value="2">2 - {{ translation.name_in_direct_order }}</option>
+                                </select>
+                            </div>
+                            <input type="text" id="_100a" v-model="record.corporate_name[indexCorporate].a"
+                                class="form-control"
+                                :placeholder="translation.corporate_name_or_jurisdiction_name"
+                                :aria-label="translation.corporate_name_or_jurisdiction_name"
+                                aria-describedby="_100a">
+                            <button @click="deleteField('corporate_name', indexCorporate)"
+                                class="btn btn-danger btn-sm">{{ translation.delete }}</button>
+                        </div>
+
+                        <button @click="addField('corporate_name')" class="btn btn-info btn-sm mb-2">
+                            {{ translation.add_corporate_name }}
+                        </button>
                         <!-- \110 -->
-
 
                         <!-- TITLE -->
                         <div class="row mb-3">
