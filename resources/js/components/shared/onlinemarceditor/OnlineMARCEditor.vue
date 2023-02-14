@@ -736,7 +736,7 @@ export default {
             },
             getZ3950(isbn, host, hostname) {
                 axios
-                    .get("api/z3950?isbn=" + isbn + '%26host=' + host)
+                    .get("api/z3950", { params: { 'isbn': isbn, 'host': host } })
                     .then((response) => {
                         if (this.Z3950Records !== null) {
                             Object.values(response.data).forEach(val => {

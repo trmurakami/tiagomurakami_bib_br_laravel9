@@ -18220,7 +18220,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     getZ3950: function getZ3950(isbn, host, hostname) {
       var _this4 = this;
-      axios.get("api/z3950?isbn=" + isbn + '%26host=' + host).then(function (response) {
+      axios.get("api/z3950", {
+        params: {
+          'isbn': isbn,
+          'host': host
+        }
+      }).then(function (response) {
         if (_this4.Z3950Records !== null) {
           Object.values(response.data).forEach(function (val) {
             val["source"] = hostname;
@@ -19465,7 +19470,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[11] || (_cache[11] = function ($event) {
       return $options.cleanAll();
     })
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.clear_all_record), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\r\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Share</button>\r\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Export</button>\r\n            ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 008 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.clear_all_record), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Share</button>\n            <button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Export</button>\n            ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_29, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 008 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [_hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Record status",
     id: "record_status",
@@ -19827,7 +19832,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[56] || (_cache[56] = function ($event) {
       return $data.record.ldr.character_coding_scheme = $event;
     })
-  }, _hoisted_1556, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.character_coding_scheme]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-3\">\r\n                                <label for=\"base_address_of_data\" class=\"form-label\">Base address of data (Length of Leader and Directory)</label>\r\n                                <input v-model=\"base_address_of_data\" type=\"text\" class=\"form-control\" id=\"base_address_of_data\">\r\n                            </div> "), _hoisted_1557, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_1556, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.ldr.character_coding_scheme]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mb-3\">\n                                <label for=\"base_address_of_data\" class=\"form-label\">Base address of data (Length of Leader and Directory)</label>\n                                <input v-model=\"base_address_of_data\" type=\"text\" class=\"form-control\" id=\"base_address_of_data\">\n                            </div> "), _hoisted_1557, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "form-select",
     "aria-label": "Encoding level",
     id: "encoding_level",
