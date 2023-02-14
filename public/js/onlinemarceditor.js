@@ -18182,7 +18182,9 @@ __webpack_require__.r(__webpack_exports__);
           });
         });
         if (_this2.crossrefRecord.data.message.ISBN) {
-          _this2.record.isbn = _this2.crossrefRecord.data.message.ISBN[0];
+          _this2.record.isbn.push({
+            id: _this2.crossrefRecord.data.message.ISBN[0]
+          });
         }
         switch (_this2.crossrefRecord.data.message.language) {
           case "en":

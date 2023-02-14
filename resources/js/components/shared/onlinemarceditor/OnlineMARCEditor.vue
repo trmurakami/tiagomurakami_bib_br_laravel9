@@ -694,7 +694,9 @@ export default {
                             });
                         });
                         if (this.crossrefRecord.data.message.ISBN) {
-                            this.record.isbn = this.crossrefRecord.data.message.ISBN[0]
+                            this.record.isbn.push({
+                                id: this.crossrefRecord.data.message.ISBN[0]
+                            })
                         }
                         switch (this.crossrefRecord.data.message.language) {
                             case "en":
