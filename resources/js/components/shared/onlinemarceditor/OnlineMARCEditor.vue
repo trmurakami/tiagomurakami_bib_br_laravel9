@@ -692,7 +692,7 @@ export default {
             cleanAll() {
                 document.location.reload(true);
             },
-            copyTestingCode() {
+            copy() {
                 try {
                     var successful = navigator.clipboard.writeText(this.complete_record);
                     var msg = successful ? 'successful' : 'unsuccessful';
@@ -3386,8 +3386,14 @@ export default {
                 {{ complete_record }}
             </pre>
                         <span class="btn btn-info text-white copy-btn ml-auto"
-                            @click.stop.prevent="copyTestingCode">{{ translation.copy }}</span>
-                        <input type="hidden" id="complete_record" :value="complete_record">
+                            @click.stop.prevent="copy">{{ translation.copy }}</span>
+                        <input 
+                            type="hidden" 
+                            v-on:focus="$event.target.select()"
+                            ref="complete_record"
+                            readonly  
+                            :value="complete_record"
+                        >                        
 
                         <div class="alert alert-info" role="alert" v-if="copySuccessful">
                             Copied successful!
