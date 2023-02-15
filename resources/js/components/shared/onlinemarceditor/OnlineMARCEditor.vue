@@ -692,7 +692,7 @@ export default {
             cleanAll() {
                 document.location.reload(true);
             },
-            copy() {
+            async copy() {
                 try {
                     var successful = navigator.clipboard.writeText(this.complete_record);
                     var msg = successful ? 'successful' : 'unsuccessful';
@@ -3388,10 +3388,8 @@ export default {
                         <span class="btn btn-info text-white copy-btn ml-auto"
                             @click.stop.prevent="copy">{{ translation.copy }}</span>
                         <input 
-                            type="hidden" 
-                            v-on:focus="$event.target.select()"
-                            ref="complete_record"
-                            readonly  
+                            type="hidden"
+                            id="complete_record"
                             :value="complete_record"
                         >                        
 
