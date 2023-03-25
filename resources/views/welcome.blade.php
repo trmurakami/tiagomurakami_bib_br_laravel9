@@ -172,6 +172,9 @@
                     <li class="list-group-item"><a href="lattestobibtex">Conversor
                             online de XML do Currículo Lattes em formato Bibtex para importação no ORCID</a>
                     </li>
+                    <li class="list-group-item"><a href="http://tiagomurakami.bib.br:81">Busca integrada em
+                            Biblioteconomia e Ciência da Informação</a>
+                    </li>
                 </ul>
             </div>
         </div>
