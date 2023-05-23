@@ -175,6 +175,8 @@
                     <li class="list-group-item"><a href="http://tiagomurakami.bib.br:81">Busca integrada em
                             Biblioteconomia e Ciência da Informação</a>
                     </li>
+                    <li class="list-group-item"><a href="http://tiagomurakami.bib.br:82">Prodmais dos Pesquisadores vinculados a Programas de Pós-Graduação em Ciência da Informação</a>
+                    </li>
                 </ul>
             </div>
         </div>
