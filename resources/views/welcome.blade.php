@@ -172,10 +172,10 @@
                     <li class="list-group-item"><a href="lattestobibtex">Conversor
                             online de XML do Currículo Lattes em formato Bibtex para importação no ORCID</a>
                     </li>
-                    <li class="list-group-item"><a href="http://tiagomurakami.bib.br:81">Busca integrada em
+                    <li class="list-group-item"><a href="http://tiagomurakami.bib.br/biblioteconomia">Busca integrada em
                             Biblioteconomia e Ciência da Informação</a>
                     </li>
-                    <li class="list-group-item"><a href="http://tiagomurakami.bib.br:82">Prodmais dos Pesquisadores vinculados a Programas de Pós-Graduação em Ciência da Informação</a>
+                    <li class="list-group-item"><a href="http://tiagomurakami.bib.br/prodmais">Prodmais dos Pesquisadores vinculados a Programas de Pós-Graduação em Ciência da Informação</a>
                     </li>
                 </ul>
             </div>
