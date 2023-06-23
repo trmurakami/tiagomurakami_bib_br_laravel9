@@ -62,3 +62,7 @@ Route::get('/software/{id}', function (Software $id) {
 Route::resource('things', ThingController::class);
 
 Route::post('/softwaretothing', [ThingController::class, 'addSoftwaretoThing']);
+
+Route::get('/cutter', function () {
+    return view('cutter.cutter');
+});

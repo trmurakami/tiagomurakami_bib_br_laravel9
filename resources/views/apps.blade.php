@@ -34,6 +34,16 @@
                     <a href="lattestobibtex" class="btn btn-primary">Acessar</a>
                 </div>
             </div>
+
+        </div>
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Consultar Tabela Cutter Sanborn</h5>
+                    <p class="card-text">Consultar Tabela Cutter Sanborn</p>
+                    <a href="cutter" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
