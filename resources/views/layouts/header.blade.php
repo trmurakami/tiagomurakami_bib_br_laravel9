@@ -9,9 +9,45 @@
                 <li><a href="{{url('/')}}/guiadesoftwares" class="nav-link px-2 text-white">Guia de softwares</a></li>
             </ul>
 
-            <ul class="nav mb-2 mb-md-0">
-                <li><a href="{{url('/')}}/login" class="nav-link px-2 text-secondary">Login</a></li>
-            </ul>
+            @if (Route::has('login'))
+            <div class="text-end">
+                @auth
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <x-dropdown-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-dropdown-link>
+                        </li>
+                        <li>
+                            <x-dropdown-link :href="route('profile.edit')">
+                                {{ __('Profile') }}
+                            </x-dropdown-link>
+                        </li>
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+
+                                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </x-dropdown-link>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                @else
+                <a type="button" class="btn btn-outline-light me-2" href="{{ route('login') }}">Login</a>
+                @if (Route::has('register'))
+                <!-- <a type="button" class="btn btn-warning" href="{{ route('register') }}">Registrar</a> -->
+                @endif
+                @endauth
+            </div>
+            @endif
 
         </div>
     </div>
