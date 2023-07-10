@@ -97,3 +97,5 @@ Route::resource('abouts', AboutController::class);
 
 Route::get('upload', [UploadController::class, 'index']);
 Route::post('upload', [UploadController::class, 'upload'])->name('upload.upload');
+
+Route::get('graficos', [WorkController::class, 'graficos'])->name('works.graficos');
