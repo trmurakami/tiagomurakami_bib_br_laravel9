@@ -209,9 +209,11 @@ class WorkController extends Controller
                     $about_existing = about::where('name', $about["name"])->first();
                     if (!$about_existing) {
                         $about_new = new About();
-                        $about_new->name = substr($about["name"], 0, 254);
-                        $about_new->save();
-                        $record->abouts()->attach($about_new);
+                        if (is_string(mb_check_encoding($about["name"], "UTF-8"))) {
+                            $about_new->name = substr($about["name"], 0, 254);
+                            $about_new->save();
+                            $record->abouts()->attach($about_new);
+                        }
                     } else {
                         $record->abouts()->attach($about_existing);
                     }
