@@ -1,11 +1,11 @@
 @extends('layouts.basemodel')
 
-@section('title', 'BibliotECA - Upload')
+@section('title', 'Ferramentas MARC - Upload')
 
 @section('content')
 
 <div class="container">
-    <h4 class="mt-3">MARC Tools - Relatório</h4>
+    <h4 class="mt-3">Ferramentas MARC - Relatório</h4>
     <form method="POST" action="/marcqareport" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -17,7 +17,7 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     <hr>
-    <h4 class="mt-3">MARC Tools - JSON</h4>
+    <h4 class="mt-3">Ferramentas MARC - JSON</h4>
     <form method="POST" action="/api/marcqa" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -28,7 +28,7 @@
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     <hr>
-    <h4 class="mt-3">MARC Tools - Exportar campo</h4>
+    <h4 class="mt-3">Ferramentas MARC - Exportar campo</h4>
     <form method="POST" action="/api/marcqaexportfield" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -46,7 +46,7 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     <hr>
-    <h4 class="mt-3">MARC Tools - Relatório indicador2 no campo título (245)</h4>
+    <h4 class="mt-3">Ferramentas MARC - Relatório indicador2 no campo título (245)</h4>
     <form method="POST" action="/api/marcqareportTitleInd2" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -61,7 +61,7 @@
         <button type="submit" class="btn btn-primary mt-2">Enviar</button>
     </form>
     <hr>
-    <h4 class="mt-3">MARC Tools - Corrigir indicador2 no campo título (245) automaticamente</h4>
+    <h4 class="mt-3">Ferramentas MARC - Corrigir indicador2 no campo título (245) automaticamente</h4>
     <form method="POST" action="/api/marcqacorrectTitleInd2" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
