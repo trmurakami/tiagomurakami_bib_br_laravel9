@@ -8,14 +8,14 @@
     <div class="row g-0">
 
         <div class="col-lg-2 d-flex align-items-center justify-content-center">
-            <a href="{{ route('works.show',$work->id) }}">
-                <x-cover :work="$work" />
-            </a>
+
+            <x-cover :work="$work" />
+
         </div>
         <div class="col-lg-10">
             <div class="card-body">
-                <h5 class="card-title"><a href="{{ route('works.show',$work->id) }}">{{ $work->name }}
-                        ({{ $work->datePublished }})</a></h5>
+                <h5 class="card-title">{{ $work->name }}
+                    ({{ $work->datePublished }})</h5>
                 <div class="row">
                     <div class="col border-end">
 
