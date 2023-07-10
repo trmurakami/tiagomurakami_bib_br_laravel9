@@ -49,7 +49,7 @@ Route::get('/editoralephseq', function () {
 Route::get('/lattestobibtex', function () {
     return view('apps.lattestobibtex');
 });
-Route::post('/lattestobibtex', LattestoBibtex::class);
+Route::post('/lattestobibtex', [LattestoBibtex::class]);
 
 Route::get('/guiadesoftwares', [SoftwareController::class, 'guiadesoftwares']);
 
