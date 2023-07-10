@@ -7,6 +7,11 @@ use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\ThingController;
 use App\Models\Software;
 use App\Http\Controllers\MARCQAController;
+use App\Http\Controllers\WorkController;
+use App\Http\Controllers\WorksAPIController;
+use App\Http\Controllers\WorkThingController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,8 +69,6 @@ Route::get('/software/{id}', function (Software $id) {
     return view('softwares.software', compact('id'));
 });
 
-Route::resource('things', ThingController::class);
-
 Route::post('/softwaretothing', [ThingController::class, 'addSoftwaretoThing']);
 
 Route::get('/cutter', function () {
@@ -77,3 +80,20 @@ Route::get('/marc', function () {
 });
 
 Route::post('marcqareport', [MARCQAController::class, 'marcQAReport'])->name('marc.report');
+
+
+Route::resource('works', WorkController::class);
+Route::resource('works', WorkController::class)->only(['create'])->middleware('auth');
+
+Route::get('/editor', function () {
+    return view('works.createnew');
+});
+
+Route::post('/works/{work}/attach', [WorkThingController::class, 'attachThing'])->name('works.attachThing');
+Route::delete('/works/{work}/detach/{thing}', [WorkThingController::class, 'detachThing'])->name('works.detachThing');
+
+Route::resource('things', ThingController::class);
+Route::resource('abouts', AboutController::class);
+
+Route::get('upload', [UploadController::class, 'index']);
+Route::post('upload', [UploadController::class, 'upload'])->name('upload.upload');

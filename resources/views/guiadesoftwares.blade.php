@@ -1,4 +1,4 @@
-@extends('layouts.basemodel')
+@extends('layouts.layout')
 
 @section('title', 'Guia de softwares')
 

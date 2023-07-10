@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Z3950Controller;
 use App\Http\Controllers\CutterSanbornController;
 use App\Http\Controllers\MARCQAController;
+use App\Http\Controllers\API\WorksAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::post('marcqa', [MARCQAController::class, 'marcQA']);
 Route::post('marcqaexportfield', [MARCQAController::class, 'exportfield']);
 Route::post('marcqareportTitleInd2', [MARCQAController::class, 'reportTitleInd2']);
 Route::post('marcqacorrectTitleInd2', [MARCQAController::class, 'correctTitleInd2']);
+
+Route::apiResource("works", WorksAPIController::class);

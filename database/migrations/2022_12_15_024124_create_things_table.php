@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('things', function (Blueprint $table) {
             $table->id();
-            $table->string('schema_org_type');
+            $table->string('type');
             $table->string('name');
+            $table->string('id_lattes13')->nullable();
             $table->string('url')->nullable();
             $table->timestamps();
         });

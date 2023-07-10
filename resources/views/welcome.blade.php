@@ -1,4 +1,4 @@
-@extends('layouts.basemodel')
+@extends('layouts.layout')
 
 @section('title', 'Tiago Rodrigo Marçal Murakami - Site pessoal')
 
