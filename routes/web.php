@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LattestoBibtex;
+use App\Http\Controllers\SoftwareController;
+use App\Http\Controllers\ThingController;
+use App\Models\Software;
+use App\Http\Controllers\MARCQAController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +54,7 @@ Route::get('/editoralephseq', function () {
 Route::get('/lattestobibtex', function () {
     return view('apps.lattestobibtex');
 });
-Route::post('/lattestobibtex', [LattestoBibtex::class]);
+Route::post('/lattestobibtex', LattestoBibtex::class);
 
 Route::get('/guiadesoftwares', [SoftwareController::class, 'guiadesoftwares']);
 
