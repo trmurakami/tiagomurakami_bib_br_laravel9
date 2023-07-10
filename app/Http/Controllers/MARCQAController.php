@@ -110,7 +110,7 @@ class MARCQAController extends Controller
                 }
             }
         }
-        return view('marcqa.report', compact('tags'));
+        return view('marc.report', compact('tags'));
     }
 
     public function exportfield (Request $request) {

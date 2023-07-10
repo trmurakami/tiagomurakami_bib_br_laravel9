@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\ThingController;
 use App\Models\Software;
+use App\Http\Controllers\MARCQAController;
 
 /*
 |--------------------------------------------------------------------------
