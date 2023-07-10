@@ -347,6 +347,10 @@
             .attr("transform", function(d) {
                 return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
             })
+            .append("a")
+            .attr("xlink:href", function(d) {
+                return "works?about=" + d.text;
+            })
             .text(function(d) {
                 return d.text;
             });
