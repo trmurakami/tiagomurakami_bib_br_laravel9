@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Z3950Controller;
 use App\Http\Controllers\CutterSanbornController;
 use App\Http\Controllers\MARCQAController;
-use App\Http\Controllers\API\WorksAPIController;
+use App\Http\Controllers\WorksAPIController;
 
 /*
 |--------------------------------------------------------------------------
