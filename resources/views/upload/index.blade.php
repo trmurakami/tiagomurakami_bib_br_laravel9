@@ -94,6 +94,7 @@
                         @csrf
                         <div class="mb-3">
                             <label for="file" class="form-label">Arquivo TSV da CAPES</label>
+                            <p>Tamanho máximo do arquivo {{ (int)(ini_get('post_max_size')) }} MB</p>
                             <input class="form-control" type="file" for="file" accept=".tsv" name="file">
                             <input type="text" name="new_filename" value="thesis.csv" hidden>
                         </div>
