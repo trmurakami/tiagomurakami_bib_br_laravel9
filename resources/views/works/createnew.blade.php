@@ -3,7 +3,8 @@
 @section('title', 'BibliotECA - Editor de registros')
 
 @section('content')
-<div id="editor">
+
+<div class="container" id="editor">
     <editor></editor>
 </div>
 
