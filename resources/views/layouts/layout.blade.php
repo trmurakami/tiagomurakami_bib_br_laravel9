@@ -13,6 +13,7 @@
 </head>
 
 <body style="" ref="body">
+    @include('layouts.ga')
     @include('layouts.header')
 
     <main>
