@@ -19,9 +19,6 @@ use File_MARC_Control_Field;
 class MARCQAController extends Controller
 {
     public function marcQA(Request $request) {
-        $request->validate([
-            'file' => 'required|mimes:mrc|max:102400',
-        ]);
         if ($request->file('file')->isValid()) {
             $file = $request->file('file');
             if ($file->getClientOriginalExtension() === 'mrc') {
@@ -63,9 +60,6 @@ class MARCQAController extends Controller
     }
 
     public function marcQAReport(Request $request) {
-        $request->validate([
-            'file' => 'required|mimes:mrc|max:102400',
-        ]);
         if ($request->file('file')->isValid()) {
             $file = $request->file('file');
             if ($file->getClientOriginalExtension() === 'mrc') {
@@ -120,16 +114,13 @@ class MARCQAController extends Controller
     }
 
     public function exportfield (Request $request) {
-        $request->validate([
-            'file' => 'required|mimes:mrc|max:102400',
-        ]);
         if ($request->file('file')->isValid()) {
-            
             $file = $request->file('file');
             $collection = Collection::fromFile($request->file);
             $result = [];
             $result['count'] = 0;
             foreach ($collection as $record) {
+                
                 if (isset($request->marcfield)) {
                     if (null !== $record->query($request->marcfield)->text()) {
                         foreach ($record->query($request->marcfield) as $subfield) {
@@ -148,9 +139,6 @@ class MARCQAController extends Controller
     }
 
     public function reportTitleInd2 (Request $request) {
-        $request->validate([
-            'file' => 'required|mimes:mrc|max:102400',
-        ]);
         if ($request->file('file')->isValid()) {
             $file = $request->file('file');
             $collection = Collection::fromFile($request->file);
@@ -194,9 +182,6 @@ class MARCQAController extends Controller
         }
     }
     public function correctTitleInd2 (Request $request) {
-        $request->validate([
-            'file' => 'required|mimes:mrc|max:102400',
-        ]);
         if ($request->file('file')->isValid()) {
             $file = $request->file('file');
             $collection = Collection::fromFile($request->file);
