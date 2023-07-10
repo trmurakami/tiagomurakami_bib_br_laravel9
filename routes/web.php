@@ -29,3 +29,46 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/apps', function () {
+    return view('apps');
+});
+
+Route::get('/slides', function () {
+    return view('slides');
+});
+
+Route::get('/onlinemarceditor', function () {
+    return view('apps.onlinemarceditor');
+});
+
+Route::get('/editoralephseq', function () {
+    return view('apps.editoralephseq');
+});
+
+Route::get('/lattestobibtex', function () {
+    return view('apps.lattestobibtex');
+});
+Route::post('/lattestobibtex', LattestoBibtex::class);
+
+Route::get('/guiadesoftwares', [SoftwareController::class, 'guiadesoftwares']);
+
+Route::resource('softwares', SoftwareController::class);
+
+Route::get('/software/{id}', function (Software $id) {
+    return view('softwares.software', compact('id'));
+});
+
+Route::resource('things', ThingController::class);
+
+Route::post('/softwaretothing', [ThingController::class, 'addSoftwaretoThing']);
+
+Route::get('/cutter', function () {
+    return view('cutter.cutter');
+});
+
+Route::get('/marc', function () {
+    return view('marc.upload');
+});
+
+Route::post('marcqareport', [MARCQAController::class, 'marcQAReport'])->name('marc.report');
