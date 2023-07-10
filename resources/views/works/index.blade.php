@@ -20,12 +20,11 @@
                     {{ $works->firstItem() }}
                     a {{ $works->lastItem() }} de {{ $works->total() }} registros</span>
             </h3>
-            <div class="input-group">
-                <input type="text" class="form-control"
-                    placeholder="Pesquisar no título (Deixe em branco e clique em buscar para exibir todo o acervo)"
-                    name="name">
-                <button class="btn btn-primary" type="submit">Buscar</button>
-            </div>
+            <form action="/works" method="GET">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Pesquisar no título" name="name">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
             </form>
             <div class="d-flex mt-3 mb-3">
                 <div class="mx-auto">
