@@ -72,7 +72,7 @@ class ThesisTSVService
                             $keywords = explode(';', $value);
                             foreach ($keywords as $key => $value) {
                                 $keywords_array[$key]['id'] = "";
-                                $keywords_array[$key]['name'] = $value;
+                                $keywords_array[$key]['name'] = substr($value, 0, 255);
                             }
                             $work->about = $keywords_array;
                             unset($keywords_array);

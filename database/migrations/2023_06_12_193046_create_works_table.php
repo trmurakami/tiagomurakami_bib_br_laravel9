@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->jsonb('about')->nullable();
-            $table->text('abstract')->nullable();
+            $table->longText('abstract')->nullable();
             $table->jsonb('actor')->nullable();
             $table->string('albumProductionType')->nullable();
             $table->string('albumReleaseType')->nullable();
@@ -65,7 +65,7 @@ return new class extends Migration
             $table->jsonb('mentions')->nullable(); // not included
             $table->jsonb('musicalinstruments')->nullable();
             $table->jsonb('musicby')->nullable();
-            $table->string('name')->nullable();
+            $table->longText('name')->nullable();
             $table->text('notesPublic')->nullable();
             $table->text('notesPrivate')->nullable();
             $table->string('numberOfPages')->nullable();
