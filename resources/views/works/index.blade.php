@@ -29,7 +29,7 @@
             </form>
             <div class="d-flex mt-3 mb-3">
                 <div class="mx-auto">
-
+                    {{ $works->links() }}
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="d-flex mt-3 mb-3">
             <div class="mx-auto">
-
+                v
             </div>
         </div>
     </div>
