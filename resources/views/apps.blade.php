@@ -45,6 +45,15 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ferramentas MARC</h5>
+                    <p class="card-text">Ferramentas MARC</p>
+                    <a href="marc" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

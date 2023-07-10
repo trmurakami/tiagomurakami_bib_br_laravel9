@@ -66,3 +66,9 @@ Route::post('/softwaretothing', [ThingController::class, 'addSoftwaretoThing']);
 Route::get('/cutter', function () {
     return view('cutter.cutter');
 });
+
+Route::get('/marc', function () {
+    return view('marc.upload');
+});
+
+Route::post('marcqareport', [MARCQAController::class, 'marcQAReport'])->name('marc.report');
