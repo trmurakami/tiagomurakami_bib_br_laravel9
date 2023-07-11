@@ -17794,6 +17794,16 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         });
       }
     },
+    addAuthor: function addAuthor(name) {
+      this.record["author"].push({
+        id: "",
+        type: "Person",
+        id_lattes13: "",
+        viaf: "",
+        "function": "Autor",
+        name: name
+      });
+    },
     addField: function addField(field) {
       if (this.record[field] === null) {
         this.record[field] = [];
@@ -17819,34 +17829,47 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         });
       }
     },
-    addAuthor: function addAuthor(name) {
-      this.record["author"].push({
-        id: "",
-        type: "Person",
-        id_lattes13: "",
-        viaf: "",
-        "function": "Autor",
-        name: name
-      });
-    },
-    getEIDR: function getEIDR(eidr) {
+    getDOI: function getDOI(doi) {
       var _this4 = this;
-      this.loadingEIDR = true;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/eidr/" + eidr).then(function (response) {
-        _this4.EIDRRecord = response.data, _this4.record.name = _this4.EIDRRecord.ResourceName;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://api.crossref.org/works/" + doi).then(function (response) {
+        _this4.crossrefRecord = response, _this4.record.name = _this4.crossrefRecord.data.message.title[0], _this4.record.url = _this4.crossrefRecord.data.message.URL, _this4.record.publisher = _this4.crossrefRecord.data.message.publisher, _this4.record["abstract"] = _this4.crossrefRecord.data.message["abstract"], _this4.record.bookEdition = _this4.crossrefRecord.data.message['edition-number'], _this4.record.copyrightYear = _this4.crossrefRecord.data.message.created["date-parts"][0][0], _this4.record.datePublished = _this4.crossrefRecord.data.message.issued["date-parts"][0][0], Object.values(_this4.crossrefRecord.data.message.author).forEach(function (val) {
+          _this4.record.author.push({
+            id: "",
+            type: "Person",
+            id_lattes13: "",
+            viaf: "",
+            name: val.given + " " + val.family,
+            "function": "Autor"
+          });
+        });
+        if (_this4.crossrefRecord.data.message.ISBN) {
+          _this4.record.isbn[0].id = _this4.crossrefRecord.data.message.ISBN[0];
+        }
       })["catch"](function (error) {
         console.log(error);
         this.errored = true;
       })["finally"](function () {
-        return _this4.loadingEIDR = false;
+        return _this4.loadingDOI = false;
+      });
+    },
+    getEIDR: function getEIDR(eidr) {
+      var _this5 = this;
+      this.loadingEIDR = true;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/eidr/" + eidr).then(function (response) {
+        _this5.EIDRRecord = response.data, _this5.record.name = _this5.EIDRRecord.ResourceName;
+      })["catch"](function (error) {
+        console.log(error);
+        this.errored = true;
+      })["finally"](function () {
+        return _this5.loadingEIDR = false;
       });
     },
     getISBN: function getISBN(isbn) {
-      var _this5 = this;
+      var _this6 = this;
       axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn).then(function (response) {
-        _this5.ISBNRecord = response.data, _this5.record.name = _this5.ISBNRecord.items[0].volumeInfo.title, _this5.record["abstract"] = _this5.ISBNRecord.items[0].volumeInfo.description, _this5.record.datePublished = _this5.ISBNRecord.items[0].volumeInfo.publishedDate, _this5.record.copyrightYear = _this5.ISBNRecord.items[0].volumeInfo.publishedDate, _this5.record.numberOfPages = _this5.ISBNRecord.items[0].volumeInfo.pageCount;
-        Object.values(_this5.ISBNRecord.items[0].volumeInfo.authors).forEach(function (val) {
-          _this5.record.author.push({
+        _this6.ISBNRecord = response.data, _this6.record.name = _this6.ISBNRecord.items[0].volumeInfo.title, _this6.record["abstract"] = _this6.ISBNRecord.items[0].volumeInfo.description, _this6.record.datePublished = _this6.ISBNRecord.items[0].volumeInfo.publishedDate, _this6.record.copyrightYear = _this6.ISBNRecord.items[0].volumeInfo.publishedDate, _this6.record.numberOfPages = _this6.ISBNRecord.items[0].volumeInfo.pageCount;
+        Object.values(_this6.ISBNRecord.items[0].volumeInfo.authors).forEach(function (val) {
+          _this6.record.author.push({
             id: "",
             name: val,
             "function": ""
@@ -17856,54 +17879,24 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         console.log(error);
         this.errored = true;
       })["finally"](function () {
-        return _this5.loadingISBN = false;
+        return _this6.loadingISBN = false;
       });
     },
-    getDOI: function getDOI(doi) {
-      var _this6 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("https://api.crossref.org/works/" + doi).then(function (response) {
-        _this6.crossrefRecord = response, _this6.record.name = _this6.crossrefRecord.data.message.title[0], _this6.record.url = _this6.crossrefRecord.data.message.URL, _this6.record.publisher = _this6.crossrefRecord.data.message.publisher, _this6.record["abstract"] = _this6.crossrefRecord.data.message["abstract"], _this6.record.bookEdition = _this6.crossrefRecord.data.message['edition-number'], _this6.record.copyrightYear = _this6.crossrefRecord.data.message.created["date-parts"][0][0], _this6.record.datePublished = _this6.crossrefRecord.data.message.issued["date-parts"][0][0], Object.values(_this6.crossrefRecord.data.message.author).forEach(function (val) {
-          _this6.record.author.push({
-            id: "",
-            type: "Person",
-            id_lattes13: "",
-            viaf: "",
-            name: val.given + " " + val.family,
-            "function": "Autor"
-          });
-        });
-        if (_this6.crossrefRecord.data.message.ISBN) {
-          _this6.record.isbn[0].id = _this6.crossrefRecord.data.message.ISBN[0];
-        }
-      })["catch"](function (error) {
-        console.log(error);
-        this.errored = true;
-      })["finally"](function () {
-        return _this6.loadingDOI = false;
-      });
-    },
-    getRecordData: function getRecordData(id) {
+    getOAIPMH: function getOAIPMH(URLOAIPMH) {
       var _this7 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/creative_work/editor/" + id).then(function (response) {
-        if (response.data.about[0].name == null) {
-          response.data.about = [{
-            id: "",
-            name: ""
-          }];
-        }
-        _this7.record = response.data;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/oai/identify?url=" + URLOAIPMH).then(function (response) {
+        _this7.OAIPMHRecord = response.data, _this7.record.name = _this7.OAIPMHRecord.Identify.repositoryName;
       })["catch"](function (error) {
         console.log(error);
         this.errored = true;
       })["finally"](function () {
         return _this7.loading = false;
       });
-      this.getCover(id);
     },
-    getOAIPMH: function getOAIPMH(URLOAIPMH) {
+    getOAIMetadataFormats: function getOAIMetadataFormats(URLOAIPMH) {
       var _this8 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/oai/identify?url=" + URLOAIPMH).then(function (response) {
-        _this8.OAIPMHRecord = response.data, _this8.record.name = _this8.OAIPMHRecord.Identify.repositoryName;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/oai/listmetadataformats?url=" + URLOAIPMH).then(function (response) {
+        _this8.OAIMetadataFormats = response.data;
       })["catch"](function (error) {
         console.log(error);
         this.errored = true;
@@ -17911,10 +17904,10 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         return _this8.loading = false;
       });
     },
-    getOAIMetadataFormats: function getOAIMetadataFormats(URLOAIPMH) {
+    getOAISets: function getOAISets(URLOAIPMH) {
       var _this9 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/oai/listmetadataformats?url=" + URLOAIPMH).then(function (response) {
-        _this9.OAIMetadataFormats = response.data;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/oai/listsets?url=" + URLOAIPMH).then(function (response) {
+        _this9.OAISets = response.data;
       })["catch"](function (error) {
         console.log(error);
         this.errored = true;
@@ -17922,10 +17915,16 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         return _this9.loading = false;
       });
     },
-    getOAISets: function getOAISets(URLOAIPMH) {
+    getRecordData: function getRecordData(id) {
       var _this10 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/oai/listsets?url=" + URLOAIPMH).then(function (response) {
-        _this10.OAISets = response.data;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/creative_work/editor/" + id).then(function (response) {
+        if (response.data.about[0].name == null) {
+          response.data.about = [{
+            id: "",
+            name: ""
+          }];
+        }
+        _this10.record = response.data;
       })["catch"](function (error) {
         console.log(error);
         this.errored = true;
@@ -17933,33 +17932,11 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         return _this10.loading = false;
       });
     },
-    getZ3950: function getZ3950(isbn, host, hostname) {
-      var _this11 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/z3950?isbn=" + isbn + "&host=" + host).then(function (response) {
-        if (_this11.Z3950Records !== null) {
-          Object.values(response.data).forEach(function (val) {
-            val["source"] = hostname;
-            _this11.Z3950Records.push(val);
-          });
-        } else {
-          _this11.Z3950Records = Array();
-          Object.values(response.data).forEach(function (val) {
-            val["source"] = hostname;
-            _this11.Z3950Records.push(val);
-          });
-        }
-      })["catch"](function (error) {
-        console.log(error);
-        this.errored = true;
-      })["finally"](function () {
-        return _this11.loadingZ3950 = false;
-      });
-    },
     getSchema: function getSchema(url, type) {
-      var _this12 = this;
+      var _this11 = this;
       axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/schema/reader?url=" + url + "&type=" + type).then(function (response) {
-        _this12.SchemaRecord = response.data, _this12.record.name = _this12.SchemaRecord.name, _this12.record.url = _this12.SchemaRecord.url, _this12.record.uploadDate = _this12.SchemaRecord.uploadDate, _this12.record.datePublished = _this12.SchemaRecord.datePublished, _this12.record.image = _this12.SchemaRecord.image, _this12.record.thumbnailUrl = _this12.SchemaRecord.image, _this12.record.duration = _this12.SchemaRecord.duration, _this12.record.description = _this12.SchemaRecord.description, _this12.record.embedUrl = _this12.SchemaRecord.embedURL, Object.values(_this12.SchemaRecord.author).forEach(function (val) {
-          _this12.record.author.push({
+        _this11.SchemaRecord = response.data, _this11.record.name = _this11.SchemaRecord.name, _this11.record.url = _this11.SchemaRecord.url, _this11.record.uploadDate = _this11.SchemaRecord.uploadDate, _this11.record.datePublished = _this11.SchemaRecord.datePublished, _this11.record.image = _this11.SchemaRecord.image, _this11.record.thumbnailUrl = _this11.SchemaRecord.image, _this11.record.duration = _this11.SchemaRecord.duration, _this11.record.description = _this11.SchemaRecord.description, _this11.record.embedUrl = _this11.SchemaRecord.embedURL, Object.values(_this11.SchemaRecord.author).forEach(function (val) {
+          _this11.record.author.push({
             id: "",
             name: val.name,
             "function": "Author"
@@ -17969,7 +17946,29 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         console.log(error);
         this.errored = true;
       })["finally"](function () {
-        return _this12.loadingSchema = false;
+        return _this11.loadingSchema = false;
+      });
+    },
+    getZ3950: function getZ3950(isbn, host, hostname) {
+      var _this12 = this;
+      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/z3950?isbn=" + isbn + "&host=" + host).then(function (response) {
+        if (_this12.Z3950Records !== null) {
+          Object.values(response.data).forEach(function (val) {
+            val["source"] = hostname;
+            _this12.Z3950Records.push(val);
+          });
+        } else {
+          _this12.Z3950Records = Array();
+          Object.values(response.data).forEach(function (val) {
+            val["source"] = hostname;
+            _this12.Z3950Records.push(val);
+          });
+        }
+      })["catch"](function (error) {
+        console.log(error);
+        this.errored = true;
+      })["finally"](function () {
+        return _this12.loadingZ3950 = false;
       });
     },
     search: function search() {
@@ -17989,56 +17988,6 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
         return _this13.loadingSearch = false;
       });
     },
-    getCover: function getCover(id) {
-      var _this14 = this;
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("api/cover?id=" + id + '&title=' + this.record.name).then(function (response) {
-        _this14.record.coverimage = response.data;
-      })["catch"](function (error) {
-        console.log(error);
-        this.errored = true;
-      });
-    },
-    deleteCover: function deleteCover(id) {
-      var _this15 = this;
-      if (confirm("Tem certeza que quer excluir esta capa?")) {
-        axios__WEBPACK_IMPORTED_MODULE_0__["default"]["delete"]("api/cover/" + id).then(function (response) {
-          _this15.deleteCoverSucess = "Capa excluída com sucesso";
-        })["catch"](function (error) {
-          console.log(error);
-          this.errored = true;
-        })["finally"](function () {
-          return _this15.loading = false;
-        });
-      }
-    },
-    coverOnFileChange: function coverOnFileChange(e) {
-      this.originalfilename = "Arquivo selecionado: " + e.target.files[0].name;
-      this.filename = "Arquivo selecionado: " + e.target.files[0].name;
-      this.file = e.target.files[0];
-      this.renamedFile = new File([this.file], this.editRecordID + '.png');
-    },
-    coverSubmitForm: function coverSubmitForm(e) {
-      e.preventDefault();
-      var currentObj = this;
-      var config = {
-        headers: {
-          'content-type': 'multipart/form-data'
-        }
-      };
-
-      // form data
-      var formData = new FormData();
-      formData.append('file', this.renamedFile);
-
-      // send upload request
-      axios__WEBPACK_IMPORTED_MODULE_0__["default"].post('api/cover_upload', formData, config).then(function (response) {
-        currentObj.successUploadCover = response.data.success;
-        currentObj.filename = "";
-      })["catch"](function (error) {
-        currentObj.output = error;
-      });
-      this.getCover(this.editRecordID);
-    },
     checkPropEmpty: function checkPropEmpty() {
       if (!this.work) {
         this.record = this.cleanrecord;
@@ -18056,10 +18005,10 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
       this.convertToBase64();
     },
     convertToBase64: function convertToBase64() {
-      var _this16 = this;
+      var _this14 = this;
       var reader = new FileReader();
       reader.onload = function (event) {
-        _this16.record.base64Image = event.target.result;
+        _this14.record.base64Image = event.target.result;
       };
       reader.readAsDataURL(this.file);
     }

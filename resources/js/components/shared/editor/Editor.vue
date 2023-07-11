@@ -926,6 +926,9 @@ export default {
                     });
             }
         },
+        addAuthor(name) {
+            this.record["author"].push({ id: "", type: "Person", id_lattes13: "", viaf: "", function: "Autor", name: name });
+        },
         addField: function (field) {
             if (this.record[field] === null) {
                 this.record[field] = [];
@@ -952,8 +955,51 @@ export default {
                     })
             }
         },
-        addAuthor(name) {
-            this.record["author"].push({ id: "", type: "Person", id_lattes13: "", viaf: "", function: "Autor", name: name });
+        getDOI(doi) {
+            axios
+                .get("https://api.crossref.org/works/" + doi)
+                .then((response) => {
+                    (this.crossrefRecord = response),
+                        (this.record.name =
+                            this.crossrefRecord.data.message.title[0]),
+                        (this.record.url =
+                            this.crossrefRecord.data.message.URL),
+                        (this.record.publisher =
+                            this.crossrefRecord.data.message.publisher),
+                        (this.record.abstract =
+                            this.crossrefRecord.data.message.abstract),
+                        (this.record.bookEdition =
+                            this.crossrefRecord.data.message['edition-number']),
+                        (this.record.copyrightYear =
+                            this.crossrefRecord.data.message.created[
+                            "date-parts"
+                            ][0][0]),
+                        (this.record.datePublished =
+                            this.crossrefRecord.data.message.issued[
+                            "date-parts"
+                            ][0][0]),
+                        Object.values(
+                            this.crossrefRecord.data.message.author
+                        ).forEach((val) => {
+                            this.record.author.push({
+                                id: "",
+                                type: "Person",
+                                id_lattes13: "",
+                                viaf: "",
+                                name: val.given + " " + val.family,
+                                function: "Autor",
+                            });
+                        });
+                    if (this.crossrefRecord.data.message.ISBN) {
+                        this.record.isbn[0].id =
+                            this.crossrefRecord.data.message.ISBN[0];
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    this.errored = true;
+                })
+                .finally(() => (this.loadingDOI = false));
         },
         getEIDR(eidr) {
             this.loadingEIDR = true;
@@ -1002,68 +1048,6 @@ export default {
                 })
                 .finally(() => (this.loadingISBN = false));
         },
-        getDOI(doi) {
-            axios
-                .get("https://api.crossref.org/works/" + doi)
-                .then((response) => {
-                    (this.crossrefRecord = response),
-                        (this.record.name =
-                            this.crossrefRecord.data.message.title[0]),
-                        (this.record.url =
-                            this.crossrefRecord.data.message.URL),
-                        (this.record.publisher =
-                            this.crossrefRecord.data.message.publisher),
-                        (this.record.abstract =
-                            this.crossrefRecord.data.message.abstract),
-                        (this.record.bookEdition =
-                            this.crossrefRecord.data.message['edition-number']),
-                        (this.record.copyrightYear =
-                            this.crossrefRecord.data.message.created[
-                            "date-parts"
-                            ][0][0]),
-                        (this.record.datePublished =
-                            this.crossrefRecord.data.message.issued[
-                            "date-parts"
-                            ][0][0]),
-                        Object.values(
-                            this.crossrefRecord.data.message.author
-                        ).forEach((val) => {
-                            this.record.author.push({
-                                id: "",
-                                type: "Person",
-                                id_lattes13: "",
-                                viaf: "",
-                                name: val.given + " " + val.family,
-                                function: "Autor",
-                            });
-                        });
-                    if (this.crossrefRecord.data.message.ISBN) {
-                        this.record.isbn[0].id =
-                            this.crossrefRecord.data.message.ISBN[0];
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    this.errored = true;
-                })
-                .finally(() => (this.loadingDOI = false));
-        },
-        getRecordData(id) {
-            axios
-                .get("api/creative_work/editor/" + id)
-                .then((response) => {
-                    if (response.data.about[0].name == null) {
-                        response.data.about = [{ id: "", name: "" }];
-                    }
-                    this.record = response.data;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    this.errored = true;
-                })
-                .finally(() => (this.loading = false));
-            this.getCover(id);
-        },
         getOAIPMH(URLOAIPMH) {
             axios
                 .get("api/oai/identify?url=" + URLOAIPMH)
@@ -1102,28 +1086,20 @@ export default {
                 })
                 .finally(() => (this.loading = false));
         },
-        getZ3950(isbn, host, hostname) {
+        getRecordData(id) {
             axios
-                .get("api/z3950?isbn=" + isbn + "&host=" + host)
+                .get("api/creative_work/editor/" + id)
                 .then((response) => {
-                    if (this.Z3950Records !== null) {
-                        Object.values(response.data).forEach((val) => {
-                            val["source"] = hostname;
-                            this.Z3950Records.push(val);
-                        });
-                    } else {
-                        this.Z3950Records = Array();
-                        Object.values(response.data).forEach((val) => {
-                            val["source"] = hostname;
-                            this.Z3950Records.push(val);
-                        });
+                    if (response.data.about[0].name == null) {
+                        response.data.about = [{ id: "", name: "" }];
                     }
+                    this.record = response.data;
                 })
                 .catch(function (error) {
                     console.log(error);
                     this.errored = true;
                 })
-                .finally(() => (this.loadingZ3950 = false));
+                .finally(() => (this.loading = false));
         },
         getSchema(url, type) {
             axios
@@ -1157,6 +1133,29 @@ export default {
                 })
                 .finally(() => (this.loadingSchema = false));
         },
+        getZ3950(isbn, host, hostname) {
+            axios
+                .get("api/z3950?isbn=" + isbn + "&host=" + host)
+                .then((response) => {
+                    if (this.Z3950Records !== null) {
+                        Object.values(response.data).forEach((val) => {
+                            val["source"] = hostname;
+                            this.Z3950Records.push(val);
+                        });
+                    } else {
+                        this.Z3950Records = Array();
+                        Object.values(response.data).forEach((val) => {
+                            val["source"] = hostname;
+                            this.Z3950Records.push(val);
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    this.errored = true;
+                })
+                .finally(() => (this.loadingZ3950 = false));
+        },
         search() {
             this.loadingSearch = true;
             axios
@@ -1174,61 +1173,6 @@ export default {
                     this.errored = true;
                 })
                 .finally(() => (this.loadingSearch = false));
-        },
-        getCover(id) {
-            axios
-                .get("api/cover?id=" + id + '&title=' + this.record.name)
-                .then((response) => {
-                    this.record.coverimage = response.data;
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    this.errored = true;
-                });
-        },
-        deleteCover(id) {
-            if (confirm("Tem certeza que quer excluir esta capa?")) {
-                axios
-                    .delete("api/cover/" + id)
-                    .then((response) => {
-                        this.deleteCoverSucess = "Capa excluída com sucesso";
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                        this.errored = true;
-                    })
-                    .finally(() => (this.loading = false));
-            }
-        },
-        coverOnFileChange(e) {
-            this.originalfilename = "Arquivo selecionado: " + e.target.files[0].name;
-            this.filename = "Arquivo selecionado: " + e.target.files[0].name;
-            this.file = e.target.files[0];
-            this.renamedFile = new File([this.file], this.editRecordID + '.png');
-        },
-        coverSubmitForm(e) {
-            e.preventDefault();
-            let currentObj = this;
-            const config = {
-                headers: {
-                    'content-type': 'multipart/form-data',
-                }
-            }
-
-            // form data
-            let formData = new FormData();
-            formData.append('file', this.renamedFile);
-
-            // send upload request
-            axios.post('api/cover_upload', formData, config)
-                .then(function (response) {
-                    currentObj.successUploadCover = response.data.success;
-                    currentObj.filename = "";
-                })
-                .catch(function (error) {
-                    currentObj.output = error;
-                });
-            this.getCover(this.editRecordID);
         },
         checkPropEmpty() {
             if (!this.work) {
