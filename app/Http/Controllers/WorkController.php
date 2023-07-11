@@ -21,6 +21,14 @@ class WorkController extends Controller
             $request->per_page = 10;
         }
 
+        if ($request->about) {
+            $query = About::query();
+            $query->where('name', $request->about);
+            $query->with('works');
+            $works = $query->first()->works()->paginate($request->per_page)->withQueryString();
+            return view('works.index', compact('works', 'request'));
+        }
+
         $query = Work::query()->with('authors')->with('abouts');
 
         if ($request->name) {
@@ -38,14 +46,7 @@ class WorkController extends Controller
         if ($request->author) {
             $search = $request->author;
             $query->whereHas('authors', function ($query) use ($search) {
-                $query->where('name', 'ilike', '%' . $search . '%');
-            });
-        }
-
-        if ($request->about) {
-            $search = $request->about;
-            $query->whereHas('abouts', function ($query) use ($search) {
-                $query->where('name', 'ilike', '%' . $search . '%');
+                $query->where('name', $search);
             });
         }
 
