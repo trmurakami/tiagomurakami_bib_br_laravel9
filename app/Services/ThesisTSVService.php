@@ -91,6 +91,6 @@ class ThesisTSVService
             }
         }
         fclose($handle);
-        return redirect('/works')->with('success', 'Trabalhos importados com sucesso!');
+        return redirect()->route('works.index')->with('success', 'Work created successfully.');
     }
 }

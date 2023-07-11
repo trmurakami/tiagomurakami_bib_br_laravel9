@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('about_id')->constrained();
             $table->foreignId('work_id')->constrained();
             $table->timestamps();
+            $table->index(['about_id', 'work_id']);
         });
     }
 

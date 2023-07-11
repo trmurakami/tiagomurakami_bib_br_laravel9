@@ -17,6 +17,7 @@ class CreateThingWorkTable extends Migration
             $table->foreign('work_id')->references('id')->on('works')->onDelete('cascade');
             $table->string('function')->nullable();
             $table->string('affiliation')->nullable();
+            $table->index(['thing_id', 'work_id']);
         });
     }
 

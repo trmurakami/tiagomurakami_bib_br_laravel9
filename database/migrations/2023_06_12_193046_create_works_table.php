@@ -102,6 +102,8 @@ return new class extends Migration
             $table->string('volumeNumber')->nullable();
             $table->jsonb('workTranslation')->nullable(); // not included
             $table->timestamps();
+
+            $table->index(['about', 'author']);
         });
     }
 
