@@ -52,6 +52,7 @@
             $request->has('type')||
             $request->has('datePublished')||
             $request->has('author')||
+            $request->has('about')||
             $request->has('isPartOf_name')||
             $request->has('releasedEvent')||
             $request->has('inLanguage')||
@@ -69,6 +70,9 @@
                     }
                     if ($key == 'name') {
                     $key_name = 'Título';
+                    }
+                    if ($key == 'about') {
+                    $key_name = 'Assunto';
                     }
                     if ($key == 'type') {
                     $key_name = 'Tipo';
