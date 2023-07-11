@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('id_lattes13')->nullable();
             $table->string('url')->nullable();
             $table->timestamps();
+
+            $table->index('name');
         });
     }
 
