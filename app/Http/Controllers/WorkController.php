@@ -210,7 +210,7 @@ class WorkController extends Controller
                     if (!$about_existing) {
                         $about_new = new About();
                         if (!empty($about["name"])) {
-                            $about_new->name = utf8_encode(substr($about["name"], 0, 254));
+                            $about_new->name = mb_convert_encoding(substr($about["name"], 0, 254), 'UTF-8', 'UTF-8');
                             $about_new->save();
                             $record->abouts()->attach($about_new);
                         }
