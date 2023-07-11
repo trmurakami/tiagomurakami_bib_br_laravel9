@@ -142,6 +142,9 @@ class WorkController extends Controller
      */
     public function edit(Work $work)
     {
+        if (is_null($work->publisher)) {
+            $work->publisher = "";
+        }
         return view('works.edit', compact('work'));
     }
 
