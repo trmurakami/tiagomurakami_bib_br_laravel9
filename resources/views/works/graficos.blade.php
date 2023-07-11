@@ -6,6 +6,7 @@
 
 <div class="container">
     <h2>Gráficos</h2>
+    <a href="{{ route('works.graficos') }}" class="btn btn-warning">Limpar consulta</a>
 
     <div class="container text-center">
         <div class="row">
