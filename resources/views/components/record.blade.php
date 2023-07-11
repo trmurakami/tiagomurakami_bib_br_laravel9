@@ -91,6 +91,20 @@
                             </small>
                         </p>
                         @endif
+                        @if (isset($work->inLanguage))
+                        <p class="card-text p-0 m-0 lh-sm">
+                            <small class="text-body-secondary">
+                                Idioma: {{ $work->inLanguage }}
+                            </small>
+                        </p>
+                        @endif
+                        @if (isset($work->countryOfOrigin))
+                        <p class="card-text p-0 m-0 lh-sm">
+                            <small class="text-body-secondary">
+                                País: {{ $work->countryOfOrigin }}
+                            </small>
+                        </p>
+                        @endif
                         @if (isset($work->sourceOrganization))
                         <p class="card-text p-0 m-0 lh-sm">
                             <small class="text-body-secondary">
