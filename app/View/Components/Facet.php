@@ -57,13 +57,13 @@ class Facet extends Component
         if ($this->request->about) {
             $search = $this->request->about;
             $query->whereHas('abouts', function ($query) use ($search) {
-                $query->where('name', 'like', '%' . $search . '%');
+                $query->where('name', $search);
             });
         }
         if ($this->request->author) {
             $search = $this->request->author;
             $query->whereHas('authors', function ($query) use ($search) {
-                $query->where('name', 'like', '%' . $search . '%');
+                $query->where('name', $search);
             });
         }
         if ($this->request->releasedEvent) {
