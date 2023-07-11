@@ -1,6 +1,6 @@
 <div class="card mb-3">
     <div class="card-header">
-        <small class="text-body-secondary">{{ $work->type }}</small>
+        <small class="text-body-secondary">{{ $work->type }} - {{ $work->id }}</small>
         @if ($work->bookFormat)
         <small class="text-body-secondary">({{ $work->bookFormat }})</small>
         @endif
