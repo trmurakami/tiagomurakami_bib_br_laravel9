@@ -39,14 +39,12 @@
                 Nenhum registro encontrado
             </div>
             @endif
-
             @foreach ($works as $work)
             <x-record :work="$work" />
             @endforeach
         </div>
         <div class="col col-lg-4">
             <h3>Refinar resultados <a href="/works" class="btn btn-warning">Limpar busca</a> </h3>
-
             @if (
             $request->has('name')||
             $request->has('type')||
@@ -100,8 +98,6 @@
                     $key_name = 'Instituição';
                     }
                     @endphp
-
-
                     <a type="button" class="btn btn-outline-warning mb-1"
                         href="/works?{{ http_build_query(array_diff_key($request->all(), [$key => $value])) }}">
                         {{ $key_name }}: {{ $value }} (X)
@@ -111,7 +107,6 @@
                 @endforeach
             </div>
             @endif
-
 
             <div class="accordion" id="facets">
                 <x-facet field="type" fieldName="Tipo" :request="$request" />
@@ -124,7 +119,6 @@
                 <x-facet field="releasedEvent" fieldName="Nome do evento" :request="$request" />
                 <x-facet field="inLanguage" fieldName="Idioma" :request="$request" />
                 <x-facet field="publisher" fieldName="Editora" :request="$request" />
-
             </div>
 
         </div>
