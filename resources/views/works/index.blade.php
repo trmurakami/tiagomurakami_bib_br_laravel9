@@ -57,6 +57,7 @@
             $request->has('releasedEvent')||
             $request->has('inLanguage')||
             $request->has('issn')||
+            $request->has('sourceOrganization')||
             $request->has('publisher')
             )
             <div class="alert alert-light" role="alert">
@@ -95,6 +96,9 @@
                     if ($key == 'publisher') {
                     $key_name = 'Editora';
                     }
+                    if ($key == 'sourceOrganization') {
+                    $key_name = 'Instituição';
+                    }
                     @endphp
 
 
@@ -126,7 +130,7 @@
         </div>
         <div class="d-flex mt-3 mb-3">
             <div class="mx-auto">
-                v
+                {{ $works->links() }}
             </div>
         </div>
     </div>
