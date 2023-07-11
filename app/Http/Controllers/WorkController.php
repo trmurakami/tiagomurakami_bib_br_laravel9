@@ -41,11 +41,25 @@ class WorkController extends Controller
                 $query->where('name', $search);
             });
         }
-        
+
+        if ($request->authors) {
+            $search = $request->authors;
+            $query->whereHas('authors', function ($query) use ($search) {
+                $query->where('name', 'ilike', '%' . $search . '%');
+            });
+        }
+
         if ($request->about) {
             $search = $request->about;
             $query->whereHas('abouts', function ($query) use ($search) {
                 $query->where('name', $search);
+            });
+        }
+
+        if ($request->abouts) {
+            $search = $request->abouts;
+            $query->whereHas('abouts', function ($query) use ($search) {
+                $query->where('name', 'ilike', '%' . $search . '%');
             });
         }
 
