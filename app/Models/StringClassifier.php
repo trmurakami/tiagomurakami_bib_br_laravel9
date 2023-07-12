@@ -30,6 +30,7 @@ class StringClassifier
     {
         $this->tnt->load('classifier.cls');
         $results = $this->tnt->predict($string);
+        
         return $results;
     }
 }
