@@ -7,6 +7,7 @@ use App\Http\Controllers\Z3950Controller;
 use App\Http\Controllers\CutterSanbornController;
 use App\Http\Controllers\MARCQAController;
 use App\Http\Controllers\WorksAPIController;
+use App\Http\Controllers\GexfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,5 @@ Route::post('marcqareportTitleInd2', [MARCQAController::class, 'reportTitleInd2'
 Route::post('marcqacorrectTitleInd2', [MARCQAController::class, 'correctTitleInd2']);
 
 Route::apiResource("works", WorksAPIController::class);
+
+Route::get('/export-gexf', [GexfController::class, 'exportGexf']);
