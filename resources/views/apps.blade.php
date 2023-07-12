@@ -54,6 +54,16 @@
                 </div>
             </div>
         </div>
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Classificador Machine Learning (Em testes)</h5>
+                    <p class="card-text">Classificador Machine Learning</p>
+                    <a href="classificador/consulta" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

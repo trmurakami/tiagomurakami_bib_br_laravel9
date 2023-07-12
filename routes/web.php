@@ -12,6 +12,7 @@ use App\Http\Controllers\WorksAPIController;
 use App\Http\Controllers\WorkThingController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\ClassificadorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -99,6 +100,11 @@ Route::get('upload', [UploadController::class, 'index']);
 Route::post('upload', [UploadController::class, 'upload'])->name('upload.upload');
 
 Route::get('graficos', [WorkController::class, 'graficos'])->name('works.graficos');
+
+Route::get('/classificador/consulta', [ClassificadorController::class, 'consulta'])->name('classificador.consulta');
+Route::post('/classificador/consulta', [ClassificadorController::class, 'processarConsulta'])->name('classificador.processarConsulta');
+Route::get('/classificador/treinamento', [ClassificadorController::class, 'treinamento'])->name('classificador.treinamento');
+Route::post('/classificador/treinamento', [ClassificadorController::class, 'processarTreinamento'])->name('classificador.processarTreinamento');
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 
