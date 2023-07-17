@@ -32,26 +32,51 @@ class ThesisTSVService
                         if ($label == 'NM_PRODUCAO') {
                             $work->name = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
                         }
+                        if ($label == 'TituloTese') {
+                            $work->name = $value;
+                        }
                         if ($label == 'AN_BASE') {
                             $work->datePublished = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+                        }
+                        if ($label == 'AnoBase') {
+                            $work->datePublished = $value;
                         }
                         if ($label == 'NM_IDIOMA') {
                             $work->inLanguage = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
                         }
+                        if ($label == 'Idioma') {
+                            $work->inLanguage = $value;
+                        }
                         if ($label == 'DS_URL_TEXTO_COMPLETO') {
                             $work->url = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+                        }
+                        if ($label == 'URLTextoCompleto') {
+                            $work->url = $value;
                         }
                         if ($label == 'DS_RESUMO') {
                             $work->abstract = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
                         }
+                        if ($label == 'ResumoTese') {
+                            $work->abstract = $value;
+                        }
                         if ($label == 'NM_PROGRAMA') {
                             $work->inSupportOf = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+                        }
+                        if ($label == 'NomePrograma') {
+                            $work->inSupportOf = $value;
                         }
                         if ($label == 'NM_DISCENTE') {
                             $author_array = [];
                             $author_array[0]['id'] = '';
                             $author_array[0]['type'] = 'Person';
                             $author_array[0]['name'] = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+                            $author_array[0]['function'] = 'Autor';
+                        }
+                        if ($label == 'Autor') {
+                            $author_array = [];
+                            $author_array[0]['id'] = '';
+                            $author_array[0]['type'] = 'Person';
+                            $author_array[0]['name'] = $value;
                             $author_array[0]['function'] = 'Autor';
                         }
                         if ($label == 'NM_ORIENTADOR') {
@@ -62,11 +87,25 @@ class ThesisTSVService
                             $work->author = $author_array;
                             unset($author_array);
                         }
+                        if ($label == 'Orientador_1') {
+                            $author_array[1]['id'] = '';
+                            $author_array[1]['type'] = 'Person';
+                            $author_array[1]['name'] = $value;
+                            $author_array[1]['function'] = 'Orientador';
+                            $work->author = $author_array;
+                            unset($author_array);
+                        }
                         if ($label == 'NM_ENTIDADE_ENSINO') {
                             $work->sourceOrganization = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
                         }
+                        if ($label == 'NomeIes') {
+                            $work->sourceOrganization = $value;
+                        }
                         if ($label == 'NR_PAGINAS') {
                             $work->numberOfPages = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
+                        }
+                        if ($label == 'NumeroPaginas') {
+                            $work->numberOfPages = $value;
                         }
                         if ($label == 'DS_PALAVRA_CHAVE') {
                             $keywords = explode(';', mb_convert_encoding($value, 'UTF-8', 'UTF-8'));
@@ -78,6 +117,15 @@ class ThesisTSVService
                                 $work->about = $keywords_array;
                                 unset($keywords_array);
                             }
+                        }
+                        if ($label == 'PalavrasChave') {
+                            $keywords = explode(';', $value);
+                            foreach ($keywords as $key => $value) {
+                                $keywords_array[$key]['id'] = "";
+                                $keywords_array[$key]['name'] = $value;
+                            }
+                            $work->about = $keywords_array;
+                            unset($keywords_array);
                         }
                     }
                     $saved_id = $work->save();
