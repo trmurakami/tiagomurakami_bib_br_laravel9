@@ -102,6 +102,21 @@
                     </form>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <h4 class="mt-3">Upload de Arquivo de Classificação</h4>
+                    <form method="POST" action="/classificador/uploadTSVTreinamento" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Arquivo de Classificação em TSV - Formato: String \t
+                                label</label>
+                            <p>Tamanho máximo do arquivo {{ (int)(ini_get('post_max_size')) }} MB</p>
+                            <input class="form-control" type="file" for="file" accept=".tsv" name="file">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

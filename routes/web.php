@@ -105,6 +105,7 @@ Route::get('/classificador/consulta', [ClassificadorController::class, 'consulta
 Route::post('/classificador/consulta', [ClassificadorController::class, 'processarConsulta'])->name('classificador.processarConsulta');
 Route::get('/classificador/treinamento', [ClassificadorController::class, 'treinamento'])->name('classificador.treinamento');
 Route::post('/classificador/treinamento', [ClassificadorController::class, 'processarTreinamento'])->name('classificador.processarTreinamento');
+Route::post('/classificador/uploadTSVTreinamento', [ClassificadorController::class, 'uploadTSVTreinamento']);
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 
