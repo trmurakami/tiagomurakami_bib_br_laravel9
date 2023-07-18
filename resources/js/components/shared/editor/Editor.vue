@@ -35,13 +35,15 @@
             <label for="type" class="form-label mb-3">Tipo de material</label>
             <select class="form-select mb-3" id="type" v-model="record.type" name="type" required>
                 <option value="Livro" selected>Livro</option>
+                <option value="Álbum musical">Álbum musical</option>
                 <option value="Artigo">Artigo</option>
-                <option value="Trabalho em Evento">Trabalho em Evento</option>
+                <option value="Dissertação">Dissertação</option>
                 <option value="Filme">Filme</option>
                 <option value="Gravação musical">Gravação musical</option>
-                <option value="Álbum musical">Álbum musical</option>
-                <option value="Vídeo">Vídeo</option>
                 <option value="Periódico">Periódico</option>
+                <option value="Tese">Tese</option>
+                <option value="Trabalho em Evento">Trabalho em Evento</option>
+                <option value="Vídeo">Vídeo</option>
             </select>
 
             <div class="m-5">
@@ -631,7 +633,7 @@
             </template>
 
             <!-- Number of pages -->
-            <template v-if="record.type === 'Livro'">
+            <template v-if="record.type === 'Livro' || record.type === 'Tese' || record.type === 'Dissertação'">
                 <div class="form-floating mb-2">
                     <input type="text" class="form-control" v-model="record.numberOfPages" id="numberOfPages"
                         name="numberOfPages" placeholder="Digite o número de páginas" />
@@ -651,6 +653,24 @@
                         <option value="Capa tradicional">Capa tradicional</option>
                     </select>
                     <label for="bookFormat">Formato do livro</label>
+                </div>
+            </template>
+
+            <!-- inSupportOf -->
+            <template v-if="record.type === 'Tese' || record.type === 'Dissertação'">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" v-model.trim="record.inSupportOf" id="inSupportOf"
+                        name="inSupportOf" placeholder="Digite o nome do Curso de Pós-Graduação" />
+                    <label for="inSupportOf">Nome do Curso de Pós-Graduação</label>
+                </div>
+            </template>
+
+            <!-- sourceOrganization -->
+            <template v-if="record.type === 'Tese' || record.type === 'Dissertação'">
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" v-model.trim="record.sourceOrganization" id="sourceOrganization"
+                        name="sourceOrganization" placeholder="Digite o nome da Instituição de Ensino Superior" />
+                    <label for="sourceOrganization">Nome da Instituição de Ensino Superior</label>
                 </div>
             </template>
 
