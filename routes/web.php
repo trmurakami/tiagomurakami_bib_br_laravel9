@@ -97,7 +97,7 @@ Route::delete('/works/{work}/detach/{thing}', [WorkThingController::class, 'deta
 Route::resource('things', ThingController::class);
 Route::resource('abouts', AboutController::class);
 
-Route::get('upload', [UploadController::class, 'index']);
+Route::get('upload', [UploadController::class, 'index'])->middleware('auth');
 Route::post('upload', [UploadController::class, 'upload'])->name('upload.upload');
 
 Route::get('graficos', [WorkController::class, 'graficos'])->name('works.graficos');
