@@ -85,10 +85,11 @@ Route::post('marcqareport', [MARCQAController::class, 'marcQAReport'])->name('ma
 
 Route::resource('works', WorkController::class);
 Route::resource('works', WorkController::class)->only(['create'])->middleware('auth');
+Route::resource('works', WorkController::class)->only(['edit'])->middleware('auth');
 
 Route::get('/editor', function () {
     return view('works.createnew');
-});
+})->middleware('auth');
 
 Route::post('/works/{work}/attach', [WorkThingController::class, 'attachThing'])->name('works.attachThing');
 Route::delete('/works/{work}/detach/{thing}', [WorkThingController::class, 'detachThing'])->name('works.detachThing');
