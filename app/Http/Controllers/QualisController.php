@@ -55,6 +55,9 @@ class QualisController extends Controller
         if ($request->area) {
             $query->where('area', $request->area);
         }
+        if ($request->orderByEstrato) {
+            $query->orderBy('estrato', $request->orderByEstrato);
+        }
         $qualis = $query->paginate(15);
 
         return view('apps.qualis', compact('qualis'));
