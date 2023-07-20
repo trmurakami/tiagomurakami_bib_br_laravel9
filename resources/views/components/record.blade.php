@@ -37,8 +37,12 @@
                         @if(isset($work->url))
                         <p class="card-text p-0 m-0">
                             <small class="text-body-secondary">URL:
+                                @if(empty($work->url))
+                                <span class="text-body-secondary">Não informado</span>
+                                @else
                                 <a href="{{ $work->url }}" target="_blank"><i class="bi bi-link"></i> Acessar o
                                     trabalho</a>
+                                @endif
                             </small>
                         </p>
                         @endif
