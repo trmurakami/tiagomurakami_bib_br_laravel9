@@ -179,6 +179,10 @@
                 </ul>
             </div>
         </div>
+
+        <x-youtube-channel />
+
+
     </div>
 </div>
 
