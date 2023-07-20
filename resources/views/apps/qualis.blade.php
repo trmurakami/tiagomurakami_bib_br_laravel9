@@ -28,7 +28,7 @@
             </form>
             <div class="d-flex mt-3 mb-3">
                 <div class="mx-auto">
-                    {!! $qualis->links() !!}
+                    {!! $qualis->withQueryString()->links() !!}
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
 
             <div class="d-flex mt-3 mb-3">
                 <div class="mx-auto">
-                    {!! $qualis->links() !!}
+                    {!! $qualis->withQueryString()->links() !!}
                 </div>
             </div>
 
