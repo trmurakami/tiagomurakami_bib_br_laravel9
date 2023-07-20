@@ -10,7 +10,7 @@
         <div class="col col-lg-12">
             <h2 class="mt-2 mb-2">Pesquisa Qualis Periódicos - <a
                     href="https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf"
-                    target="_blank">Fonte</a>
+                    target="_blank">Fonte</a> - <a class="btn btn-warning" href="qualis">Limpar filtros</a>
             </h2>
             <form action="qualis" method="get">
                 <div class="input-group mb-3">
