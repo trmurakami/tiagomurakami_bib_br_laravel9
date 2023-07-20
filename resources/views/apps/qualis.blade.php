@@ -47,7 +47,7 @@
                     <tr>
                         <th scope="row">{{ $q->issn }}</th>
                         <td>{{ $q->titulo }}</td>
-                        <td>{{ $q->area }}</td>
+                        <td><a href="qualis?area={{ $q->area }}">{{ $q->area }}</a></td>
                         <td>{{ $q->estrato }}</td>
                         <td>{{ $q->ano }}</td>
                     </tr>

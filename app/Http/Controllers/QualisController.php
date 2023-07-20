@@ -14,6 +14,7 @@ class QualisController extends Controller
     {
         $issn = $request->input('issn');
         $titulo = $request->input('titulo');
+        $area = $request->input('area');
 
         // Certifique-se de que a tabela onde o Qualis está armazenado seja substituída pelo nome correto
         $query = DB::table('qualis');
@@ -26,7 +27,11 @@ class QualisController extends Controller
             $query->where('titulo', 'ilike', '%' . $titulo . '%');
         }
 
-        $qualis = $query->first();
+        if ($area) {
+            $query->where('area', $area);
+        }
+
+        $qualis = $query->get();
 
         if ($qualis) {
             // Resultado encontrado no Qualis, faça o que for necessário aqui
@@ -45,6 +50,9 @@ class QualisController extends Controller
         }
         if ($request->titulo) {
             $query->where('titulo', 'iLIKE', '%' . $request->titulo . '%');
+        }
+        if ($request->area) {
+            $query->where('area', $request->area);
         }
         $qualis = $query->paginate(15);
 
