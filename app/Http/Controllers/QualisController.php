@@ -50,6 +50,7 @@ class QualisController extends Controller
         }
         if ($request->titulo) {
             $query->where('titulo', 'iLIKE', '%' . $request->titulo . '%');
+            $query->orderBy('titulo');
         }
         if ($request->area) {
             $query->where('area', $request->area);
