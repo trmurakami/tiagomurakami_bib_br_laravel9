@@ -36,11 +36,13 @@
                 <thead>
                     <tr>
                         <th scope="col">ISSN</th>
-                        <th scope="col">Título <a href="{{ $qualis->url(1) }}&orderByTitulo=asc">&uarr;</a><a
-                                href="{{ $qualis->url(1) }}&orderByTitulo=desc">&darr;</a></th>
+                        <th scope="col">Título <a
+                                href="{{ $qualis->appends(['orderByTitulo' => 'asc'])->url(1) }}">&uarr;</a><a
+                                href="{{ $qualis->appends(['orderByTitulo' => 'desc'])->url(1) }}">&darr;</a></th>
                         <th scope="col">Área de avaliação</th>
-                        <th scope="col">Estrato <a href="{{ $qualis->url(1) }}&orderByEstrato=asc">&uarr;</a><a
-                                href="{{ $qualis->url(1) }}&orderByEstrato=desc">&darr;</a></th>
+                        <th scope="col">Estrato <a
+                                href="{{ $qualis->appends(['orderByEstrato' => 'asc'])->url(1) }}">&uarr;</a><a
+                                href="{{ $qualis->appends(['orderByEstrato' => 'desc'])->url(1) }}">&darr;</a></th>
                         <th scope="col">Ano</th>
                     </tr>
                 </thead>
