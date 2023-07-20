@@ -6,7 +6,72 @@
 
 <div class="container">
     <h2>Gráficos</h2>
-    <a href="{{ route('works.graficos') }}" class="btn btn-warning">Limpar consulta</a>
+
+    @if (
+    $request->has('name')||
+    $request->has('type')||
+    $request->has('datePublished')||
+    $request->has('author')||
+    $request->has('about')||
+    $request->has('isPartOf_name')||
+    $request->has('releasedEvent')||
+    $request->has('inLanguage')||
+    $request->has('issn')||
+    $request->has('sourceOrganization')||
+    $request->has('publisher')
+    )
+    <div class="alert alert-light" role="alert">
+        Filtro ativo: <br>
+        @foreach ($request->all() as $key => $value)
+        @if ($key != 'page')
+        <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            @php
+            if ($key == 'author') {
+            $key_name = 'Autor';
+            }
+            if ($key == 'name') {
+            $key_name = 'Título';
+            }
+            if ($key == 'about') {
+            $key_name = 'Assunto';
+            }
+            if ($key == 'type') {
+            $key_name = 'Tipo';
+            }
+            if ($key == 'datePublished') {
+            $key_name = 'Ano de publicação';
+            }
+            if ($key == 'isPartOf_name') {
+            $key_name = 'Publicação';
+            }
+            if ($key == 'releasedEvent') {
+            $key_name = 'Nome do evento';
+            }
+            if ($key == 'inLanguage') {
+            $key_name = 'Idioma';
+            }
+            if ($key == 'issn') {
+            $key_name = 'ISSN';
+            }
+            if ($key == 'publisher') {
+            $key_name = 'Editora';
+            }
+            if ($key == 'sourceOrganization') {
+            $key_name = 'Instituição';
+            }
+            @endphp
+            <a type="button" class="btn btn-outline-warning mb-1" href="/graficos">
+                {{ $key_name }}: {{ $value }} (X)
+            </a>
+        </div>
+        <a href="{{ route('works.graficos') }}" class="btn btn-warning">Limpar todos os filtros</a>
+        @endif
+        @endforeach
+    </div>
+    @endif
+
+
+
 
     <div class="container text-center">
         <div class="row">
