@@ -36,7 +36,8 @@
                 <thead>
                     <tr>
                         <th scope="col">ISSN</th>
-                        <th scope="col">Título</th>
+                        <th scope="col">Título <a href="{{ $qualis->url(1) }}&orderByTitulo=asc">&uarr;</a><a
+                                href="{{ $qualis->url(1) }}&orderByTitulo=desc">&darr;</a></th>
                         <th scope="col">Área de avaliação</th>
                         <th scope="col">Estrato <a href="{{ $qualis->url(1) }}&orderByEstrato=asc">&uarr;</a><a
                                 href="{{ $qualis->url(1) }}&orderByEstrato=desc">&darr;</a></th>
