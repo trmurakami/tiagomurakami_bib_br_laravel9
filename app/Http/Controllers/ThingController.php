@@ -15,9 +15,15 @@ class ThingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $things = Thing::orderBy('id','desc')->paginate(5);
+        $query = Thing::query();
+        if ($request->name) {
+            $query->where('name', 'iLIKE', '%' . $request->name . '%');
+        }
+        $things = $query->withCount('works')->with('works')
+        ->orderByDesc('works_count')->paginate(15);
+
         return view('things.index', compact('things'));
     }
 

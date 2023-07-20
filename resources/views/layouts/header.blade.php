@@ -7,6 +7,7 @@
                 <li><a href="{{url('/')}}/apps" class="nav-link px-2 text-white">Aplicativos online</a></li>
                 <li><a href="{{url('/')}}/slides" class="nav-link px-2 text-white">Slides de apresentações</a></li>
                 <li><a href="{{url('/')}}/works" class="nav-link px-2 text-white">Biblioteca</a></li>
+                <li><a href="{{url('/')}}/things" class="nav-link px-2 text-white">Biblioteca - Autoridades</a></li>
                 <li><a href="{{url('/')}}/graficos" class="nav-link px-2 text-white">Biblioteca - Gráficos</a></li>
                 <!-- <li><a href="{{url('/')}}/guiadesoftwares" class="nav-link px-2 text-white">Guia de softwares</a></li> -->
             </ul>
