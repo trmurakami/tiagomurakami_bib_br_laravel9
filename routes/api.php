@@ -8,6 +8,7 @@ use App\Http\Controllers\CutterSanbornController;
 use App\Http\Controllers\MARCQAController;
 use App\Http\Controllers\WorksAPIController;
 use App\Http\Controllers\GexfController;
+use App\Http\Controllers\QualisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,5 @@ Route::post('marcqacorrectTitleInd2', [MARCQAController::class, 'correctTitleInd
 Route::apiResource("works", WorksAPIController::class);
 
 Route::get('/export-gexf', [GexfController::class, 'exportGexf']);
+
+Route::get('/consultar-qualis', [QualisController::class, 'consultarQualis']);

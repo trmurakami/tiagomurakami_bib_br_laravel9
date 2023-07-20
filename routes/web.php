@@ -13,6 +13,7 @@ use App\Http\Controllers\WorkThingController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ClassificadorController;
+use App\Http\Controllers\QualisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,6 +97,8 @@ Route::delete('/works/{work}/detach/{thing}', [WorkThingController::class, 'deta
 
 Route::resource('things', ThingController::class);
 Route::resource('abouts', AboutController::class);
+
+Route::resource('qualis', QualisController::class);
 
 Route::get('upload', [UploadController::class, 'index'])->middleware('auth');
 Route::post('upload', [UploadController::class, 'upload'])->name('upload.upload');
