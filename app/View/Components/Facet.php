@@ -71,7 +71,7 @@ class Facet extends Component
             
         }
         if ($this->request->isPartOf_name) {
-            $querywhere('isPartOf_name', 'like', '%' . $this->request->isPartOf_name . '%');
+            $query->where('isPartOf_name', 'like', '%' . $this->request->isPartOf_name . '%');
         }
         if ($this->field == 'datePublished') {
             $query->groupBy($this->field)->orderByDesc('field')->limit(10);
