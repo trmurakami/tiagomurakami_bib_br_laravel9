@@ -57,8 +57,8 @@
         <div class="col-sm-6 mt-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Classificador Machine Learning (Em testes)</h5>
-                    <p class="card-text">Classificador Machine Learning</p>
+                    <h5 class="card-title">Classificador Machine Learning usando TNTSearch</h5>
+                    <p class="card-text">Classificador Machine Learning usando TNTSearch</p>
                     <a href="classificador/consulta" class="btn btn-primary">Acessar</a>
                 </div>
             </div>
@@ -69,6 +69,24 @@
                     <h5 class="card-title">Consulta Qualis Periódicos</h5>
                     <p class="card-text">Consulta Qualis Periódicos</p>
                     <a href="qualis" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Classificador SDGs usando Tensorflow</h5>
+                    <p class="card-text">Classificador SDGs</p>
+                    <a href="https://tiagomurakami.bib.br/sdg" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Classificador Ciência da Informação usando Tensorflow</h5>
+                    <p class="card-text">Classificador Ciência da Informação</p>
+                    <a href="https://tiagomurakami.bib.br/classificadorci" class="btn btn-primary">Acessar</a>
                 </div>
             </div>
         </div>
