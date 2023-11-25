@@ -14,6 +14,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ClassificadorController;
 use App\Http\Controllers\QualisController;
+use App\Http\Controllers\AuroraSDG;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/apps', function () {
     return view('apps');
@@ -112,5 +113,10 @@ Route::post('/classificador/treinamento', [ClassificadorController::class, 'proc
 Route::post('/classificador/uploadTSVTreinamento', [ClassificadorController::class, 'uploadTSVTreinamento']);
 
 Route::get('phpmyinfo', function () {
-    phpinfo(); 
+    phpinfo();
 })->name('phpmyinfo');
+
+Route::get('/aurorasdg', function () {
+    return view('apps.aurorasdg');
+});
+Route::post('/aurorasdg', AuroraSDG::class);

@@ -84,6 +84,15 @@
         <div class="col-sm-6 mt-3">
             <div class="card">
                 <div class="card-body">
+                    <h5 class="card-title">Classificador SDGs usando Aurora API</h5>
+                    <p class="card-text">Classificador SDGs</p>
+                    <a href="https://tiagomurakami.bib.br/aurorasdg" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
                     <h5 class="card-title">Classificador Ciência da Informação usando Tensorflow</h5>
                     <p class="card-text">Classificador Ciência da Informação</p>
                     <a href="https://tiagomurakami.bib.br/classificadorci" class="btn btn-primary">Acessar</a>
