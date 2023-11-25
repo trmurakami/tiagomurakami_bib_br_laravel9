@@ -16,6 +16,8 @@ class AuroraSDG extends Controller
     {
         if ($request->file) {
 
+            $content[] = "título\tSDG\tProbabilidade\tSDG2\tProbabilidade2";
+
             $fh = fopen($request->file, 'r+');
             $row = fgetcsv($fh, 108192, "\t");
 
@@ -51,13 +53,13 @@ class AuroraSDG extends Controller
                     return $b['prediction'] <=> $a['prediction'];
                 });
 
-                $content[] = $row[TITULO] . "\t" . $response["predictions"][0]["sdg"]["name"] . "\t" . $response["predictions"][0]["prediction"];
+                $content[] = $row[TITULO] . "\t" . $response["predictions"][0]["sdg"]["name"] . "\t" . $response["predictions"][0]["prediction"] . "\t" . $response["predictions"][1]["sdg"]["name"] . "\t" . $response["predictions"][1]["prediction"];
 
                 ob_flush();
                 flush();
             }
 
-            $file = "lattes.tsv";
+            $file = "sdgs.tsv";
             header('Content-type: text/plain');
             header("Content-Disposition: attachment; filename=$file");
 
