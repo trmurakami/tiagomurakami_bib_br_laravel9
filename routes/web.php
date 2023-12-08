@@ -120,3 +120,7 @@ Route::get('/aurorasdg', function () {
     return view('apps.aurorasdg');
 });
 Route::post('/aurorasdg', AuroraSDG::class);
+
+Route::get('/fichacatalografica', function () {
+    return view('fichacatalografica.ficha');
+});

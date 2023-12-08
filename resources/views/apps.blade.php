@@ -100,6 +100,16 @@
             </div>
         </div>
 
+        <div class="col-sm-6 mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gerador de Ficha Catalográfica</h5>
+                    <p class="card-text">Gerador de Ficha Catalográfica</p>
+                    <a href="fichacatalografica" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

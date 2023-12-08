@@ -2,5 +2,6 @@
     "/js/onlinemarceditor.js": "/js/onlinemarceditor.js",
     "/js/editoralephseq.js": "/js/editoralephseq.js",
     "/js/cutter.js": "/js/cutter.js",
-    "/js/editor.js": "/js/editor.js"
+    "/js/editor.js": "/js/editor.js",
+    "/js/ficha.js": "/js/ficha.js"
 }
