@@ -5,7 +5,9 @@ export default {
         validation: {
             titulo: 'is-invalid',
         },
-        cutter: [],
+        cutter: {
+            codigo: 'A000',
+        },
         record: {
             ano: "2024",
             cidade: "",

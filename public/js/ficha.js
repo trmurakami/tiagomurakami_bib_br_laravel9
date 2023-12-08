@@ -17592,7 +17592,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       validation: {
         titulo: 'is-invalid'
       },
-      cutter: [],
+      cutter: {
+        codigo: 'A000'
+      },
       record: {
         ano: "2024",
         cidade: "",
