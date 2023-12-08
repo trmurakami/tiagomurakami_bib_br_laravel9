@@ -74,70 +74,7 @@ export default {
             validate: 'Validate',
             warning: 'Warning'
         },
-        translation_pt_BR: {
-            _008: '008 - Campo de tamanho fixo',
-            _040a: 'Código da Agência Catalogadora',
-            _040c: 'Agência que transcreveu o registro em formato legível por máquina',
-            _245: 'Título Principal',
-            _2451: 'Entrada secundária de título',
-            _24510: 'Não gera entrada secundária',
-            _24511: 'Gera entrada secundária',
-            _2452: 'Caracteres a serem desprezados',
-            _245a: 'Título principal',
-            _245b: 'Subtítulo',
-            _245c: 'Indicação de responsabilidade',
-            _260: 'Imprenta',
-            _2601: 'Informações editoriais',
-            _2601_: '# - Não se aplica/nenhuma informação fornecida/editor mais antigo',
-            _26012: '2 - Editor intermediário',
-            _26013: '3 - Editor atual',
-            _260a: 'Lugar de publicação, distribuição, etc.',
-            _260b: 'Nome do editor, distribuidor, etc.',
-            _260c: 'Data de publicação, distribuição, etc.',
-            _300: 'Descrição física',
-            _300a: 'Extensão',
-            _300b: 'Detalhes físicos adicionais',
-            _300c: 'Dimensões',
-            add_corporate_name:'Adicionar Entidade',
-            add_eletronic_location_and_access: 'Adicionar Localização eletrônica e acesso',
-            add_general_note: 'Adicionar nota geral',
-            add_isbn: 'Adicionar ISBN',
-            add_personal_name: 'Adicionar Nome pessoal',
-            add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
-            add_subject_added_entry_topical_term: 'Adicionar Assunto Tópico',
-            affiliation: 'Afiliação',
-            book: 'Livro',
-            cataloging_source: 'Fonte da Catalogação',
-            clear_all_record: 'Limpar registro',
-            clear_validation: 'Limpar validação',
-            control_number: 'Número de controle',
-            control_number_identifier: 'Código MARC da Agência Catalogadora',
-            copy: 'Copiar',
-            corporate_name: 'Entidade',
-            corporate_name_or_jurisdiction_name: 'Nome da entidade ou lugar',
-            current_publication_frequency: 'Frequência atual da publicação',
-            dates_associated_with_a_name: 'Datas associadas ao nome',
-            delete: 'Excluir',
-            edit_fields: 'Editar campos',
-            family_name: 'Nome de família',
-            forename: 'Prenome',
-            fuller_form_of_name: 'Forma completa do nome',
-            general_note: 'Nota geral',
-            inverted_name: 'Nome invertido',
-            jurisdiction_name: 'Nome da jurisdição',
-            leader: 'Líder',
-            marc_record: 'Registro MARC',
-            name_in_direct_order: 'Nome na ordem direta',        
-            personal_name: 'Nome pessoal',
-            predefined_types: 'Tipos predefinidos',
-            relator_term: 'Termo de relação',
-            serial: 'Periódico',
-            surname: 'Sobrenome',
-            type_of_corporate_name: 'Tipo do nome da entidade',
-            type_of_personal_name: 'Tipo de entrada do nome pessoal',
-            validate: 'Validar',
-            warning: 'Atenção'
-        },
+        cutter: [],
         record: {
             ano: "2024",
             cidade: "Cidade",
@@ -163,9 +100,10 @@ export default {
             complete_record: function() {
 
                 return this.record.sobrenome + ', ' + this.record.nome + '\n' +
+                this.cutter.codigo + '      ' +
                 this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + 
                 ' - ' + this.record.ano + '\n' +
-                this.record.folhas + ' f. : il. ; 30 cm\n' +
+                this.record.folhas + ' f. : il.\n' +
                 '\n' +
                 'Orientador: Nome do orientador\n' +
                 '\n' +
@@ -252,6 +190,15 @@ export default {
             deleteField: function(field, index) {
                 this.record[field].splice(index, 1);
             },
+            getCutter() {
+                axios.get('/api/cutter', {
+                    params: {
+                        search: this.record.sobrenome.toLowerCase().replaceAll(',', '')
+                    }
+                }).then(response => {
+                    this.cutter = response.data;
+                });
+            },
             translate(language) {
                 switch (language) {
                     case "pt_BR":
@@ -264,11 +211,7 @@ export default {
                         this.translation = this.translation_en_US;
                 }
             },
-            update005() {
-                let today = new Date().toISOString().replace('-', '').replace('-', '').replace('T', '').replace(
-                    ':', '').replace(':', '').substr(0, 16);
-                this.record._005 = today
-            },
+
             validate() {
                 this.errors = null;
                 if (this.record.title == "") {
@@ -342,7 +285,7 @@ export default {
                                 aria-describedby="Nome">
                             <input type="text" id="sobrenome" v-model="record.sobrenome" class="form-control"
                                 placeholder="Sobrenome" aria-label="Sobrenome"
-                                aria-describedby="Sobrenome">
+                                aria-describedby="Sobrenome" @input="getCutter">
                         </div>
                         <!-- \Autor -->
 

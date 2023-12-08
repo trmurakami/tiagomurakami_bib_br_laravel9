@@ -17661,70 +17661,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         validate: 'Validate',
         warning: 'Warning'
       },
-      translation_pt_BR: {
-        _008: '008 - Campo de tamanho fixo',
-        _040a: 'Código da Agência Catalogadora',
-        _040c: 'Agência que transcreveu o registro em formato legível por máquina',
-        _245: 'Título Principal',
-        _2451: 'Entrada secundária de título',
-        _24510: 'Não gera entrada secundária',
-        _24511: 'Gera entrada secundária',
-        _2452: 'Caracteres a serem desprezados',
-        _245a: 'Título principal',
-        _245b: 'Subtítulo',
-        _245c: 'Indicação de responsabilidade',
-        _260: 'Imprenta',
-        _2601: 'Informações editoriais',
-        _2601_: '# - Não se aplica/nenhuma informação fornecida/editor mais antigo',
-        _26012: '2 - Editor intermediário',
-        _26013: '3 - Editor atual',
-        _260a: 'Lugar de publicação, distribuição, etc.',
-        _260b: 'Nome do editor, distribuidor, etc.',
-        _260c: 'Data de publicação, distribuição, etc.',
-        _300: 'Descrição física',
-        _300a: 'Extensão',
-        _300b: 'Detalhes físicos adicionais',
-        _300c: 'Dimensões',
-        add_corporate_name: 'Adicionar Entidade',
-        add_eletronic_location_and_access: 'Adicionar Localização eletrônica e acesso',
-        add_general_note: 'Adicionar nota geral',
-        add_isbn: 'Adicionar ISBN',
-        add_personal_name: 'Adicionar Nome pessoal',
-        add_rda_fields: 'Adicionar campos RDA (336, 337, 338)',
-        add_subject_added_entry_topical_term: 'Adicionar Assunto Tópico',
-        affiliation: 'Afiliação',
-        book: 'Livro',
-        cataloging_source: 'Fonte da Catalogação',
-        clear_all_record: 'Limpar registro',
-        clear_validation: 'Limpar validação',
-        control_number: 'Número de controle',
-        control_number_identifier: 'Código MARC da Agência Catalogadora',
-        copy: 'Copiar',
-        corporate_name: 'Entidade',
-        corporate_name_or_jurisdiction_name: 'Nome da entidade ou lugar',
-        current_publication_frequency: 'Frequência atual da publicação',
-        dates_associated_with_a_name: 'Datas associadas ao nome',
-        "delete": 'Excluir',
-        edit_fields: 'Editar campos',
-        family_name: 'Nome de família',
-        forename: 'Prenome',
-        fuller_form_of_name: 'Forma completa do nome',
-        general_note: 'Nota geral',
-        inverted_name: 'Nome invertido',
-        jurisdiction_name: 'Nome da jurisdição',
-        leader: 'Líder',
-        marc_record: 'Registro MARC',
-        name_in_direct_order: 'Nome na ordem direta',
-        personal_name: 'Nome pessoal',
-        predefined_types: 'Tipos predefinidos',
-        relator_term: 'Termo de relação',
-        serial: 'Periódico',
-        surname: 'Sobrenome',
-        type_of_corporate_name: 'Tipo do nome da entidade',
-        type_of_personal_name: 'Tipo de entrada do nome pessoal',
-        validate: 'Validar',
-        warning: 'Atenção'
-      },
+      cutter: [],
       record: {
         ano: "2024",
         cidade: "Cidade",
@@ -17748,7 +17685,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   computed: {
     complete_record: function complete_record() {
-      return this.record.sobrenome + ', ' + this.record.nome + '\n' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano + '\n' + this.record.folhas + ' f. : il. ; 30 cm\n' + '\n' + 'Orientador: Nome do orientador\n' + '\n' + '\n';
+      return this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano + '\n' + this.record.folhas + ' f. : il.\n' + '\n' + 'Orientador: Nome do orientador\n' + '\n' + '\n';
     }
   },
   mounted: function mounted() {
@@ -17844,6 +17781,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     deleteField: function deleteField(field, index) {
       this.record[field].splice(index, 1);
     },
+    getCutter: function getCutter() {
+      var _this2 = this;
+      axios.get('/api/cutter', {
+        params: {
+          search: this.record.sobrenome.toLowerCase().replaceAll(',', '')
+        }
+      }).then(function (response) {
+        _this2.cutter = response.data;
+      });
+    },
     translate: function translate(language) {
       switch (language) {
         case "pt_BR":
@@ -17855,10 +17802,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         default:
           this.translation = this.translation_en_US;
       }
-    },
-    update005: function update005() {
-      var today = new Date().toISOString().replace('-', '').replace('-', '').replace('T', '').replace(':', '').replace(':', '').substr(0, 16);
-      this.record._005 = today;
     },
     validate: function validate() {
       this.errors = null;
@@ -18019,11 +17962,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "form-control",
     placeholder: "Sobrenome",
     "aria-label": "Sobrenome",
-    "aria-describedby": "Sobrenome"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.sobrenome]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Autor "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Título do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "aria-describedby": "Sobrenome",
+    onInput: _cache[4] || (_cache[4] = function () {
+      return $options.getCutter && $options.getCutter.apply($options, arguments);
+    })
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.sobrenome]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Autor "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Título do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "titulo",
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.record.titulo = $event;
     }),
     "class": "form-control",
@@ -18033,7 +17979,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.titulo]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Título do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "ano",
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
       return $data.record.ano = $event;
     }),
     "class": "form-control",
@@ -18043,7 +17989,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.ano]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "folhas",
-    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $data.record.folhas = $event;
     }),
     "class": "form-control",
@@ -18052,7 +17998,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-describedby": "folhas"
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.folhas]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                            " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n                        ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "btn btn-info text-white copy-btn ml-auto",
-    onClick: _cache[7] || (_cache[7] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onClick: _cache[8] || (_cache[8] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.copy && $options.copy.apply($options, arguments);
     }, ["stop", "prevent"]))
   }, "Copiar"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
