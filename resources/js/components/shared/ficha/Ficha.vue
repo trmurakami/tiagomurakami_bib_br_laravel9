@@ -6,6 +6,7 @@ export default {
             titulo: 'is-invalid',
             autor_nome: 'is-invalid',
             autor_sobrenome: 'is-invalid',
+            assuntos: 'is-invalid',
             grau: 'is-invalid',
             instituicao: 'is-invalid',
             nome_orientador: 'is-invalid',
@@ -18,6 +19,8 @@ export default {
             genero_orientador: "Orientador",
             genero_coorientador: "Coorientador",
             ano: "2024",
+            assuntos: [],
+            assuntos_string: "",
             cidade: "",
             coorientador: "",
             folhas: 0,
@@ -48,6 +51,7 @@ export default {
                 this.record.coorientador +
                 this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.ano + '.\n' +
                 '\n' +
+                this.record.assuntos_string + 
                 'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' +
                 '\n'
 
@@ -100,6 +104,13 @@ export default {
             deleteField: function(field, index) {
                 this.record[field].splice(index, 1);
             },
+            gerarStringAssuntos() {
+                let strAssuntos = '';
+                for (let i = 0; i < this.record.assuntos.length; i++) {
+                    strAssuntos += (i + 1) + '. ' + this.record.assuntos[i] + '. ';
+                }
+                this.record.assuntos_string = strAssuntos;
+            },
             getCutter() {
                 axios.get('/api/cutter', {
                     params: {
@@ -111,7 +122,7 @@ export default {
             },
             preencherCoorientador() {
                 if (this.record.nome_coorientador && this.record.sobrenome_coorientador) {
-                this.record.coorientador = this.record.genero_coorientador + ': ' + this.record.nome_coorientador + ' ' + this.record.sobrenome_coorientador + '.\n';
+                    this.record.coorientador = this.record.genero_coorientador + ': ' + this.record.nome_coorientador + ' ' + this.record.sobrenome_coorientador + '.\n';
                 }
             },
             toggleGeneroOrientador() {
@@ -207,6 +218,17 @@ export default {
                 } else {
                     this.validation.grau = "is-valid";
                 }
+                if (!this.record.assuntos || !this.record.assuntos[0]) {
+                    this.validation.assuntos = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'O primeiro assunto é obrigatório'
+                    });
+                } else {
+                    this.validation.assuntos = "is-valid";
+                }
             }
         }
 }
@@ -265,14 +287,14 @@ export default {
                         </div>
                         <!-- \Ano do trabalho -->
 
-                        <!-- Ano do trabalho -->
+                        <!-- Número de folhas -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="folhas">Número de folhas</span>
                             <input type="text" id="folhas" v-model="record.folhas" class="form-control"
                                 placeholder="Número de folhas" aria-label="Número de folhas"
                                 aria-describedby="folhas">
                         </div>
-                        <!-- \Ano do trabalho -->
+                        <!-- \Número de folhas -->
 
                         <!-- Orientador -->
                         <div class="input-group mb-3">
@@ -305,7 +327,7 @@ export default {
                                 aria-describedby="Sobrenome" @input="getCutter(); validate()" :class="validation.sobrenome_coorientador">
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" @input="toggleGeneroCoorientador">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" @input="toggleGeneroCoorientador(); preencherCoorientador()">
                             <label class="form-check-label" for="flexCheckDefault">
                                 Coorientadora?
                             </label>
@@ -335,6 +357,34 @@ export default {
                         </div>
 
                         <!-- \Grau acadêmico -->
+                        <!-- Assuntos -->
+                        <!-- Ano do trabalho -->
+                        <div class="input-group mb-3">
+                            <div class="col-2">
+                                <span class="input-group-text" id="assuntos">Assuntos</span>
+                            </div>
+                            <div class="col-10">
+                                <input type="text" id="assunto" v-model="record.assuntos[0]" class="form-control"
+                                placeholder="Assunto 1" aria-label="Assunto"
+                                aria-describedby="assunto0" @input="validate(); gerarStringAssuntos()" :class="validation.assuntos">
+                                <input type="text" id="assunto" v-model="record.assuntos[1]" class="form-control"
+                                placeholder="Assunto 2" aria-label="Assunto"
+                                aria-describedby="assunto0" @input="gerarStringAssuntos()">
+                                <input type="text" id="assunto" v-model="record.assuntos[2]" class="form-control"
+                                placeholder="Assunto 3" aria-label="Assunto"
+                                aria-describedby="assunto" @input="gerarStringAssuntos()">
+                                <input type="text" id="assunto" v-model="record.assuntos[3]" class="form-control"
+                                placeholder="Assunto 4" aria-label="Assunto"
+                                aria-describedby="assunto" @input="gerarStringAssuntos()">
+                                <input type="text" id="assunto" v-model="record.assuntos[4]" class="form-control"
+                                placeholder="Assunto 5" aria-label="Assunto"
+                                aria-describedby="assunto" @input="gerarStringAssuntos()">
+                            </div>
+
+                        </div>
+                        <!-- \Ano do trabalho -->
+
+                        <!-- \Assuntos -->
 
 
                     </div>
