@@ -17590,85 +17590,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       validation: {
-        _245a: ''
-      },
-      crossrefRecord: null,
-      ISBNRecord: null,
-      Z3950Records: null,
-      recordType: 'Book',
-      translation: [],
-      translation_en_US: {
-        _008: '008 - Fixed-Length Data Elements-General Information',
-        _040a: 'Original cataloging agency',
-        _040c: 'Transcribing agency',
-        _245: 'Title statement',
-        _2451: 'Title added entry',
-        _24510: 'No added entry',
-        _24511: 'Added entry',
-        _2452: 'Nonfiling characters',
-        _245a: 'Title',
-        _245b: 'Remainder of title',
-        _245c: 'Statement of responsibility, etc.',
-        _260: 'Imprint',
-        _2601: 'Sequence of publishing statements',
-        _2601_: '# - Not applicable/No information provided/Earliest available publisher',
-        _26012: '2 - Intervening publisher',
-        _26013: '3 - Current/latest publisher',
-        _260a: 'Place of publication',
-        _260b: 'Name of publisher',
-        _260c: 'Date of publication',
-        _300: 'Physical Description',
-        _300a: 'Extent',
-        _300b: 'Other physical details',
-        _300c: 'Dimensions',
-        add_corporate_name: 'Add Corporate Name',
-        add_eletronic_location_and_access: 'Add Electronic Location and Access',
-        add_general_note: 'Add General Note',
-        add_isbn: 'Add ISBN',
-        add_personal_name: 'Add Personal Name',
-        add_rda_fields: 'Add RDA fields (336, 337, 338)',
-        add_subject_added_entry_topical_term: 'Add Subject Added Entry-Topical Term',
-        affiliation: 'Affiliation',
-        book: 'Book',
-        cataloging_source: 'Cataloging Source',
-        clear_all_record: 'Clear all record',
-        clear_validation: 'Clear validation',
-        control_number: 'Control Number',
-        control_number_identifier: 'Control Number Identifier',
-        copy: 'Copy',
-        corporate_name: 'Corporate Name',
-        corporate_name_or_jurisdiction_name: 'Corporate name or jurisdiction name as entry element',
-        current_publication_frequency: 'Current Publication Frequency',
-        dates_associated_with_a_name: 'Dates associated with a name',
-        "delete": 'Delete',
-        edit_fields: 'Edit fields',
-        family_name: 'Family name',
-        forename: 'Forename',
-        fuller_form_of_name: 'Fuller form of name',
-        general_note: 'General Note',
-        inverted_name: 'Inverted name',
-        jurisdiction_name: 'Jurisdiction name',
-        leader: 'Leader',
-        marc_record: 'MARC Record',
-        name_in_direct_order: 'Name in direct order',
-        personal_name: 'Personal Name',
-        predefined_types: 'Predefined types',
-        relator_term: 'Relator term',
-        serial: 'Serial',
-        surname: 'Surname',
-        type_of_corporate_name: 'Type of corporate name entry element',
-        type_of_personal_name: 'Type of personal name entry element',
-        validate: 'Validate',
-        warning: 'Warning'
+        titulo: 'is-invalid'
       },
       cutter: [],
       record: {
         ano: "2024",
-        cidade: "Cidade",
-        folhas: 100,
-        nome: "Nome",
-        sobrenome: "Sobrenome",
-        titulo: "Título de exemplo"
+        cidade: "",
+        folhas: 0,
+        nome: "",
+        sobrenome: "",
+        titulo: "Título do trabalho"
       },
       copySuccessful: false,
       current_ldr: null,
@@ -17791,30 +17722,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         _this2.cutter = response.data;
       });
     },
-    translate: function translate(language) {
-      switch (language) {
-        case "pt_BR":
-          this.translation = this.translation_pt_BR;
-          break;
-        case "en_US":
-          this.translation = this.translation_en_US;
-          break;
-        default:
-          this.translation = this.translation_en_US;
-      }
-    },
     validate: function validate() {
       this.errors = null;
-      if (this.record.title == "") {
-        this.validation._245a = "is-invalid";
+      if (this.record.titulo == "") {
+        this.validation.titulo = "is-invalid";
         if (this.errors == null) {
           this.errors = [];
         }
         this.errors.push({
-          message: 'Title is mandatory'
+          message: 'Título é obrigatório'
+        });
+      } else if (this.record.titulo == "Título do trabalho") {
+        this.validation.titulo = "is-invalid";
+        if (this.errors == null) {
+          this.errors = [];
+        }
+        this.errors.push({
+          message: 'Título de exemplo não foi alterado'
         });
       } else {
-        this.validation._245a = "is-valid";
+        this.validation.titulo = "is-valid";
       }
       if (this.record.f008.p07_10.length != 4) {
         if (this.errors == null) {
@@ -17972,14 +17899,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.record.titulo = $event;
     }),
-    "class": "form-control",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.titulo]),
     placeholder: "Título do trabalho",
     "aria-label": "Título do trabalho",
-    "aria-describedby": "titulo"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.titulo]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Título do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "aria-describedby": "titulo",
+    onInput: _cache[6] || (_cache[6] = function () {
+      return $options.validate && $options.validate.apply($options, arguments);
+    })
+  }, null, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.titulo]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Título do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "ano",
-    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $data.record.ano = $event;
     }),
     "class": "form-control",
@@ -17989,7 +17919,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.ano]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "folhas",
-    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
       return $data.record.folhas = $event;
     }),
     "class": "form-control",
@@ -17998,14 +17928,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "aria-describedby": "folhas"
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.folhas]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                            " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n                        ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "btn btn-info text-white copy-btn ml-auto",
-    onClick: _cache[8] || (_cache[8] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onClick: _cache[9] || (_cache[9] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.copy && $options.copy.apply($options, arguments);
     }, ["stop", "prevent"]))
   }, "Copiar"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     id: "complete_record",
     value: $options.complete_record
-  }, null, 8 /* PROPS */, _hoisted_20), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, " Copiado com sucesso! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.translation.warning), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+  }, null, 8 /* PROPS */, _hoisted_20), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_21, " Copiado com sucesso! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.translation.warning), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error.message), 1 /* TEXT */);
   }), 256 /* UNKEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
 }

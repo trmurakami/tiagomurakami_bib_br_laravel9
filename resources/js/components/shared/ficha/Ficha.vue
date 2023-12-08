@@ -3,85 +3,16 @@ export default {
   data() {
     return {
         validation: {
-            _245a: '',
-        },
-        crossrefRecord: null,
-        ISBNRecord: null,
-        Z3950Records: null,
-        recordType: 'Book',
-        translation: [],
-        translation_en_US: {
-            _008: '008 - Fixed-Length Data Elements-General Information',
-            _040a: 'Original cataloging agency',
-            _040c: 'Transcribing agency',
-            _245: 'Title statement',
-            _2451: 'Title added entry',
-            _24510: 'No added entry',
-            _24511: 'Added entry',
-            _2452: 'Nonfiling characters',
-            _245a: 'Title',
-            _245b: 'Remainder of title',
-            _245c: 'Statement of responsibility, etc.',
-            _260: 'Imprint',
-            _2601: 'Sequence of publishing statements',
-            _2601_: '# - Not applicable/No information provided/Earliest available publisher',
-            _26012: '2 - Intervening publisher',
-            _26013: '3 - Current/latest publisher',
-            _260a: 'Place of publication',
-            _260b: 'Name of publisher',
-            _260c: 'Date of publication',
-            _300: 'Physical Description',
-            _300a: 'Extent',
-            _300b: 'Other physical details',
-            _300c: 'Dimensions',
-            add_corporate_name:'Add Corporate Name',
-            add_eletronic_location_and_access: 'Add Electronic Location and Access',
-            add_general_note: 'Add General Note',
-            add_isbn: 'Add ISBN',
-            add_personal_name: 'Add Personal Name',
-            add_rda_fields: 'Add RDA fields (336, 337, 338)',
-            add_subject_added_entry_topical_term: 'Add Subject Added Entry-Topical Term',
-            affiliation: 'Affiliation',
-            book: 'Book',
-            cataloging_source: 'Cataloging Source',
-            clear_all_record: 'Clear all record',
-            clear_validation: 'Clear validation',
-            control_number: 'Control Number',
-            control_number_identifier: 'Control Number Identifier',
-            copy: 'Copy',
-            corporate_name: 'Corporate Name',
-            corporate_name_or_jurisdiction_name: 'Corporate name or jurisdiction name as entry element',
-            current_publication_frequency: 'Current Publication Frequency',
-            dates_associated_with_a_name: 'Dates associated with a name',
-            delete: 'Delete',
-            edit_fields: 'Edit fields',
-            family_name: 'Family name',
-            forename: 'Forename',
-            fuller_form_of_name: 'Fuller form of name',
-            general_note: 'General Note',
-            inverted_name: 'Inverted name',
-            jurisdiction_name: 'Jurisdiction name',
-            leader: 'Leader',
-            marc_record: 'MARC Record',
-            name_in_direct_order: 'Name in direct order',
-            personal_name: 'Personal Name',
-            predefined_types: 'Predefined types',
-            relator_term: 'Relator term',
-            serial: 'Serial',
-            surname: 'Surname',
-            type_of_corporate_name: 'Type of corporate name entry element',
-            type_of_personal_name: 'Type of personal name entry element',
-            validate: 'Validate',
-            warning: 'Warning'
+            titulo: 'is-invalid',
         },
         cutter: [],
         record: {
             ano: "2024",
-            cidade: "Cidade",
-            folhas: 100,
-            nome: "Nome",
-            sobrenome: "Sobrenome",
-            titulo: "Título de exemplo"
+            cidade: "",
+            folhas: 0,
+            nome: "",
+            sobrenome: "",
+            titulo: "Título do trabalho",
         },
         copySuccessful: false,
         current_ldr: null,
@@ -199,31 +130,26 @@ export default {
                     this.cutter = response.data;
                 });
             },
-            translate(language) {
-                switch (language) {
-                    case "pt_BR":
-                        this.translation = this.translation_pt_BR;
-                        break;
-                    case "en_US":
-                        this.translation = this.translation_en_US;
-                        break;
-                    default:
-                        this.translation = this.translation_en_US;
-                }
-            },
-
             validate() {
                 this.errors = null;
-                if (this.record.title == "") {
-                    this.validation._245a = "is-invalid";
+                if (this.record.titulo == "") {
+                    this.validation.titulo = "is-invalid";
                     if (this.errors == null) {
                         this.errors = [];
                     }
                     this.errors.push({
-                        message: 'Title is mandatory'
+                        message: 'Título é obrigatório'
+                    });
+                } else if (this.record.titulo == "Título do trabalho") {
+                    this.validation.titulo = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'Título de exemplo não foi alterado'
                     });
                 } else {
-                    this.validation._245a = "is-valid";
+                    this.validation.titulo = "is-valid";
                 }
                 if (this.record.f008.p07_10.length != 4) {
                     if (this.errors == null) {
@@ -294,7 +220,7 @@ export default {
                             <span class="input-group-text" id="titulo">Título do trabalho</span>
                             <input type="text" id="titulo" v-model="record.titulo" class="form-control"
                                 placeholder="Título do trabalho" aria-label="Título do trabalho"
-                                aria-describedby="titulo">
+                                aria-describedby="titulo" :class="validation.titulo" @input="validate">
                         </div>
                         <!-- \Título do trabalho -->
 
