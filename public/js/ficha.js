@@ -17594,6 +17594,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         autor_nome: 'is-invalid',
         autor_sobrenome: 'is-invalid',
         assuntos: 'is-invalid',
+        folhas: 'is-invalid',
         grau: 'is-invalid',
         instituicao: 'is-invalid',
         nome_orientador: 'is-invalid',
@@ -17610,12 +17611,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         assuntos_string: "",
         cidade: "",
         coorientador: "",
+        especializacao: "",
+        especializacao_string: "",
         folhas: 0,
+        graduacao: "",
+        graduacao_string: "",
         grau: "",
         instituicao: "",
         nome: "",
         nome_orientador: "",
         nome_coorientador: "",
+        ppg: "",
+        ppg_string: "",
         sobrenome: "",
         sobrenome_orientador: "",
         sobrenome_coorientador: "",
@@ -17627,7 +17634,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   computed: {
     complete_record: function complete_record() {
-      return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano + '\n' + this.record.folhas + ' f. : il.\n' + '\n' + this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' + this.record.coorientador + this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.ano + '.\n' + '\n' + this.record.assuntos_string + 'I.' + this.record.sobrenome_orientador + ', ' + this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' + '\n';
+      return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano + '\n' + this.record.folhas + ' f. : il.\n' + '\n' + this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' + this.record.coorientador + this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + ', ' + this.record.ano + '.\n' + '\n' + this.record.assuntos_string + 'I.' + this.record.sobrenome_orientador + ', ' + this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' + '\n';
     }
   },
   mounted: function mounted() {
@@ -17639,6 +17646,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     'record.sobrenome_coorientador': function recordSobrenome_coorientador() {
       this.preencherCoorientador();
+    },
+    'record.graduacao': function recordGraduacao() {
+      this.preencherGraduacaoString();
+    },
+    'record.ppg': function recordPpg() {
+      this.preencherPPGString();
     }
   },
   methods: {
@@ -17711,6 +17724,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     preencherCoorientador: function preencherCoorientador() {
       if (this.record.nome_coorientador && this.record.sobrenome_coorientador) {
         this.record.coorientador = this.record.genero_coorientador + ': ' + this.record.nome_coorientador + ' ' + this.record.sobrenome_coorientador + '.\n';
+      }
+    },
+    preencherGraduacaoString: function preencherGraduacaoString() {
+      if (this.record.graduacao) {
+        this.record.graduacao_string = 'Bacharel em ' + this.record.graduacao;
+      }
+    },
+    preencherPPGString: function preencherPPGString() {
+      if (this.record.ppg) {
+        this.record.ppg_string = 'Programa de Pós-Graduação em ' + this.record.ppg;
       }
     },
     toggleGeneroOrientador: function toggleGeneroOrientador() {
@@ -17816,6 +17839,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         });
       } else {
         this.validation.assuntos = "is-valid";
+      }
+      if (this.record.folhas == 0) {
+        this.validation.folhas = "is-invalid";
+        if (this.errors == null) {
+          this.errors = [];
+        }
+        this.errors.push({
+          message: 'O número de folhas não foi informado'
+        });
+      } else {
+        this.validation.folhas = "is-valid";
       }
     }
   }
@@ -17937,33 +17971,57 @@ var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"Trabalho de conclusão de curso (graduação)\">Trabalho de conclusão de curso (Graduação)</option><option value=\"Trabalho de conclusão de curso (especialização)\">Trabalho de conclusão de curso (Especialização)</option><option value=\"Dissertação (Mestrado)\">Dissertação (Mestrado)</option><option value=\"Dissertação (Mestrado Profissional)\">Dissertação (Mestrado Profissional)</option><option value=\"Tese (Doutorado)\">Tese (Doutorado)</option><option value=\"Tese de livre-docência\">Tese de livre-docência</option>", 6);
 var _hoisted_36 = [_hoisted_30];
 var _hoisted_37 = {
+  key: 0,
   "class": "input-group mb-3"
 };
-var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "input-group-text",
+  id: "ppg"
+}, "Programa de Pós Graduação", -1 /* HOISTED */);
+var _hoisted_39 = {
+  key: 1,
+  "class": "input-group mb-3"
+};
+var _hoisted_40 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "input-group-text",
+  id: "graduacao"
+}, "Graduação em", -1 /* HOISTED */);
+var _hoisted_41 = {
+  key: 2,
+  "class": "input-group mb-3"
+};
+var _hoisted_42 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "input-group-text",
+  id: "especializacao"
+}, "Especialização em", -1 /* HOISTED */);
+var _hoisted_43 = {
+  "class": "input-group mb-3"
+};
+var _hoisted_44 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "col-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "input-group-text",
   id: "assuntos"
 }, "Assuntos")], -1 /* HOISTED */);
-var _hoisted_39 = {
+var _hoisted_45 = {
   "class": "col-10"
 };
-var _hoisted_40 = {
+var _hoisted_46 = {
   "class": "col-md-4 col-lg-4"
 };
-var _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Ficha catalográfica", -1 /* HOISTED */);
-var _hoisted_42 = ["value"];
-var _hoisted_43 = {
+var _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Ficha catalográfica", -1 /* HOISTED */);
+var _hoisted_48 = ["value"];
+var _hoisted_49 = {
   key: 0,
   "class": "alert alert-info",
   role: "alert"
 };
-var _hoisted_44 = {
+var _hoisted_50 = {
   key: 1,
   "class": "alert alert-warning mt-5",
   role: "alert"
 };
-var _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Validação", -1 /* HOISTED */);
+var _hoisted_51 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Validação", -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -18034,34 +18092,37 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
       return $data.record.folhas = $event;
     }),
-    "class": "form-control",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.folhas]),
     placeholder: "Número de folhas",
     "aria-label": "Número de folhas",
-    "aria-describedby": "folhas"
-  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.folhas]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Número de folhas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Orientador "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.record.genero_orientador), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "aria-describedby": "folhas",
+    onInput: _cache[10] || (_cache[10] = function ($event) {
+      return $options.validate();
+    })
+  }, null, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.folhas]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Número de folhas "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Orientador "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.record.genero_orientador), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "nome_orientador",
-    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+    "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
       return $data.record.nome_orientador = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.nome_orientador]),
     placeholder: "Nome",
     "aria-label": "Nome do orientador",
     "aria-describedby": "Nome",
-    onInput: _cache[11] || (_cache[11] = function ($event) {
+    onInput: _cache[12] || (_cache[12] = function ($event) {
       return $options.validate();
     })
   }, null, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.nome_orientador]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "sobrenome_orientador",
-    "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
+    "onUpdate:modelValue": _cache[13] || (_cache[13] = function ($event) {
       return $data.record.sobrenome_orientador = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.sobrenome_orientador]),
     placeholder: "Sobrenome",
     "aria-label": "Sobrenome",
     "aria-describedby": "Sobrenome",
-    onInput: _cache[13] || (_cache[13] = function ($event) {
+    onInput: _cache[14] || (_cache[14] = function ($event) {
       $options.getCutter();
       $options.validate();
     })
@@ -18070,33 +18131,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "checkbox",
     value: "",
     id: "flexCheckDefault",
-    onInput: _cache[14] || (_cache[14] = function () {
+    onInput: _cache[15] || (_cache[15] = function () {
       return $options.toggleGeneroOrientador && $options.toggleGeneroOrientador.apply($options, arguments);
     })
   }, null, 32 /* HYDRATE_EVENTS */), _hoisted_21]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Orientador "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Coorientador "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.record.genero_coorientador), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "nome_coorientador",
-    "onUpdate:modelValue": _cache[15] || (_cache[15] = function ($event) {
+    "onUpdate:modelValue": _cache[16] || (_cache[16] = function ($event) {
       return $data.record.nome_coorientador = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.nome_coorientador]),
     placeholder: "Nome",
     "aria-label": "Nome do coorientador",
     "aria-describedby": "Nome",
-    onInput: _cache[16] || (_cache[16] = function ($event) {
+    onInput: _cache[17] || (_cache[17] = function ($event) {
       return $options.validate();
     })
   }, null, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.nome_coorientador]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "sobrenome_coorientador",
-    "onUpdate:modelValue": _cache[17] || (_cache[17] = function ($event) {
+    "onUpdate:modelValue": _cache[18] || (_cache[18] = function ($event) {
       return $data.record.sobrenome_coorientador = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.sobrenome_coorientador]),
     placeholder: "Sobrenome",
     "aria-label": "Sobrenome",
     "aria-describedby": "Sobrenome",
-    onInput: _cache[18] || (_cache[18] = function ($event) {
+    onInput: _cache[19] || (_cache[19] = function ($event) {
       $options.getCutter();
       $options.validate();
     })
@@ -18105,109 +18166,139 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "checkbox",
     value: "",
     id: "flexCheckDefault",
-    onInput: _cache[19] || (_cache[19] = function ($event) {
+    onInput: _cache[20] || (_cache[20] = function ($event) {
       $options.toggleGeneroCoorientador();
       $options.preencherCoorientador();
     })
   }, null, 32 /* HYDRATE_EVENTS */), _hoisted_25]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Coorientador "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Instituição "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "instituicao",
-    "onUpdate:modelValue": _cache[20] || (_cache[20] = function ($event) {
+    "onUpdate:modelValue": _cache[21] || (_cache[21] = function ($event) {
       return $data.record.instituicao = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.instituicao]),
     placeholder: "Nome da instituição",
     "aria-label": "Nome da instituição",
     "aria-describedby": "instituicao",
-    onInput: _cache[21] || (_cache[21] = function ($event) {
+    onInput: _cache[22] || (_cache[22] = function ($event) {
       return $options.validate();
     })
   }, null, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.instituicao]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Instituição "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Grau acadêmico "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [_hoisted_29, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-select", $data.validation.grau]),
     id: "grau",
-    "onUpdate:modelValue": _cache[22] || (_cache[22] = function ($event) {
+    "onUpdate:modelValue": _cache[23] || (_cache[23] = function ($event) {
       return $data.record.grau = $event;
     }),
     "aria-label": "Grau acadêmico",
-    onInput: _cache[23] || (_cache[23] = function ($event) {
+    onInput: _cache[24] || (_cache[24] = function ($event) {
       return $options.validate();
     })
-  }, _hoisted_36, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.grau]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Grau acadêmico "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Assuntos "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  }, _hoisted_36, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.record.grau]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Grau acadêmico "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Programa de Pós Graduação "), ['Dissertação (Mestrado)', 'Dissertação (Mestrado Profissional)', 'Tese (Doutorado)'].includes($data.record.grau) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "ppg",
+    "onUpdate:modelValue": _cache[25] || (_cache[25] = function ($event) {
+      return $data.record.ppg = $event;
+    }),
+    "class": "form-control",
+    placeholder: "Nome do Programa de Pós Graduação",
+    "aria-label": "Nome do Programa de Pós Graduação",
+    "aria-describedby": "ppg"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.ppg]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Programa de Pós Graduação "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Graduação "), $data.record.grau == 'Trabalho de conclusão de curso (graduação)' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_39, [_hoisted_40, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "graduacao",
+    "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+      return $data.record.graduacao = $event;
+    }),
+    "class": "form-control",
+    placeholder: "Graduação em",
+    "aria-label": "Graduação em",
+    "aria-describedby": "graduacao"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.graduacao]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Graduação "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Especialização "), ['Trabalho de conclusão de curso (especialização)'].includes($data.record.grau) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_41, [_hoisted_42, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    id: "especializacao",
+    "onUpdate:modelValue": _cache[27] || (_cache[27] = function ($event) {
+      return $data.record.graduacao = $event;
+    }),
+    "class": "form-control",
+    placeholder: "Especialização em",
+    "aria-label": "Especialização em",
+    "aria-describedby": "especializacao"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.graduacao]])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Especialização "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Assuntos "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_43, [_hoisted_44, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_45, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "assunto",
-    "onUpdate:modelValue": _cache[24] || (_cache[24] = function ($event) {
+    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
       return $data.record.assuntos[0] = $event;
     }),
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["form-control", $data.validation.assuntos]),
     placeholder: "Assunto 1",
     "aria-label": "Assunto",
     "aria-describedby": "assunto0",
-    onInput: _cache[25] || (_cache[25] = function ($event) {
+    onInput: _cache[29] || (_cache[29] = function ($event) {
       $options.validate();
       $options.gerarStringAssuntos();
     })
   }, null, 34 /* CLASS, HYDRATE_EVENTS */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[0]]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "assunto",
-    "onUpdate:modelValue": _cache[26] || (_cache[26] = function ($event) {
+    "onUpdate:modelValue": _cache[30] || (_cache[30] = function ($event) {
       return $data.record.assuntos[1] = $event;
     }),
     "class": "form-control",
     placeholder: "Assunto 2",
     "aria-label": "Assunto",
     "aria-describedby": "assunto0",
-    onInput: _cache[27] || (_cache[27] = function ($event) {
+    onInput: _cache[31] || (_cache[31] = function ($event) {
       return $options.gerarStringAssuntos();
     })
   }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[1]]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "assunto",
-    "onUpdate:modelValue": _cache[28] || (_cache[28] = function ($event) {
+    "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
       return $data.record.assuntos[2] = $event;
     }),
     "class": "form-control",
     placeholder: "Assunto 3",
     "aria-label": "Assunto",
     "aria-describedby": "assunto",
-    onInput: _cache[29] || (_cache[29] = function ($event) {
+    onInput: _cache[33] || (_cache[33] = function ($event) {
       return $options.gerarStringAssuntos();
     })
   }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[2]]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "assunto",
-    "onUpdate:modelValue": _cache[30] || (_cache[30] = function ($event) {
+    "onUpdate:modelValue": _cache[34] || (_cache[34] = function ($event) {
       return $data.record.assuntos[3] = $event;
     }),
     "class": "form-control",
     placeholder: "Assunto 4",
     "aria-label": "Assunto",
     "aria-describedby": "assunto",
-    onInput: _cache[31] || (_cache[31] = function ($event) {
+    onInput: _cache[35] || (_cache[35] = function ($event) {
       return $options.gerarStringAssuntos();
     })
   }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[3]]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     id: "assunto",
-    "onUpdate:modelValue": _cache[32] || (_cache[32] = function ($event) {
+    "onUpdate:modelValue": _cache[36] || (_cache[36] = function ($event) {
       return $data.record.assuntos[4] = $event;
     }),
     "class": "form-control",
     placeholder: "Assunto 5",
     "aria-label": "Assunto",
     "aria-describedby": "assunto",
-    onInput: _cache[33] || (_cache[33] = function ($event) {
+    onInput: _cache[37] || (_cache[37] = function ($event) {
       return $options.gerarStringAssuntos();
     })
-  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[4]]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Assuntos ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [_hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                            " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n                        ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[4]]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Assuntos ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_46, [_hoisted_47, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, "                            " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.complete_record) + "\n                        ", 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "btn btn-info text-white copy-btn ml-auto",
-    onClick: _cache[34] || (_cache[34] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onClick: _cache[38] || (_cache[38] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.copy && $options.copy.apply($options, arguments);
     }, ["stop", "prevent"]))
   }, "Copiar"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     id: "complete_record",
     value: $options.complete_record
-  }, null, 8 /* PROPS */, _hoisted_42), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_43, " Copiado com sucesso! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_44, [_hoisted_45, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+  }, null, 8 /* PROPS */, _hoisted_48), $data.copySuccessful ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_49, " Copiado com sucesso! ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_50, [_hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error.message), 1 /* TEXT */);
   }), 256 /* UNKEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
 }

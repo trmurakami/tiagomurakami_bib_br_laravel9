@@ -7,6 +7,7 @@ export default {
             autor_nome: 'is-invalid',
             autor_sobrenome: 'is-invalid',
             assuntos: 'is-invalid',
+            folhas: 'is-invalid',
             grau: 'is-invalid',
             instituicao: 'is-invalid',
             nome_orientador: 'is-invalid',
@@ -23,12 +24,18 @@ export default {
             assuntos_string: "",
             cidade: "",
             coorientador: "",
+            especializacao: "",
+            especializacao_string: "",
             folhas: 0,
+            graduacao: "",
+            graduacao_string: "",
             grau: "",
             instituicao: "",
             nome: "",
             nome_orientador: "",
             nome_coorientador: "",
+            ppg: "",
+            ppg_string: "",
             sobrenome: "",
             sobrenome_orientador: "",
             sobrenome_coorientador: "",
@@ -49,7 +56,7 @@ export default {
                 '\n' +
                 this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
                 this.record.coorientador +
-                this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.ano + '.\n' +
+                this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + ', ' + this.record.ano + '.\n' +
                 '\n' +
                 this.record.assuntos_string + 
                 'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' +
@@ -66,6 +73,12 @@ export default {
         },
         'record.sobrenome_coorientador': function() {
             this.preencherCoorientador();
+        },
+        'record.graduacao': function() {
+            this.preencherGraduacaoString();
+        },
+        'record.ppg': function() {
+            this.preencherPPGString();
         }
     },
         methods: {
@@ -123,6 +136,16 @@ export default {
             preencherCoorientador() {
                 if (this.record.nome_coorientador && this.record.sobrenome_coorientador) {
                     this.record.coorientador = this.record.genero_coorientador + ': ' + this.record.nome_coorientador + ' ' + this.record.sobrenome_coorientador + '.\n';
+                }
+            },
+            preencherGraduacaoString() {
+                if (this.record.graduacao) {
+                    this.record.graduacao_string = 'Bacharel em ' + this.record.graduacao;
+                }
+            },
+            preencherPPGString() {
+                if (this.record.ppg) {
+                    this.record.ppg_string = 'Programa de Pós-Graduação em ' + this.record.ppg;
                 }
             },
             toggleGeneroOrientador() {
@@ -229,6 +252,17 @@ export default {
                 } else {
                     this.validation.assuntos = "is-valid";
                 }
+                if (this.record.folhas == 0) {
+                    this.validation.folhas = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'O número de folhas não foi informado'
+                    });
+                } else {
+                    this.validation.folhas = "is-valid";
+                }
             }
         }
 }
@@ -292,7 +326,7 @@ export default {
                             <span class="input-group-text" id="folhas">Número de folhas</span>
                             <input type="text" id="folhas" v-model="record.folhas" class="form-control"
                                 placeholder="Número de folhas" aria-label="Número de folhas"
-                                aria-describedby="folhas">
+                                aria-describedby="folhas" :class="validation.folhas" @input="validate()">
                         </div>
                         <!-- \Número de folhas -->
 
@@ -357,6 +391,32 @@ export default {
                         </div>
 
                         <!-- \Grau acadêmico -->
+                        <!-- Programa de Pós Graduação -->
+                        <div class="input-group mb-3" v-if="['Dissertação (Mestrado)', 'Dissertação (Mestrado Profissional)', 'Tese (Doutorado)'].includes(record.grau)">
+                            <span class="input-group-text" id="ppg">Programa de Pós Graduação</span>
+                            <input type="text" id="ppg" v-model="record.ppg" class="form-control"
+                                placeholder="Nome do Programa de Pós Graduação" aria-label="Nome do Programa de Pós Graduação"
+                                aria-describedby="ppg">
+                        </div>
+                        <!-- \Programa de Pós Graduação -->
+                        <!-- Graduação -->
+                        <div class="input-group mb-3" v-if="record.grau == 'Trabalho de conclusão de curso (graduação)'">
+                            <span class="input-group-text" id="graduacao">Graduação em</span>
+                            <input type="text" id="graduacao" v-model="record.graduacao" class="form-control"
+                                placeholder="Graduação em" aria-label="Graduação em"
+                                aria-describedby="graduacao">
+                        </div>
+                        <!-- \Graduação -->
+                        <!-- Especialização -->
+                        <div class="input-group mb-3" v-if="['Trabalho de conclusão de curso (especialização)'].includes(record.grau)">
+                            <span class="input-group-text" id="especializacao">Especialização em</span>
+                            <input type="text" id="especializacao" v-model="record.graduacao" class="form-control"
+                                placeholder="Especialização em" aria-label="Especialização em"
+                                aria-describedby="especializacao">
+                        </div>
+                        <!-- \Especialização -->
+
+
                         <!-- Assuntos -->
                         <!-- Ano do trabalho -->
                         <div class="input-group mb-3">
