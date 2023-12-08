@@ -17664,7 +17664,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   computed: {
     complete_record: function complete_record() {
-      return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano + '\n' + this.record.folhas + ' f.' + this.record.ilustrado + '\n' + '\n' + this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' + this.record.coorientador + this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' + '\n' + this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' + this.record.nome_orientador + ', orient. II. ' + this.record.titulo + '.\n' + '\n';
+      return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano + '\n' + this.record.folhas + ' f.' + this.record.ilustrado + '\n' + '\n' + this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' + this.record.coorientador + this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' + '\n' + this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' + this.record.nome_orientador + ', orient. II. ' + this.record.titulo + '.\n' + '\n';
     }
   },
   mounted: function mounted() {
@@ -18103,16 +18103,20 @@ var _hoisted_70 = ["value"];
 var _hoisted_71 = ["value"];
 var _hoisted_72 = ["value"];
 var _hoisted_73 = ["value"];
-var _hoisted_74 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_74 = ["value"];
+var _hoisted_75 = ["value"];
+var _hoisted_76 = ["value"];
+var _hoisted_77 = ["value"];
+var _hoisted_78 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
   "class": "btn btn-success text-white copy-btn ml-auto"
 }, "Exportar PDF", -1 /* HOISTED */);
-var _hoisted_75 = {
+var _hoisted_79 = {
   key: 0,
   "class": "alert alert-warning mt-5",
   role: "alert"
 };
-var _hoisted_76 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Validação", -1 /* HOISTED */);
+var _hoisted_80 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Validação", -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -18394,7 +18398,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onInput: _cache[39] || (_cache[39] = function ($event) {
       return $options.gerarStringAssuntos();
     })
-  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[4]]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Assuntos ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.sobrenome + ', ' + this.record.nome), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.cutter.codigo + this.record.titulo[0].toLowerCase()), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_52, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_53, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.folhas + ' f.' + this.record.ilustrado + '\n'), 1 /* TEXT */), _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_55, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_56, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.coorientador), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_57, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.'), 1 /* TEXT */), _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_59, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' + this.record.nome_orientador + ', orient. II. ' + this.record.titulo), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                         <pre>\n                            {{ complete_record }}\n                        </pre> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.record.assuntos[4]]])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Ano do trabalho "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" \\Assuntos ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_48, [_hoisted_49, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_50, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_51, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.sobrenome + ', ' + this.record.nome), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.cutter.codigo + this.record.titulo[0].toLowerCase()), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_52, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_53, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.folhas + ' f.' + this.record.ilustrado + '\n'), 1 /* TEXT */), _hoisted_54, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_55, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.'), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_56, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.coorientador), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_57, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.'), 1 /* TEXT */), _hoisted_58, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_59, "    " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' + this.record.nome_orientador + ', orient. II. ' + this.record.titulo), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                         <pre>\n                            {{ complete_record }}\n                        </pre> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_60, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
     "class": "btn btn-info text-white copy-btn ml-auto",
     onClick: _cache[40] || (_cache[40] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.copy && $options.copy.apply($options, arguments);
@@ -18452,7 +18456,27 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "sobrenome_orientador",
     name: "sobrenome_orientador",
     value: $data.record.sobrenome_orientador
-  }, null, 8 /* PROPS */, _hoisted_73), _hoisted_74])]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_75, [_hoisted_76, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
+  }, null, 8 /* PROPS */, _hoisted_73), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "hidden",
+    id: "genero_coorientador",
+    name: "genero_coorientador",
+    value: $data.record.genero_coorientador
+  }, null, 8 /* PROPS */, _hoisted_74), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "hidden",
+    id: "nome_coorientador",
+    name: "nome_coorientador",
+    value: $data.record.nome_coorientador
+  }, null, 8 /* PROPS */, _hoisted_75), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "hidden",
+    id: "sobrenome_coorientador",
+    name: "sobrenome_coorientador",
+    value: $data.record.sobrenome_coorientador
+  }, null, 8 /* PROPS */, _hoisted_76), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "hidden",
+    id: "instituicao",
+    name: "instituicao",
+    value: $data.record.instituicao
+  }, null, 8 /* PROPS */, _hoisted_77), _hoisted_78])]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_79, [_hoisted_80, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.errors, function (error) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(error.message), 1 /* TEXT */);
   }), 256 /* UNKEYED_FRAGMENT */))])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]);
 }

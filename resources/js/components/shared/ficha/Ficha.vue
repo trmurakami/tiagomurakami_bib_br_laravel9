@@ -85,7 +85,7 @@ export default {
                 '\n' +
                 this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
                 this.record.coorientador +
-                this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' +
+                this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' +
                 '\n' +
                 this.record.assuntos_string + 
                 ' I. ' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II. ' + this.record.titulo + '.\n' +
@@ -504,7 +504,7 @@ export default {
                             <br/>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.' }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.coorientador }}</p>
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.' }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.' }}</p>
                             <br/>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II. ' + this.record.titulo }}</p>
                         </div>
@@ -536,6 +536,10 @@ export default {
                                 <input type="hidden" id="genero_orientador" name="genero_orientador" :value="record.genero_orientador">
                                 <input type="hidden" id="nome_orientador" name="nome_orientador" :value="record.nome_orientador">
                                 <input type="hidden" id="sobrenome_orientador" name="sobrenome_orientador" :value="record.sobrenome_orientador">
+                                <input type="hidden" id="genero_coorientador" name="genero_coorientador" :value="record.genero_coorientador">
+                                <input type="hidden" id="nome_coorientador" name="nome_coorientador" :value="record.nome_coorientador">
+                                <input type="hidden" id="sobrenome_coorientador" name="sobrenome_coorientador" :value="record.sobrenome_coorientador">
+                                <input type="hidden" id="instituicao" name="instituicao" :value="record.instituicao">
 
                                 <button type="submit" class="btn btn-success text-white copy-btn ml-auto">Exportar PDF</button>
                             </form>
