@@ -4,6 +4,8 @@ export default {
     return {
         validation: {
             titulo: 'is-invalid',
+            autor_nome: 'is-invalid',
+            autor_sobrenome: 'is-invalid'
         },
         cutter: {
             codigo: 'A000',
@@ -17,16 +19,7 @@ export default {
             titulo: "Título do trabalho",
         },
         copySuccessful: false,
-        current_ldr: null,
-        loadingDOI: false,
-        loadingISBN: false,
-        loadingZ3950: false,
-        i_personal_name: 1,
-        errors: null,
-        RDA: false,
-        _336b: null,
-        _337b: null,
-        _338b: null
+        errors: null
     }
   },
   computed: {
@@ -45,8 +38,7 @@ export default {
             }
         },
         mounted() {
-            this.update005();
-            this.translation = this.translation_en_US;
+            this.validate();
         },
         methods: {
             addField: function(field) {
@@ -153,29 +145,27 @@ export default {
                 } else {
                     this.validation.titulo = "is-valid";
                 }
-                if (this.record.f008.p07_10.length != 4) {
+                if (this.record.nome == "") {
+                    this.validation.autor_nome = "is-invalid";
                     if (this.errors == null) {
                         this.errors = [];
                     }
                     this.errors.push({
-                        message: '008 position 07-10 has invalid length (4 is mandatory)'
+                        message: 'Nome do autor é obrigatório'
                     });
+                } else {
+                    this.validation.autor_nome = "is-valid";
                 }
-                if (isNaN(this.record.f008.p07_10)) {
+                if (this.record.sobrenome == "") {
+                    this.validation.autor_sobrenome = "is-invalid";
                     if (this.errors == null) {
                         this.errors = [];
                     }
                     this.errors.push({
-                        message: '008 position 07-10 is not a valid number'
+                        message: 'Sobrenome do autor é obrigatório'
                     });
-                }
-                if (this.record.f008.p07_10 == '0000') {
-                    if (this.errors == null) {
-                        this.errors = [];
-                    }
-                    this.errors.push({
-                        message: '008 position 07-10 is not a valid number'
-                    });
+                } else {
+                    this.validation.autor_sobrenome = "is-valid";
                 }
             }
         }
@@ -210,10 +200,10 @@ export default {
                             <span class="input-group-text" id="autor">Autor</span>
                             <input type="text" id="nome" v-model="record.nome" class="form-control"
                                 placeholder="Nome" aria-label="Nome"
-                                aria-describedby="Nome">
+                                aria-describedby="Nome" :class="validation.autor_nome" @input="validate()">
                             <input type="text" id="sobrenome" v-model="record.sobrenome" class="form-control"
                                 placeholder="Sobrenome" aria-label="Sobrenome"
-                                aria-describedby="Sobrenome" @input="getCutter">
+                                aria-describedby="Sobrenome" @input="getCutter(); validate()" :class="validation.autor_sobrenome">
                         </div>
                         <!-- \Autor -->
 
@@ -222,7 +212,7 @@ export default {
                             <span class="input-group-text" id="titulo">Título do trabalho</span>
                             <input type="text" id="titulo" v-model="record.titulo" class="form-control"
                                 placeholder="Título do trabalho" aria-label="Título do trabalho"
-                                aria-describedby="titulo" :class="validation.titulo" @input="validate">
+                                aria-describedby="titulo" :class="validation.titulo" @input="validate()">
                         </div>
                         <!-- \Título do trabalho -->
 
@@ -263,7 +253,7 @@ export default {
                             Copiado com sucesso!
                         </div>
                         <div class="alert alert-warning mt-5" role="alert" v-if="errors">
-                            <h5>{{ translation.warning }}</h5>
+                            <h5>Validação</h5>
                             <ul>
                                 <li v-for="(error) in errors">{{ error.message }}</li>
                             </ul>
