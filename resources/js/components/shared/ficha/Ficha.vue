@@ -47,7 +47,6 @@ export default {
   },
   computed: {
             complete_record: function() {
-                
                 return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' +
                 this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' +
                 this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + 
@@ -56,7 +55,7 @@ export default {
                 '\n' +
                 this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
                 this.record.coorientador +
-                this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + ', ' + this.record.ano + '.\n' +
+                this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' +
                 '\n' +
                 this.record.assuntos_string + 
                 'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' +
@@ -289,7 +288,7 @@ export default {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 ms-sm-auto col-lg-8 px-md-4">
+                    <div class="col-md-6 ms-sm-auto col-lg-6">
 
                         <!-- Autor -->
                         <div class="input-group mb-3">
@@ -410,7 +409,7 @@ export default {
                         <!-- Especialização -->
                         <div class="input-group mb-3" v-if="['Trabalho de conclusão de curso (especialização)'].includes(record.grau)">
                             <span class="input-group-text" id="especializacao">Especialização em</span>
-                            <input type="text" id="especializacao" v-model="record.graduacao" class="form-control"
+                            <input type="text" id="especializacao" v-model="record.especializacao" class="form-control"
                                 placeholder="Especialização em" aria-label="Especialização em"
                                 aria-describedby="especializacao">
                         </div>
@@ -448,22 +447,36 @@ export default {
 
 
                     </div>
-                    <div class="col-md-4 col-lg-4">
+                    <div class="col-md-6 col-lg-6">
                         <h2>Ficha catalográfica</h2>
-                        <pre>
-                            {{ complete_record }}
-                        </pre>
-                        <span class="btn btn-info text-white copy-btn ml-auto"
-                            @click.stop.prevent="copy">Copiar</span>
-                        <input 
-                            type="hidden"
-                            id="complete_record"
-                            :value="complete_record"
-                        >
-
-                        <div class="alert alert-info" role="alert" v-if="copySuccessful">
-                            Copiado com sucesso!
+                        <div class="border p-5">
+                            <p class="p-0 m-0">{{ this.record.sobrenome + ', ' + this.record.nome }}</p>
+                            <p>{{ this.cutter.codigo + this.record.titulo[0].toLowerCase() }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.folhas + ' f. : il.\n' }}</p>
+                            <br/>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.' }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.coorientador }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.' }}</p>
+                            <br/>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.assuntos_string + 'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo }}</p>
                         </div>
+<!--                         <pre>
+                            {{ complete_record }}
+                        </pre> -->
+                        <p class="mt-3">
+                            <span class="btn btn-info text-white copy-btn ml-auto"
+                                @click.stop.prevent="copy">Copiar</span>
+                            <input 
+                                type="hidden"
+                                id="complete_record"
+                                :value="complete_record"
+                            >
+
+                            <div class="alert alert-info" role="alert" v-if="copySuccessful">
+                                Copiado com sucesso!
+                            </div>
+                        </p>
                         <div class="alert alert-warning mt-5" role="alert" v-if="errors">
                             <h5>Validação</h5>
                             <ul>
