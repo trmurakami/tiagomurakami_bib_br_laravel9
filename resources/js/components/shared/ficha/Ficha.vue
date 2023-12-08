@@ -1,7 +1,10 @@
 <script>
+
+import axios from 'axios';
 export default {
   data() {
     return {
+        csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
         validation: {
             titulo: 'is-invalid',
             autor_nome: 'is-invalid',
@@ -30,6 +33,7 @@ export default {
             graduacao: "",
             graduacao_string: "",
             grau: "",
+            ilustrado: "",
             instituicao: "",
             nome: "",
             nome_orientador: "",
@@ -41,6 +45,32 @@ export default {
             sobrenome_coorientador: "",
             titulo: "Título do trabalho",
         },
+        record_test: {
+            genero_orientador: "Orientadora",
+            genero_coorientador: "Coorientador",
+            ano: "2006",
+            assuntos: ['Tesauros', 'World Wide Web'],
+            assuntos_string: "1. Tesauros. 2. World Wide Web.",
+            cidade: "",
+            coorientador: "",
+            especializacao: "",
+            especializacao_string: "",
+            folhas: 92,
+            graduacao: "Biblioteconomia",
+            graduacao_string: "Bacharel em Biblioteconomia",
+            grau: "Trabalho de conclusão de curso (graduação)",
+            ilustrado: " : il.",
+            instituicao: "Universidade de São Paulo. Escola de Comunicações e Artes",
+            nome: "Tiago Rodrigo Marçal",
+            nome_orientador: "Sueli Mara Soares Pinto",
+            nome_coorientador: "",
+            ppg: "",
+            ppg_string: "",
+            sobrenome: "Murakami",
+            sobrenome_orientador: "Ferreira",
+            sobrenome_coorientador: "",
+            titulo: "Tesauros e a World Wide Web",
+        },
         copySuccessful: false,
         errors: null
     }
@@ -50,15 +80,15 @@ export default {
                 return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' +
                 this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' +
                 this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + 
-                ' - ' + this.record.ano + '\n' +
-                this.record.folhas + ' f. : il.\n' +
+                ' — ' + this.record.ano + '\n' +
+                this.record.folhas + ' f.'+ this.record.ilustrado + '\n' +
                 '\n' +
                 this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
                 this.record.coorientador +
                 this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' +
                 '\n' +
                 this.record.assuntos_string + 
-                'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' +
+                ' I. ' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II. ' + this.record.titulo + '.\n' +
                 '\n'
 
             }
@@ -116,6 +146,10 @@ export default {
             deleteField: function(field, index) {
                 this.record[field].splice(index, 1);
             },
+            example() {
+                this.record = this.record_test;
+                this.cutter.codigo = 'M972';
+            },
             gerarStringAssuntos() {
                 let strAssuntos = '';
                 for (let i = 0; i < this.record.assuntos.length; i++) {
@@ -152,6 +186,9 @@ export default {
             },
             toggleGeneroCoorientador() {
                 this.record.genero_coorientador = this.record.genero_coorientador === 'Coorientador' ? 'Coorientadora' : 'Coorientador';
+            },
+            toggleIlustrado() {
+                this.record.ilustrado = this.record.ilustrado === '' ? ' : il.' : '';
             },
             validate() {
                 this.errors = null;
@@ -277,6 +314,7 @@ export default {
                     <h1 class="h2">Gerador de ficha catalográfica para trabalhos acadêmicos</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" @click="example()">Preencher registro de exemplo</button>
                             <button type="button" class="btn btn-sm btn-outline-warning"
                                 @click="validate()">Validar</button>
                             <button type="button" class="btn btn-sm btn-outline-secondary" @click="cleanAll()">Reiniciar</button>
@@ -328,6 +366,15 @@ export default {
                                 aria-describedby="folhas" :class="validation.folhas" @input="validate()">
                         </div>
                         <!-- \Número de folhas -->
+
+                        <!-- Ilustrado -->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" @input="toggleIlustrado">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Ilustrado?
+                            </label>
+                        </div>
+                        <!-- \Ilustrado -->
 
                         <!-- Orientador -->
                         <div class="input-group mb-3">
@@ -452,14 +499,14 @@ export default {
                         <div class="border p-5">
                             <p class="p-0 m-0">{{ this.record.sobrenome + ', ' + this.record.nome }}</p>
                             <p>{{ this.cutter.codigo + this.record.titulo[0].toLowerCase() }}</p>
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano }}</p>
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.folhas + ' f. : il.\n' }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.folhas + ' f.' + this.record.ilustrado + '\n' }}</p>
                             <br/>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.' }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.coorientador }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.' }}</p>
                             <br/>
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.assuntos_string + 'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II. ' + this.record.titulo }}</p>
                         </div>
 <!--                         <pre>
                             {{ complete_record }}
@@ -477,6 +524,20 @@ export default {
                                 Copiado com sucesso!
                             </div>
                         </p>
+                        <p>
+                            <form action="/export-pdf" method="POST">
+                                <input type="hidden" name="_token" :value="csrf" />
+                                <input type="hidden" id="titulo" name="titulo" :value="record.titulo">
+                                <input type="hidden" id="nome" name="nome" :value="record.nome">
+                                <input type="hidden" id="sobrenome" name="sobrenome" :value="record.sobrenome">
+                                <input type="hidden" id="ano" name="ano" :value="record.ano">
+                                <input type="hidden" id="folhas" name="folhas" :value="record.folhas">
+
+                                <button type="submit" class="btn btn-success text-white copy-btn ml-auto">Exportar PDF</button>
+                            </form>
+                        </p>
+
+
                         <div class="alert alert-warning mt-5" role="alert" v-if="errors">
                             <h5>Validação</h5>
                             <ul>

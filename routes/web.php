@@ -124,3 +124,5 @@ Route::post('/aurorasdg', AuroraSDG::class);
 Route::get('/fichacatalografica', function () {
     return view('fichacatalografica.ficha');
 });
+
+Route::post('/export-pdf', [App\Http\Controllers\PdfExportController::class, 'exportPdf']);
