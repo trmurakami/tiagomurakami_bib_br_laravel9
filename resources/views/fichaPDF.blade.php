@@ -44,12 +44,12 @@
     <br />
     <div class="ficha-catalografica">
         <h1>{{ $sobrenome }}, {{ $nome }}</h1>
-        <p><strong>{{ $titulo }}</strong> / {{ $nome }} {{ $sobrenome }}. -- Local : Editora, {{ $ano }}.
+        <p><strong>{{ $titulo }}</strong> / {{ $nome }} {{ $sobrenome }}. — {{ $ano }}.
         </p>
         <p>{{ $folhas }} f.</p>
-        <p>Orientador: Nome Sobrenome.</p>
+        <p>{{ $genero_orientador }}: {{ $nome_orientador }} {{ $sobrenome_orientador }}.</p>
         <p>Tese (doutorado) -- Instituição, PPG, {{ $ano }}.</p>
-        <p>1. Assunto. 2. Assunto. I. Orientador. II. {{ $titulo }}.</p>
+        <p>1. Assunto. 2. Assunto. I. {{ $sobrenome_orientador }}, {{ $nome_orientador }}. II. {{ $titulo }}.</p>
     </div>
 </body>
 
