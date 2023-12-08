@@ -503,7 +503,7 @@ export default {
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.folhas + ' f.' + this.record.ilustrado + '\n' }}</p>
                             <br/>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.' }}</p>
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.coorientador }}</p>
+                            <p class="p-0 m-0" v-if="this.record.coorientador.length > 0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.coorientador }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.' }}</p>
                             <br/>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II. ' + this.record.titulo }}</p>
