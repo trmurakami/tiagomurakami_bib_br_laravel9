@@ -6,6 +6,7 @@ export default {
             titulo: 'is-invalid',
             autor_nome: 'is-invalid',
             autor_sobrenome: 'is-invalid',
+            grau: 'is-invalid',
             instituicao: 'is-invalid',
             nome_orientador: 'is-invalid',
             sobrenome_orientador: 'is-invalid',
@@ -15,14 +16,19 @@ export default {
         },
         record: {
             genero_orientador: "Orientador",
+            genero_coorientador: "Coorientador",
             ano: "2024",
             cidade: "",
+            coorientador: "",
             folhas: 0,
+            grau: "",
             instituicao: "",
             nome: "",
             nome_orientador: "",
+            nome_coorientador: "",
             sobrenome: "",
             sobrenome_orientador: "",
+            sobrenome_coorientador: "",
             titulo: "Título do trabalho",
         },
         copySuccessful: false,
@@ -31,24 +37,33 @@ export default {
   },
   computed: {
             complete_record: function() {
-
-                return this.record.sobrenome + ', ' + this.record.nome + '\n' +
+                
+                return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' +
                 this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' +
                 this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + 
                 ' - ' + this.record.ano + '\n' +
                 this.record.folhas + ' f. : il.\n' +
                 '\n' +
                 this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
-                ' - ' + this.record.instituicao + ', ' + this.record.ano + '.\n' +
+                this.record.coorientador +
+                this.record.grau + ' - ' + this.record.instituicao + ', ' + this.record.ano + '.\n' +
                 '\n' +
                 'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' +
                 '\n'
 
             }
+  },
+    mounted() {
+        this.validate();
+    },
+    watch: {
+        'record.nome_coorientador': function() {
+            this.preencherCoorientador();
         },
-        mounted() {
-            this.validate();
-        },
+        'record.sobrenome_coorientador': function() {
+            this.preencherCoorientador();
+        }
+    },
         methods: {
             addField: function(field) {
                 if (this.record[field] === null) {
@@ -94,8 +109,16 @@ export default {
                     this.cutter = response.data;
                 });
             },
+            preencherCoorientador() {
+                if (this.record.nome_coorientador && this.record.sobrenome_coorientador) {
+                this.record.coorientador = this.record.genero_coorientador + ': ' + this.record.nome_coorientador + ' ' + this.record.sobrenome_coorientador + '.\n';
+                }
+            },
             toggleGeneroOrientador() {
                 this.record.genero_orientador = this.record.genero_orientador === 'Orientador' ? 'Orientadora' : 'Orientador';
+            },
+            toggleGeneroCoorientador() {
+                this.record.genero_coorientador = this.record.genero_coorientador === 'Coorientador' ? 'Coorientadora' : 'Coorientador';
             },
             validate() {
                 this.errors = null;
@@ -172,6 +195,17 @@ export default {
                     });
                 } else {
                     this.validation.instituicao = "is-valid";
+                }
+                if (this.record.grau == "") {
+                    this.validation.grau = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'Grau acadêmico é obrigatório'
+                    });
+                } else {
+                    this.validation.grau = "is-valid";
                 }
             }
         }
@@ -259,6 +293,25 @@ export default {
                         </div>
                         <!-- \Orientador -->
 
+                        <!-- Coorientador -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="coorientador">{{ record.genero_coorientador }}</span>
+
+                            <input type="text" id="nome_coorientador" v-model="record.nome_coorientador" class="form-control"
+                                placeholder="Nome" aria-label="Nome do coorientador"
+                                aria-describedby="Nome" :class="validation.nome_coorientador" @input="validate()">
+                            <input type="text" id="sobrenome_coorientador" v-model="record.sobrenome_coorientador" class="form-control"
+                                placeholder="Sobrenome" aria-label="Sobrenome"
+                                aria-describedby="Sobrenome" @input="getCutter(); validate()" :class="validation.sobrenome_coorientador">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" @input="toggleGeneroCoorientador">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Coorientadora?
+                            </label>
+                        </div>
+                        <!-- \Coorientador -->
+
                         <!-- Instituição -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="instituicao">Instituição</span>
@@ -267,6 +320,21 @@ export default {
                                 aria-describedby="instituicao" :class="validation.instituicao" @input="validate()">
                         </div>
                         <!-- \Instituição -->
+
+                        <!-- Grau acadêmico -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="grau">Grau acadêmico</span>
+                            <select class="form-select" id="grau" v-model="record.grau" aria-label="Grau acadêmico" @input="validate()" :class="validation.grau">
+                                <option value="Trabalho de conclusão de curso (graduação)">Trabalho de conclusão de curso (Graduação)</option>
+                                <option value="Trabalho de conclusão de curso (especialização)">Trabalho de conclusão de curso (Especialização)</option>
+                                <option value="Dissertação (Mestrado)">Dissertação (Mestrado)</option>
+                                <option value="Dissertação (Mestrado Profissional)">Dissertação (Mestrado Profissional)</option>
+                                <option value="Tese (Doutorado)">Tese (Doutorado)</option>
+                                <option value="Tese de livre-docência">Tese de livre-docência</option>
+                            </select>
+                        </div>
+
+                        <!-- \Grau acadêmico -->
 
 
                     </div>
