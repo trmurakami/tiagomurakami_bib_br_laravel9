@@ -5,17 +5,24 @@ export default {
         validation: {
             titulo: 'is-invalid',
             autor_nome: 'is-invalid',
-            autor_sobrenome: 'is-invalid'
+            autor_sobrenome: 'is-invalid',
+            instituicao: 'is-invalid',
+            nome_orientador: 'is-invalid',
+            sobrenome_orientador: 'is-invalid',
         },
         cutter: {
             codigo: 'A000',
         },
         record: {
+            genero_orientador: "Orientador",
             ano: "2024",
             cidade: "",
             folhas: 0,
+            instituicao: "",
             nome: "",
+            nome_orientador: "",
             sobrenome: "",
+            sobrenome_orientador: "",
             titulo: "Título do trabalho",
         },
         copySuccessful: false,
@@ -31,8 +38,10 @@ export default {
                 ' - ' + this.record.ano + '\n' +
                 this.record.folhas + ' f. : il.\n' +
                 '\n' +
-                'Orientador: Nome do orientador\n' +
+                this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
+                ' - ' + this.record.instituicao + ', ' + this.record.ano + '.\n' +
                 '\n' +
+                'I.' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II.' + this.record.titulo + '.\n' +
                 '\n'
 
             }
@@ -46,49 +55,10 @@ export default {
                     this.record[field] = [];
                 }
                 switch (field) {
-                    case "isbn":
-                        this.record[field].push({
-                            id: ""
-                        });
-                        break;
-                    case "personal_name":
-                        this.record[field].push({
-                            ind1: "1",
-                            a: "",
-                            d: null,
-                            q: null
-                        });
-                        break;
                     case "corporate_name":
                         this.record[field].push({
                             ind1: "2",
                             a: ""
-                        });
-                        break;
-                    case "_650":
-                        this.record[field].push({
-                            ind1: "0",
-                            ind2: "4",
-                            a: "",
-                            _2: ""
-                        });
-                        break;
-                    case "_856":
-                        this.record[field].push({
-                            ind1: "4",
-                            ind2: "0",
-                            u: ""
-                        });
-                        break;
-                    case "general_note":
-                        this.record[field].push({
-                            a: ""
-                        });
-                        break;
-                    case "_536":
-                        this.record[field].push({
-                            a: "",
-                            f: ""
                         });
                         break;
                     default:
@@ -123,6 +93,9 @@ export default {
                 }).then(response => {
                     this.cutter = response.data;
                 });
+            },
+            toggleGeneroOrientador() {
+                this.record.genero_orientador = this.record.genero_orientador === 'Orientador' ? 'Orientadora' : 'Orientador';
             },
             validate() {
                 this.errors = null;
@@ -166,6 +139,39 @@ export default {
                     });
                 } else {
                     this.validation.autor_sobrenome = "is-valid";
+                }
+                if (this.record.nome_orientador == "") {
+                    this.validation.nome_orientador = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'Nome do orientador é obrigatório'
+                    });
+                } else {
+                    this.validation.nome_orientador = "is-valid";
+                }
+                if (this.record.sobrenome_orientador == "") {
+                    this.validation.sobrenome_orientador = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'Sobrenome do orientador é obrigatório'
+                    });
+                } else {
+                    this.validation.sobrenome_orientador = "is-valid";
+                }
+                if (this.record.instituicao == "") {
+                    this.validation.instituicao = "is-invalid";
+                    if (this.errors == null) {
+                        this.errors = [];
+                    }
+                    this.errors.push({
+                        message: 'Nome da instituição é obrigatório'
+                    });
+                } else {
+                    this.validation.instituicao = "is-valid";
                 }
             }
         }
@@ -233,6 +239,34 @@ export default {
                                 aria-describedby="folhas">
                         </div>
                         <!-- \Ano do trabalho -->
+
+                        <!-- Orientador -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="orientador">{{ record.genero_orientador }}</span>
+
+                            <input type="text" id="nome_orientador" v-model="record.nome_orientador" class="form-control"
+                                placeholder="Nome" aria-label="Nome do orientador"
+                                aria-describedby="Nome" :class="validation.nome_orientador" @input="validate()">
+                            <input type="text" id="sobrenome_orientador" v-model="record.sobrenome_orientador" class="form-control"
+                                placeholder="Sobrenome" aria-label="Sobrenome"
+                                aria-describedby="Sobrenome" @input="getCutter(); validate()" :class="validation.sobrenome_orientador">
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" @input="toggleGeneroOrientador">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Orientadora?
+                            </label>
+                        </div>
+                        <!-- \Orientador -->
+
+                        <!-- Instituição -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="instituicao">Instituição</span>
+                            <input type="text" id="instituicao" v-model="record.instituicao" class="form-control"
+                                placeholder="Nome da instituição" aria-label="Nome da instituição"
+                                aria-describedby="instituicao" :class="validation.instituicao" @input="validate()">
+                        </div>
+                        <!-- \Instituição -->
 
 
                     </div>
