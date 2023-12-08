@@ -17685,7 +17685,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   computed: {
     complete_record: function complete_record() {
-      return this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano + '\n' + this.record.folhas + ' f. : il.\n' + '\n' + 'Orientador: Nome do orientador\n' + '\n' + '\n';
+      return this.record.sobrenome + ', ' + this.record.nome + '\n' + this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' + this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' - ' + this.record.ano + '\n' + this.record.folhas + ' f. : il.\n' + '\n' + 'Orientador: Nome do orientador\n' + '\n' + '\n';
     }
   },
   mounted: function mounted() {

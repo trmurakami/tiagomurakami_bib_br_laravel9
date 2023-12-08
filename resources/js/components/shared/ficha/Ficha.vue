@@ -100,7 +100,7 @@ export default {
             complete_record: function() {
 
                 return this.record.sobrenome + ', ' + this.record.nome + '\n' +
-                this.cutter.codigo + '      ' +
+                this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' +
                 this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + 
                 ' - ' + this.record.ano + '\n' +
                 this.record.folhas + ' f. : il.\n' +
