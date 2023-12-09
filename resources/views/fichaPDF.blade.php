@@ -95,12 +95,16 @@
             </p>
         </div>
     </div>
-    <p style="text-align: center; margin-bottom: 0">
+    <p style="text-align: center; margin-bottom: 0; font-size:11px">
         <small>Elaborado pelo Gerador de ficha catalográfica para trabalhos acadêmicos</small>
     </p>
-    <p style="text-align: center; margin: 0">
-        <small>com os dados fornecidos pelo(a) autor(a)</small>
+    <p style="text-align: center; margin: 0; font-size:11px">
+        <small>com os dados fornecidos pelo(a) autor(a), sob a responsabilidade de</small>
     </p>
+    <p style="text-align: center; margin: 0; font-size:11px">
+        <small>Tiago Rodrigo Marçal Murakami - CRB-8/7555.</small>
+    </p>
+
 </body>
 
 </html>
