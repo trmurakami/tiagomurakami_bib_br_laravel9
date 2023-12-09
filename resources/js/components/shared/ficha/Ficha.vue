@@ -497,7 +497,7 @@ export default {
                     </div>
                     <div class="col-md-6 col-lg-6">
                         <h2>Ficha catalográfica</h2>
-                        <div class="border p-5">
+                        <div class="border p-5" style="font-family: monospace;">
                             <p class="p-0 m-0">{{ this.record.sobrenome + ', ' + this.record.nome }}</p>
                             <p>{{ this.cutter.codigo + this.record.titulo[0].toLowerCase() }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano }}</p>

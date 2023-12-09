@@ -18056,7 +18056,10 @@ var _hoisted_48 = {
 };
 var _hoisted_49 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, "Ficha catalográfica", -1 /* HOISTED */);
 var _hoisted_50 = {
-  "class": "border p-5"
+  "class": "border p-5",
+  style: {
+    "font-family": "monospace"
+  }
 };
 var _hoisted_51 = {
   "class": "p-0 m-0"

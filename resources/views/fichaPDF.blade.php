@@ -11,6 +11,7 @@
         border: 1px solid #000;
         padding: 20px;
         font-size: 14px;
+        font-family: monospace;
         line-height: 1.5;
     }
 
@@ -42,8 +43,22 @@
     <br />
     <br />
     <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p style="text-align: center;">CIP - Catalogação na Publicação</p>
     <div class="ficha-catalografica">
-        <h1>{{ $sobrenome }}, {{ $nome }}</h1>
+        <p>{{ $sobrenome }}, {{ $nome }}</p>
         <p><strong>{{ $titulo }}</strong> / {{ $nome }} {{ $sobrenome }}. — {{ $ano }}.
         </p>
         <p>{{ $folhas }} f.
@@ -55,6 +70,9 @@
         <p>Tese (doutorado) — {{ $instituicao }}, PPG, {{ $ano }}.</p>
         <p>1. Assunto. 2. Assunto. I. {{ $sobrenome_orientador }}, {{ $nome_orientador }}. II. {{ $titulo }}.</p>
     </div>
+    <p style="text-align: center;">
+        Elaborado pelo Gerador de ficha catalográfica para trabalhos acadêmicos com os dados fornecidos pelo(a) autor(a)
+    </p>
 </body>
 
 </html>
