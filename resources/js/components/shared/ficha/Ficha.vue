@@ -509,9 +509,6 @@ export default {
                             <br/>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.assuntos_string + ' I. ' + this.record.sobrenome_orientador + ', ' +  this.record.nome_orientador + ', orient. II. ' + this.record.titulo }}</p>
                         </div>
-<!--                         <pre>
-                            {{ complete_record }}
-                        </pre> -->
                         <p class="mt-3">
                             <span class="btn btn-info text-white copy-btn ml-auto"
                                 @click.stop.prevent="copy">Copiar</span>
