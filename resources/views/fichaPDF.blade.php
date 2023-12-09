@@ -4,26 +4,26 @@
 <head>
     <title>Ficha catalográfica</title>
     <style>
-        /* Adicione aqui o seu CSS */
-        .ficha-catalografica {
-            width: 70%;
-            margin: auto;
-            border: 1px solid #000;
-            padding: 20px;
-            font-size: 12px;
-            font-family: monospace;
-            line-height: 1.5;
-            display: flex;
-            justify-content: space-between;
-        }
+    /* Adicione aqui o seu CSS */
+    .ficha-catalografica {
+        width: 70%;
+        margin: auto;
+        border: 1px solid #000;
+        padding: 20px;
+        font-size: 12px;
+        font-family: monospace;
+        line-height: 1.5;
+        display: flex;
+        justify-content: space-between;
+    }
 
-        .ficha-catalografica h1 {
-            text-align: center;
-        }
+    .ficha-catalografica h1 {
+        text-align: center;
+    }
 
-        .ficha-catalografica p {
-            margin: 0;
-        }
+    .ficha-catalografica p {
+        margin: 0;
+    }
     </style>
 </head>
 
@@ -59,7 +59,7 @@
     <p style="text-align: center;">CIP - Catalogação na Publicação</p>
     <div class="ficha-catalografica">
         <p>{{ $cutter }}{{ strtolower($titulo[0]) }}</p>
-        <div style="padding:40px">
+        <div style="padding:30px">
             <p>{{ $sobrenome }}, {{ $nome }}</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $titulo }} / {{ $nome }} {{ $sobrenome }}. — {{ $ano }}.
             </p>
