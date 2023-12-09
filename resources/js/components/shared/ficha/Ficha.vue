@@ -546,6 +546,7 @@ export default {
                                 <input type="hidden" id="graduacao" name="graduacao" :value="record.graduacao">
                                 <input type="hidden" id="especializacao" name="especializacao" :value="record.especializacao">
                                 <input type="hidden" id="assuntos" name="assuntos" :value="record.assuntos">
+                                <input type="hidden" id="cutter" name="cutter" :value="cutter.codigo">
 
 
                                 <button type="submit" class="btn btn-success text-white copy-btn ml-auto">Exportar PDF</button>
