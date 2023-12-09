@@ -542,6 +542,11 @@ export default {
                                 <input type="hidden" id="sobrenome_coorientador" name="sobrenome_coorientador" :value="record.sobrenome_coorientador">
                                 <input type="hidden" id="instituicao" name="instituicao" :value="record.instituicao">
                                 <input type="hidden" id="grau" name="grau" :value="record.grau">
+                                <input type="hidden" id="ppg" name="ppg" :value="record.ppg">
+                                <input type="hidden" id="graduacao" name="graduacao" :value="record.graduacao">
+                                <input type="hidden" id="especializacao" name="especializacao" :value="record.especializacao">
+                                <input type="hidden" id="assuntos" name="assuntos" :value="record.assuntos">
+
 
                                 <button type="submit" class="btn btn-success text-white copy-btn ml-auto">Exportar PDF</button>
                             </form>
