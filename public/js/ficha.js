@@ -17737,6 +17737,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     example: function example() {
       this.record = this.record_test;
       this.cutter.codigo = 'M972';
+      this.validate();
     },
     gerarStringAssuntos: function gerarStringAssuntos() {
       var strAssuntos = '';
