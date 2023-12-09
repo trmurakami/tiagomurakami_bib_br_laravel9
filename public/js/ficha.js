@@ -18496,12 +18496,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "hidden",
     id: "ppg",
     name: "ppg",
-    value: $data.record.ppg
+    value: $data.record.ppg_string
   }, null, 8 /* PROPS */, _hoisted_79), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     id: "graduacao",
     name: "graduacao",
-    value: $data.record.graduacao
+    value: $data.record.graduacao_string
   }, null, 8 /* PROPS */, _hoisted_80), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "hidden",
     id: "especializacao",

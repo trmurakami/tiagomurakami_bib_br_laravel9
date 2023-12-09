@@ -70,7 +70,18 @@
             </p>
             <br />
             <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $genero_orientador }}: {{ $nome_orientador }} {{ $sobrenome_orientador }}.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $grau }} — {{ $instituicao }}, {{ $ano }}.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $grau }} — {{ $instituicao }},
+                @if (!empty($graduacao))
+                {{ $graduacao }},
+                @endif
+                @if (!empty($ppg))
+                {{ $ppg }},
+                @endif
+                @if (!empty($especializacao))
+                {{ $especializacao }},
+                @endif
+                {{ $ano }}.
+            </p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;
                 @php
                 $assuntos_array = explode(",", $assuntos);
