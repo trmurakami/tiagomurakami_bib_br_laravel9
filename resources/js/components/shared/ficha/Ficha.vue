@@ -541,6 +541,7 @@ export default {
                                 <input type="hidden" id="nome_coorientador" name="nome_coorientador" :value="record.nome_coorientador">
                                 <input type="hidden" id="sobrenome_coorientador" name="sobrenome_coorientador" :value="record.sobrenome_coorientador">
                                 <input type="hidden" id="instituicao" name="instituicao" :value="record.instituicao">
+                                <input type="hidden" id="grau" name="grau" :value="record.grau">
 
                                 <button type="submit" class="btn btn-success text-white copy-btn ml-auto">Exportar PDF</button>
                             </form>

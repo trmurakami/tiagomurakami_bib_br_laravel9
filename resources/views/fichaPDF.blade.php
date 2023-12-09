@@ -69,7 +69,7 @@
         </p>
         <br />
         <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $genero_orientador }}: {{ $nome_orientador }} {{ $sobrenome_orientador }}.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Tese (doutorado) — {{ $instituicao }}, PPG, {{ $ano }}.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $grau }} — {{ $instituicao }}, {{ $ano }}.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;1. Assunto. 2. Assunto. I. {{ $sobrenome_orientador }}, {{ $nome_orientador }}. II.
             {{ $titulo }}.
         </p>
