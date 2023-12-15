@@ -543,9 +543,11 @@ export default {
                                 <input type="hidden" id="nome" name="nome" :value="record.nome">
                                 <input type="hidden" id="sobrenome" name="sobrenome" :value="record.sobrenome">
                                 <input type="hidden" id="ano" name="ano" :value="record.ano">
+                                <input type="hidden" id="cidade" name="cidade" :value="record.cidade">
                                 <input type="hidden" id="folhas" name="folhas" :value="record.folhas">
                                 <input type="hidden" id="ilustrado" name="ilustrado" :value="record.ilustrado">
                                 <input type="hidden" id="genero_orientador" name="genero_orientador" :value="record.genero_orientador">
+                                <input type="hidden" id="titulacao_orientador" name="titulacao_orientador" :value="record.titulacao_orientador">
                                 <input type="hidden" id="nome_orientador" name="nome_orientador" :value="record.nome_orientador">
                                 <input type="hidden" id="sobrenome_orientador" name="sobrenome_orientador" :value="record.sobrenome_orientador">
                                 <input type="hidden" id="genero_coorientador" name="genero_coorientador" :value="record.genero_coorientador">
