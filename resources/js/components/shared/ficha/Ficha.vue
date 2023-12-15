@@ -43,6 +43,7 @@ export default {
             sobrenome: "",
             sobrenome_orientador: "",
             sobrenome_coorientador: "",
+            titulacao_orientador: "",
             titulo: "Título do trabalho",
         },
         record_test: {
@@ -51,7 +52,7 @@ export default {
             ano: "2006",
             assuntos: ['Tesauros', 'World Wide Web'],
             assuntos_string: "1. Tesauros. 2. World Wide Web.",
-            cidade: "",
+            cidade: "São Paulo",
             coorientador: "",
             especializacao: "",
             especializacao_string: "",
@@ -69,6 +70,7 @@ export default {
             sobrenome: "Murakami",
             sobrenome_orientador: "Ferreira",
             sobrenome_coorientador: "",
+            titulacao_orientador: "Professora Doutora",
             titulo: "Tesauros e a World Wide Web",
         },
         copySuccessful: false,
@@ -80,10 +82,10 @@ export default {
                 return '\n' + this.record.sobrenome + ', ' + this.record.nome + '\n' +
                 this.cutter.codigo + this.record.titulo[0].toLowerCase() + '      ' +
                 this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + 
-                ' — ' + this.record.ano + '\n' +
+                ' — ' + this.record.cidade + ', ' + this.record.ano + '\n' +
                 this.record.folhas + ' f.'+ this.record.ilustrado + '\n' +
                 '\n' +
-                this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
+                this.record.genero_orientador + ': ' + this.titulacao_orientador + ' ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.\n' +
                 this.record.coorientador +
                 this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.\n' +
                 '\n' +
@@ -350,6 +352,15 @@ export default {
                         </div>
                         <!-- \Título do trabalho -->
 
+                        <!-- Cidade -->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="cidade">Cidade</span>
+                            <input type="text" id="cidade" v-model="record.cidade" class="form-control"
+                                placeholder="Cidade" aria-label="Cidade"
+                                aria-describedby="ano">
+                        </div>
+                        <!-- \Cidade -->
+
                         <!-- Ano do trabalho -->
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="ano">Ano do trabalho</span>
@@ -381,6 +392,9 @@ export default {
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="orientador">{{ record.genero_orientador }}</span>
 
+                            <input type="text" id="titulacao_orientador" v-model="record.titulacao_orientador" class="form-control"
+                                placeholder="Titulação" aria-label="Titulação do orientador"
+                                aria-describedby="Nome">
                             <input type="text" id="nome_orientador" v-model="record.nome_orientador" class="form-control"
                                 placeholder="Nome" aria-label="Nome do orientador"
                                 aria-describedby="Nome" :class="validation.nome_orientador" @input="validate()">
@@ -500,10 +514,10 @@ export default {
                         <div class="border p-5" style="font-family: monospace;">
                             <p>{{ this.cutter.codigo + this.record.titulo[0].toLowerCase() }}</p>
                             <p class="p-0 m-0">{{ this.record.sobrenome + ', ' + this.record.nome }}</p>                            
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.ano }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.titulo + ' / ' + this.record.nome + ' ' + this.record.sobrenome + ' — ' + this.record.cidade + ', ' + this.record.ano }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.folhas + ' f.' + this.record.ilustrado + '\n' }}</p>
                             <br/>
-                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.genero_orientador + ': ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.' }}</p>
+                            <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.genero_orientador + ': ' + this.record.titulacao_orientador + ' ' + this.record.nome_orientador + ' ' + this.record.sobrenome_orientador + '.' }}</p>
                             <p class="p-0 m-0" v-if="this.record.coorientador.length > 0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.coorientador }}</p>
                             <p class="p-0 m-0">&nbsp;&nbsp;&nbsp;&nbsp;{{ this.record.grau + ' — ' + this.record.instituicao + ', ' + this.record.graduacao_string + this.record.ppg_string + this.record.especializacao + ', ' + this.record.ano + '.' }}</p>
                             <br/>

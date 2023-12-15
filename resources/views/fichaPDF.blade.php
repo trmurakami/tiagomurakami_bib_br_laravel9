@@ -61,7 +61,7 @@
         <p>{{ $cutter }}{{ strtolower($titulo[0]) }}</p>
         <div style="padding:30px">
             <p>{{ $sobrenome }}, {{ $nome }}</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $titulo }} / {{ $nome }} {{ $sobrenome }}. — {{ $ano }}.
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $titulo }} / {{ $nome }} {{ $sobrenome }}. — {{ $cidade }}, {{ $ano }}.
             </p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $folhas }} f.
                 @if ($ilustrado == ': il.')
@@ -69,7 +69,9 @@
                 @endif
             </p>
             <br />
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $genero_orientador }}: {{ $nome_orientador }} {{ $sobrenome_orientador }}.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $genero_orientador }}: {{ $titulacao_orientador }} {{ $nome_orientador }}
+                {{ $sobrenome_orientador }}.
+            </p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;{{ $grau }} — {{ $instituicao }},
                 @if (!empty($graduacao))
                 {{ $graduacao }},
