@@ -15,15 +15,13 @@ return new class extends Migration
     {
         Schema::create('software_thing', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('software_id')->constrained('softwares');
-            $table->foreignId('thing_id')->constrained('things');
+            $table->foreignId('software_id')->constrained('softwares')->onDelete('cascade');
+            $table->foreignId('thing_id')->constrained('things')->onDelete('cascade');
             $table->string('function');
             $table->string('number_of_branchs');
             $table->string('software_version');
-            $table->string('url');            
+            $table->string('url');
             $table->timestamps();
-
-
         });
     }
 

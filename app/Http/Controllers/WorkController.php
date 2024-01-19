@@ -191,6 +191,13 @@ class WorkController extends Controller
             ->with('success', 'Work deleted successfully');
     }
 
+    public function destroybyquery()
+    {
+        $query = Work::query();
+        $query->where('datePublished', '2022');
+        $query->delete();
+    }
+
     public static function indexRelations($id)
     {
         $record = Work::find($id);
@@ -212,7 +219,6 @@ class WorkController extends Controller
                     } else {
                         $record->authors()->attach($thing_existing, ['function' => $author['function']]);
                     }
-                    
                 }
             }
         }
@@ -366,7 +372,7 @@ class WorkController extends Controller
         $q->orderByDesc('count');
         $aboutData = $q->limit(200)->get();
 
-        
+
         return view('works.graficos', array('datePublishedData' => $datePublishedData, 'typeData' => $typeData, 'request' => $request, 'aboutData' => $aboutData));
     }
 
@@ -387,7 +393,5 @@ class WorkController extends Controller
                 return false;
             }
         }
-
     }
-
 }

@@ -121,6 +121,8 @@ Route::get('/aurorasdg', function () {
 });
 Route::post('/aurorasdg', AuroraSDG::class);
 
+Route::get('/deleteyear', [WorkController::class, 'destroybyquery']);
+
 Route::get('/fichacatalografica', function () {
     return view('fichacatalografica.ficha');
 });
