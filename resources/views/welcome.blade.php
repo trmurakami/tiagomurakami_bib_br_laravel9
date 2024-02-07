@@ -176,6 +176,8 @@
                             Pesquisadores vinculados a Programas de Pós-Graduação em Ciência da Informação</a>
                     </li>
                     <li class="list-group-item"><a href="cutter">Consultar Tabela Cutter Sanborn</a></li>
+                    <li class="list-group-item"><a href="https://vocabularios.eca.usp.br/redeassuntos/">Rede de assuntos
+                            do acervo da Biblioteca da ECA/USP</a></li>
                     <li class="list-group-item"><a
                             href="https://ouestware.gitlab.io/retina/beta/#/graph/?url=https%3A%2F%2Fgist.githubusercontent.com%2Ftrmurakami%2Fb7ab09409fb63e7e2e49c0971c8c045d%2Fraw%2F8e04f722fae3674f84726c298541a0c076871cca%2Fnetwork-705a9516-9a1.gexf&lt=9.946&le=20">
                             Rede de Assuntos das Teses de Ciência da Informação</a>
