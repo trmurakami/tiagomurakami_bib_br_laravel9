@@ -38,7 +38,7 @@
     <div class="row mt-3">
         <div class="col-sm-6">
             <div class="card">
-                <img src="includes/images/Librecat-Catmandu.png" class="card-img-top"
+                <img src="includes/images/SlidesIA.png" class="card-img-top"
                     alt="Slides da apresentação Desmistificando a IA para os bibliotecários">
                 <div class="card-body">
                     <h5 class="card-title">Desmistificando a IA para os bibliotecários</h5>
