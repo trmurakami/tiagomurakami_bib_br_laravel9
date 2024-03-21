@@ -35,6 +35,22 @@
             </div>
         </div>
     </div>
+    <div class="row mt-3">
+        <div class="col-sm-6">
+            <div class="card">
+                <img src="includes/images/Librecat-Catmandu.png" class="card-img-top"
+                    alt="Slides da apresentação Desmistificando a IA para os bibliotecários">
+                <div class="card-body">
+                    <h5 class="card-title">Desmistificando a IA para os bibliotecários</h5>
+                    <p class="card-text">Slides apresentados em vídeo no <a
+                            href="https://www.youtube.com/watch?v=5DrOXBih4cw">Youtube</a>.
+                        <br />Ano: 2024
+                    </p>
+                    <a href="files/IA_Murakami.pptx" class="btn btn-primary">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @stop
