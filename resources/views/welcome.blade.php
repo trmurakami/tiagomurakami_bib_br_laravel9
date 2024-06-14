@@ -172,7 +172,7 @@
                     <li class="list-group-item"><a href="lattestobibtex">Conversor
                             online de XML do Currículo Lattes em formato Bibtex para importação no ORCID</a>
                     </li>
-                    <li class="list-group-item"><a href="https://tiagomurakami.bib.br/prodmais">Prodmais dos
+                    <li class="list-group-item"><a href="https://tiagomurakami.bib.br/ppgcis/public/">Prodmais dos
                             Pesquisadores vinculados a Programas de Pós-Graduação em Ciência da Informação</a>
                     </li>
                     <li class="list-group-item"><a href="cutter">Consultar Tabela Cutter Sanborn</a></li>
