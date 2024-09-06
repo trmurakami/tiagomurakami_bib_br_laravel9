@@ -172,6 +172,7 @@
                             online de XML do Currículo Lattes em formato Bibtex para importação no ORCID</a>
                     </li>
                     <li class="list-group-item"><a href="cutter">Consultar Tabela Cutter Sanborn</a></li>
+                    <li class="list-group-item"><a href="qualis">Consultar Qualis Periódicos</a></li>
                     <li class="list-group-item"><a href="https://vocabularios.eca.usp.br/redeassuntos/">Rede de assuntos
                             do acervo da Biblioteca da ECA/USP</a></li>
                     <li class="list-group-item"><a
