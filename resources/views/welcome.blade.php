@@ -4,9 +4,6 @@
 
 @section('head')
 
-<meta name="google-adsense-account" content="ca-pub-0960074477928275">
-
-
 <script type="application/ld+json">
 {
     "@context": "http://www.schema.org",
